@@ -61,10 +61,10 @@ export default function Tokens() {
         900: '#1c1917',
       },
       semantic: {
-        success: { 50: '#f0fdf4', 500: '#22c55e', 700: '#15803d' },
-        warning: { 50: '#fffbeb', 500: '#f59e0b', 700: '#b45309' },
-        error: { 50: '#fef2f2', 500: '#ef4444', 700: '#b91c1c' },
-        info: { 50: '#eff6ff', 500: '#3b82f6', 700: '#1d4ed8' },
+        success: { 50: '#f0fdf4', 100: '#dcfce7', 300: '#86efac', 500: '#22c55e', 700: '#15803d' },
+        warning: { 50: '#fffbeb', 100: '#fef3c7', 300: '#fcd34d', 500: '#f59e0b', 700: '#b45309' },
+        error: { 50: '#fef2f2', 100: '#fee2e2', 300: '#fca5a5', 500: '#ef4444', 700: '#b91c1c' },
+        info: { 50: '#eff6ff', 100: '#dbeafe', 300: '#93c5fd', 500: '#3b82f6', 700: '#1d4ed8' },
       },
     },
     typography: {
@@ -99,18 +99,18 @@ export default function Tokens() {
     },
     spacing: {
       0: '0',
-      1: '0.125rem',
-      2: '0.25rem',
-      3: '0.5rem',
-      4: '0.75rem',
-      5: '1rem',
-      6: '1.5rem',
-      7: '2rem',
-      8: '2.5rem',
-      9: '3rem',
-      10: '4rem',
-      11: '5rem',
-      12: '6rem',
+      1: '0.25rem',
+      2: '0.5rem',
+      3: '1rem',
+      4: '1.5rem',
+      5: '2rem',
+      6: '3rem',
+      7: '4rem',
+      8: '5rem',
+      9: '6rem',
+      10: '7rem',
+      11: '8rem',
+      12: '9rem',
     },
     borderRadius: {
       sm: '0.25rem',
@@ -149,68 +149,142 @@ export default function Tokens() {
     },
   };
 
-  const cssVariables = `/* Jasmine Kindergarten Design System - CSS Variables */
+  const cssVariables = `/* Jasmine Kindergarten Design System - CSS Variables
+   Full reference: see tokens/design-tokens.css for copy-paste usage. */
 
-/* Colors - Primary */
---color-primary-50: #fff8f0;
---color-primary-100: #ffefd9;
---color-primary-200: #ffddb3;
---color-primary-300: #ffc88d;
---color-primary-400: #ffb366;
---color-primary-500: #ff9940;
---color-primary-600: #ff7e1a;
---color-primary-700: #e56500;
---color-primary-800: #b34f00;
---color-primary-900: #803900;
+:root {
+  /* Colors - Primary */
+  --color-primary-50: #fff8f0;
+  --color-primary-100: #ffefd9;
+  --color-primary-200: #ffddb3;
+  --color-primary-300: #ffc88d;
+  --color-primary-400: #ffb366;
+  --color-primary-500: #ff9940;
+  --color-primary-600: #ff7e1a;
+  --color-primary-700: #e56500;
+  --color-primary-800: #b34f00;
+  --color-primary-900: #803900;
 
-/* Colors - Secondary */
---color-secondary-50: #f0f9ff;
---color-secondary-100: #e0f2fe;
---color-secondary-200: #bae6fd;
---color-secondary-300: #7dd3fc;
---color-secondary-400: #38bdf8;
---color-secondary-500: #0ea5e9;
---color-secondary-600: #0284c7;
---color-secondary-700: #0369a1;
---color-secondary-800: #075985;
---color-secondary-900: #0c4a6e;
+  /* Colors - Secondary */
+  --color-secondary-50: #f0f9ff;
+  --color-secondary-100: #e0f2fe;
+  --color-secondary-200: #bae6fd;
+  --color-secondary-300: #7dd3fc;
+  --color-secondary-400: #38bdf8;
+  --color-secondary-500: #0ea5e9;
+  --color-secondary-600: #0284c7;
+  --color-secondary-700: #0369a1;
+  --color-secondary-800: #075985;
+  --color-secondary-900: #0c4a6e;
 
-/* Spacing */
---spacing-0: 0;
---spacing-1: 0.125rem;
---spacing-2: 0.25rem;
---spacing-3: 0.5rem;
---spacing-4: 0.75rem;
---spacing-5: 1rem;
---spacing-6: 1.5rem;
---spacing-7: 2rem;
---spacing-8: 2.5rem;
---spacing-9: 3rem;
---spacing-10: 4rem;
---spacing-11: 5rem;
---spacing-12: 6rem;
+  /* Colors - Accent */
+  --color-accent-50: #fff1f7;
+  --color-accent-100: #ffe4f0;
+  --color-accent-200: #ffc9e1;
+  --color-accent-300: #ffa3ce;
+  --color-accent-400: #ff6bae;
+  --color-accent-500: #ff3d94;
+  --color-accent-600: #f01b75;
+  --color-accent-700: #d10d5e;
+  --color-accent-800: #a80d4d;
+  --color-accent-900: #8d0f44;
 
-/* Typography */
---font-family-display: 'Quicksand', 'Nunito', sans-serif;
---font-family-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
---font-size-display-1: 4rem;
---font-size-display-2: 3rem;
---font-size-heading-1: 2.5rem;
---font-size-heading-2: 2rem;
---font-size-heading-3: 1.5rem;
---font-size-body-lg: 1.125rem;
---font-size-body: 1rem;
---font-size-body-sm: 0.875rem;
---font-size-caption: 0.75rem;
+  /* Colors - Neutral */
+  --color-neutral-50: #fafaf9;
+  --color-neutral-100: #f5f5f4;
+  --color-neutral-200: #e7e5e4;
+  --color-neutral-300: #d6d3d1;
+  --color-neutral-400: #a8a29e;
+  --color-neutral-500: #78716c;
+  --color-neutral-600: #57534e;
+  --color-neutral-700: #44403c;
+  --color-neutral-800: #292524;
+  --color-neutral-900: #1c1917;
 
-/* Animation */
---duration-instant: 100ms;
---duration-fast: 200ms;
---duration-normal: 300ms;
---duration-slow: 500ms;
---ease-in: cubic-bezier(0.4, 0, 1, 1);
---ease-out: cubic-bezier(0, 0, 0.2, 1);
---ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  /* Colors - Semantic */
+  --color-success-50: #f0fdf4;
+  --color-success-100: #dcfce7;
+  --color-success-300: #86efac;
+  --color-success-500: #22c55e;
+  --color-success-700: #15803d;
+  --color-warning-50: #fffbeb;
+  --color-warning-100: #fef3c7;
+  --color-warning-300: #fcd34d;
+  --color-warning-500: #f59e0b;
+  --color-warning-700: #b45309;
+  --color-error-50: #fef2f2;
+  --color-error-100: #fee2e2;
+  --color-error-300: #fca5a5;
+  --color-error-500: #ef4444;
+  --color-error-700: #b91c1c;
+  --color-info-50: #eff6ff;
+  --color-info-100: #dbeafe;
+  --color-info-300: #93c5fd;
+  --color-info-500: #3b82f6;
+  --color-info-700: #1d4ed8;
+
+  /* Spacing (8px grid) */
+  --spacing-0: 0;
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 1rem;
+  --spacing-4: 1.5rem;
+  --spacing-5: 2rem;
+  --spacing-6: 3rem;
+  --spacing-7: 4rem;
+  --spacing-8: 5rem;
+  --spacing-9: 6rem;
+  --spacing-10: 7rem;
+  --spacing-11: 8rem;
+  --spacing-12: 9rem;
+
+  /* Typography */
+  --font-family-display: 'Quicksand', 'Nunito', sans-serif;
+  --font-family-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', Consolas, monospace;
+  --font-size-display-1: clamp(2.75rem, 6vw, 4rem);
+  --font-size-display-2: clamp(2.25rem, 5vw, 3rem);
+  --font-size-heading-1: clamp(2rem, 4vw, 2.5rem);
+  --font-size-heading-2: clamp(1.5rem, 3vw, 2rem);
+  --font-size-heading-3: clamp(1.25rem, 2.5vw, 1.5rem);
+  --font-size-body-lg: 1.125rem;
+  --font-size-body: 1rem;
+  --font-size-body-sm: 0.875rem;
+  --font-size-caption: 0.75rem;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.02em;
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+
+  /* Animation */
+  --duration-instant: 100ms;
+  --duration-fast: 200ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
 `;
 
   const downloadJSON = () => {
@@ -236,9 +310,9 @@ export default function Tokens() {
   };
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-16 lg:space-y-20">
       <div>
-        <h1 className="text-4xl font-bold text-[var(--color-neutral-900)] mb-3">Design Tokens</h1>
+        <h1 className="text-4xl font-bold text-[var(--color-neutral-900)] mb-4 sm:mb-6">Design Tokens</h1>
         <p className="text-lg text-[var(--color-neutral-600)] max-w-3xl">
           Download the complete design system tokens in JSON or CSS format for easy integration 
           into your development workflow.
@@ -249,7 +323,7 @@ export default function Tokens() {
       <div className="grid md:grid-cols-2 gap-6">
         <div className="p-8 bg-gradient-to-br from-[var(--color-primary-50)] to-[var(--color-accent-50)] border-2 border-[var(--color-primary-300)] rounded-2xl">
           <div className="flex items-center gap-3 mb-4">
-            <div className="p-3 bg-white rounded-xl shadow-sm">
+            <div className="p-3 bg-white dark:bg-[var(--color-neutral-100)] rounded-xl shadow-sm">
               <span className="text-2xl">📦</span>
             </div>
             <div>
@@ -272,7 +346,7 @@ export default function Tokens() {
 
         <div className="p-8 bg-gradient-to-br from-[var(--color-secondary-50)] to-[var(--color-primary-50)] border-2 border-[var(--color-secondary-300)] rounded-2xl">
           <div className="flex items-center gap-3 mb-4">
-            <div className="p-3 bg-white rounded-xl shadow-sm">
+            <div className="p-3 bg-white dark:bg-[var(--color-neutral-100)] rounded-xl shadow-sm">
               <span className="text-2xl">🎨</span>
             </div>
             <div>
@@ -448,7 +522,7 @@ export default function Tokens() {
           </div>
         </div>
 
-        <div className="mt-8 p-6 bg-white rounded-xl">
+        <div className="mt-8 p-6 bg-white dark:bg-[var(--color-neutral-100)] rounded-xl">
           <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-3">Figma Integration</h3>
           <p className="text-sm text-[var(--color-neutral-700)] mb-3">
             Import the JSON tokens into Figma using the Tokens Studio plugin for seamless design-to-development handoff.
@@ -472,6 +546,22 @@ export default function Tokens() {
             </li>
           </ol>
         </div>
+      </div>
+
+      {/* Standalone Token Files */}
+      <div className="p-6 rounded-xl bg-gradient-to-br from-[var(--color-primary-50)] to-[var(--color-secondary-50)] border border-[var(--color-primary-200)]">
+        <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-2">Standalone Token Files</h3>
+        <p className="text-sm text-[var(--color-neutral-700)] mb-4">
+          Pre-built token bundles are available in the <code className="bg-white/70 px-1.5 py-0.5 rounded text-xs">tokens/</code> directory:
+        </p>
+        <ul className="space-y-2 text-sm text-[var(--color-neutral-700)]">
+          <li className="flex items-start gap-2">
+            <span className="font-mono text-[var(--color-primary-600)]">tokens/design-tokens.json</span> — W3C Design Token format; import into Figma Tokens / Style Dictionary
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="font-mono text-[var(--color-primary-600)]">tokens/design-tokens.css</span> — Complete CSS custom properties with <code className="bg-white/70 px-1 py-0.5 rounded text-xs">:root</code> and <code className="bg-white/70 px-1 py-0.5 rounded text-xs">.dark</code> blocks
+          </li>
+        </ul>
       </div>
 
       {/* Version Info */}

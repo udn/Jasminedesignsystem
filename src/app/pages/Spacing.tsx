@@ -1,24 +1,24 @@
 export default function Spacing() {
   const spacingTokens = [
     { name: 'spacing-0', value: '0px', rem: '0', usage: 'No spacing' },
-    { name: 'spacing-1', value: '2px', rem: '0.125rem', usage: 'Minimal spacing, borders' },
-    { name: 'spacing-2', value: '4px', rem: '0.25rem', usage: 'Tight spacing, small gaps' },
-    { name: 'spacing-3', value: '8px', rem: '0.5rem', usage: 'Base unit, compact spacing' },
-    { name: 'spacing-4', value: '12px', rem: '0.75rem', usage: 'Small padding, gaps' },
-    { name: 'spacing-5', value: '16px', rem: '1rem', usage: 'Standard spacing, default padding' },
-    { name: 'spacing-6', value: '24px', rem: '1.5rem', usage: 'Medium spacing, card padding' },
-    { name: 'spacing-7', value: '32px', rem: '2rem', usage: 'Large spacing, section padding' },
-    { name: 'spacing-8', value: '40px', rem: '2.5rem', usage: 'Extra large spacing' },
-    { name: 'spacing-9', value: '48px', rem: '3rem', usage: 'Component spacing, large gaps' },
-    { name: 'spacing-10', value: '64px', rem: '4rem', usage: 'Section spacing' },
-    { name: 'spacing-11', value: '80px', rem: '5rem', usage: 'Large section spacing' },
-    { name: 'spacing-12', value: '96px', rem: '6rem', usage: 'Maximum spacing, hero sections' },
+    { name: 'spacing-1', value: '4px', rem: '0.25rem', usage: 'Fine adjustments, borders' },
+    { name: 'spacing-2', value: '8px', rem: '0.5rem', usage: 'Tight spacing, small gaps' },
+    { name: 'spacing-3', value: '16px', rem: '1rem', usage: 'Base unit, default spacing' },
+    { name: 'spacing-4', value: '24px', rem: '1.5rem', usage: 'Small padding, compact sections' },
+    { name: 'spacing-5', value: '32px', rem: '2rem', usage: 'Standard padding, comfortable gaps' },
+    { name: 'spacing-6', value: '48px', rem: '3rem', usage: 'Card padding, large component gaps' },
+    { name: 'spacing-7', value: '64px', rem: '4rem', usage: 'Section spacing on desktop' },
+    { name: 'spacing-8', value: '80px', rem: '5rem', usage: 'Hero spacing, generous sections' },
+    { name: 'spacing-9', value: '96px', rem: '6rem', usage: 'Maximum standard spacing' },
+    { name: 'spacing-10', value: '112px', rem: '7rem', usage: 'Extra large layouts, landing pages' },
+    { name: 'spacing-11', value: '128px', rem: '8rem', usage: 'Hero layouts on large screens' },
+    { name: 'spacing-12', value: '144px', rem: '9rem', usage: 'Immersive sections, full-bleed banners' },
   ];
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-16 lg:space-y-20">
       <div>
-        <h1 className="text-4xl font-bold text-[var(--color-neutral-900)] mb-3">Spacing & Sizing</h1>
+        <h1 className="text-4xl font-bold text-[var(--color-neutral-900)] mb-4 sm:mb-6">Spacing & Sizing</h1>
         <p className="text-lg text-[var(--color-neutral-600)] max-w-3xl">
           Our spacing system is built on an 8px base grid, creating consistent rhythm and alignment throughout 
           the interface. This systematic approach ensures visual harmony and makes layouts predictable for developers.
@@ -29,24 +29,24 @@ export default function Spacing() {
       <div className="p-8 rounded-2xl bg-gradient-to-br from-[var(--color-primary-50)] to-[var(--color-secondary-50)] border border-[var(--color-primary-200)]">
         <h2 className="text-2xl font-bold text-[var(--color-neutral-900)] mb-4">8px Base Grid System</h2>
         <p className="text-[var(--color-neutral-700)] mb-6">
-          All spacing values are multiples of 8px (with exceptions at 2px and 4px for fine-tuning). 
+          All spacing values are built from a strict 8px base grid (with 4px as the smallest adjustment). 
           This creates a consistent vertical and horizontal rhythm that works across all screen sizes.
         </p>
         
         <div className="grid md:grid-cols-3 gap-6">
-          <div className="p-4 bg-white rounded-lg">
+          <div className="p-4 bg-white dark:bg-[var(--color-neutral-100)] rounded-lg">
             <h3 className="font-semibold text-[var(--color-neutral-900)] mb-2">Why 8px?</h3>
             <p className="text-sm text-[var(--color-neutral-600)]">
               Most screen resolutions are divisible by 8, preventing sub-pixel rendering issues and ensuring crisp edges.
             </p>
           </div>
-          <div className="p-4 bg-white rounded-lg">
+          <div className="p-4 bg-white dark:bg-[var(--color-neutral-100)] rounded-lg">
             <h3 className="font-semibold text-[var(--color-neutral-900)] mb-2">Flexibility</h3>
             <p className="text-sm text-[var(--color-neutral-600)]">
               2px and 4px tokens provide flexibility for borders and tight spacing when needed.
             </p>
           </div>
-          <div className="p-4 bg-white rounded-lg">
+          <div className="p-4 bg-white dark:bg-[var(--color-neutral-100)] rounded-lg">
             <h3 className="font-semibold text-[var(--color-neutral-900)] mb-2">Scalability</h3>
             <p className="text-sm text-[var(--color-neutral-600)]">
               The system scales elegantly from mobile to desktop without awkward gaps or crowding.
@@ -61,7 +61,7 @@ export default function Spacing() {
         
         <div className="space-y-4">
           {spacingTokens.map((token) => (
-            <div key={token.name} className="p-6 rounded-xl bg-white border border-[var(--color-neutral-200)]">
+            <div key={token.name} className="p-6 rounded-xl bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)]">
               <div className="grid md:grid-cols-3 gap-6 items-center">
                 <div className="space-y-1">
                   <h3 className="font-semibold text-[var(--color-neutral-900)]">
@@ -100,7 +100,7 @@ export default function Spacing() {
         {/* Card with Spacing */}
         <div className="space-y-4">
           <h3 className="text-lg font-semibold text-[var(--color-neutral-900)]">Card Component Spacing</h3>
-          <div className="p-6 rounded-xl bg-white border-2 border-[var(--color-primary-300)] relative">
+          <div className="p-6 rounded-xl bg-white dark:bg-[var(--color-neutral-100)] border-2 border-[var(--color-primary-300)] relative">
             <div className="absolute top-0 left-0 text-xs text-[var(--color-primary-600)] bg-[var(--color-primary-100)] px-2 py-1 rounded-br">
               24px padding
             </div>
@@ -136,9 +136,9 @@ export default function Spacing() {
         <div className="space-y-4">
           <h3 className="text-lg font-semibold text-[var(--color-neutral-900)]">Vertical Stack (16px gaps)</h3>
           <div className="space-y-4 p-6 rounded-xl bg-[var(--color-neutral-100)]">
-            <div className="p-4 bg-white rounded-lg shadow-sm">Stack Item 1</div>
-            <div className="p-4 bg-white rounded-lg shadow-sm">Stack Item 2</div>
-            <div className="p-4 bg-white rounded-lg shadow-sm">Stack Item 3</div>
+            <div className="p-4 bg-white dark:bg-[var(--color-neutral-100)] rounded-lg shadow-sm">Stack Item 1</div>
+            <div className="p-4 bg-white dark:bg-[var(--color-neutral-100)] rounded-lg shadow-sm">Stack Item 2</div>
+            <div className="p-4 bg-white dark:bg-[var(--color-neutral-100)] rounded-lg shadow-sm">Stack Item 3</div>
           </div>
         </div>
 
@@ -146,9 +146,9 @@ export default function Spacing() {
         <div className="space-y-4">
           <h3 className="text-lg font-semibold text-[var(--color-neutral-900)]">Grid Layout (24px gaps)</h3>
           <div className="grid grid-cols-3 gap-6 p-6 rounded-xl bg-[var(--color-neutral-100)]">
-            <div className="p-4 bg-white rounded-lg shadow-sm text-center">Grid 1</div>
-            <div className="p-4 bg-white rounded-lg shadow-sm text-center">Grid 2</div>
-            <div className="p-4 bg-white rounded-lg shadow-sm text-center">Grid 3</div>
+            <div className="p-4 bg-white dark:bg-[var(--color-neutral-100)] rounded-lg shadow-sm text-center">Grid 1</div>
+            <div className="p-4 bg-white dark:bg-[var(--color-neutral-100)] rounded-lg shadow-sm text-center">Grid 2</div>
+            <div className="p-4 bg-white dark:bg-[var(--color-neutral-100)] rounded-lg shadow-sm text-center">Grid 3</div>
           </div>
         </div>
       </div>
@@ -166,7 +166,7 @@ export default function Spacing() {
             { name: '2xl', value: '24px', var: '--radius-2xl' },
             { name: 'full', value: '9999px', var: '--radius-full' },
           ].map((radius) => (
-            <div key={radius.name} className="p-4 rounded-xl bg-white border border-[var(--color-neutral-200)] text-center">
+            <div key={radius.name} className="p-4 rounded-xl bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)] text-center">
               <div 
                 className="w-full h-20 bg-gradient-to-br from-[var(--color-primary-400)] to-[var(--color-accent-400)] mb-3"
                 style={{ borderRadius: radius.value }}

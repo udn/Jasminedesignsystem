@@ -1,9 +1,5 @@
-@import "./fonts.css";
-
-@theme {
-  /* ===== COLOR SYSTEM ===== */
-  
-  /* Primary Palette - Warm, approachable colors */
+:root {
+  /* Colors - Primary */
   --color-primary-50: #fff8f0;
   --color-primary-100: #ffefd9;
   --color-primary-200: #ffddb3;
@@ -15,7 +11,7 @@
   --color-primary-800: #b34f00;
   --color-primary-900: #803900;
 
-  /* Secondary Palette - Playful, joyful colors */
+  /* Colors - Secondary */
   --color-secondary-50: #f0f9ff;
   --color-secondary-100: #e0f2fe;
   --color-secondary-200: #bae6fd;
@@ -27,7 +23,7 @@
   --color-secondary-800: #075985;
   --color-secondary-900: #0c4a6e;
 
-  /* Accent - Warm pink for highlights */
+  /* Colors - Accent */
   --color-accent-50: #fff1f7;
   --color-accent-100: #ffe4f0;
   --color-accent-200: #ffc9e1;
@@ -39,7 +35,7 @@
   --color-accent-800: #a80d4d;
   --color-accent-900: #8d0f44;
 
-  /* Neutral Palette */
+  /* Colors - Neutral */
   --color-neutral-50: #fafaf9;
   --color-neutral-100: #f5f5f4;
   --color-neutral-200: #e7e5e4;
@@ -51,103 +47,90 @@
   --color-neutral-800: #292524;
   --color-neutral-900: #1c1917;
 
-  /* Semantic Colors */
-  /* Success (green) */
+  /* Colors - Semantic */
   --color-success-50: #f0fdf4;
   --color-success-100: #dcfce7;
   --color-success-300: #86efac;
   --color-success-500: #22c55e;
   --color-success-700: #15803d;
-  
-  /* Warning (amber) */
+
   --color-warning-50: #fffbeb;
   --color-warning-100: #fef3c7;
   --color-warning-300: #fcd34d;
   --color-warning-500: #f59e0b;
   --color-warning-700: #b45309;
-  
-  /* Error (red) */
+
   --color-error-50: #fef2f2;
   --color-error-100: #fee2e2;
   --color-error-300: #fca5a5;
   --color-error-500: #ef4444;
   --color-error-700: #b91c1c;
-  
-  /* Info (blue) */
+
   --color-info-50: #eff6ff;
   --color-info-100: #dbeafe;
   --color-info-300: #93c5fd;
   --color-info-500: #3b82f6;
   --color-info-700: #1d4ed8;
 
-  /* ===== SPACING SYSTEM (8px base grid) ===== */
-  /* Core scale: multiples of 4px / 8px for rhythm */
-  --spacing-0: 0;          /* 0px  */
-  --spacing-1: 0.25rem;    /* 4px  */
-  --spacing-2: 0.5rem;     /* 8px  */
-  --spacing-3: 1rem;       /* 16px */
-  --spacing-4: 1.5rem;     /* 24px */
-  --spacing-5: 2rem;       /* 32px */
-  --spacing-6: 3rem;       /* 48px */
-  --spacing-7: 4rem;       /* 64px */
-  --spacing-8: 5rem;       /* 80px */
-  --spacing-9: 6rem;       /* 96px */
-  --spacing-10: 7rem;      /* 112px */
-  --spacing-11: 8rem;      /* 128px */
-  --spacing-12: 9rem;      /* 144px */
+  /* Spacing */
+  --spacing-0: 0;
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 1rem;
+  --spacing-4: 1.5rem;
+  --spacing-5: 2rem;
+  --spacing-6: 3rem;
+  --spacing-7: 4rem;
+  --spacing-8: 5rem;
+  --spacing-9: 6rem;
+  --spacing-10: 7rem;
+  --spacing-11: 8rem;
+  --spacing-12: 9rem;
 
-  /* Semantic spacing aliases */
-  --spacing-component-padding: var(--spacing-3);  /* Default component padding */
-  --spacing-section-gap: var(--spacing-6);        /* Vertical gap between sections */
-  --spacing-inline-gap: var(--spacing-2);         /* Default inline gap between items */
-
-  /* ===== TYPOGRAPHY SCALE ===== */
+  /* Typography */
   --font-family-display: 'Quicksand', 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-family-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Roboto, Arial, sans-serif;
   --font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', Consolas, monospace;
 
-  /* Responsive type scale (mobile-first) */
-  --font-size-display-1: clamp(2.75rem, 6vw, 4rem);   /* ~44–64px */
-  --font-size-display-2: clamp(2.25rem, 5vw, 3rem);   /* ~36–48px */
-  --font-size-heading-1: clamp(2rem, 4vw, 2.5rem);    /* ~32–40px */
-  --font-size-heading-2: clamp(1.5rem, 3vw, 2rem);    /* ~24–32px */
-  --font-size-heading-3: clamp(1.25rem, 2.5vw, 1.5rem); /* ~20–24px */
-  --font-size-body-lg: 1.125rem;  /* 18px */
-  --font-size-body: 1rem;         /* 16px */
-  --font-size-body-sm: 0.875rem;  /* 14px */
-  --font-size-caption: 0.75rem;   /* 12px */
+  --font-size-display-1: clamp(2.75rem, 6vw, 4rem);
+  --font-size-display-2: clamp(2.25rem, 5vw, 3rem);
+  --font-size-heading-1: clamp(2rem, 4vw, 2.5rem);
+  --font-size-heading-2: clamp(1.5rem, 3vw, 2rem);
+  --font-size-heading-3: clamp(1.25rem, 2.5vw, 1.5rem);
+  --font-size-body-lg: 1.125rem;
+  --font-size-body: 1rem;
+  --font-size-body-sm: 0.875rem;
+  --font-size-caption: 0.75rem;
 
   --line-height-tight: 1.2;
   --line-height-normal: 1.5;
   --line-height-relaxed: 1.7;
 
-  /* Font weights */
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
 
-  /* Letter spacing */
   --letter-spacing-tight: -0.02em;
   --letter-spacing-normal: 0;
   --letter-spacing-wide: 0.02em;
 
-  /* ===== BORDER RADIUS ===== */
-  --radius-sm: 0.25rem;   /* 4px */
-  --radius-md: 0.5rem;    /* 8px */
-  --radius-lg: 0.75rem;   /* 12px */
-  --radius-xl: 1rem;      /* 16px */
-  --radius-2xl: 1.5rem;   /* 24px */
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
   --radius-full: 9999px;
 
-  /* ===== SHADOWS ===== */
+  /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 
-  /* ===== MOTION ===== */
+  /* Motion */
   --duration-instant: 100ms;
   --duration-fast: 200ms;
   --duration-normal: 300ms;
@@ -158,37 +141,12 @@
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-
-  /* ===== BREAKPOINTS (for reference) ===== */
-  /* Mobile: 0-639px */
-  /* Tablet: 640px-1023px */
-  /* Desktop: 1024px+ */
-  /* Wide: 1280px+ */
 }
 
-/* Base Styles */
-body {
-  font-family: var(--font-family-body);
-  font-size: var(--font-size-body);
-  line-height: var(--line-height-normal);
-  color: var(--color-neutral-900);
-  background-color: var(--color-neutral-50);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-family-display);
-  line-height: var(--line-height-tight);
-  font-weight: 700;
-}
-
-/* ===== DARK MODE ===== */
-/* Class-based dark mode; will be toggled via next-themes on <html class=\"dark\"> */
 .dark {
   color-scheme: dark;
 
-  /* Invert primary palette for dark surfaces */
+  /* Primary */
   --color-primary-50: #803900;
   --color-primary-100: #b34f00;
   --color-primary-200: #e56500;
@@ -200,7 +158,7 @@ h1, h2, h3, h4, h5, h6 {
   --color-primary-800: #ffefd9;
   --color-primary-900: #fff8f0;
 
-  /* Neutral palette inverted for dark mode */
+  /* Neutral */
   --color-neutral-50: #1c1917;
   --color-neutral-100: #292524;
   --color-neutral-200: #44403c;
@@ -212,7 +170,7 @@ h1, h2, h3, h4, h5, h6 {
   --color-neutral-800: #f5f5f4;
   --color-neutral-900: #fafaf9;
 
-  /* Secondary palette tuned for dark backgrounds */
+  /* Secondary */
   --color-secondary-50: #0b1220;
   --color-secondary-100: #0f172a;
   --color-secondary-200: #1d2a3f;
@@ -224,7 +182,7 @@ h1, h2, h3, h4, h5, h6 {
   --color-secondary-800: #e0f2fe;
   --color-secondary-900: #f0f9ff;
 
-  /* Accent palette tuned for dark backgrounds */
+  /* Accent */
   --color-accent-50: #3b0f1f;
   --color-accent-100: #4a1026;
   --color-accent-200: #7f1239;
@@ -236,7 +194,7 @@ h1, h2, h3, h4, h5, h6 {
   --color-accent-800: #ffe4f0;
   --color-accent-900: #fff1f7;
 
-  /* Semantic colors adjusted for dark mode */
+  /* Semantic */
   --color-success-50: #052e16;
   --color-success-100: #14532d;
   --color-success-300: #15803d;
@@ -261,14 +219,10 @@ h1, h2, h3, h4, h5, h6 {
   --color-info-500: #60a5fa;
   --color-info-700: #dbeafe;
 
-  /* Softer, lifted shadows for dark UIs */
+  /* Shadows (softer for dark surfaces) */
   --shadow-sm: 0 1px 2px 0 rgb(15 23 42 / 0.7);
   --shadow-md: 0 4px 6px -1px rgb(15 23 42 / 0.8), 0 2px 4px -2px rgb(15 23 42 / 0.7);
   --shadow-lg: 0 10px 15px -3px rgb(15 23 42 / 0.85), 0 4px 6px -4px rgb(15 23 42 / 0.75);
   --shadow-xl: 0 20px 25px -5px rgb(15 23 42 / 0.9), 0 8px 10px -6px rgb(15 23 42 / 0.8);
 }
 
-.dark body {
-  background-color: var(--color-neutral-50);
-  color: var(--color-neutral-900);
-}

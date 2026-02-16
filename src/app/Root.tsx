@@ -1,10 +1,17 @@
 import { Outlet, Link, useLocation } from 'react-router';
-import { Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import { Menu, Moon, Sun, X } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { useTheme } from 'next-themes';
 
 export default function Root() {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { theme, setTheme, systemTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const navigation = [
     { name: 'Overview', path: '/' },
@@ -24,9 +31,9 @@ export default function Root() {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--color-neutral-50)]">
+    <div className="min-h-screen bg-[var(--color-neutral-50)] overflow-x-hidden">
       {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-[var(--color-neutral-200)] bg-white/80 backdrop-blur-lg">
+      <header className="sticky top-0 z-50 border-b border-[var(--color-neutral-200)] bg-[var(--color-neutral-50)]/80 backdrop-blur-lg">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center gap-3">
@@ -56,22 +63,64 @@ export default function Root() {
                   {item.name}
                 </Link>
               ))}
+              {mounted && (
+                <button
+                  type="button"
+                  onClick={() =>
+                    setTheme(
+                      (theme === 'dark' || (theme === 'system' && systemTheme === 'dark'))
+                        ? 'light'
+                        : 'dark'
+                    )
+                  }
+                  className="ml-3 inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-neutral-200)] bg-[var(--color-neutral-50)]/70 text-[var(--color-neutral-700)] shadow-sm hover:bg-[var(--color-neutral-100)] hover:text-[var(--color-neutral-900)] transition-colors"
+                  aria-label="Toggle theme"
+                >
+                  {theme === 'dark' || (theme === 'system' && systemTheme === 'dark') ? (
+                    <Sun size={18} />
+                  ) : (
+                    <Moon size={18} />
+                  )}
+                </button>
+              )}
             </nav>
 
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg hover:bg-[var(--color-neutral-100)] transition-colors"
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            {/* Mobile Theme + Menu Buttons */}
+            <div className="flex items-center gap-2 md:hidden">
+              {mounted && (
+                <button
+                  type="button"
+                  onClick={() =>
+                    setTheme(
+                      (theme === 'dark' || (theme === 'system' && systemTheme === 'dark'))
+                        ? 'light'
+                        : 'dark'
+                    )
+                  }
+                  className="p-2 rounded-lg border border-[var(--color-neutral-200)] bg-[var(--color-neutral-50)]/80 text-[var(--color-neutral-700)] hover:bg-[var(--color-neutral-100)] transition-colors"
+                  aria-label="Toggle theme"
+                >
+                  {theme === 'dark' || (theme === 'system' && systemTheme === 'dark') ? (
+                    <Sun size={18} />
+                  ) : (
+                    <Moon size={18} />
+                  )}
+                </button>
+              )}
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="p-2 rounded-lg hover:bg-[var(--color-neutral-100)] transition-colors"
+                aria-label="Toggle menu"
+              >
+                {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <nav className="md:hidden border-t border-[var(--color-neutral-200)] bg-white">
+          <nav className="md:hidden border-t border-[var(--color-neutral-200)] bg-[var(--color-neutral-50)]">
             <div className="px-4 py-2 space-y-1">
               {navigation.map((item) => (
                 <Link
@@ -93,12 +142,12 @@ export default function Root() {
       </header>
 
       {/* Main Content */}
-      <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <main className="mx-auto max-w-7xl px-6 py-12 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
         <Outlet />
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-[var(--color-neutral-200)] bg-white">
+      <footer className="border-t border-[var(--color-neutral-200)] bg-[var(--color-neutral-50)]">
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
           <div className="text-center text-sm text-[var(--color-neutral-500)]">
             <p>© 2026 Jasmine Kindergarten Design System</p>

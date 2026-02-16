@@ -2,9 +2,9 @@ import { Sparkles, Shield, Heart, Zap } from 'lucide-react';
 
 export default function Overview() {
   return (
-    <div className="space-y-12">
+    <div className="space-y-16 lg:space-y-20">
       {/* Hero Section */}
-      <div className="text-center space-y-4">
+      <div className="text-center space-y-6 py-8 sm:py-12 lg:py-16">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--color-primary-100)] text-[var(--color-primary-700)] text-sm font-medium">
           <Sparkles size={16} />
           <span>Version 1.0.0</span>
@@ -24,7 +24,7 @@ export default function Overview() {
 
       {/* Brand Attributes */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div className="p-6 rounded-2xl bg-white border border-[var(--color-neutral-200)] shadow-sm">
+        <div className="p-6 rounded-2xl bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)] shadow-sm">
           <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-[var(--color-primary-100)] text-[var(--color-primary-600)] mb-4">
             <Sparkles size={24} />
           </div>
@@ -34,7 +34,7 @@ export default function Overview() {
           </p>
         </div>
 
-        <div className="p-6 rounded-2xl bg-white border border-[var(--color-neutral-200)] shadow-sm">
+        <div className="p-6 rounded-2xl bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)] shadow-sm">
           <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-[var(--color-secondary-100)] text-[var(--color-secondary-600)] mb-4">
             <Heart size={24} />
           </div>
@@ -44,7 +44,7 @@ export default function Overview() {
           </p>
         </div>
 
-        <div className="p-6 rounded-2xl bg-white border border-[var(--color-neutral-200)] shadow-sm">
+        <div className="p-6 rounded-2xl bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)] shadow-sm">
           <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-[var(--color-accent-100)] text-[var(--color-accent-600)] mb-4">
             <Shield size={24} />
           </div>
@@ -54,7 +54,7 @@ export default function Overview() {
           </p>
         </div>
 
-        <div className="p-6 rounded-2xl bg-white border border-[var(--color-neutral-200)] shadow-sm">
+        <div className="p-6 rounded-2xl bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)] shadow-sm">
           <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-[var(--color-success-100)] text-[var(--color-success-600)] mb-4">
             <Zap size={24} />
           </div>
@@ -92,9 +92,9 @@ export default function Overview() {
 
       {/* System Features */}
       <div>
-        <h2 className="text-3xl font-bold text-[var(--color-neutral-900)] mb-6">What's Included</h2>
+        <h2 className="text-3xl font-bold text-[var(--color-neutral-900)] mb-8">What's Included</h2>
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="p-6 rounded-xl bg-white border border-[var(--color-neutral-200)]">
+          <div className="p-6 rounded-xl bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)]">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-3">Design Tokens</h3>
             <ul className="space-y-2 text-sm text-[var(--color-neutral-700)]">
               <li className="flex items-start gap-2">
@@ -116,7 +116,7 @@ export default function Overview() {
             </ul>
           </div>
 
-          <div className="p-6 rounded-xl bg-white border border-[var(--color-neutral-200)]">
+          <div className="p-6 rounded-xl bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)]">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-3">Components & Patterns</h3>
             <ul className="space-y-2 text-sm text-[var(--color-neutral-700)]">
               <li className="flex items-start gap-2">

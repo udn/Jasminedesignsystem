@@ -1,8 +1,8 @@
 export default function Layout() {
   return (
-    <div className="space-y-12">
+    <div className="space-y-16 lg:space-y-20">
       <div>
-        <h1 className="text-4xl font-bold text-[var(--color-neutral-900)] mb-3">Layout Patterns</h1>
+        <h1 className="text-4xl font-bold text-[var(--color-neutral-900)] mb-4 sm:mb-6">Layout Patterns</h1>
         <p className="text-lg text-[var(--color-neutral-600)] max-w-3xl">
           Responsive layout patterns built on a mobile-first approach. Our grid system and breakpoints 
           ensure consistent, scalable layouts across all device sizes.
@@ -14,7 +14,7 @@ export default function Layout() {
         <h2 className="text-2xl font-bold text-[var(--color-neutral-900)]">Responsive Breakpoints</h2>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
+          <div className="p-6 bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)] rounded-xl">
             <div className="w-12 h-12 bg-[var(--color-primary-100)] rounded-lg flex items-center justify-center mb-4">
               <span className="text-2xl">📱</span>
             </div>
@@ -23,7 +23,7 @@ export default function Layout() {
             <p className="text-xs text-[var(--color-neutral-500)]">Default, mobile-first design</p>
           </div>
 
-          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
+          <div className="p-6 bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)] rounded-xl">
             <div className="w-12 h-12 bg-[var(--color-secondary-100)] rounded-lg flex items-center justify-center mb-4">
               <span className="text-2xl">📲</span>
             </div>
@@ -32,7 +32,7 @@ export default function Layout() {
             <p className="text-xs text-[var(--color-neutral-500)]">sm: and md: breakpoints</p>
           </div>
 
-          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
+          <div className="p-6 bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)] rounded-xl">
             <div className="w-12 h-12 bg-[var(--color-accent-100)] rounded-lg flex items-center justify-center mb-4">
               <span className="text-2xl">💻</span>
             </div>
@@ -41,7 +41,7 @@ export default function Layout() {
             <p className="text-xs text-[var(--color-neutral-500)]">lg: breakpoint</p>
           </div>
 
-          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
+          <div className="p-6 bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)] rounded-xl">
             <div className="w-12 h-12 bg-[var(--color-success-100)] rounded-lg flex items-center justify-center mb-4">
               <span className="text-2xl">🖥️</span>
             </div>
@@ -137,7 +137,7 @@ export default function Layout() {
           <h3 className="text-lg font-semibold text-[var(--color-neutral-900)]">Container Example</h3>
           <div className="bg-[var(--color-neutral-100)] p-4 rounded-xl">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <div className="h-24 bg-white rounded-lg shadow-sm flex items-center justify-center">
+              <div className="h-24 bg-white dark:bg-[var(--color-neutral-100)] rounded-lg shadow-sm flex items-center justify-center">
                 <p className="text-[var(--color-neutral-600)]">Content Container (max-width: 1280px)</p>
               </div>
             </div>
@@ -158,7 +158,7 @@ export default function Layout() {
                 <h1 className="text-4xl md:text-5xl font-bold">Welcome to Jasmine Kindergarten</h1>
                 <p className="text-lg opacity-90">Where young minds grow through joyful learning</p>
                 <div className="flex flex-wrap gap-3 justify-center pt-4">
-                  <button className="px-6 py-3 bg-white text-[var(--color-primary-600)] rounded-lg font-medium hover:shadow-lg transition-all">
+                  <button className="px-6 py-3 bg-white dark:bg-[var(--color-neutral-100)] text-[var(--color-primary-600)] rounded-lg font-medium hover:shadow-lg transition-all">
                     Get Started
                   </button>
                   <button className="px-6 py-3 bg-white/20 backdrop-blur-sm text-white rounded-lg font-medium hover:bg-white/30 transition-all border border-white/40">
@@ -174,7 +174,7 @@ export default function Layout() {
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-3">Feature Grid (Responsive)</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {Array.from({ length: 3 }).map((_, i) => (
-                <div key={i} className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
+                <div key={i} className="p-6 bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)] rounded-xl">
                   <div className="w-12 h-12 bg-[var(--color-primary-100)] rounded-xl mb-4 flex items-center justify-center text-2xl">
                     ⭐
                   </div>
@@ -194,12 +194,12 @@ export default function Layout() {
               <div className="md:col-span-1 p-6 bg-[var(--color-neutral-100)] rounded-xl">
                 <h4 className="font-semibold text-[var(--color-neutral-900)] mb-4">Sidebar</h4>
                 <div className="space-y-2">
-                  <div className="p-2 bg-white rounded text-sm">Menu Item 1</div>
-                  <div className="p-2 bg-white rounded text-sm">Menu Item 2</div>
-                  <div className="p-2 bg-white rounded text-sm">Menu Item 3</div>
+                  <div className="p-2 bg-white dark:bg-[var(--color-neutral-100)] rounded text-sm">Menu Item 1</div>
+                  <div className="p-2 bg-white dark:bg-[var(--color-neutral-100)] rounded text-sm">Menu Item 2</div>
+                  <div className="p-2 bg-white dark:bg-[var(--color-neutral-100)] rounded text-sm">Menu Item 3</div>
                 </div>
               </div>
-              <div className="md:col-span-3 p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
+              <div className="md:col-span-3 p-6 bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)] rounded-xl">
                 <h4 className="font-semibold text-[var(--color-neutral-900)] mb-2">Main Content</h4>
                 <p className="text-sm text-[var(--color-neutral-600)]">
                   Primary content area takes up 3/4 of the width on desktop, full width on mobile.
@@ -213,7 +213,7 @@ export default function Layout() {
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-3">Card Grid (Auto-fit)</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {Array.from({ length: 4 }).map((_, i) => (
-                <div key={i} className="p-4 bg-white border border-[var(--color-neutral-200)] rounded-lg">
+                <div key={i} className="p-4 bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)] rounded-lg">
                   <div className="aspect-square bg-gradient-to-br from-[var(--color-primary-300)] to-[var(--color-accent-300)] rounded-lg mb-3" />
                   <p className="text-sm font-medium text-[var(--color-neutral-900)]">Card {i + 1}</p>
                 </div>
@@ -329,6 +329,63 @@ export default function Layout() {
                 <span>Test with screen readers and keyboard only</span>
               </li>
             </ul>
+          </div>
+        </div>
+      </div>
+      {/* Container Width Tokens */}
+      <div className="space-y-6">
+        <h2 className="text-2xl font-bold text-[var(--color-neutral-900)]">Container Width Reference</h2>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="border-b-2 border-[var(--color-neutral-300)]">
+                <th className="px-4 py-3 text-left font-semibold text-[var(--color-neutral-900)]">Breakpoint</th>
+                <th className="px-4 py-3 text-left font-semibold text-[var(--color-neutral-900)]">Min Width</th>
+                <th className="px-4 py-3 text-left font-semibold text-[var(--color-neutral-900)]">Container Max</th>
+                <th className="px-4 py-3 text-left font-semibold text-[var(--color-neutral-900)]">Horizontal Padding</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { bp: 'Mobile', min: '0px', max: '100%', pad: '16px' },
+                { bp: 'Tablet', min: '640px', max: '640px', pad: '24px' },
+                { bp: 'Desktop', min: '1024px', max: '1024px', pad: '32px' },
+                { bp: 'Wide', min: '1280px', max: '1280px', pad: '32px' },
+              ].map((r) => (
+                <tr key={r.bp} className="border-b border-[var(--color-neutral-200)]">
+                  <td className="px-4 py-3 font-medium text-[var(--color-neutral-900)]">{r.bp}</td>
+                  <td className="px-4 py-3 text-[var(--color-neutral-600)]">{r.min}</td>
+                  <td className="px-4 py-3 text-[var(--color-neutral-600)]">{r.max}</td>
+                  <td className="px-4 py-3 text-[var(--color-neutral-600)]">{r.pad}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Copy-Paste Grid Snippets */}
+      <div className="space-y-6">
+        <h2 className="text-2xl font-bold text-[var(--color-neutral-900)]">Grid Snippets (Copy-Paste)</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="p-6 rounded-xl bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)]">
+            <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-3">Responsive Container</h3>
+            <pre className="bg-[var(--color-neutral-900)] text-[var(--color-neutral-100)] p-4 rounded-lg text-xs overflow-x-auto">
+              <code>{`<div class="mx-auto max-w-7xl
+  px-4 sm:px-6 lg:px-8">
+  <!-- content -->
+</div>`}</code>
+            </pre>
+          </div>
+          <div className="p-6 rounded-xl bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)]">
+            <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-3">Responsive Grid</h3>
+            <pre className="bg-[var(--color-neutral-900)] text-[var(--color-neutral-100)] p-4 rounded-lg text-xs overflow-x-auto">
+              <code>{`<div class="grid grid-cols-1
+  sm:grid-cols-2 lg:grid-cols-3
+  gap-4 sm:gap-6">
+  <!-- items -->
+</div>`}</code>
+            </pre>
           </div>
         </div>
       </div>
