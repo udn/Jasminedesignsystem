@@ -3,158 +3,170 @@ import type { PageContent } from './types';
 export const homeContent: PageContent = {
   hero: {
     headline: {
-      id: 'Awal Terbaik untuk Si Kecil',
-      en: 'The Best Start for Them',
+      id: 'Pendidikan Hangat, Masa Depan Cerah',
+      en: 'Warm Learning, Bright Future',
     },
     subheadline: {
-      id: 'Tempat anak Anda tumbuh, belajar, dan bersinar dengan percaya diri.',
-      en: 'Where your child grows, learns, and shines with confidence.',
+      id: 'PAUD & TK Islam di Sleman yang mendampingi tumbuh kembang anak usia 2–6 tahun.',
+      en: 'Islamic early years school in Sleman nurturing children aged 2–6.',
     },
     cta: {
       id: 'Jadwalkan Kunjungan',
-      en: 'Book a Visit',
+      en: 'Schedule a Visit',
     },
     microcopy: {
-      id: 'Gratis & tanpa komitmen. Lihat sendiri suasana belajar yang menyenangkan.',
-      en: 'Free & no commitment. See our joyful learning environment for yourself.',
+      id: 'Gratis trial class dan tur sekolah untuk orang tua baru.',
+      en: 'Free trial class and school tour for new parents.',
     },
   },
 
   features: [
     {
       headline: {
-        id: 'Kurikulum Bermain yang Teruji',
-        en: 'A Proven Play-Based Curriculum',
+        id: 'Fokus pada Karakter dan Iman',
+        en: 'Focused on Faith and Character',
       },
       description: {
-        id: 'Didesain oleh ahli pendidikan anak usia dini dan selaras dengan standar nasional PAUD Indonesia.',
-        en: "Designed by early childhood experts and aligned with Indonesia's national PAUD standards.",
+        id: 'Program harian yang menanamkan akhlak mulia, kecintaan pada Al-Qur’an, dan kemandirian sejak dini.',
+        en: 'Daily routines building good character, love for the Qur’an, and early independence.',
       },
       bullets: [
         {
-          id: 'Merangsang kreativitas melalui kegiatan seni, musik, dan eksplorasi alam',
-          en: 'Stimulates creativity through art, music, and nature exploration',
+          id: 'Anak percaya diri: terbiasa menyapa, berbagi, dan memimpin doa.',
+          en: 'Confident children: used to greeting, sharing, and leading prayers.',
         },
         {
-          id: 'Membangun fondasi literasi dan numerasi sejak dini',
-          en: 'Builds early literacy and numeracy foundations',
+          id: 'Nilai Islami kuat melalui pembiasaan doa, shalat, dan adab sederhana.',
+          en: 'Strong Islamic values through daily prayers and simple manners.',
         },
         {
-          id: 'Portofolio perkembangan anak diperbarui setiap bulan untuk orang tua',
-          en: 'Monthly growth portfolios keep parents informed',
+          id: 'Orang tua tenang karena aktivitas selaras dengan nilai keluarga Muslim.',
+          en: 'Parents feel at ease as activities align with Muslim family values.',
         },
       ],
-      icon: 'BookOpen',
+      icon: 'Sparkles',
     },
     {
       headline: {
-        id: 'Aman, Bersih, dan Menyenangkan',
-        en: 'Safe, Clean, and Joyful',
+        id: 'Belajar Aktif Melalui Bermain',
+        en: 'Active Play-Based Learning',
       },
       description: {
-        id: 'Ruang kelas dirancang ramah anak dengan standar keamanan tinggi dan fasilitas bermain modern.',
-        en: 'Child-friendly classrooms with high safety standards and modern play facilities.',
+        id: 'Setiap sudut kelas dan playground dirancang agar anak belajar sambil bermain, bereksplorasi, dan bereksperimen.',
+        en: 'Classrooms and playgrounds are designed for learning through play, exploration, and experiments.',
       },
       bullets: [
         {
-          id: 'CCTV 24 jam yang dapat diakses orang tua secara real-time',
-          en: '24/7 CCTV with real-time parent access',
+          id: 'Motorik terstimulasi lewat panjat, seluncur, dan permainan keseimbangan.',
+          en: 'Motor skills stimulated through climbing, slides, and balance games.',
         },
         {
-          id: 'Rasio guru dan murid 1:6 untuk perhatian optimal',
-          en: '1:6 teacher-to-student ratio for focused attention',
+          id: 'Kreativitas tumbuh lewat menggambar, seni, dan eksperimen sains sederhana.',
+          en: 'Creativity grows through drawing, art, and simple science activities.',
         },
         {
-          id: 'Ruang bermain indoor dan outdoor yang terawat dan higienis',
-          en: 'Well-maintained, hygienic indoor and outdoor play areas',
+          id: 'Bahasa berkembang lewat story telling, role play, dan circle time harian.',
+          en: 'Language develops with storytelling, role play, and daily circle time.',
         },
       ],
-      icon: 'Shield',
+      icon: 'Puzzle',
     },
     {
       headline: {
-        id: 'Guru Bersertifikat dan Berpengalaman',
-        en: 'Certified, Experienced Teachers',
+        id: 'Komunikasi Terbuka dengan Orang Tua',
+        en: 'Open Communication with Parents',
       },
       description: {
-        id: 'Tim pengajar kami memiliki sertifikasi PAUD dan pengalaman rata-rata 8 tahun di pendidikan anak.',
-        en: 'Our teaching team holds PAUD certifications with an average of 8 years in early education.',
+        id: 'Laporan perkembangan berkala, dokumentasi foto, dan konsultasi rutin agar orang tua selalu terhubung.',
+        en: 'Regular progress reports, photos, and consultations keep parents closely involved.',
       },
       bullets: [
         {
-          id: 'Pelatihan berkelanjutan dalam metode Montessori dan Reggio Emilia',
-          en: 'Ongoing training in Montessori and Reggio Emilia methods',
+          id: 'Update rutin: laporan bulanan motorik, sosial, bahasa, dan kemandirian.',
+          en: 'Regular updates: monthly reports on motor, social, language and independence.',
         },
         {
-          id: 'Pendekatan personal yang menghargai keunikan setiap anak',
-          en: "Personalized approach honoring each child's uniqueness",
+          id: 'Grup komunikasi resmi untuk informasi kegiatan dan dokumentasi harian.',
+          en: 'Official chat groups for activity info and daily documentation.',
         },
         {
-          id: 'Komunikasi rutin dengan orang tua melalui aplikasi dan pertemuan tatap muka',
-          en: 'Regular parent communication via app and face-to-face meetings',
+          id: 'Jadwal khusus konsultasi dengan guru untuk membahas kebutuhan anak.',
+          en: 'Dedicated consultation slots with teachers to discuss your child’s needs.',
         },
       ],
-      icon: 'GraduationCap',
+      icon: 'MessagesSquare',
     },
   ],
 
   testimonials: [
     {
       quote: {
-        id: 'Anak saya dulu pemalu, sekarang berani tampil di depan kelas. Jasmine benar-benar mengubah kepercayaan dirinya. Saya sangat merekomendasikan untuk orang tua yang ingin melihat anaknya berkembang.',
-        en: "My child used to be shy, now she confidently presents in front of class. Jasmine truly transformed her confidence. I highly recommend it for parents who want to see real growth.",
+        id: 'Sebagai orang tua baru, saya sempat khawatir anak saya pemalu dan sulit beradaptasi. Setelah tiga bulan di PAUD Jasmine, ia mulai berani bercerita, menyapa tetangga, dan memimpin doa makan di rumah.',
+        en: 'As a first-time parent I worried my child was shy and would struggle to adapt. After three months at PAUD Jasmine she now loves to share stories, greet neighbours, and lead our mealtime prayers.',
       },
-      name: 'Sarah',
+      name: 'Rina',
       attribution: {
-        id: 'Ibu Sarah, orang tua murid (usia 4 tahun)',
-        en: 'Sarah, parent (child age 4)',
-      },
-      childAge: '4',
-      avatarInitials: 'S',
-    },
-    {
-      quote: {
-        id: 'Portofolio bulanan membuat kami selalu tahu perkembangan anak. Guru-gurunya sangat perhatian dan sabar. Kami merasa tenang menitipkan anak di sini.',
-        en: "The monthly portfolio keeps us updated on our child's progress. The teachers are attentive and patient. We feel at ease leaving our child here.",
-      },
-      name: 'Andi & Rina',
-      attribution: {
-        id: 'Bapak Andi & Ibu Rina, orang tua murid (usia 3 tahun)',
-        en: 'Andi & Rina, parents (child age 3)',
+        id: 'Ibu Rina, orang tua murid KB',
+        en: 'Rina, parent of a Playgroup student',
       },
       childAge: '3',
-      avatarInitials: 'AR',
+      avatarInitials: 'R',
     },
     {
       quote: {
-        id: 'Fasilitas lengkap dan bersih. Anak saya selalu semangat berangkat sekolah setiap pagi. Terima kasih Jasmine sudah menjadi rumah kedua bagi anak kami.',
-        en: "Complete and clean facilities. My child is always excited to go to school every morning. Thank you Jasmine for being a second home for our child.",
+        id: 'Kami memilih PAUD Jasmine karena ingin lingkungan Islami yang tetap ceria. Anak kami sangat menyukai kegiatan membaca Al-Qur’an dengan metode UMMI dan bermain di playground yang aman.',
+        en: 'We chose PAUD Jasmine for its joyful Islamic environment. Our child loves Qur’an time with the UMMI method and the safe, colourful playground.',
       },
-      name: 'Dewi',
+      name: 'Andi',
       attribution: {
-        id: 'Ibu Dewi, orang tua murid (usia 5 tahun)',
-        en: 'Dewi, parent (child age 5)',
+        id: 'Bapak Andi, orang tua murid TK A',
+        en: 'Andi, parent of a Kindergarten A student',
       },
       childAge: '5',
-      avatarInitials: 'D',
+      avatarInitials: 'A',
+    },
+    {
+      quote: {
+        id: 'Yang paling kami hargai adalah komunikasi sekolah dengan orang tua. Setiap bulan kami mendapat laporan detail perkembangan anak dan bisa konsultasi langsung dengan wali kelas.',
+        en: 'We value the strong communication with parents most. Every month we receive detailed reports and can speak directly with the homeroom teacher.',
+      },
+      name: 'Sari',
+      attribution: {
+        id: 'Ibu Sari, orang tua murid TK B',
+        en: 'Sari, parent of a Kindergarten B student',
+      },
+      childAge: '6',
+      avatarInitials: 'S',
     },
   ],
 
   trustSignals: [
     {
-      label: { id: '500+ keluarga mempercayakan anak mereka', en: '500+ families have trusted us' },
+      label: {
+        id: 'Berpengalaman mendampingi anak usia dini di Sleman',
+        en: 'Experienced in early childhood education in Sleman',
+      },
       type: 'stat',
     },
     {
-      label: { id: 'Berdiri sejak 2015 — 10+ tahun', en: 'Est. 2015 — 10+ years' },
+      label: {
+        id: 'Rasio guru–anak kecil untuk perhatian optimal',
+        en: 'Low teacher–child ratio for focused attention',
+      },
       type: 'stat',
     },
     {
-      label: { id: '98% orang tua merekomendasikan', en: '98% of parents recommend us' },
-      type: 'stat',
+      label: {
+        id: 'Lingkungan Islami dengan pembiasaan doa dan tilawah',
+        en: 'Islamic environment with daily prayers and Qur’an recitation',
+      },
+      type: 'credential',
     },
     {
-      label: { id: 'Terakreditasi A oleh BAN PAUD', en: 'A-Accredited by BAN PAUD' },
+      label: {
+        id: 'Kelas ber-AC, CCTV, dan area bermain aman',
+        en: 'Air-conditioned classes, CCTV, and safe play areas',
+      },
       type: 'credential',
     },
   ],
@@ -162,82 +174,82 @@ export const homeContent: PageContent = {
   faq: [
     {
       question: {
-        id: 'Berapa usia minimal untuk mendaftarkan anak?',
-        en: 'What is the minimum age for enrollment?',
+        id: 'Mulai usia berapa anak bisa mendaftar di PAUD Jasmine?',
+        en: 'From what age can children enroll at PAUD Jasmine?',
       },
       answer: {
-        id: 'Jasmine menerima anak mulai usia 2 tahun. Kami memiliki program Toddler (2–3 tahun), Pre-K (3–4 tahun), dan Kindergarten (4–5 tahun) yang masing-masing dirancang sesuai tahap perkembangan anak.',
-        en: 'Jasmine accepts children from age 2. We offer Toddler (2–3), Pre-K (3–4), and Kindergarten (4–5) programs, each designed for the appropriate developmental stage.',
+        id: 'Anak dapat mulai bergabung sejak usia 2 tahun untuk Kelompok Bermain (KB) dan 4–6 tahun untuk Taman Kanak-Kanak (TK). Kami membantu orang tua menentukan kelas yang paling sesuai berdasarkan usia dan kesiapan anak, dengan masa adaptasi bertahap di awal.',
+        en: 'Children can join from age 2 for Playgroup and 4–6 for Kindergarten. We help parents choose the right class based on age and readiness, with a gentle phased adaptation period at the start.',
       },
     },
     {
       question: {
-        id: 'Apa kurikulum yang digunakan di Jasmine?',
-        en: 'What curriculum does Jasmine use?',
+        id: 'Apakah PAUD Jasmine berbasis Islam?',
+        en: 'Is PAUD Jasmine an Islamic school?',
       },
       answer: {
-        id: 'Kami menerapkan kurikulum berbasis bermain yang menggabungkan pendekatan Montessori dan Reggio Emilia, selaras dengan standar Kurikulum Merdeka PAUD dari Kemendikbud. Fokus kami pada perkembangan kognitif, sosial-emosional, dan motorik secara holistik.',
-        en: "We use a play-based curriculum combining Montessori and Reggio Emilia approaches, aligned with the Ministry of Education's Kurikulum Merdeka for PAUD. We focus on holistic cognitive, social-emotional, and motor development.",
+        id: 'Ya. PAUD Jasmine Al Muflihuun menerapkan nilai-nilai Islami dalam kegiatan harian: doa, shalat, dan pengenalan Al-Qur’an dengan metode UMMI yang ramah anak. Suasana tetap ceria dan penuh pelukan, tanpa pendekatan yang menakutkan.',
+        en: 'Yes. PAUD Jasmine Al Muflihuun applies Islamic values in daily activities: prayers, worship, and Qur’an learning using the child-friendly UMMI method. The atmosphere stays cheerful and loving, never frightening.',
       },
     },
     {
       question: {
-        id: 'Bagaimana saya bisa memantau perkembangan anak saya?',
-        en: "How can I track my child's development?",
+        id: 'Bagaimana keamanan dan kebersihan lingkungan sekolah?',
+        en: 'How safe and clean is the school environment?',
       },
       answer: {
-        id: 'Setiap bulan orang tua menerima portofolio digital berisi foto kegiatan, catatan observasi guru, dan penilaian perkembangan. Selain itu, kami mengadakan pertemuan orang tua-guru setiap semester dan menyediakan akses CCTV real-time.',
-        en: 'Parents receive a monthly digital portfolio with activity photos, teacher observations, and developmental assessments. We also hold parent-teacher meetings each semester and provide real-time CCTV access.',
+        id: 'Area belajar dan playground berpagar, diawasi petugas, serta dipantau CCTV. Ruang kelas ber-AC dibersihkan setiap hari, dengan jadwal fogging desinfektan berkala. Toilet menggunakan kloset duduk yang ramah anak.',
+        en: 'Classrooms and playgrounds are fenced, monitored by staff, and covered by CCTV. Air-conditioned rooms are cleaned daily with regular disinfection, and toilets use child-friendly seated fixtures.',
       },
     },
     {
       question: {
-        id: 'Berapa biaya pendidikan di Jasmine?',
-        en: 'How much does tuition cost?',
+        id: 'Seperti apa metode belajar yang digunakan?',
+        en: 'What learning approach do you use?',
       },
       answer: {
-        id: 'Biaya bervariasi sesuai program. Kami menawarkan paket yang transparan tanpa biaya tersembunyi. Hubungi tim admisi kami untuk mendapatkan rincian biaya lengkap dan informasi tentang opsi cicilan yang tersedia.',
-        en: 'Tuition varies by program. We offer transparent packages with no hidden fees. Contact our admissions team for a full fee breakdown and information about available installment options.',
+        id: 'Kami menggabungkan belajar aktif berbasis bermain dengan kegiatan terstruktur sederhana. Anak diajak bergerak, bereksplorasi, dan mencoba sendiri melalui permainan, seni, musik, dan aktivitas luar ruang, serta belajar Al-Qur’an dengan metode UMMI.',
+        en: 'We combine active play-based learning with simple structured activities. Children move, explore, and experiment through games, art, music, outdoor play, and child-friendly Qur’an learning with the UMMI method.',
       },
     },
     {
       question: {
-        id: 'Apakah Jasmine menyediakan makan siang?',
-        en: 'Does Jasmine provide lunch?',
+        id: 'Apakah orang tua bisa memantau perkembangan anak?',
+        en: 'Can parents monitor their child’s development?',
       },
       answer: {
-        id: 'Ya, kami menyediakan makan siang dan dua kali snack sehat setiap hari. Menu dirancang oleh ahli gizi anak dan bisa disesuaikan untuk anak dengan alergi atau kebutuhan diet khusus.',
-        en: 'Yes, we provide lunch and two healthy snacks daily. Menus are designed by a child nutritionist and can be adapted for allergies or special dietary needs.',
+        id: 'Bisa. Orang tua menerima laporan perkembangan berkala yang mencakup aspek motorik, bahasa, sosial-emosi, dan kemandirian. Kami juga membagikan dokumentasi foto kegiatan tertentu dan menyediakan jadwal konsultasi rutin dengan wali kelas.',
+        en: 'Yes. Parents receive regular progress reports covering motor, language, social-emotional, and independence skills. We also share activity photos and offer regular consultation slots with the homeroom teacher.',
       },
     },
     {
       question: {
-        id: 'Bagaimana proses adaptasi untuk anak baru?',
-        en: 'How does the adaptation process work for new students?',
+        id: 'Berapa jam belajar setiap hari dan apakah ada layanan full day?',
+        en: 'How long is the daily schedule and is there a full-day option?',
       },
       answer: {
-        id: 'Kami memiliki program orientasi selama 2 minggu. Minggu pertama, orang tua boleh mendampingi. Minggu kedua, anak mulai mandiri dengan bimbingan guru pendamping. Tim kami akan berkomunikasi aktif dengan orang tua selama masa transisi ini.',
-        en: 'We have a 2-week orientation program. During the first week, parents may accompany their child. In the second week, children start independently with a dedicated teacher. Our team actively communicates with parents throughout this transition.',
+        id: 'Kegiatan reguler berlangsung sekitar 3–4 jam di pagi hari. Untuk orang tua yang membutuhkan, tersedia opsi waktu perpanjangan dengan kegiatan tambahan yang tetap edukatif dan menyenangkan, tanpa membuat anak kelelahan.',
+        en: 'Regular sessions run around 3–4 hours in the morning. For families who need more time we offer extended hours with   , age-appropriate activities that keep children engaged without exhausting them.',
       },
     },
     {
       question: {
-        id: 'Apa jam operasional sekolah?',
-        en: "What are the school's operating hours?",
+        id: 'Bagaimana proses pendaftaran singkatnya?',
+        en: 'What are the basic steps to enroll?',
       },
       answer: {
-        id: 'Program reguler berlangsung Senin–Jumat, pukul 08.00–12.00 WIB. Kami juga menawarkan program extended day hingga pukul 15.00 WIB bagi orang tua yang membutuhkan waktu tambahan.',
-        en: 'Regular programs run Monday–Friday, 08:00–12:00 WIB. We also offer an extended day program until 15:00 WIB for parents who need extra time.',
+        id: 'Orang tua mengisi formulir minat, lalu kami jadwalkan kunjungan dan trial class. Setelah merasa cocok, orang tua melengkapi administrasi sederhana tanpa tes akademik, karena fokus kami adalah kenyamanan dan kesiapan emosi anak.',
+        en: 'Parents fill in an interest form, then we arrange a visit and trial class. Once you feel confident, you complete simple paperwork—no academic tests—because we focus on comfort and emotional readiness.',
       },
     },
     {
       question: {
-        id: 'Bagaimana cara mendaftar?',
-        en: 'How do I enroll my child?',
+        id: 'Apakah tersedia diskon atau promo pendaftaran?',
+        en: 'Do you offer registration discounts or promos?',
       },
       answer: {
-        id: 'Proses pendaftaran dimulai dengan kunjungan sekolah. Setelah itu, Anda bisa mengisi formulir pendaftaran online dan melengkapi dokumen yang diperlukan. Tim admisi kami akan memandu Anda di setiap langkah. Jadwalkan kunjungan hari ini untuk memulai.',
-        en: 'Enrollment starts with a school visit. After that, you can fill out the online registration form and submit the required documents. Our admissions team will guide you every step of the way. Schedule a visit today to get started.',
+        id: 'Secara berkala kami memberikan promo seperti free trial class, potongan biaya untuk saudara kandung, atau diskon pendaftar awal. Informasi lengkap akan disampaikan saat kunjungan atau melalui kontak resmi kami.',
+        en: 'We periodically offer promos such as free trial classes, sibling discounts, and early-bird offers. Full details are shared during your visit or via our official contact channels.',
       },
     },
   ],
@@ -251,12 +263,12 @@ export const homeContent: PageContent = {
       { label: { id: 'Hubungi Kami', en: 'Contact' }, href: '/website/contact' },
     ],
     brandStatement: {
-      id: 'Jasmine Kindergarten — Membangun fondasi cerah untuk masa depan anak Indonesia.',
-      en: "Jasmine Kindergarten — Building bright foundations for Indonesia's children.",
+      id: 'PAUD & TK Islam yang hangat, aman, dan menyenangkan di Kalasan, Sleman.',
+      en: 'A warm, safe Islamic early childhood school in Kalasan, Sleman.',
     },
     legal: {
-      id: '© 2026 Jasmine Kindergarten. Terakreditasi A oleh BAN PAUD. Semua hak dilindungi.',
-      en: '© 2026 Jasmine Kindergarten. A-Accredited by BAN PAUD. All rights reserved.',
+      id: '© 2026 PAUD Jasmine Al Muflihuun. Semua hak dilindungi.',
+      en: '© 2026 PAUD Jasmine Al Muflihuun. All rights reserved.',
     },
   },
 };
