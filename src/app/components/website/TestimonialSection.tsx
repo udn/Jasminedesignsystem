@@ -1,10 +1,12 @@
 import { Star, Quote } from 'lucide-react';
+import Autoplay from 'embla-carousel-autoplay';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  CarouselDots,
 } from '@/app/components/ui/carousel';
 import type { Testimonial, TrustSignal, Language } from '@/data/copy/types';
 import { t } from '@/data/copy/types';
@@ -51,7 +53,11 @@ export function TestimonialSection({
       </div>
 
       {/* Testimonial Carousel */}
-      <Carousel className="w-full">
+      <Carousel
+        className="w-full"
+        opts={{ loop: true }}
+        plugins={[Autoplay({ delay: 4000, stopOnInteraction: true })]}
+      >
         <CarouselContent>
           {testimonials.map((testimonial, index) => (
             <CarouselItem
@@ -93,6 +99,7 @@ export function TestimonialSection({
         </CarouselContent>
         <CarouselPrevious className="hidden sm:flex" />
         <CarouselNext className="hidden sm:flex" />
+        <CarouselDots />
       </Carousel>
     </section>
   );
