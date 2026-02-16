@@ -23,6 +23,7 @@ export default function Root() {
     { name: 'Motion', path: '/motion' },
     { name: 'Accessibility', path: '/accessibility' },
     { name: 'Tokens', path: '/tokens' },
+    { name: 'Website', path: '/website', highlight: true },
   ];
 
   const isActive = (path: string) => {
@@ -50,19 +51,30 @@ export default function Root() {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-1">
-              {navigation.map((item) => (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  className={`px-3 py-2 text-sm rounded-lg transition-colors ${
-                    isActive(item.path)
-                      ? 'bg-[var(--color-primary-100)] text-[var(--color-primary-700)] font-medium'
-                      : 'text-[var(--color-neutral-600)] hover:bg-[var(--color-neutral-100)] hover:text-[var(--color-neutral-900)]'
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {navigation.map((item) => {
+                const highlight = 'highlight' in item && item.highlight;
+                return (
+                  <span key={item.path} className="flex items-center gap-1">
+                    {highlight && (
+                      <span className="mx-1 h-5 w-px bg-[var(--color-neutral-300)]" />
+                    )}
+                    <Link
+                      to={item.path}
+                      className={`px-3 py-2 text-sm rounded-lg transition-colors ${
+                        highlight
+                          ? isActive(item.path)
+                            ? 'bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-accent-500)] text-white font-medium'
+                            : 'bg-[var(--color-primary-50)] text-[var(--color-primary-600)] hover:bg-[var(--color-primary-100)] font-medium border border-[var(--color-primary-200)]'
+                          : isActive(item.path)
+                            ? 'bg-[var(--color-primary-100)] text-[var(--color-primary-700)] font-medium'
+                            : 'text-[var(--color-neutral-600)] hover:bg-[var(--color-neutral-100)] hover:text-[var(--color-neutral-900)]'
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  </span>
+                );
+              })}
               {mounted && (
                 <button
                   type="button"
@@ -122,27 +134,38 @@ export default function Root() {
         {mobileMenuOpen && (
           <nav className="md:hidden border-t border-[var(--color-neutral-200)] bg-[var(--color-neutral-50)]">
             <div className="px-4 py-2 space-y-1">
-              {navigation.map((item) => (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`block px-3 py-2 text-sm rounded-lg transition-colors ${
-                    isActive(item.path)
-                      ? 'bg-[var(--color-primary-100)] text-[var(--color-primary-700)] font-medium'
-                      : 'text-[var(--color-neutral-600)] hover:bg-[var(--color-neutral-100)] hover:text-[var(--color-neutral-900)]'
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {navigation.map((item) => {
+                const highlight = 'highlight' in item && item.highlight;
+                return (
+                  <span key={item.path}>
+                    {highlight && (
+                      <div className="my-2 border-t border-[var(--color-neutral-200)]" />
+                    )}
+                    <Link
+                      to={item.path}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`block px-3 py-2 text-sm rounded-lg transition-colors ${
+                        highlight
+                          ? isActive(item.path)
+                            ? 'bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-accent-500)] text-white font-medium'
+                            : 'bg-[var(--color-primary-50)] text-[var(--color-primary-600)] font-medium border border-[var(--color-primary-200)]'
+                          : isActive(item.path)
+                            ? 'bg-[var(--color-primary-100)] text-[var(--color-primary-700)] font-medium'
+                            : 'text-[var(--color-neutral-600)] hover:bg-[var(--color-neutral-100)] hover:text-[var(--color-neutral-900)]'
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  </span>
+                );
+              })}
             </div>
           </nav>
         )}
       </header>
 
       {/* Main Content */}
-      <main className="mx-auto max-w-7xl px-6 py-12 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
+      <main className="mx-auto max-w-7xl px-4 py-8 sm:px-8 sm:py-14 lg:px-10 lg:py-20">
         <Outlet />
       </main>
 
