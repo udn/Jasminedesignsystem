@@ -3,20 +3,20 @@ import type { PageContent } from './types';
 export const homeContent: PageContent = {
   hero: {
     headline: {
-      id: 'Pendidikan Hangat, Masa Depan Cerah',
-      en: 'Warm Learning, Bright Future',
+      id: 'Pendidikan: Investasi Masa Depan',
+      en: 'Education: An Investment in the Future',
     },
     subheadline: {
-      id: 'PAUD & TK Islam di Sleman yang mendampingi tumbuh kembang anak usia 2–6 tahun.',
-      en: 'Islamic early years school in Sleman nurturing children aged 2–6.',
+      id: 'PAUD Jasmine Al Muflihuun — Kelompok Bermain (KB), TK (Taman Kanak-Kanak), dan TPA (Tempat Penitipan Anak) untuk usia 0–6 tahun di Purwomartani, Kalasan, Sleman.',
+      en: 'PAUD Jasmine Al Muflihuun — Playgroup (KB), Kindergarten (TK), and Daycare (TPA) for children aged 0–6 in Purwomartani, Kalasan, Sleman.',
     },
     cta: {
       id: 'Jadwalkan Kunjungan',
       en: 'Schedule a Visit',
     },
     microcopy: {
-      id: 'Gratis trial class dan tur sekolah untuk orang tua baru.',
-      en: 'Free trial class and school tour for new parents.',
+      id: 'Free trial class & sibling discount 25% (untuk pendaftar ke-2). Belajar membaca dan mencintai Al-Qur’an dengan metode UMMI.',
+      en: 'Free trial class & 25% sibling discount for the second child. Learn to read and love the Qur’an with the child-friendly UMMI method.',
     },
   },
 
@@ -95,6 +95,31 @@ export const homeContent: PageContent = {
         },
       ],
       icon: 'MessagesSquare',
+    },
+    {
+      headline: {
+        id: 'Ekstrakurikuler Lengkap & Fasilitas Nyaman',
+        en: 'Rich Extracurriculars & Comfortable Facilities',
+      },
+      description: {
+        id: 'Mendukung minat anak lewat berbagai kegiatan dan fasilitas yang aman, bersih, dan menyenangkan.',
+        en: 'We support every child’s interests with diverse activities and safe, clean, joyful facilities.',
+      },
+      bullets: [
+        {
+          id: 'Ekstrakurikuler: Coding & Robotic by Jasmine Al Muflihuun, menari, menggambar & mewarnai, drumband, angklung, English class, dan berenang.',
+          en: 'Extracurriculars: Coding & Robotics by Jasmine Al Muflihuun, dance, drawing & coloring, marching band, angklung, English class, and swimming.',
+        },
+        {
+          id: 'Fasilitas: ruang kelas bersih dan nyaman dengan AC & air purifier, mushala siswa, perpustakaan, permainan indoor & outdoor yang aman dan menyenangkan.',
+          en: 'Facilities: clean, comfortable classrooms with AC & air purifiers, student prayer room, library, and safe, engaging indoor & outdoor play areas.',
+        },
+        {
+          id: 'Fogging disinfektan berkala, toilet bersih dengan closet duduk, serta CCTV & TV edukasi di area sekolah.',
+          en: 'Regular disinfectant fogging, clean seated toilets, and CCTV & educational TV throughout the school.',
+        },
+      ],
+      icon: 'Sparkles',
     },
   ],
 
@@ -263,8 +288,8 @@ export const homeContent: PageContent = {
       { label: { id: 'Hubungi Kami', en: 'Contact' }, href: '/website/contact' },
     ],
     brandStatement: {
-      id: 'PAUD & TK Islam yang hangat, aman, dan menyenangkan di Kalasan, Sleman.',
-      en: 'A warm, safe Islamic early childhood school in Kalasan, Sleman.',
+      id: 'PAUD Jasmine Al Muflihuun — KB, TK, dan TPA Islami yang hangat, aman, dan menyenangkan di Kalasan, Sleman.',
+      en: 'PAUD Jasmine Al Muflihuun — Warm, safe Islamic KB, TK, and daycare in Kalasan, Sleman.',
     },
     legal: {
       id: '© 2026 PAUD Jasmine Al Muflihuun. Semua hak dilindungi.',

@@ -3,12 +3,12 @@ import type { PageContent } from './types';
 export const programsContent: PageContent = {
   hero: {
     headline: {
-      id: 'Program untuk Setiap Tahap',
-      en: 'Programs for Every Stage',
+      id: 'Program KB, TK, dan TPA',
+      en: 'KB, TK, and Daycare Programs',
     },
     subheadline: {
-      id: 'Kurikulum terstruktur yang tumbuh bersama anak Anda, dari balita hingga TK.',
-      en: 'A structured curriculum that grows with your child, from toddler to kindergarten.',
+      id: 'Pilihan program Kelompok Bermain (KB), TK (Taman Kanak-Kanak), dan TPA (Tempat Penitipan Anak) yang hangat dan Islami untuk usia 0–6 tahun.',
+      en: 'Warm, Islamic programs for Playgroup (KB), Kindergarten (TK), and Daycare (TPA) for children aged 0–6 years.',
     },
     cta: {
       id: 'Lihat Detail Program',
@@ -23,12 +23,12 @@ export const programsContent: PageContent = {
   features: [
     {
       headline: {
-        id: 'Toddler: Langkah Pertama Belajar',
-        en: 'Toddler: First Steps to Learning',
+        id: 'Kelompok Bermain (KB): Langkah Pertama Belajar',
+        en: 'Playgroup (KB): First Steps to Learning',
       },
       description: {
-        id: 'Memperkenalkan dunia belajar melalui bermain sensorik, musik, dan gerakan. Fokus pada kemandirian awal dan kenyamanan emosional.',
-        en: 'Introducing learning through sensory play, music, and movement. Focus on early independence and emotional comfort.',
+        id: 'Untuk usia sekitar 2–4 tahun. Memperkenalkan dunia belajar melalui bermain sensorik, musik, dan gerakan dengan fokus pada kemandirian awal dan kenyamanan emosional.',
+        en: 'For ages around 2–4. Introducing learning through sensory play, music, and movement with a focus on early independence and emotional comfort.',
       },
       bullets: [
         {
@@ -48,12 +48,12 @@ export const programsContent: PageContent = {
     },
     {
       headline: {
-        id: 'Pre-K: Eksplorasi dan Penemuan',
-        en: 'Pre-K: Explore and Discover',
+        id: 'TK (Taman Kanak-Kanak): Eksplorasi dan Penemuan',
+        en: 'Kindergarten (TK): Explore and Discover',
       },
       description: {
-        id: 'Mengembangkan rasa ingin tahu alami anak melalui proyek, cerita, dan eksperimen sederhana. Fondasi literasi dan numerasi dimulai di sini.',
-        en: 'Nurturing natural curiosity through projects, stories, and simple experiments. Literacy and numeracy foundations start here.',
+        id: 'Untuk usia sekitar 4–6 tahun. Mengembangkan rasa ingin tahu alami anak melalui proyek, cerita, dan eksperimen sederhana. Fondasi literasi dan numerasi dimulai di sini.',
+        en: 'For ages around 4–6. Nurturing natural curiosity through projects, stories, and simple experiments. Literacy and numeracy foundations start here.',
       },
       bullets: [
         {
@@ -73,12 +73,12 @@ export const programsContent: PageContent = {
     },
     {
       headline: {
-        id: 'Kindergarten: Siap untuk Masa Depan',
-        en: 'Kindergarten: Ready for the Future',
+        id: 'TPA (Tempat Penitipan Anak): Aman & Menenangkan',
+        en: 'Daycare (TPA): Safe & Soothing',
       },
       description: {
-        id: 'Mempersiapkan anak memasuki jenjang SD dengan percaya diri. Fokus pada kesiapan akademik, kemandirian, dan keterampilan sosial.',
-        en: 'Preparing children to enter primary school with confidence. Focus on academic readiness, independence, and social skills.',
+        id: 'Layanan penitipan harian bagi orang tua bekerja dengan lingkungan Islami yang penuh pelukan. Fokus pada rasa aman, rutinitas yang tenang, dan stimulasi bermain yang tepat.',
+        en: 'Daily daycare service for working parents in a loving Islamic environment. Focused on safety, calm routines, and age-appropriate play-based stimulation.',
       },
       bullets: [
         {
@@ -139,7 +139,7 @@ export const programsContent: PageContent = {
 
   trustSignals: [
     {
-      label: { id: '3 program usia terstruktur', en: '3 structured age-based programs' },
+      label: { id: 'Program KB, TK, dan TPA terintegrasi', en: 'Integrated KB, TK, and daycare programs' },
       type: 'stat',
     },
     {

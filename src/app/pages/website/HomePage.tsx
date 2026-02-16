@@ -7,6 +7,7 @@ import {
   FAQSection,
   CTABanner,
   WebsiteFooter,
+  GallerySection,
 } from '@/app/components/website';
 import { homeContent } from '@/data/copy/home';
 import type { Language } from '@/data/copy/types';
@@ -66,6 +67,39 @@ export default function HomePage() {
     navigate('/website/contact');
   };
 
+  const galleryImages = [
+    {
+      src: '/images/paud-jasmine-playground-1.jpg',
+      alt: 'Playground warna-warni PAUD Jasmine Al Muflihuun di Kalasan Sleman',
+      label: 'Playground outdoor yang aman dan menyenangkan',
+    },
+    {
+      src: '/images/paud-jasmine-classroom-1.jpg',
+      alt: 'Suasana ruang kelas bersih dan ber-AC di PAUD Jasmine',
+      label: 'Ruang kelas bersih, nyaman, dan ber-AC',
+    },
+    {
+      src: '/images/paud-jasmine-ummi-session.jpg',
+      alt: 'Anak-anak belajar Al-Qur’an dengan metode UMMI',
+      label: 'Belajar membaca dan mencintai Al-Qur’an dengan metode UMMI',
+    },
+    {
+      src: '/images/paud-jasmine-extracurricular-1.jpg',
+      alt: 'Kegiatan ekstrakurikuler coding dan robotic untuk anak',
+      label: 'Ekstrakurikuler coding & robotic by Jasmine Al Muflihuun',
+    },
+    {
+      src: '/images/paud-jasmine-music-1.jpg',
+      alt: 'Anak-anak bermain drumband dan angklung',
+      label: 'Drumband dan angklung yang melatih percaya diri',
+    },
+    {
+      src: '/images/paud-jasmine-poster.jpg',
+      alt: 'Poster informasi PAUD Jasmine Al Muflihuun',
+      label: 'Informasi lengkap program KB, TK, dan TPA',
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-[var(--color-neutral-50)]">
       <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-10">
@@ -76,6 +110,8 @@ export default function HomePage() {
             badgeText={lang === 'id' ? 'Pendaftaran 2026/2027 Dibuka' : '2026/2027 Enrollment Open'}
             onCtaClick={handleCtaClick}
           />
+
+          <GallerySection images={galleryImages} />
 
           <FeatureSection features={homeContent.features} lang={lang} />
 

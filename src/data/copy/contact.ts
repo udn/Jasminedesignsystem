@@ -32,8 +32,8 @@ export const contactContent: PageContent = {
       },
       bullets: [
         {
-          id: 'Alamat: Jl. Pendidikan No. 88, Kebayoran Baru, Jakarta Selatan 12160',
-          en: 'Address: Jl. Pendidikan No. 88, Kebayoran Baru, South Jakarta 12160',
+          id: 'Alamat: Jl Grogolsari Juwangen Purwomartani Kalasan Sleman',
+          en: 'Address: Jl Grogolsari Juwangen, Purwomartani, Kalasan, Sleman',
         },
         {
           id: 'Jam kunjungan: Senin–Jumat, 09.00–15.00 WIB',
@@ -52,21 +52,21 @@ export const contactContent: PageContent = {
         en: 'Many Ways to Reach Us',
       },
       description: {
-        id: 'Pilih cara yang paling nyaman bagi Anda. Tim admisi kami siap menjawab pertanyaan tentang program, biaya, dan pendaftaran.',
-        en: 'Choose the most convenient way for you. Our admissions team is ready to answer questions about programs, fees, and enrollment.',
+        id: 'Pilih cara yang paling nyaman bagi Anda. Tim admisi kami siap menjawab pertanyaan tentang program KB, TK, dan TPA, biaya, serta pendaftaran.',
+        en: 'Choose the most convenient way for you. Our admissions team is ready to answer questions about our KB, TK, and TPA programs, fees, and enrollment.',
       },
       bullets: [
         {
-          id: 'WhatsApp: +62 812-3456-7890 (respons tercepat)',
-          en: 'WhatsApp: +62 812-3456-7890 (fastest response)',
+          id: 'WhatsApp: 085229552707 (Buah hati KB/TK) & 081328846089 (TPA) — respons tercepat',
+          en: 'WhatsApp: +62 852-2955-2707 (KB/TK) & +62 813-2884-6089 (TPA) — fastest response',
         },
         {
-          id: 'Email: info@jasminekindergarten.id',
-          en: 'Email: info@jasminekindergarten.id',
+          id: 'Instagram: @jasminealmuflihuun',
+          en: 'Instagram: @jasminealmuflihuun',
         },
         {
-          id: 'Telepon: (021) 765-4321 (Senin–Jumat, 08.00–16.00 WIB)',
-          en: 'Phone: (021) 765-4321 (Mon–Fri, 08:00–16:00 WIB)',
+          id: 'Telepon/WA dapat dihubungi Senin–Sabtu, 08.00–15.00 WIB',
+          en: 'Phone/WhatsApp available Monday–Saturday, 08:00–15:00 WIB',
         },
       ],
       icon: 'MessageCircle',
@@ -195,8 +195,8 @@ export const contactContent: PageContent = {
     {
       question: { id: 'Apakah Jasmine memiliki media sosial?', en: 'Does Jasmine have social media?' },
       answer: {
-        id: 'Ya! Ikuti kami di Instagram @jasminekindergarten.id untuk melihat kegiatan sehari-hari, tips parenting, dan informasi program terbaru.',
-        en: 'Yes! Follow us on Instagram @jasminekindergarten.id to see daily activities, parenting tips, and latest program information.',
+        id: 'Ya! Ikuti kami di Instagram @jasminealmuflihuun untuk melihat kegiatan sehari-hari anak, informasi program KB, TK, dan TPA, serta pengumuman promo seperti free trial class dan sibling discount 25%.',
+        en: 'Yes! Follow us on Instagram @jasminealmuflihuun to see daily activities, information about our KB, TK, and TPA programs, and promos such as free trial classes and 25% sibling discounts.',
       },
     },
     {
@@ -224,12 +224,12 @@ export const contactContent: PageContent = {
       { label: { id: 'Hubungi Kami', en: 'Contact' }, href: '/website/contact' },
     ],
     brandStatement: {
-      id: 'Jasmine Kindergarten — Selalu siap membantu Anda. Hubungi kami kapan saja.',
-      en: 'Jasmine Kindergarten — Always here to help. Reach out to us anytime.',
+      id: 'PAUD Jasmine Al Muflihuun — KB, TK, dan TPA Islami yang hangat, aman, dan menyenangkan di Kalasan, Sleman.',
+      en: 'PAUD Jasmine Al Muflihuun — Warm, safe Islamic KB, TK, and daycare in Kalasan, Sleman.',
     },
     legal: {
-      id: '© 2026 Jasmine Kindergarten. Terakreditasi A oleh BAN PAUD. Semua hak dilindungi.',
-      en: '© 2026 Jasmine Kindergarten. A-Accredited by BAN PAUD. All rights reserved.',
+      id: '© 2026 PAUD Jasmine Al Muflihuun. Semua hak dilindungi.',
+      en: '© 2026 PAUD Jasmine Al Muflihuun. All rights reserved.',
     },
   },
 };
