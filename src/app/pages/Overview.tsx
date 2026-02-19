@@ -22,47 +22,83 @@ export default function Overview() {
         </p>
       </div>
 
-      {/* Brand Attributes */}
+      {/* Brand Attributes - Full cards with images */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div className="p-6 rounded-2xl bg-white border border-[var(--color-neutral-200)] shadow-sm">
-          <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-[var(--color-primary-100)] text-[var(--color-primary-600)] mb-4">
-            <Sparkles size={24} />
+        <article className="rounded-2xl bg-white border border-[var(--color-neutral-200)] shadow-sm overflow-hidden">
+          <div className="aspect-[4/3] bg-[var(--color-primary-100)] relative overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&h=300&fit=crop"
+              alt="Playful - children learning and playing"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 flex items-center justify-center bg-[var(--color-primary-600)]/20">
+              <Sparkles className="text-white drop-shadow-md" size={48} strokeWidth={1.5} />
+            </div>
           </div>
-          <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-2">Playful</h3>
-          <p className="text-sm text-[var(--color-neutral-600)]">
-            Joyful colors and delightful interactions that spark curiosity and engagement.
-          </p>
-        </div>
+          <div className="p-6">
+            <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-2">Playful</h3>
+            <p className="text-sm text-[var(--color-neutral-600)]">
+              Joyful colors and delightful interactions that spark curiosity and engagement.
+            </p>
+          </div>
+        </article>
 
-        <div className="p-6 rounded-2xl bg-white border border-[var(--color-neutral-200)] shadow-sm">
-          <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-[var(--color-secondary-100)] text-[var(--color-secondary-600)] mb-4">
-            <Heart size={24} />
+        <article className="rounded-2xl bg-white border border-[var(--color-neutral-200)] shadow-sm overflow-hidden">
+          <div className="aspect-[4/3] bg-[var(--color-secondary-100)] relative overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=400&h=300&fit=crop"
+              alt="Warm - welcoming environment"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 flex items-center justify-center bg-[var(--color-secondary-500)]/20">
+              <Heart className="text-white drop-shadow-md" size={48} strokeWidth={1.5} />
+            </div>
           </div>
-          <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-2">Warm</h3>
-          <p className="text-sm text-[var(--color-neutral-600)]">
-            Approachable design that makes parents and children feel welcomed and comfortable.
-          </p>
-        </div>
+          <div className="p-6">
+            <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-2">Warm</h3>
+            <p className="text-sm text-[var(--color-neutral-600)]">
+              Approachable design that makes parents and children feel welcomed and comfortable.
+            </p>
+          </div>
+        </article>
 
-        <div className="p-6 rounded-2xl bg-white border border-[var(--color-neutral-200)] shadow-sm">
-          <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-[var(--color-accent-100)] text-[var(--color-accent-600)] mb-4">
-            <Shield size={24} />
+        <article className="rounded-2xl bg-white border border-[var(--color-neutral-200)] shadow-sm overflow-hidden">
+          <div className="aspect-[4/3] bg-[var(--color-accent-100)] relative overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=400&h=300&fit=crop"
+              alt="Trustworthy - safe and professional"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 flex items-center justify-center bg-[var(--color-accent-500)]/20">
+              <Shield className="text-white drop-shadow-md" size={48} strokeWidth={1.5} />
+            </div>
           </div>
-          <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-2">Trustworthy</h3>
-          <p className="text-sm text-[var(--color-neutral-600)]">
-            Professional, accessible, and secure design patterns that build confidence.
-          </p>
-        </div>
+          <div className="p-6">
+            <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-2">Trustworthy</h3>
+            <p className="text-sm text-[var(--color-neutral-600)]">
+              Professional, accessible, and secure design patterns that build confidence.
+            </p>
+          </div>
+        </article>
 
-        <div className="p-6 rounded-2xl bg-white border border-[var(--color-neutral-200)] shadow-sm">
-          <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-[var(--color-success-100)] text-[var(--color-success-600)] mb-4">
-            <Zap size={24} />
+        <article className="rounded-2xl bg-white border border-[var(--color-neutral-200)] shadow-sm overflow-hidden">
+          <div className="aspect-[4/3] bg-[var(--color-success-100)] relative overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=400&h=300&fit=crop"
+              alt="Minimal - clean and focused"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 flex items-center justify-center bg-[var(--color-success-500)]/20">
+              <Zap className="text-white drop-shadow-md" size={48} strokeWidth={1.5} />
+            </div>
           </div>
-          <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-2">Minimal</h3>
-          <p className="text-sm text-[var(--color-neutral-600)]">
-            Clean, focused interfaces that prioritize clarity and ease of use.
-          </p>
-        </div>
+          <div className="p-6">
+            <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-2">Minimal</h3>
+            <p className="text-sm text-[var(--color-neutral-600)]">
+              Clean, focused interfaces that prioritize clarity and ease of use.
+            </p>
+          </div>
+        </article>
       </div>
 
       {/* Target Audience */}

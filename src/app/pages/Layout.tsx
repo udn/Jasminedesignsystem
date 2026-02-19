@@ -15,7 +15,7 @@ export default function Layout() {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
-            <div className="w-12 h-12 bg-[var(--color-primary-100)] rounded-lg flex items-center justify-center mb-4">
+            <div className="w-12 h-12 bg-[var(--color-primary-100)] rounded-lg flex items-center justify-center mb-4 mx-auto">
               <span className="text-2xl">📱</span>
             </div>
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-2">Mobile</h3>
@@ -24,7 +24,7 @@ export default function Layout() {
           </div>
 
           <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
-            <div className="w-12 h-12 bg-[var(--color-secondary-100)] rounded-lg flex items-center justify-center mb-4">
+            <div className="w-12 h-12 bg-[var(--color-secondary-100)] rounded-lg flex items-center justify-center mb-4 mx-auto">
               <span className="text-2xl">📲</span>
             </div>
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-2">Tablet</h3>
@@ -33,7 +33,7 @@ export default function Layout() {
           </div>
 
           <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
-            <div className="w-12 h-12 bg-[var(--color-accent-100)] rounded-lg flex items-center justify-center mb-4">
+            <div className="w-12 h-12 bg-[var(--color-accent-100)] rounded-lg flex items-center justify-center mb-4 mx-auto">
               <span className="text-2xl">💻</span>
             </div>
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-2">Desktop</h3>
@@ -42,7 +42,7 @@ export default function Layout() {
           </div>
 
           <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
-            <div className="w-12 h-12 bg-[var(--color-success-100)] rounded-lg flex items-center justify-center mb-4">
+            <div className="w-12 h-12 bg-[var(--color-success-100)] rounded-lg flex items-center justify-center mb-4 mx-auto">
               <span className="text-2xl">🖥️</span>
             </div>
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-2">Wide</h3>
