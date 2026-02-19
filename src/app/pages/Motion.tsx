@@ -11,9 +11,9 @@ export default function Motion() {
   };
 
   return (
-    <div className="space-y-16 lg:space-y-20">
+    <div className="space-y-12">
       <div>
-        <h1 className="text-4xl font-bold text-[var(--color-neutral-900)] mb-4 sm:mb-6">Motion Guidelines</h1>
+        <h1 className="text-4xl font-bold text-[var(--color-neutral-900)] mb-3">Motion Guidelines</h1>
         <p className="text-lg text-[var(--color-neutral-600)] max-w-3xl">
           Motion brings our interfaces to life, creating delightful experiences that feel responsive and playful. 
           Our motion system balances performance with personality.
@@ -25,7 +25,7 @@ export default function Motion() {
         <h2 className="text-2xl font-bold text-[var(--color-neutral-900)]">Easing Curves</h2>
         
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="p-6 bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)] rounded-xl">
+          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-3">Ease Out</h3>
             <p className="text-sm text-[var(--color-neutral-600)] mb-4">
               cubic-bezier(0, 0, 0.2, 1) • Most common, elements entering the screen
@@ -42,7 +42,7 @@ export default function Motion() {
             </div>
           </div>
 
-          <div className="p-6 bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)] rounded-xl">
+          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-3">Ease In</h3>
             <p className="text-sm text-[var(--color-neutral-600)] mb-4">
               cubic-bezier(0.4, 0, 1, 1) • Elements leaving the screen
@@ -59,7 +59,7 @@ export default function Motion() {
             </div>
           </div>
 
-          <div className="p-6 bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)] rounded-xl">
+          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-3">Ease In-Out</h3>
             <p className="text-sm text-[var(--color-neutral-600)] mb-4">
               cubic-bezier(0.4, 0, 0.2, 1) • Smooth transitions between states
@@ -76,7 +76,7 @@ export default function Motion() {
             </div>
           </div>
 
-          <div className="p-6 bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)] rounded-xl">
+          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-3">Spring</h3>
             <p className="text-sm text-[var(--color-neutral-600)] mb-4">
               cubic-bezier(0.34, 1.56, 0.64, 1) • Playful bounce for special moments
@@ -109,28 +109,28 @@ export default function Motion() {
         <h2 className="text-2xl font-bold text-[var(--color-neutral-900)]">Duration Ranges</h2>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="p-6 bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)] rounded-xl">
+          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-2">Instant</h3>
             <p className="text-2xl font-bold text-[var(--color-primary-600)] mb-2">100ms</p>
             <p className="text-sm text-[var(--color-neutral-600)] mb-3">Color changes, small state updates</p>
             <code className="text-xs bg-[var(--color-neutral-100)] px-2 py-1 rounded">--duration-instant</code>
           </div>
 
-          <div className="p-6 bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)] rounded-xl">
+          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-2">Fast</h3>
             <p className="text-2xl font-bold text-[var(--color-secondary-600)] mb-2">200ms</p>
             <p className="text-sm text-[var(--color-neutral-600)] mb-3">Hover states, tooltips, small movements</p>
             <code className="text-xs bg-[var(--color-neutral-100)] px-2 py-1 rounded">--duration-fast</code>
           </div>
 
-          <div className="p-6 bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)] rounded-xl">
+          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-2">Normal</h3>
             <p className="text-2xl font-bold text-[var(--color-accent-600)] mb-2">300ms</p>
             <p className="text-sm text-[var(--color-neutral-600)] mb-3">Most transitions, modals, dropdowns</p>
             <code className="text-xs bg-[var(--color-neutral-100)] px-2 py-1 rounded">--duration-normal</code>
           </div>
 
-          <div className="p-6 bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)] rounded-xl">
+          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-2">Slow</h3>
             <p className="text-2xl font-bold text-[var(--color-success-600)] mb-2">500ms</p>
             <p className="text-sm text-[var(--color-neutral-600)] mb-3">Page transitions, large movements</p>
@@ -144,7 +144,7 @@ export default function Motion() {
         <h2 className="text-2xl font-bold text-[var(--color-neutral-900)]">Microinteraction Principles</h2>
         
         <div className="grid md:grid-cols-3 gap-6">
-          <div className="p-6 bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)] rounded-xl">
+          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-4">Button Press</h3>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -156,7 +156,7 @@ export default function Motion() {
             <p className="text-xs text-[var(--color-neutral-500)] mt-3">Scale down on press for tactile feedback</p>
           </div>
 
-          <div className="p-6 bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)] rounded-xl">
+          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-4">Icon Interaction</h3>
             <div className="flex justify-center gap-4">
               <motion.button
@@ -177,7 +177,7 @@ export default function Motion() {
             <p className="text-xs text-[var(--color-neutral-500)] mt-3">Subtle rotation and scale on hover</p>
           </div>
 
-          <div className="p-6 bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)] rounded-xl">
+          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-4">Notification</h3>
             <motion.div
               animate={{
@@ -204,7 +204,7 @@ export default function Motion() {
         <h2 className="text-2xl font-bold text-[var(--color-neutral-900)]">Common Animation Patterns</h2>
         
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="p-6 bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)] rounded-xl">
+          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-4">Fade In</h3>
             <motion.div
               initial={{ opacity: 0 }}
@@ -219,7 +219,7 @@ export default function Motion() {
             </code>
           </div>
 
-          <div className="p-6 bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)] rounded-xl">
+          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-4">Slide Up</h3>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -234,7 +234,7 @@ export default function Motion() {
             </code>
           </div>
 
-          <div className="p-6 bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)] rounded-xl">
+          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-4">Scale In</h3>
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
@@ -249,7 +249,7 @@ export default function Motion() {
             </code>
           </div>
 
-          <div className="p-6 bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)] rounded-xl">
+          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-4">Stagger</h3>
             <div className="space-y-2">
               {[0, 1, 2].map((i) => (
@@ -276,7 +276,7 @@ export default function Motion() {
         <h2 className="text-2xl font-bold text-[var(--color-neutral-900)]">Loading Animations</h2>
         
         <div className="grid md:grid-cols-3 gap-6">
-          <div className="p-6 bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)] rounded-xl text-center">
+          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl text-center">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-4">Spinner</h3>
             <div className="flex justify-center mb-3">
               <div className="w-10 h-10 border-4 border-[var(--color-neutral-200)] border-t-[var(--color-primary-500)] rounded-full animate-spin" />
@@ -284,7 +284,7 @@ export default function Motion() {
             <p className="text-xs text-[var(--color-neutral-500)]">Classic loading indicator</p>
           </div>
 
-          <div className="p-6 bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)] rounded-xl text-center">
+          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl text-center">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-4">Pulse</h3>
             <div className="flex justify-center mb-3">
               <motion.div
@@ -296,7 +296,7 @@ export default function Motion() {
             <p className="text-xs text-[var(--color-neutral-500)]">Breathing effect</p>
           </div>
 
-          <div className="p-6 bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)] rounded-xl text-center">
+          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl text-center">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-4">Dots</h3>
             <div className="flex justify-center gap-2 mb-3">
               {[0, 1, 2].map((i) => (
@@ -378,28 +378,6 @@ export default function Motion() {
             </ul>
           </div>
         </div>
-      </div>
-
-      {/* Reduced Motion */}
-      <div className="p-6 rounded-xl bg-gradient-to-br from-[var(--color-secondary-50)] to-[var(--color-accent-50)] border border-[var(--color-secondary-200)]">
-        <h3 className="text-xl font-semibold text-[var(--color-neutral-900)] mb-3">Reduced Motion Support</h3>
-        <p className="text-sm text-[var(--color-neutral-700)] mb-4">
-          Always respect the <code className="bg-white/70 px-1.5 py-0.5 rounded text-xs">prefers-reduced-motion</code> media query.
-          When a user enables reduced motion, disable non-essential animations and replace them with instant transitions.
-        </p>
-        <pre className="bg-[var(--color-neutral-900)] text-[var(--color-neutral-100)] p-4 rounded-lg text-xs overflow-x-auto mb-4">
-          <code>{`@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-  }
-}`}</code>
-        </pre>
-        <p className="text-xs text-[var(--color-neutral-600)]">
-          Essential motion (progress indicators, loading spinners) should use a subtle fade rather than full animation when reduced motion is enabled.
-        </p>
       </div>
 
       {/* Performance Tips */}

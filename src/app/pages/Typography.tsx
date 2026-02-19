@@ -102,9 +102,9 @@ export default function Typography() {
   ];
 
   return (
-    <div className="space-y-16 lg:space-y-20">
+    <div className="space-y-12">
       <div>
-        <h1 className="text-4xl font-bold text-[var(--color-neutral-900)] mb-4 sm:mb-6">Typography System</h1>
+        <h1 className="text-4xl font-bold text-[var(--color-neutral-900)] mb-3">Typography System</h1>
         <p className="text-lg text-[var(--color-neutral-600)] max-w-3xl">
           Our typography system balances playfulness with professionalism. We use Quicksand for headings to add 
           warmth and approachability, paired with system fonts for optimal readability in body text.
@@ -117,7 +117,7 @@ export default function Typography() {
         
         <div className="grid gap-6">
           {fontFamilies.map((font) => (
-            <div key={font.name} className="p-6 rounded-xl bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)]">
+            <div key={font.name} className="p-6 rounded-xl bg-white border border-[var(--color-neutral-200)]">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-3">
                   <h3 className="text-xl font-semibold text-[var(--color-neutral-900)]">{font.name}</h3>
@@ -169,7 +169,7 @@ export default function Typography() {
 
         <div className="space-y-6">
           {typeScale.map((type) => (
-            <div key={type.name} className="p-6 rounded-xl bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)]">
+            <div key={type.name} className="p-6 rounded-xl bg-white border border-[var(--color-neutral-200)]">
               <div className="grid lg:grid-cols-3 gap-6">
                 <div className="space-y-2">
                   <h3 className="text-lg font-semibold text-[var(--color-neutral-900)]">{type.name}</h3>
@@ -208,7 +208,7 @@ export default function Typography() {
         <h2 className="text-2xl font-bold text-[var(--color-neutral-900)]">Line Heights</h2>
         
         <div className="grid md:grid-cols-3 gap-6">
-          <div className="p-6 rounded-xl bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)]">
+          <div className="p-6 rounded-xl bg-white border border-[var(--color-neutral-200)]">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-3">Tight (1.2)</h3>
             <p className="text-sm text-[var(--color-neutral-600)] mb-4">For headings and display text</p>
             <p className="leading-[1.2] text-[var(--color-neutral-700)]" style={{ fontFamily: 'var(--font-family-display)' }}>
@@ -217,7 +217,7 @@ export default function Typography() {
             </p>
           </div>
 
-          <div className="p-6 rounded-xl bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)]">
+          <div className="p-6 rounded-xl bg-white border border-[var(--color-neutral-200)]">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-3">Normal (1.5)</h3>
             <p className="text-sm text-[var(--color-neutral-600)] mb-4">For body text and UI elements</p>
             <p className="leading-[1.5] text-[var(--color-neutral-700)]">
@@ -225,79 +225,13 @@ export default function Typography() {
             </p>
           </div>
 
-          <div className="p-6 rounded-xl bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)]">
+          <div className="p-6 rounded-xl bg-white border border-[var(--color-neutral-200)]">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-3">Relaxed (1.7)</h3>
             <p className="text-sm text-[var(--color-neutral-600)] mb-4">For long-form content</p>
             <p className="leading-[1.7] text-[var(--color-neutral-700)]">
               More generous spacing improves readability in paragraphs and extended reading scenarios.
             </p>
           </div>
-        </div>
-      </div>
-
-      {/* Font Weights */}
-      <div className="space-y-4">
-        <h2 className="text-2xl font-bold text-[var(--color-neutral-900)]">Font Weights</h2>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {[
-            { name: 'Normal', weight: 400, cssVar: '--font-weight-normal' },
-            { name: 'Medium', weight: 500, cssVar: '--font-weight-medium' },
-            { name: 'Semibold', weight: 600, cssVar: '--font-weight-semibold' },
-            { name: 'Bold', weight: 700, cssVar: '--font-weight-bold' },
-            { name: 'Extrabold', weight: 800, cssVar: '--font-weight-extrabold' },
-          ].map((w) => (
-            <div key={w.name} className="p-4 rounded-xl bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)]">
-              <p style={{ fontWeight: w.weight, fontFamily: 'var(--font-family-display)' }} className="text-2xl text-[var(--color-neutral-900)] mb-2">
-                Aa
-              </p>
-              <p className="text-sm font-medium text-[var(--color-neutral-900)]">{w.name} ({w.weight})</p>
-              <code className="text-xs text-[var(--color-neutral-500)]">{w.cssVar}</code>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Letter Spacing */}
-      <div className="space-y-4">
-        <h2 className="text-2xl font-bold text-[var(--color-neutral-900)]">Letter Spacing</h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          {[
-            { name: 'Tight', value: '-0.02em', cssVar: '--letter-spacing-tight', desc: 'Display & heading text', sample: 'Joyful Learning' },
-            { name: 'Normal', value: '0', cssVar: '--letter-spacing-normal', desc: 'Body text & UI', sample: 'Joyful Learning' },
-            { name: 'Wide', value: '0.02em', cssVar: '--letter-spacing-wide', desc: 'Labels, captions, overlines', sample: 'JOYFUL LEARNING' },
-          ].map((ls) => (
-            <div key={ls.name} className="p-6 rounded-xl bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)]">
-              <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-1">{ls.name} ({ls.value})</h3>
-              <p className="text-sm text-[var(--color-neutral-600)] mb-3">{ls.desc}</p>
-              <p className="text-xl text-[var(--color-neutral-800)]" style={{ letterSpacing: ls.value, fontFamily: 'var(--font-family-display)' }}>
-                {ls.sample}
-              </p>
-              <code className="text-xs text-[var(--color-neutral-500)]">{ls.cssVar}</code>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Responsive Type Note */}
-      <div className="p-6 rounded-xl bg-gradient-to-br from-[var(--color-primary-50)] to-[var(--color-accent-50)] border border-[var(--color-primary-200)]">
-        <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-2">Responsive Type Scale</h3>
-        <p className="text-sm text-[var(--color-neutral-700)] mb-3">
-          Display and heading sizes use <code className="bg-white/70 px-1.5 py-0.5 rounded text-xs">clamp()</code> for
-          fluid responsive sizing. Sizes scale smoothly between a mobile minimum and a desktop maximum:
-        </p>
-        <div className="grid sm:grid-cols-2 gap-3 text-sm">
-          {[
-            { level: 'Display 1', range: '44px – 64px' },
-            { level: 'Display 2', range: '36px – 48px' },
-            { level: 'Heading 1', range: '32px – 40px' },
-            { level: 'Heading 2', range: '24px – 32px' },
-            { level: 'Heading 3', range: '20px – 24px' },
-          ].map((r) => (
-            <div key={r.level} className="flex justify-between bg-white/60 rounded-lg px-3 py-2">
-              <span className="font-medium text-[var(--color-neutral-800)]">{r.level}</span>
-              <span className="text-[var(--color-neutral-600)]">{r.range}</span>
-            </div>
-          ))}
         </div>
       </div>
 
@@ -384,7 +318,7 @@ export default function Typography() {
       <div className="space-y-4">
         <h2 className="text-2xl font-bold text-[var(--color-neutral-900)]">Typography in Context</h2>
         
-        <div className="p-8 rounded-xl bg-white dark:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)]">
+        <div className="p-8 rounded-xl bg-white border border-[var(--color-neutral-200)]">
           <h1 className="text-[2.5rem] font-bold text-[var(--color-neutral-900)] mb-4" style={{ fontFamily: 'var(--font-family-display)' }}>
             Welcome to Jasmine Kindergarten
           </h1>

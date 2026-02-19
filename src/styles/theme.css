@@ -52,66 +52,47 @@
   --color-neutral-900: #1c1917;
 
   /* Semantic Colors */
-  /* Success (green) */
   --color-success-50: #f0fdf4;
-  --color-success-100: #dcfce7;
-  --color-success-300: #86efac;
   --color-success-500: #22c55e;
   --color-success-700: #15803d;
   
-  /* Warning (amber) */
   --color-warning-50: #fffbeb;
-  --color-warning-100: #fef3c7;
-  --color-warning-300: #fcd34d;
   --color-warning-500: #f59e0b;
   --color-warning-700: #b45309;
   
-  /* Error (red) */
   --color-error-50: #fef2f2;
-  --color-error-100: #fee2e2;
-  --color-error-300: #fca5a5;
   --color-error-500: #ef4444;
   --color-error-700: #b91c1c;
   
-  /* Info (blue) */
   --color-info-50: #eff6ff;
-  --color-info-100: #dbeafe;
-  --color-info-300: #93c5fd;
   --color-info-500: #3b82f6;
   --color-info-700: #1d4ed8;
 
   /* ===== SPACING SYSTEM (8px base grid) ===== */
-  /* Core scale: multiples of 4px / 8px for rhythm */
-  --spacing-0: 0;          /* 0px  */
-  --spacing-1: 0.25rem;    /* 4px  */
-  --spacing-2: 0.5rem;     /* 8px  */
-  --spacing-3: 1rem;       /* 16px */
-  --spacing-4: 1.5rem;     /* 24px */
-  --spacing-5: 2rem;       /* 32px */
-  --spacing-6: 3rem;       /* 48px */
-  --spacing-7: 4rem;       /* 64px */
-  --spacing-8: 5rem;       /* 80px */
-  --spacing-9: 6rem;       /* 96px */
-  --spacing-10: 7rem;      /* 112px */
-  --spacing-11: 8rem;      /* 128px */
-  --spacing-12: 9rem;      /* 144px */
-
-  /* Semantic spacing aliases */
-  --spacing-component-padding: var(--spacing-3);  /* Default component padding */
-  --spacing-section-gap: var(--spacing-6);        /* Vertical gap between sections */
-  --spacing-inline-gap: var(--spacing-2);         /* Default inline gap between items */
+  --spacing-0: 0;
+  --spacing-1: 0.125rem; /* 2px */
+  --spacing-2: 0.25rem;  /* 4px */
+  --spacing-3: 0.5rem;   /* 8px */
+  --spacing-4: 0.75rem;  /* 12px */
+  --spacing-5: 1rem;     /* 16px */
+  --spacing-6: 1.5rem;   /* 24px */
+  --spacing-7: 2rem;     /* 32px */
+  --spacing-8: 2.5rem;   /* 40px */
+  --spacing-9: 3rem;     /* 48px */
+  --spacing-10: 4rem;    /* 64px */
+  --spacing-11: 5rem;    /* 80px */
+  --spacing-12: 6rem;    /* 96px */
 
   /* ===== TYPOGRAPHY SCALE ===== */
   --font-family-display: 'Quicksand', 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-family-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Roboto, Arial, sans-serif;
   --font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', Consolas, monospace;
 
-  /* Responsive type scale (mobile-first) */
-  --font-size-display-1: clamp(2.75rem, 6vw, 4rem);   /* ~44–64px */
-  --font-size-display-2: clamp(2.25rem, 5vw, 3rem);   /* ~36–48px */
-  --font-size-heading-1: clamp(2rem, 4vw, 2.5rem);    /* ~32–40px */
-  --font-size-heading-2: clamp(1.5rem, 3vw, 2rem);    /* ~24–32px */
-  --font-size-heading-3: clamp(1.25rem, 2.5vw, 1.5rem); /* ~20–24px */
+  --font-size-display-1: 4rem;    /* 64px */
+  --font-size-display-2: 3rem;    /* 48px */
+  --font-size-heading-1: 2.5rem;  /* 40px */
+  --font-size-heading-2: 2rem;    /* 32px */
+  --font-size-heading-3: 1.5rem;  /* 24px */
   --font-size-body-lg: 1.125rem;  /* 18px */
   --font-size-body: 1rem;         /* 16px */
   --font-size-body-sm: 0.875rem;  /* 14px */
@@ -120,18 +101,6 @@
   --line-height-tight: 1.2;
   --line-height-normal: 1.5;
   --line-height-relaxed: 1.7;
-
-  /* Font weights */
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-  --font-weight-extrabold: 800;
-
-  /* Letter spacing */
-  --letter-spacing-tight: -0.02em;
-  --letter-spacing-normal: 0;
-  --letter-spacing-wide: 0.02em;
 
   /* ===== BORDER RADIUS ===== */
   --radius-sm: 0.25rem;   /* 4px */
@@ -166,7 +135,8 @@
   /* Wide: 1280px+ */
 }
 
-/* Base Styles */
+
+
 body {
   font-family: var(--font-family-body);
   font-size: var(--font-size-body);
@@ -184,91 +154,33 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ===== DARK MODE ===== */
-/* Class-based dark mode; will be toggled via next-themes on <html class=\"dark\"> */
-.dark {
-  color-scheme: dark;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary-50: #803900;
+    --color-primary-100: #b34f00;
+    --color-primary-200: #e56500;
+    --color-primary-300: #ff7e1a;
+    --color-primary-400: #ff9940;
+    --color-primary-500: #ffb366;
+    --color-primary-600: #ffc88d;
+    --color-primary-700: #ffddb3;
+    --color-primary-800: #ffefd9;
+    --color-primary-900: #fff8f0;
 
-  /* Invert primary palette for dark surfaces */
-  --color-primary-50: #803900;
-  --color-primary-100: #b34f00;
-  --color-primary-200: #e56500;
-  --color-primary-300: #ff7e1a;
-  --color-primary-400: #ff9940;
-  --color-primary-500: #ffb366;
-  --color-primary-600: #ffc88d;
-  --color-primary-700: #ffddb3;
-  --color-primary-800: #ffefd9;
-  --color-primary-900: #fff8f0;
+    --color-neutral-50: #1c1917;
+    --color-neutral-100: #292524;
+    --color-neutral-200: #44403c;
+    --color-neutral-300: #57534e;
+    --color-neutral-400: #78716c;
+    --color-neutral-500: #a8a29e;
+    --color-neutral-600: #d6d3d1;
+    --color-neutral-700: #e7e5e4;
+    --color-neutral-800: #f5f5f4;
+    --color-neutral-900: #fafaf9;
+  }
 
-  /* Neutral palette inverted for dark mode */
-  --color-neutral-50: #1c1917;
-  --color-neutral-100: #292524;
-  --color-neutral-200: #44403c;
-  --color-neutral-300: #57534e;
-  --color-neutral-400: #78716c;
-  --color-neutral-500: #a8a29e;
-  --color-neutral-600: #d6d3d1;
-  --color-neutral-700: #e7e5e4;
-  --color-neutral-800: #f5f5f4;
-  --color-neutral-900: #fafaf9;
-
-  /* Secondary palette tuned for dark backgrounds */
-  --color-secondary-50: #0b1220;
-  --color-secondary-100: #0f172a;
-  --color-secondary-200: #1d2a3f;
-  --color-secondary-300: #1e3a8a;
-  --color-secondary-400: #2563eb;
-  --color-secondary-500: #38bdf8;
-  --color-secondary-600: #7dd3fc;
-  --color-secondary-700: #bae6fd;
-  --color-secondary-800: #e0f2fe;
-  --color-secondary-900: #f0f9ff;
-
-  /* Accent palette tuned for dark backgrounds */
-  --color-accent-50: #3b0f1f;
-  --color-accent-100: #4a1026;
-  --color-accent-200: #7f1239;
-  --color-accent-300: #be185d;
-  --color-accent-400: #ec4899;
-  --color-accent-500: #f472b6;
-  --color-accent-600: #fb7185;
-  --color-accent-700: #fecdd3;
-  --color-accent-800: #ffe4f0;
-  --color-accent-900: #fff1f7;
-
-  /* Semantic colors adjusted for dark mode */
-  --color-success-50: #052e16;
-  --color-success-100: #14532d;
-  --color-success-300: #15803d;
-  --color-success-500: #22c55e;
-  --color-success-700: #86efac;
-
-  --color-warning-50: #451a03;
-  --color-warning-100: #78350f;
-  --color-warning-300: #f59e0b;
-  --color-warning-500: #fbbf24;
-  --color-warning-700: #fed7aa;
-
-  --color-error-50: #450a0a;
-  --color-error-100: #7f1d1d;
-  --color-error-300: #dc2626;
-  --color-error-500: #f97373;
-  --color-error-700: #fee2e2;
-
-  --color-info-50: #0b1120;
-  --color-info-100: #1d2a3f;
-  --color-info-300: #1d4ed8;
-  --color-info-500: #60a5fa;
-  --color-info-700: #dbeafe;
-
-  /* Softer, lifted shadows for dark UIs */
-  --shadow-sm: 0 1px 2px 0 rgb(15 23 42 / 0.7);
-  --shadow-md: 0 4px 6px -1px rgb(15 23 42 / 0.8), 0 2px 4px -2px rgb(15 23 42 / 0.7);
-  --shadow-lg: 0 10px 15px -3px rgb(15 23 42 / 0.85), 0 4px 6px -4px rgb(15 23 42 / 0.75);
-  --shadow-xl: 0 20px 25px -5px rgb(15 23 42 / 0.9), 0 8px 10px -6px rgb(15 23 42 / 0.8);
-}
-
-.dark body {
-  background-color: var(--color-neutral-50);
-  color: var(--color-neutral-900);
+  body {
+    background-color: var(--color-neutral-50);
+    color: var(--color-neutral-900);
+  }
 }

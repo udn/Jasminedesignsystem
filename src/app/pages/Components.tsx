@@ -1,1033 +1,1018 @@
 import { useState } from 'react';
-import {
-  Heart, Star, Send, Download, Plus, X, Check, ChevronDown,
-  Search, Bell, User, Home, Settings, AlertCircle,
-  CheckCircle, Info, Play, Upload, Eye, Bold, Italic, Underline,
-  AlignLeft, AlignCenter, AlignRight, Moon, Sun, Copy,
+import { 
+  Heart, Star, Send, Download, Plus, X, Check, ChevronDown, 
+  Search, Bell, User, Menu, Home, Settings, AlertCircle, 
+  CheckCircle, XCircle, Info, Play, Upload, Eye
 } from 'lucide-react';
 
-import { Button } from '../components/ui/button';
-import { Input } from '../components/ui/input';
-import { Textarea } from '../components/ui/textarea';
-import { Label } from '../components/ui/label';
-import { Checkbox } from '../components/ui/checkbox';
-import { Switch } from '../components/ui/switch';
-import { Slider } from '../components/ui/slider';
-import { RadioGroup, RadioGroupItem } from '../components/ui/radio-group';
-import {
-  Select, SelectContent, SelectItem, SelectTrigger, SelectValue,
-} from '../components/ui/select';
-import {
-  Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter,
-} from '../components/ui/card';
-import { Badge } from '../components/ui/badge';
-import { Alert, AlertTitle, AlertDescription } from '../components/ui/alert';
-import { Avatar, AvatarImage, AvatarFallback } from '../components/ui/avatar';
-import { Progress } from '../components/ui/progress';
-import { Separator } from '../components/ui/separator';
-import { Skeleton } from '../components/ui/skeleton';
-import { Toggle } from '../components/ui/toggle';
-import { ToggleGroup, ToggleGroupItem } from '../components/ui/toggle-group';
-import {
-  Tabs, TabsList, TabsTrigger, TabsContent,
-} from '../components/ui/tabs';
-import {
-  Accordion, AccordionItem, AccordionTrigger, AccordionContent,
-} from '../components/ui/accordion';
-import {
-  Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle,
-  DialogDescription, DialogFooter, DialogClose,
-} from '../components/ui/dialog';
-import {
-  Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle,
-  SheetDescription, SheetClose,
-} from '../components/ui/sheet';
-import {
-  Tooltip, TooltipTrigger, TooltipContent, TooltipProvider,
-} from '../components/ui/tooltip';
-import {
-  Popover, PopoverTrigger, PopoverContent,
-} from '../components/ui/popover';
-import {
-  DropdownMenu, DropdownMenuTrigger, DropdownMenuContent,
-  DropdownMenuItem, DropdownMenuSeparator, DropdownMenuLabel,
-} from '../components/ui/dropdown-menu';
-import {
-  HoverCard, HoverCardTrigger, HoverCardContent,
-} from '../components/ui/hover-card';
-import {
-  Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink,
-  BreadcrumbPage, BreadcrumbSeparator,
-} from '../components/ui/breadcrumb';
-import {
-  Pagination, PaginationContent, PaginationItem, PaginationLink,
-  PaginationPrevious, PaginationNext, PaginationEllipsis,
-} from '../components/ui/pagination';
-import {
-  Table, TableHeader, TableBody, TableHead, TableRow, TableCell,
-} from '../components/ui/table';
-import { ScrollArea } from '../components/ui/scroll-area';
-
 export default function Components() {
-  const [sliderValue, setSliderValue] = useState([50]);
-  const [progressValue] = useState(72);
+  const [checkboxStates, setCheckboxStates] = useState<Record<string, boolean>>({});
+  const [radioValue, setRadioValue] = useState('option1');
+  const [switchStates, setSwitchStates] = useState<Record<string, boolean>>({});
+  const [sliderValue, setSliderValue] = useState(50);
+  const [selectValue, setSelectValue] = useState('option1');
+  const [showModal, setShowModal] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(false);
+
+  const toggleCheckbox = (id: string) => {
+    setCheckboxStates(prev => ({ ...prev, [id]: !prev[id] }));
+  };
+
+  const toggleSwitch = (id: string) => {
+    setSwitchStates(prev => ({ ...prev, [id]: !prev[id] }));
+  };
 
   return (
-    <div className="space-y-16 lg:space-y-20">
+    <div className="space-y-12">
       <div>
-        <h1 className="text-4xl font-bold text-[var(--color-neutral-900)] mb-4 sm:mb-6">Components</h1>
+        <h1 className="text-4xl font-bold text-[var(--color-neutral-900)] mb-3">Components</h1>
         <p className="text-lg text-[var(--color-neutral-600)] max-w-3xl">
-          30+ production-ready components built on Radix UI primitives with complete state
-          variations. Each component follows our design principles of playfulness, warmth,
-          trust, and minimalism.
+          30+ production-ready components with complete state variations. Each component follows our design 
+          principles of playfulness, warmth, trust, and minimalism.
         </p>
       </div>
 
-      {/* ================================================================ */}
-      {/* 1. BUTTONS                                                       */}
-      {/* ================================================================ */}
+      {/* BUTTONS */}
       <ComponentSection title="Buttons" id="buttons">
         <ComponentDemo
-          title="Button Variants"
-          description="All semantic variants using the Button primitive"
-          usage="Use default for primary CTA, secondary for supporting actions, outline for tertiary, destructive for danger zones, ghost and link for low-emphasis actions."
+          title="Primary Button"
+          description="Main call-to-action buttons with high emphasis"
+          usage="Use for primary actions like 'Submit', 'Save', 'Continue'"
         >
           <div className="flex flex-wrap gap-3">
-            <Button>Default</Button>
-            <Button variant="secondary">Secondary</Button>
-            <Button variant="outline">Outline</Button>
-            <Button variant="destructive">Destructive</Button>
-            <Button variant="ghost">Ghost</Button>
-            <Button variant="link">Link</Button>
+            <button className="px-6 py-3 bg-[var(--color-primary-500)] hover:bg-[var(--color-primary-600)] active:bg-[var(--color-primary-700)] text-white rounded-lg font-medium transition-colors shadow-sm hover:shadow-md">
+              Default
+            </button>
+            <button className="px-6 py-3 bg-[var(--color-primary-600)] text-white rounded-lg font-medium shadow-md">
+              Hover
+            </button>
+            <button className="px-6 py-3 bg-[var(--color-primary-700)] text-white rounded-lg font-medium shadow-md">
+              Active
+            </button>
+            <button className="px-6 py-3 bg-[var(--color-primary-500)] text-white rounded-lg font-medium ring-2 ring-[var(--color-primary-300)] ring-offset-2">
+              Focus
+            </button>
+            <button className="px-6 py-3 bg-[var(--color-neutral-200)] text-[var(--color-neutral-400)] rounded-lg font-medium cursor-not-allowed" disabled>
+              Disabled
+            </button>
           </div>
         </ComponentDemo>
 
         <ComponentDemo
-          title="Button Sizes"
-          description="Small, default, large, and icon-only"
-          usage="Adapt button size to layout context and visual hierarchy."
+          title="Secondary Button"
+          description="Supporting actions with medium emphasis"
+          usage="Use for secondary actions like 'Cancel', 'Back', 'Learn More'"
         >
-          <div className="flex flex-wrap items-center gap-3">
-            <Button size="sm">Small</Button>
-            <Button size="default">Default</Button>
-            <Button size="lg">Large</Button>
-            <Button size="icon" aria-label="Add"><Plus /></Button>
+          <div className="flex flex-wrap gap-3">
+            <button className="px-6 py-3 bg-[var(--color-secondary-100)] hover:bg-[var(--color-secondary-200)] active:bg-[var(--color-secondary-300)] text-[var(--color-secondary-700)] rounded-lg font-medium transition-colors">
+              Default
+            </button>
+            <button className="px-6 py-3 bg-[var(--color-secondary-200)] text-[var(--color-secondary-700)] rounded-lg font-medium">
+              Hover
+            </button>
+            <button className="px-6 py-3 bg-[var(--color-secondary-300)] text-[var(--color-secondary-800)] rounded-lg font-medium">
+              Active
+            </button>
+            <button className="px-6 py-3 bg-[var(--color-neutral-200)] text-[var(--color-neutral-400)] rounded-lg font-medium cursor-not-allowed" disabled>
+              Disabled
+            </button>
           </div>
         </ComponentDemo>
 
         <ComponentDemo
-          title="Button States"
-          description="Default, hover (try it), focus (Tab), and disabled"
-          usage="Disabled buttons must never be the only way to communicate an error."
+          title="Outline Button"
+          description="Subtle actions with low emphasis"
+          usage="Use for tertiary actions or when background contrast is needed"
         >
           <div className="flex flex-wrap gap-3">
-            <Button>Default</Button>
-            <Button className="ring-2 ring-ring ring-offset-2">Focus</Button>
-            <Button disabled>Disabled</Button>
+            <button className="px-6 py-3 border-2 border-[var(--color-primary-500)] hover:bg-[var(--color-primary-50)] active:bg-[var(--color-primary-100)] text-[var(--color-primary-600)] rounded-lg font-medium transition-colors">
+              Default
+            </button>
+            <button className="px-6 py-3 border-2 border-[var(--color-primary-500)] bg-[var(--color-primary-50)] text-[var(--color-primary-600)] rounded-lg font-medium">
+              Hover
+            </button>
+            <button className="px-6 py-3 border-2 border-[var(--color-neutral-300)] text-[var(--color-neutral-400)] rounded-lg font-medium cursor-not-allowed" disabled>
+              Disabled
+            </button>
           </div>
         </ComponentDemo>
 
         <ComponentDemo
           title="Icon Buttons"
-          description="Buttons paired with Lucide icons for clarity"
-          usage="Always provide an aria-label on icon-only buttons."
+          description="Buttons with icons for compact actions"
+          usage="Use for toolbars, navigation, or space-constrained interfaces"
         >
           <div className="flex flex-wrap gap-3">
-            <Button><Heart className="mr-2 h-4 w-4" /> Like</Button>
-            <Button variant="secondary"><Star className="mr-2 h-4 w-4" /> Favorite</Button>
-            <Button variant="outline"><Send className="mr-2 h-4 w-4" /> Send</Button>
-            <Button variant="ghost" size="icon" aria-label="Download"><Download className="h-4 w-4" /></Button>
+            <button className="px-4 py-3 bg-[var(--color-primary-500)] hover:bg-[var(--color-primary-600)] text-white rounded-lg transition-colors flex items-center gap-2">
+              <Heart size={20} />
+              <span>Like</span>
+            </button>
+            <button className="px-4 py-3 bg-[var(--color-accent-500)] hover:bg-[var(--color-accent-600)] text-white rounded-lg transition-colors flex items-center gap-2">
+              <Star size={20} />
+              <span>Favorite</span>
+            </button>
+            <button className="p-3 bg-[var(--color-secondary-100)] hover:bg-[var(--color-secondary-200)] text-[var(--color-secondary-700)] rounded-lg transition-colors">
+              <Send size={20} />
+            </button>
+            <button className="p-3 bg-[var(--color-neutral-100)] hover:bg-[var(--color-neutral-200)] text-[var(--color-neutral-700)] rounded-lg transition-colors">
+              <Download size={20} />
+            </button>
           </div>
         </ComponentDemo>
 
-        <FigmaSpec
-          component="Button"
-          anatomy={['Root container', 'Leading icon (optional)', 'Label text', 'Trailing icon (optional)']}
-          variants={{ variant: 'default | secondary | outline | destructive | ghost | link', size: 'sm | default | lg | icon' }}
-          spacing="Horizontal padding: 16px (sm: 12px, lg: 32px). Vertical padding: 8px (sm: 6px, lg: 12px). Icon gap: 8px."
-          typography="font-size: body-sm (14px), font-weight: medium (500), font-family: body."
-          a11y="role=button, aria-disabled when disabled, visible focus ring on :focus-visible, min touch target 44×44px."
-        />
+        <ComponentDemo
+          title="Button Sizes"
+          description="Small, medium, and large button variants"
+          usage="Adapt button size to context and hierarchy"
+        >
+          <div className="flex flex-wrap items-center gap-3">
+            <button className="px-3 py-1.5 bg-[var(--color-primary-500)] hover:bg-[var(--color-primary-600)] text-white text-sm rounded-lg transition-colors">
+              Small
+            </button>
+            <button className="px-6 py-3 bg-[var(--color-primary-500)] hover:bg-[var(--color-primary-600)] text-white rounded-lg transition-colors">
+              Medium
+            </button>
+            <button className="px-8 py-4 bg-[var(--color-primary-500)] hover:bg-[var(--color-primary-600)] text-white text-lg rounded-lg transition-colors">
+              Large
+            </button>
+          </div>
+        </ComponentDemo>
       </ComponentSection>
 
-      {/* ================================================================ */}
-      {/* 2. FORM INPUTS                                                   */}
-      {/* ================================================================ */}
+      {/* INPUTS */}
       <ComponentSection title="Form Inputs" id="inputs">
         <ComponentDemo
           title="Text Input"
-          description="Single-line input with label, placeholder, disabled, and error states"
-          usage="Use for short text entries — names, emails, search queries."
+          description="Single-line text input fields"
+          usage="Use for short text entries like names, emails, etc."
         >
           <div className="space-y-4 max-w-md">
-            <div className="space-y-2">
-              <Label htmlFor="demo-name">Full Name</Label>
-              <Input id="demo-name" placeholder="Enter your name" />
+            <div>
+              <label className="block text-sm font-medium text-[var(--color-neutral-700)] mb-2">
+                Default State
+              </label>
+              <input
+                type="text"
+                placeholder="Enter your name"
+                className="w-full px-4 py-3 border border-[var(--color-neutral-300)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)] focus:border-transparent transition-all"
+              />
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="demo-disabled">Disabled</Label>
-              <Input id="demo-disabled" placeholder="Cannot edit" disabled />
+            <div>
+              <label className="block text-sm font-medium text-[var(--color-neutral-700)] mb-2">
+                Filled State
+              </label>
+              <input
+                type="text"
+                value="John Doe"
+                readOnly
+                className="w-full px-4 py-3 border border-[var(--color-neutral-300)] rounded-lg bg-white"
+              />
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="demo-error">Email (error)</Label>
-              <Input id="demo-error" placeholder="Invalid" className="border-[var(--color-error-500)] focus-visible:ring-[var(--color-error-500)]" />
-              <p className="text-sm text-[var(--color-error-500)]">Please enter a valid email address.</p>
+            <div>
+              <label className="block text-sm font-medium text-[var(--color-neutral-700)] mb-2">
+                Disabled State
+              </label>
+              <input
+                type="text"
+                placeholder="Disabled input"
+                disabled
+                className="w-full px-4 py-3 border border-[var(--color-neutral-200)] rounded-lg bg-[var(--color-neutral-100)] text-[var(--color-neutral-400)] cursor-not-allowed"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-[var(--color-neutral-700)] mb-2">
+                Error State
+              </label>
+              <input
+                type="text"
+                placeholder="Invalid input"
+                className="w-full px-4 py-3 border-2 border-[var(--color-error-500)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-error-500)]"
+              />
+              <p className="text-sm text-[var(--color-error-500)] mt-1">This field is required</p>
             </div>
           </div>
         </ComponentDemo>
 
         <ComponentDemo
           title="Textarea"
-          description="Multi-line text field"
-          usage="Use for longer text — messages, descriptions, feedback."
+          description="Multi-line text input"
+          usage="Use for longer text entries like messages or descriptions"
         >
-          <div className="space-y-2 max-w-md">
-            <Label htmlFor="demo-message">Message</Label>
-            <Textarea id="demo-message" placeholder="Type your message here..." rows={4} />
+          <div className="max-w-md">
+            <label className="block text-sm font-medium text-[var(--color-neutral-700)] mb-2">
+              Message
+            </label>
+            <textarea
+              rows={4}
+              placeholder="Enter your message..."
+              className="w-full px-4 py-3 border border-[var(--color-neutral-300)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)] focus:border-transparent transition-all resize-none"
+            />
           </div>
         </ComponentDemo>
 
         <ComponentDemo
-          title="Select"
-          description="Dropdown selection backed by Radix Select"
-          usage="Use when picking one option from a predefined list."
+          title="Select Dropdown"
+          description="Dropdown selection input"
+          usage="Use when users need to select from a predefined list"
         >
-          <div className="space-y-2 max-w-md">
-            <Label>Class</Label>
-            <Select>
-              <SelectTrigger className="w-full"><SelectValue placeholder="Choose a class" /></SelectTrigger>
-              <SelectContent>
-                <SelectItem value="toddler">Toddler (2–3 yrs)</SelectItem>
-                <SelectItem value="preschool">Preschool (3–4 yrs)</SelectItem>
-                <SelectItem value="kinder">Kindergarten (4–5 yrs)</SelectItem>
-              </SelectContent>
-            </Select>
+          <div className="max-w-md">
+            <label className="block text-sm font-medium text-[var(--color-neutral-700)] mb-2">
+              Choose an option
+            </label>
+            <div className="relative">
+              <select
+                value={selectValue}
+                onChange={(e) => setSelectValue(e.target.value)}
+                className="w-full px-4 py-3 pr-10 border border-[var(--color-neutral-300)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)] focus:border-transparent appearance-none bg-white transition-all"
+              >
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+              </select>
+              <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-[var(--color-neutral-500)] pointer-events-none" size={20} />
+            </div>
           </div>
         </ComponentDemo>
 
         <ComponentDemo
           title="Checkbox"
-          description="Multi-select toggle built on Radix Checkbox"
-          usage="Use when users can select multiple options independently."
+          description="Multiple selection inputs"
+          usage="Use when users can select multiple options"
         >
           <div className="space-y-3">
-            <div className="flex items-center gap-3">
-              <Checkbox id="cb-1" defaultChecked />
-              <Label htmlFor="cb-1">Arts & Crafts</Label>
-            </div>
-            <div className="flex items-center gap-3">
-              <Checkbox id="cb-2" />
-              <Label htmlFor="cb-2">Music & Movement</Label>
-            </div>
-            <div className="flex items-center gap-3">
-              <Checkbox id="cb-3" disabled />
-              <Label htmlFor="cb-3" className="text-[var(--color-neutral-400)]">Full (disabled)</Label>
-            </div>
+            {['checkbox1', 'checkbox2', 'checkbox3'].map((id, index) => (
+              <label key={id} className="flex items-center gap-3 cursor-pointer group">
+                <div className="relative">
+                  <input
+                    type="checkbox"
+                    checked={checkboxStates[id] || false}
+                    onChange={() => toggleCheckbox(id)}
+                    className="peer sr-only"
+                  />
+                  <div className="w-5 h-5 border-2 border-[var(--color-neutral-300)] rounded peer-checked:bg-[var(--color-primary-500)] peer-checked:border-[var(--color-primary-500)] peer-focus:ring-2 peer-focus:ring-[var(--color-primary-300)] transition-all flex items-center justify-center">
+                    {checkboxStates[id] && <Check size={14} className="text-white" />}
+                  </div>
+                </div>
+                <span className="text-[var(--color-neutral-700)] group-hover:text-[var(--color-neutral-900)]">
+                  Checkbox Option {index + 1}
+                </span>
+              </label>
+            ))}
+            <label className="flex items-center gap-3 cursor-not-allowed opacity-50">
+              <div className="w-5 h-5 border-2 border-[var(--color-neutral-300)] rounded bg-[var(--color-neutral-100)]" />
+              <span className="text-[var(--color-neutral-500)]">Disabled Checkbox</span>
+            </label>
           </div>
         </ComponentDemo>
 
         <ComponentDemo
-          title="Radio Group"
-          description="Single-select from mutually exclusive options"
-          usage="Use when only one option may be selected."
+          title="Radio Button"
+          description="Single selection from multiple options"
+          usage="Use when users can select only one option from a group"
         >
-          <RadioGroup defaultValue="half-day">
-            <div className="flex items-center gap-3">
-              <RadioGroupItem value="half-day" id="rg-1" />
-              <Label htmlFor="rg-1">Half Day</Label>
-            </div>
-            <div className="flex items-center gap-3">
-              <RadioGroupItem value="full-day" id="rg-2" />
-              <Label htmlFor="rg-2">Full Day</Label>
-            </div>
-            <div className="flex items-center gap-3">
-              <RadioGroupItem value="extended" id="rg-3" />
-              <Label htmlFor="rg-3">Extended Care</Label>
-            </div>
-          </RadioGroup>
+          <div className="space-y-3">
+            {['option1', 'option2', 'option3'].map((id, index) => (
+              <label key={id} className="flex items-center gap-3 cursor-pointer group">
+                <div className="relative">
+                  <input
+                    type="radio"
+                    name="radio-group"
+                    checked={radioValue === id}
+                    onChange={() => setRadioValue(id)}
+                    className="peer sr-only"
+                  />
+                  <div className="w-5 h-5 border-2 border-[var(--color-neutral-300)] rounded-full peer-checked:border-[var(--color-primary-500)] peer-focus:ring-2 peer-focus:ring-[var(--color-primary-300)] transition-all flex items-center justify-center">
+                    {radioValue === id && (
+                      <div className="w-2.5 h-2.5 bg-[var(--color-primary-500)] rounded-full" />
+                    )}
+                  </div>
+                </div>
+                <span className="text-[var(--color-neutral-700)] group-hover:text-[var(--color-neutral-900)]">
+                  Radio Option {index + 1}
+                </span>
+              </label>
+            ))}
+          </div>
         </ComponentDemo>
 
         <ComponentDemo
-          title="Switch"
-          description="Binary toggle for instant-apply settings"
-          usage="Use for on/off preferences that take effect immediately."
+          title="Switch Toggle"
+          description="Binary on/off controls"
+          usage="Use for settings and preferences that take effect immediately"
         >
-          <div className="space-y-4 max-w-sm">
-            <div className="flex items-center justify-between">
-              <Label htmlFor="sw-1">Email Notifications</Label>
-              <Switch id="sw-1" defaultChecked />
-            </div>
-            <div className="flex items-center justify-between">
-              <Label htmlFor="sw-2">Dark Mode</Label>
-              <Switch id="sw-2" />
-            </div>
-            <div className="flex items-center justify-between">
-              <Label htmlFor="sw-3" className="text-[var(--color-neutral-400)]">Locked</Label>
-              <Switch id="sw-3" disabled />
-            </div>
+          <div className="space-y-4">
+            {['switch1', 'switch2'].map((id, index) => (
+              <label key={id} className="flex items-center justify-between cursor-pointer group max-w-md">
+                <span className="text-[var(--color-neutral-700)]">Enable Feature {index + 1}</span>
+                <div className="relative">
+                  <input
+                    type="checkbox"
+                    checked={switchStates[id] || false}
+                    onChange={() => toggleSwitch(id)}
+                    className="sr-only peer"
+                  />
+                  <div className="w-11 h-6 bg-[var(--color-neutral-300)] rounded-full peer-checked:bg-[var(--color-primary-500)] peer-focus:ring-2 peer-focus:ring-[var(--color-primary-300)] transition-all">
+                    <div className={`absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform ${switchStates[id] ? 'translate-x-5' : ''}`} />
+                  </div>
+                </div>
+              </label>
+            ))}
+            <label className="flex items-center justify-between cursor-not-allowed opacity-50 max-w-md">
+              <span className="text-[var(--color-neutral-500)]">Disabled Switch</span>
+              <div className="w-11 h-6 bg-[var(--color-neutral-200)] rounded-full">
+                <div className="absolute w-5 h-5 bg-white rounded-full shadow top-0.5 left-0.5" />
+              </div>
+            </label>
           </div>
         </ComponentDemo>
 
         <ComponentDemo
           title="Slider"
-          description="Continuous range selector"
-          usage="Use for adjusting numeric values — volume, filter ranges, ages."
+          description="Range input for numeric values"
+          usage="Use for adjusting settings like volume, brightness, or filters"
         >
-          <div className="space-y-2 max-w-md">
-            <div className="flex justify-between text-sm text-[var(--color-neutral-600)]">
-              <Label>Age Range</Label>
-              <span>{sliderValue[0]} years</span>
-            </div>
-            <Slider min={2} max={5} step={1} value={sliderValue} onValueChange={setSliderValue} />
+          <div className="max-w-md space-y-2">
+            <label className="block text-sm font-medium text-[var(--color-neutral-700)]">
+              Value: {sliderValue}
+            </label>
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value={sliderValue}
+              onChange={(e) => setSliderValue(Number(e.target.value))}
+              className="w-full h-2 bg-[var(--color-neutral-200)] rounded-lg appearance-none cursor-pointer slider-thumb"
+              style={{
+                background: `linear-gradient(to right, var(--color-primary-500) 0%, var(--color-primary-500)) ${sliderValue}%, var(--color-neutral-200) ${sliderValue}%, var(--color-neutral-200) 100%)`
+              }}
+            />
           </div>
         </ComponentDemo>
 
         <ComponentDemo
           title="Search Input"
-          description="Text input with leading search icon"
-          usage="Use for search functionality."
+          description="Search input with icon"
+          usage="Use for search functionality"
         >
-          <div className="relative max-w-md">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--color-neutral-400)] h-4 w-4" />
-            <Input className="pl-10" placeholder="Search students..." />
+          <div className="max-w-md relative">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--color-neutral-400)]" size={20} />
+            <input
+              type="search"
+              placeholder="Search..."
+              className="w-full pl-12 pr-4 py-3 border border-[var(--color-neutral-300)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)] focus:border-transparent transition-all"
+            />
           </div>
         </ComponentDemo>
-
-        <FigmaSpec
-          component="Form Inputs"
-          anatomy={['Label', 'Input container', 'Placeholder / value text', 'Helper text (optional)', 'Error text (optional)', 'Leading / trailing icon (optional)']}
-          variants={{ state: 'default | focus | filled | disabled | error', size: 'default (h-9)' }}
-          spacing="Label-to-input gap: 8px. Input padding: 12px horizontal, 8px vertical. Error text margin-top: 4px."
-          typography="Label: body-sm (14px) medium. Input: body (16px) normal. Helper/Error: body-sm (14px)."
-          a11y="Inputs linked to labels via htmlFor/id. Error state uses aria-invalid=true and aria-describedby pointing to error text. Disabled inputs use aria-disabled."
-        />
       </ComponentSection>
 
-      {/* ================================================================ */}
-      {/* 3. CARDS                                                         */}
-      {/* ================================================================ */}
+      {/* CARDS */}
       <ComponentSection title="Cards" id="cards">
         <ComponentDemo
           title="Basic Card"
-          description="Simple content container with header and body"
-          usage="Use for grouping related information."
+          description="Simple content container"
+          usage="Use for grouping related information"
         >
-          <Card className="max-w-sm">
-            <CardHeader>
-              <CardTitle>Welcome Back</CardTitle>
-              <CardDescription>Here is today&apos;s schedule for your child.</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-[var(--color-neutral-600)]">
-                Morning circle starts at 8:30 AM, followed by outdoor play and art class.
-              </p>
-            </CardContent>
-            <CardFooter>
-              <Button variant="outline" size="sm">View Full Schedule</Button>
-            </CardFooter>
-          </Card>
+          <div className="max-w-sm p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <h3 className="text-xl font-bold text-[var(--color-neutral-900)] mb-2">Card Title</h3>
+            <p className="text-[var(--color-neutral-600)] mb-4">
+              This is a basic card component with title and description content.
+            </p>
+            <button className="text-[var(--color-primary-600)] font-medium hover:text-[var(--color-primary-700)]">
+              Learn More →
+            </button>
+          </div>
         </ComponentDemo>
 
         <ComponentDemo
           title="Card with Image"
-          description="Card featuring a visual media header"
-          usage="Use for blog posts, program highlights, or galleries."
+          description="Card with visual media"
+          usage="Use for blog posts, products, or visual content"
         >
-          <Card className="max-w-sm overflow-hidden">
+          <div className="max-w-sm bg-white border border-[var(--color-neutral-200)] rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
             <div className="h-48 bg-gradient-to-br from-[var(--color-primary-300)] to-[var(--color-accent-300)]" />
-            <CardHeader>
-              <CardTitle>Art & Creativity</CardTitle>
-              <CardDescription>Explore imagination through hands-on art projects.</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Button size="sm">Learn More</Button>
-            </CardContent>
-          </Card>
+            <div className="p-6">
+              <h3 className="text-xl font-bold text-[var(--color-neutral-900)] mb-2">Image Card</h3>
+              <p className="text-[var(--color-neutral-600)] mb-4">
+                Beautiful card design with image header for visual appeal.
+              </p>
+              <button className="px-4 py-2 bg-[var(--color-primary-500)] hover:bg-[var(--color-primary-600)] text-white rounded-lg transition-colors">
+                View Details
+              </button>
+            </div>
+          </div>
+        </ComponentDemo>
+
+        <ComponentDemo
+          title="Interactive Card"
+          description="Clickable card with hover effects"
+          usage="Use for navigation or selectable items"
+        >
+          <button className="max-w-sm p-6 bg-white border-2 border-[var(--color-neutral-200)] rounded-xl shadow-sm hover:shadow-lg hover:border-[var(--color-primary-300)] hover:-translate-y-1 transition-all text-left">
+            <div className="flex items-start gap-4">
+              <div className="p-3 bg-[var(--color-primary-100)] rounded-xl">
+                <Star size={24} className="text-[var(--color-primary-600)]" />
+              </div>
+              <div className="flex-1">
+                <h3 className="text-lg font-bold text-[var(--color-neutral-900)] mb-1">Interactive Card</h3>
+                <p className="text-sm text-[var(--color-neutral-600)]">
+                  Entire card is clickable with smooth hover animation
+                </p>
+              </div>
+            </div>
+          </button>
         </ComponentDemo>
 
         <ComponentDemo
           title="Stat Card"
-          description="Metric display card for dashboards"
-          usage="Use to surface key KPIs."
+          description="Card for displaying metrics and statistics"
+          usage="Use in dashboards for key metrics"
         >
-          <Card className="max-w-xs bg-gradient-to-br from-[var(--color-primary-500)] to-[var(--color-accent-500)] text-white border-0">
-            <CardHeader>
-              <CardDescription className="text-white/80">Total Students</CardDescription>
-              <CardTitle className="text-4xl text-white">1,234</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-white/80 flex items-center gap-1">
-                <span className="text-green-300">↑ 12%</span> vs last month
-              </p>
-            </CardContent>
-          </Card>
+          <div className="max-w-xs p-6 bg-gradient-to-br from-[var(--color-primary-500)] to-[var(--color-accent-500)] rounded-xl shadow-lg text-white">
+            <p className="text-sm opacity-90 mb-1">Total Students</p>
+            <p className="text-4xl font-bold mb-2">1,234</p>
+            <p className="text-sm opacity-80 flex items-center gap-1">
+              <span className="text-green-300">↑ 12%</span> vs last month
+            </p>
+          </div>
         </ComponentDemo>
-
-        <FigmaSpec
-          component="Card"
-          anatomy={['Root container', 'CardHeader', 'CardTitle', 'CardDescription', 'CardContent', 'CardFooter', 'CardAction (optional)']}
-          variants={{ style: 'default | elevated | gradient' }}
-          spacing="Padding: 24px all sides. Header-to-content gap: 16px. Footer top border padding: 24px."
-          typography="Title: heading-3 (24px) bold. Description: body-sm (14px) normal. Content: body (16px)."
-          a11y="Use semantic heading levels inside CardTitle. Interactive cards should be wrapped in a <button> or <a> with appropriate role."
-        />
       </ComponentSection>
 
-      {/* ================================================================ */}
-      {/* 4. NAVIGATION                                                    */}
-      {/* ================================================================ */}
+      {/* NAVIGATION */}
       <ComponentSection title="Navigation" id="navigation">
         <ComponentDemo
-          title="Tabs"
-          description="Horizontal tab navigation backed by Radix Tabs"
-          usage="Use for switching between related views within the same context."
+          title="Navigation Tabs"
+          description="Horizontal tab navigation"
+          usage="Use for switching between related views"
         >
-          <Tabs defaultValue="schedule" className="max-w-lg">
-            <TabsList>
-              <TabsTrigger value="schedule">Schedule</TabsTrigger>
-              <TabsTrigger value="activities">Activities</TabsTrigger>
-              <TabsTrigger value="reports">Reports</TabsTrigger>
-            </TabsList>
-            <TabsContent value="schedule" className="p-4 text-sm text-[var(--color-neutral-600)]">
-              Today: Morning circle → Outdoor play → Art class → Lunch → Nap → Music
-            </TabsContent>
-            <TabsContent value="activities" className="p-4 text-sm text-[var(--color-neutral-600)]">
-              Upcoming: Nature walk (Wed), Puppet show (Fri), Parent visit (Sat)
-            </TabsContent>
-            <TabsContent value="reports" className="p-4 text-sm text-[var(--color-neutral-600)]">
-              Weekly progress reports are available every Friday.
-            </TabsContent>
-          </Tabs>
+          <div className="flex gap-1 p-1 bg-[var(--color-neutral-100)] rounded-lg w-fit">
+            <button className="px-6 py-2 bg-white text-[var(--color-neutral-900)] rounded-md shadow-sm font-medium">
+              Active
+            </button>
+            <button className="px-6 py-2 text-[var(--color-neutral-600)] hover:text-[var(--color-neutral-900)] rounded-md transition-colors">
+              Tab 2
+            </button>
+            <button className="px-6 py-2 text-[var(--color-neutral-600)] hover:text-[var(--color-neutral-900)] rounded-md transition-colors">
+              Tab 3
+            </button>
+          </div>
         </ComponentDemo>
 
         <ComponentDemo
           title="Breadcrumbs"
-          description="Hierarchical navigation path"
-          usage="Show the user's current location in the site hierarchy."
+          description="Navigation path indicator"
+          usage="Use to show current location in hierarchy"
         >
-          <Breadcrumb>
-            <BreadcrumbList>
-              <BreadcrumbItem><BreadcrumbLink href="#">Home</BreadcrumbLink></BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem><BreadcrumbLink href="#">Parents</BreadcrumbLink></BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem><BreadcrumbPage>Resources</BreadcrumbPage></BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
+          <nav className="flex items-center gap-2 text-sm">
+            <a href="#" className="text-[var(--color-primary-600)] hover:text-[var(--color-primary-700)]">Home</a>
+            <span className="text-[var(--color-neutral-400)]">/</span>
+            <a href="#" className="text-[var(--color-primary-600)] hover:text-[var(--color-primary-700)]">Parents</a>
+            <span className="text-[var(--color-neutral-400)]">/</span>
+            <span className="text-[var(--color-neutral-700)]">Resources</span>
+          </nav>
         </ComponentDemo>
 
         <ComponentDemo
           title="Pagination"
-          description="Multi-page navigation controls"
-          usage="Use for paginated lists or search results."
+          description="Page navigation controls"
+          usage="Use for multi-page content"
         >
-          <Pagination>
-            <PaginationContent>
-              <PaginationItem><PaginationPrevious href="#" /></PaginationItem>
-              <PaginationItem><PaginationLink href="#" isActive>1</PaginationLink></PaginationItem>
-              <PaginationItem><PaginationLink href="#">2</PaginationLink></PaginationItem>
-              <PaginationItem><PaginationLink href="#">3</PaginationLink></PaginationItem>
-              <PaginationItem><PaginationEllipsis /></PaginationItem>
-              <PaginationItem><PaginationNext href="#" /></PaginationItem>
-            </PaginationContent>
-          </Pagination>
+          <div className="flex items-center gap-2">
+            <button className="px-4 py-2 border border-[var(--color-neutral-300)] rounded-lg text-[var(--color-neutral-700)] hover:bg-[var(--color-neutral-100)] transition-colors">
+              Previous
+            </button>
+            <button className="px-4 py-2 bg-[var(--color-primary-500)] text-white rounded-lg font-medium">1</button>
+            <button className="px-4 py-2 border border-[var(--color-neutral-300)] rounded-lg text-[var(--color-neutral-700)] hover:bg-[var(--color-neutral-100)] transition-colors">2</button>
+            <button className="px-4 py-2 border border-[var(--color-neutral-300)] rounded-lg text-[var(--color-neutral-700)] hover:bg-[var(--color-neutral-100)] transition-colors">3</button>
+            <button className="px-4 py-2 border border-[var(--color-neutral-300)] rounded-lg text-[var(--color-neutral-700)] hover:bg-[var(--color-neutral-100)] transition-colors">
+              Next
+            </button>
+          </div>
         </ComponentDemo>
 
         <ComponentDemo
-          title="Dropdown Menu"
-          description="Contextual action menu built on Radix DropdownMenu"
-          usage="Use for contextual options or overflow menus."
+          title="Icon Navigation"
+          description="Icon-based navigation menu"
+          usage="Use for bottom navigation or side menus"
         >
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="outline"><Settings className="mr-2 h-4 w-4" /> Options <ChevronDown className="ml-2 h-4 w-4" /></Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-48">
-              <DropdownMenuLabel>Actions</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Edit Profile</DropdownMenuItem>
-              <DropdownMenuItem>View Schedule</DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem className="text-[var(--color-error-500)]">Remove Child</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <div className="flex gap-2 p-2 bg-white border border-[var(--color-neutral-200)] rounded-xl shadow-sm w-fit">
+            <button className="p-3 bg-[var(--color-primary-100)] text-[var(--color-primary-600)] rounded-lg">
+              <Home size={20} />
+            </button>
+            <button className="p-3 text-[var(--color-neutral-500)] hover:bg-[var(--color-neutral-100)] rounded-lg transition-colors">
+              <Search size={20} />
+            </button>
+            <button className="p-3 text-[var(--color-neutral-500)] hover:bg-[var(--color-neutral-100)] rounded-lg transition-colors">
+              <Bell size={20} />
+            </button>
+            <button className="p-3 text-[var(--color-neutral-500)] hover:bg-[var(--color-neutral-100)] rounded-lg transition-colors">
+              <User size={20} />
+            </button>
+          </div>
         </ComponentDemo>
-
-        <FigmaSpec
-          component="Navigation"
-          anatomy={['Tabs: TabsList + TabsTrigger + TabsContent', 'Breadcrumb: BreadcrumbList + BreadcrumbItem + BreadcrumbSeparator', 'Pagination: PaginationContent + PaginationItem + PaginationLink', 'DropdownMenu: Trigger + Content + Items + Separators']}
-          variants={{ tabs: 'default | underlined', pagination: 'numbered | compact' }}
-          spacing="Tab trigger padding: 12px 16px. Breadcrumb separator gap: 8px. Pagination item gap: 4px. Dropdown padding: 4px."
-          typography="Tab trigger: body-sm (14px) medium. Breadcrumb: body-sm (14px). Dropdown item: body-sm (14px)."
-          a11y="Tabs: role=tablist/tab/tabpanel with arrow-key navigation. Breadcrumb: nav[aria-label=breadcrumb]. DropdownMenu: fully keyboard-navigable, Escape to close."
-        />
       </ComponentSection>
 
-      {/* ================================================================ */}
-      {/* 5. FEEDBACK & ALERTS                                             */}
-      {/* ================================================================ */}
-      <ComponentSection title="Feedback & Status" id="feedback">
+      {/* FEEDBACK */}
+      <ComponentSection title="Feedback & Alerts" id="feedback">
         <ComponentDemo
-          title="Alert"
-          description="Contextual feedback messages using the Alert primitive"
-          usage="Communicate status, warnings, errors, or informational messages."
+          title="Alert Messages"
+          description="Feedback messages for different states"
+          usage="Use to communicate status, warnings, or errors"
         >
           <div className="space-y-3 max-w-2xl">
-            <Alert>
-              <CheckCircle className="h-4 w-4" />
-              <AlertTitle>Enrollment confirmed</AlertTitle>
-              <AlertDescription>Your child has been registered for the Fall 2026 term.</AlertDescription>
-            </Alert>
-            <Alert>
-              <Info className="h-4 w-4" />
-              <AlertTitle>Reminder</AlertTitle>
-              <AlertDescription>Parent-teacher conference is scheduled for March 5.</AlertDescription>
-            </Alert>
-            <Alert variant="destructive">
-              <AlertCircle className="h-4 w-4" />
-              <AlertTitle>Payment overdue</AlertTitle>
-              <AlertDescription>Please update your billing information to avoid service interruption.</AlertDescription>
-            </Alert>
+            <div className="flex items-start gap-3 p-4 bg-[var(--color-success-50)] border border-[var(--color-success-200)] rounded-lg">
+              <CheckCircle size={20} className="text-[var(--color-success-600)] mt-0.5" />
+              <div className="flex-1">
+                <p className="font-medium text-[var(--color-success-800)]">Success</p>
+                <p className="text-sm text-[var(--color-success-700)]">Your changes have been saved successfully.</p>
+              </div>
+              <button className="text-[var(--color-success-600)] hover:text-[var(--color-success-800)]">
+                <X size={18} />
+              </button>
+            </div>
+
+            <div className="flex items-start gap-3 p-4 bg-[var(--color-info-50)] border border-[var(--color-info-200)] rounded-lg">
+              <Info size={20} className="text-[var(--color-info-600)] mt-0.5" />
+              <div className="flex-1">
+                <p className="font-medium text-[var(--color-info-800)]">Information</p>
+                <p className="text-sm text-[var(--color-info-700)]">New features are now available. Check them out!</p>
+              </div>
+              <button className="text-[var(--color-info-600)] hover:text-[var(--color-info-800)]">
+                <X size={18} />
+              </button>
+            </div>
+
+            <div className="flex items-start gap-3 p-4 bg-[var(--color-warning-50)] border border-[var(--color-warning-200)] rounded-lg">
+              <AlertCircle size={20} className="text-[var(--color-warning-600)] mt-0.5" />
+              <div className="flex-1">
+                <p className="font-medium text-[var(--color-warning-800)]">Warning</p>
+                <p className="text-sm text-[var(--color-warning-700)]">Please review your information before submitting.</p>
+              </div>
+              <button className="text-[var(--color-warning-600)] hover:text-[var(--color-warning-800)]">
+                <X size={18} />
+              </button>
+            </div>
+
+            <div className="flex items-start gap-3 p-4 bg-[var(--color-error-50)] border border-[var(--color-error-200)] rounded-lg">
+              <XCircle size={20} className="text-[var(--color-error-600)] mt-0.5" />
+              <div className="flex-1">
+                <p className="font-medium text-[var(--color-error-800)]">Error</p>
+                <p className="text-sm text-[var(--color-error-700)]">There was an error processing your request.</p>
+              </div>
+              <button className="text-[var(--color-error-600)] hover:text-[var(--color-error-800)]">
+                <X size={18} />
+              </button>
+            </div>
           </div>
         </ComponentDemo>
 
         <ComponentDemo
-          title="Badge"
-          description="Small status labels"
-          usage="Use for counts, statuses, tags, or categories."
-        >
-          <div className="flex flex-wrap items-center gap-3">
-            <Badge>New</Badge>
-            <Badge variant="secondary">Active</Badge>
-            <Badge variant="outline">Draft</Badge>
-            <Badge variant="destructive">Urgent</Badge>
-          </div>
-        </ComponentDemo>
-
-        <ComponentDemo
-          title="Progress"
-          description="Visual completion indicator"
-          usage="Show task progress, upload status, or learning milestones."
+          title="Progress Bar"
+          description="Visual progress indicator"
+          usage="Use to show task completion or loading progress"
         >
           <div className="space-y-4 max-w-md">
-            <div className="space-y-2">
-              <div className="flex justify-between text-sm text-[var(--color-neutral-700)]">
-                <span>Learning milestones</span>
-                <span>{progressValue}%</span>
+            <div>
+              <div className="flex justify-between text-sm text-[var(--color-neutral-700)] mb-2">
+                <span>Progress</span>
+                <span>75%</span>
               </div>
-              <Progress value={progressValue} />
-            </div>
-            <div className="space-y-2">
-              <div className="flex justify-between text-sm text-[var(--color-neutral-700)]">
-                <span>Attendance</span>
-                <span>100%</span>
+              <div className="h-2 bg-[var(--color-neutral-200)] rounded-full overflow-hidden">
+                <div className="h-full bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-accent-500)] rounded-full" style={{ width: '75%' }} />
               </div>
-              <Progress value={100} />
             </div>
-          </div>
-        </ComponentDemo>
-
-        <ComponentDemo
-          title="Skeleton"
-          description="Loading placeholder that mimics content layout"
-          usage="Show while content is being fetched — reduces perceived latency."
-        >
-          <div className="flex items-center gap-4 max-w-sm">
-            <Skeleton className="h-12 w-12 rounded-full" />
-            <div className="space-y-2 flex-1">
-              <Skeleton className="h-4 w-3/4" />
-              <Skeleton className="h-4 w-1/2" />
+            <div>
+              <div className="flex justify-between text-sm text-[var(--color-neutral-700)] mb-2">
+                <span>Loading</span>
+                <span>50%</span>
+              </div>
+              <div className="h-3 bg-[var(--color-neutral-200)] rounded-full overflow-hidden">
+                <div className="h-full bg-[var(--color-secondary-500)] rounded-full" style={{ width: '50%' }} />
+              </div>
             </div>
           </div>
         </ComponentDemo>
 
         <ComponentDemo
           title="Loading Spinners"
-          description="Animated activity indicators"
-          usage="Use for indeterminate loading states."
+          description="Loading state indicators"
+          usage="Use to indicate content is loading"
         >
           <div className="flex flex-wrap items-center gap-6">
             <div className="w-8 h-8 border-4 border-[var(--color-neutral-200)] border-t-[var(--color-primary-500)] rounded-full animate-spin" />
             <div className="w-10 h-10 border-4 border-[var(--color-neutral-200)] border-t-[var(--color-accent-500)] rounded-full animate-spin" />
-            <div className="flex gap-1.5">
-              <div className="w-2.5 h-2.5 bg-[var(--color-primary-500)] rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-              <div className="w-2.5 h-2.5 bg-[var(--color-primary-500)] rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-              <div className="w-2.5 h-2.5 bg-[var(--color-primary-500)] rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+            <div className="flex gap-2">
+              <div className="w-3 h-3 bg-[var(--color-primary-500)] rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+              <div className="w-3 h-3 bg-[var(--color-primary-500)] rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+              <div className="w-3 h-3 bg-[var(--color-primary-500)] rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
             </div>
           </div>
         </ComponentDemo>
 
-        <FigmaSpec
-          component="Feedback"
-          anatomy={['Alert: container + icon + title + description', 'Badge: inline container + text', 'Progress: track + indicator', 'Skeleton: animated placeholder block']}
-          variants={{ alert: 'default | destructive', badge: 'default | secondary | outline | destructive', progress: 'determinate | indeterminate' }}
-          spacing="Alert padding: 16px. Badge padding: 4px 10px. Progress height: 8px."
-          typography="Alert title: body-sm (14px) semibold. Alert description: body-sm (14px). Badge: caption (12px) medium."
-          a11y="Alert: role=alert for important messages. Progress: role=progressbar, aria-valuenow, aria-valuemin, aria-valuemax. Skeleton: aria-hidden=true."
-        />
+        <ComponentDemo
+          title="Badge"
+          description="Small status indicators"
+          usage="Use for counts, statuses, or labels"
+        >
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="px-3 py-1 bg-[var(--color-primary-100)] text-[var(--color-primary-700)] text-sm font-medium rounded-full">
+              New
+            </span>
+            <span className="px-3 py-1 bg-[var(--color-success-100)] text-[var(--color-success-700)] text-sm font-medium rounded-full">
+              Active
+            </span>
+            <span className="px-3 py-1 bg-[var(--color-warning-100)] text-[var(--color-warning-700)] text-sm font-medium rounded-full">
+              Pending
+            </span>
+            <span className="px-3 py-1 bg-[var(--color-error-100)] text-[var(--color-error-700)] text-sm font-medium rounded-full">
+              Closed
+            </span>
+            <span className="px-2 py-0.5 bg-[var(--color-accent-500)] text-white text-xs font-bold rounded-full">
+              99+
+            </span>
+          </div>
+        </ComponentDemo>
       </ComponentSection>
 
-      {/* ================================================================ */}
-      {/* 6. MEDIA & DISPLAY                                               */}
-      {/* ================================================================ */}
-      <ComponentSection title="Media & Display" id="media">
+      {/* MEDIA & AVATARS */}
+      <ComponentSection title="Media & Avatars" id="media">
         <ComponentDemo
           title="Avatar"
-          description="User identity display with image and fallback"
-          usage="Represent users, teachers, or student profiles."
+          description="User profile images"
+          usage="Use to represent users or accounts"
         >
           <div className="flex flex-wrap items-end gap-4">
-            <Avatar className="h-10 w-10">
-              <AvatarFallback className="bg-gradient-to-br from-[var(--color-primary-400)] to-[var(--color-accent-400)] text-white text-xs">AB</AvatarFallback>
-            </Avatar>
-            <Avatar className="h-14 w-14">
-              <AvatarFallback className="bg-gradient-to-br from-[var(--color-secondary-400)] to-[var(--color-primary-400)] text-white">JD</AvatarFallback>
-            </Avatar>
-            <Avatar className="h-20 w-20">
-              <AvatarFallback className="bg-gradient-to-br from-[var(--color-accent-400)] to-[var(--color-secondary-400)] text-white text-xl">MK</AvatarFallback>
-            </Avatar>
+            <div className="w-12 h-12 bg-gradient-to-br from-[var(--color-primary-400)] to-[var(--color-accent-400)] rounded-full flex items-center justify-center text-white font-bold">
+              AB
+            </div>
+            <div className="w-16 h-16 bg-gradient-to-br from-[var(--color-secondary-400)] to-[var(--color-primary-400)] rounded-full flex items-center justify-center text-white font-bold text-lg">
+              JD
+            </div>
+            <div className="w-20 h-20 bg-gradient-to-br from-[var(--color-accent-400)] to-[var(--color-secondary-400)] rounded-full flex items-center justify-center text-white font-bold text-xl">
+              MK
+            </div>
             <div className="relative">
-              <Avatar className="h-14 w-14">
-                <AvatarFallback className="bg-gradient-to-br from-[var(--color-primary-400)] to-[var(--color-accent-400)] text-white">ON</AvatarFallback>
-              </Avatar>
-              <div className="absolute bottom-0 right-0 w-3.5 h-3.5 bg-[var(--color-success-500)] border-2 border-white rounded-full" />
+              <div className="w-16 h-16 bg-gradient-to-br from-[var(--color-primary-400)] to-[var(--color-accent-400)] rounded-full" />
+              <div className="absolute bottom-0 right-0 w-4 h-4 bg-[var(--color-success-500)] border-2 border-white rounded-full" />
             </div>
           </div>
         </ComponentDemo>
 
         <ComponentDemo
-          title="Separator"
-          description="Visual divider between content sections"
-          usage="Use to create clear visual boundaries."
+          title="Image Placeholder"
+          description="Placeholder for images"
+          usage="Use while images are loading or unavailable"
         >
-          <div className="space-y-4 max-w-md">
-            <Separator />
-            <div className="flex items-center gap-4">
-              <Separator className="flex-1" />
-              <span className="text-sm text-[var(--color-neutral-500)]">OR</span>
-              <Separator className="flex-1" />
+          <div className="space-y-4">
+            <div className="w-64 h-48 bg-[var(--color-neutral-100)] rounded-lg flex items-center justify-center">
+              <Eye size={32} className="text-[var(--color-neutral-400)]" />
             </div>
-            <Separator className="bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-accent-500)] h-0.5" />
+            <div className="w-32 h-32 bg-gradient-to-br from-[var(--color-primary-200)] to-[var(--color-accent-200)] rounded-xl" />
           </div>
         </ComponentDemo>
 
         <ComponentDemo
-          title="Scroll Area"
-          description="Custom styled scrollbar container"
-          usage="Use for overflowing content areas with a consistent scrollbar."
+          title="Video Placeholder"
+          description="Video player placeholder"
+          usage="Use for video content areas"
         >
-          <ScrollArea className="h-40 w-full max-w-sm rounded-md border p-4">
-            <div className="space-y-4">
-              {Array.from({ length: 10 }, (_, i) => (
-                <p key={i} className="text-sm text-[var(--color-neutral-600)]">
-                  Student {i + 1}: Activity log entry for today&apos;s session. Participated in morning circle and art class.
-                </p>
-              ))}
-            </div>
-          </ScrollArea>
-        </ComponentDemo>
-
-        <ComponentDemo
-          title="Hover Card"
-          description="Rich preview on hover"
-          usage="Show detailed previews without navigating away."
-        >
-          <HoverCard>
-            <HoverCardTrigger asChild>
-              <Button variant="link" className="text-[var(--color-primary-600)]">@jasmine-kinder</Button>
-            </HoverCardTrigger>
-            <HoverCardContent className="w-72">
-              <div className="flex gap-3">
-                <Avatar className="h-10 w-10">
-                  <AvatarFallback className="bg-[var(--color-primary-100)] text-[var(--color-primary-700)]">JK</AvatarFallback>
-                </Avatar>
-                <div>
-                  <h4 className="text-sm font-semibold">Jasmine Kindergarten</h4>
-                  <p className="text-xs text-[var(--color-neutral-500)]">Joyful learning for children aged 2–5 in Indonesia.</p>
-                </div>
-              </div>
-            </HoverCardContent>
-          </HoverCard>
-        </ComponentDemo>
-
-        <ComponentDemo
-          title="Image Placeholder & Video"
-          description="Placeholder content for media areas"
-          usage="Use while media is loading or as fallback."
-        >
-          <div className="flex flex-wrap gap-4">
-            <div className="w-48 h-36 bg-[var(--color-neutral-100)] rounded-lg flex items-center justify-center">
-              <Eye className="h-8 w-8 text-[var(--color-neutral-400)]" />
-            </div>
-            <div className="relative w-48 h-36 bg-[var(--color-neutral-900)] rounded-lg overflow-hidden group cursor-pointer">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Play className="h-5 w-5 text-[var(--color-neutral-900)] ml-0.5" />
-                </div>
+          <div className="relative w-full max-w-md aspect-video bg-[var(--color-neutral-900)] rounded-xl overflow-hidden group cursor-pointer">
+            <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary-500)]/20 to-[var(--color-accent-500)]/20" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                <Play size={28} className="text-[var(--color-neutral-900)] ml-1" />
               </div>
             </div>
           </div>
         </ComponentDemo>
-
-        <FigmaSpec
-          component="Media & Display"
-          anatomy={['Avatar: root + image + fallback + status dot (optional)', 'Separator: horizontal or vertical rule', 'ScrollArea: viewport + scrollbar + thumb', 'HoverCard: trigger + content panel']}
-          variants={{ avatar: 'sm (32px) | md (40px) | lg (56px) | xl (80px)', separator: 'horizontal | vertical' }}
-          spacing="Avatar status dot offset: -2px. ScrollArea padding: 16px. HoverCard content padding: 16px."
-          typography="Avatar fallback: body-sm (14px) bold. HoverCard title: body-sm (14px) semibold."
-          a11y="Avatar images need alt text. Separator uses role=separator. ScrollArea maintains native keyboard scrolling."
-        />
       </ComponentSection>
 
-      {/* ================================================================ */}
-      {/* 7. DATA DISPLAY                                                  */}
-      {/* ================================================================ */}
+      {/* DATA DISPLAY */}
       <ComponentSection title="Data Display" id="data">
         <ComponentDemo
-          title="Table"
-          description="Structured tabular data using the Table primitive"
-          usage="Use for lists, rosters, schedules, and structured records."
+          title="Simple Table"
+          description="Tabular data display"
+          usage="Use for structured data presentation"
         >
-          <div className="max-w-2xl">
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Name</TableHead>
-                  <TableHead>Age</TableHead>
-                  <TableHead>Class</TableHead>
-                  <TableHead>Status</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                <TableRow>
-                  <TableCell className="font-medium">Emma Johnson</TableCell>
-                  <TableCell>4</TableCell>
-                  <TableCell>Preschool</TableCell>
-                  <TableCell><Badge variant="secondary">Active</Badge></TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">Liam Smith</TableCell>
-                  <TableCell>3</TableCell>
-                  <TableCell>Toddler</TableCell>
-                  <TableCell><Badge variant="secondary">Active</Badge></TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">Sophia Brown</TableCell>
-                  <TableCell>5</TableCell>
-                  <TableCell>Kindergarten</TableCell>
-                  <TableCell><Badge variant="outline">Pending</Badge></TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="border-b-2 border-[var(--color-neutral-300)]">
+                  <th className="px-4 py-3 text-left text-sm font-semibold text-[var(--color-neutral-900)]">Name</th>
+                  <th className="px-4 py-3 text-left text-sm font-semibold text-[var(--color-neutral-900)]">Age</th>
+                  <th className="px-4 py-3 text-left text-sm font-semibold text-[var(--color-neutral-900)]">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-[var(--color-neutral-200)] hover:bg-[var(--color-neutral-50)] transition-colors">
+                  <td className="px-4 py-3 text-sm text-[var(--color-neutral-700)]">Emma Johnson</td>
+                  <td className="px-4 py-3 text-sm text-[var(--color-neutral-700)]">4</td>
+                  <td className="px-4 py-3">
+                    <span className="px-2 py-1 bg-[var(--color-success-100)] text-[var(--color-success-700)] text-xs rounded-full">Active</span>
+                  </td>
+                </tr>
+                <tr className="border-b border-[var(--color-neutral-200)] hover:bg-[var(--color-neutral-50)] transition-colors">
+                  <td className="px-4 py-3 text-sm text-[var(--color-neutral-700)]">Liam Smith</td>
+                  <td className="px-4 py-3 text-sm text-[var(--color-neutral-700)]">3</td>
+                  <td className="px-4 py-3">
+                    <span className="px-2 py-1 bg-[var(--color-success-100)] text-[var(--color-success-700)] text-xs rounded-full">Active</span>
+                  </td>
+                </tr>
+                <tr className="hover:bg-[var(--color-neutral-50)] transition-colors">
+                  <td className="px-4 py-3 text-sm text-[var(--color-neutral-700)]">Sophia Brown</td>
+                  <td className="px-4 py-3 text-sm text-[var(--color-neutral-700)]">5</td>
+                  <td className="px-4 py-3">
+                    <span className="px-2 py-1 bg-[var(--color-warning-100)] text-[var(--color-warning-700)] text-xs rounded-full">Pending</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </ComponentDemo>
 
-        <FigmaSpec
-          component="Table"
-          anatomy={['Table root', 'TableHeader + TableRow + TableHead', 'TableBody + TableRow + TableCell', 'TableFooter (optional)', 'TableCaption (optional)']}
-          variants={{ density: 'default | compact', bordered: 'true | false' }}
-          spacing="Cell padding: 8px 16px. Header bottom border: 2px. Row border: 1px."
-          typography="Header: body-sm (14px) medium, neutral-500. Cell: body-sm (14px) normal, neutral-700."
-          a11y="Use semantic <table>, <thead>, <tbody> elements. Sortable columns should use aria-sort."
-        />
+        <ComponentDemo
+          title="List Items"
+          description="Vertical list with actions"
+          usage="Use for menus, options, or content lists"
+        >
+          <div className="space-y-2 max-w-md">
+            <button className="w-full flex items-center justify-between p-4 bg-white border border-[var(--color-neutral-200)] rounded-lg hover:border-[var(--color-primary-300)] hover:shadow-sm transition-all text-left">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-[var(--color-primary-100)] rounded-lg flex items-center justify-center">
+                  <Settings size={20} className="text-[var(--color-primary-600)]" />
+                </div>
+                <div>
+                  <p className="font-medium text-[var(--color-neutral-900)]">Settings</p>
+                  <p className="text-sm text-[var(--color-neutral-500)]">Manage preferences</p>
+                </div>
+              </div>
+              <ChevronDown size={20} className="text-[var(--color-neutral-400)] -rotate-90" />
+            </button>
+
+            <button className="w-full flex items-center justify-between p-4 bg-white border border-[var(--color-neutral-200)] rounded-lg hover:border-[var(--color-primary-300)] hover:shadow-sm transition-all text-left">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-[var(--color-secondary-100)] rounded-lg flex items-center justify-center">
+                  <Bell size={20} className="text-[var(--color-secondary-600)]" />
+                </div>
+                <div>
+                  <p className="font-medium text-[var(--color-neutral-900)]">Notifications</p>
+                  <p className="text-sm text-[var(--color-neutral-500)]">3 new messages</p>
+                </div>
+              </div>
+              <span className="px-2 py-0.5 bg-[var(--color-error-500)] text-white text-xs font-bold rounded-full">3</span>
+            </button>
+          </div>
+        </ComponentDemo>
       </ComponentSection>
 
-      {/* ================================================================ */}
-      {/* 8. OVERLAYS                                                      */}
-      {/* ================================================================ */}
-      <ComponentSection title="Overlays" id="overlays">
+      {/* OVERLAYS */}
+      <ComponentSection title="Overlays & Modals" id="overlays">
         <ComponentDemo
-          title="Dialog"
-          description="Modal overlay for focused interactions"
-          usage="Use for confirmations, forms, or important messages that require attention."
+          title="Modal Dialog"
+          description="Overlay dialog for focused interactions"
+          usage="Use for confirmations, forms, or important messages"
         >
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button>Open Dialog</Button>
-            </DialogTrigger>
-            <DialogContent>
-              <DialogHeader>
-                <DialogTitle>Confirm Enrollment</DialogTitle>
-                <DialogDescription>Are you sure you want to enroll your child in the Fall 2026 program?</DialogDescription>
-              </DialogHeader>
-              <DialogFooter>
-                <DialogClose asChild><Button variant="outline">Cancel</Button></DialogClose>
-                <DialogClose asChild><Button>Confirm</Button></DialogClose>
-              </DialogFooter>
-            </DialogContent>
-          </Dialog>
-        </ComponentDemo>
+          <div>
+            <button 
+              onClick={() => setShowModal(true)}
+              className="px-6 py-3 bg-[var(--color-primary-500)] hover:bg-[var(--color-primary-600)] text-white rounded-lg transition-colors"
+            >
+              Open Modal
+            </button>
 
-        <ComponentDemo
-          title="Sheet"
-          description="Slide-out panel from the edge of the screen"
-          usage="Use for secondary content, filters, or mobile navigation."
-        >
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="outline">Open Sheet</Button>
-            </SheetTrigger>
-            <SheetContent>
-              <SheetHeader>
-                <SheetTitle>Notifications</SheetTitle>
-                <SheetDescription>You have 3 unread messages from teachers.</SheetDescription>
-              </SheetHeader>
-              <div className="py-4 space-y-3">
-                {['Art class update', 'Schedule change', 'Photo day reminder'].map((msg) => (
-                  <div key={msg} className="flex items-center gap-3 p-3 bg-[var(--color-neutral-100)] rounded-lg">
-                    <Bell className="h-4 w-4 text-[var(--color-primary-500)]" />
-                    <span className="text-sm">{msg}</span>
+            {showModal && (
+              <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+                <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 animate-in fade-in duration-200">
+                  <div className="flex items-start justify-between mb-4">
+                    <h3 className="text-2xl font-bold text-[var(--color-neutral-900)]">Modal Title</h3>
+                    <button 
+                      onClick={() => setShowModal(false)}
+                      className="p-1 hover:bg-[var(--color-neutral-100)] rounded-lg transition-colors"
+                    >
+                      <X size={20} />
+                    </button>
                   </div>
-                ))}
+                  <p className="text-[var(--color-neutral-600)] mb-6">
+                    This is a modal dialog. It captures user focus and requires interaction before continuing.
+                  </p>
+                  <div className="flex gap-3 justify-end">
+                    <button 
+                      onClick={() => setShowModal(false)}
+                      className="px-4 py-2 border border-[var(--color-neutral-300)] text-[var(--color-neutral-700)] rounded-lg hover:bg-[var(--color-neutral-100)] transition-colors"
+                    >
+                      Cancel
+                    </button>
+                    <button 
+                      onClick={() => setShowModal(false)}
+                      className="px-4 py-2 bg-[var(--color-primary-500)] hover:bg-[var(--color-primary-600)] text-white rounded-lg transition-colors"
+                    >
+                      Confirm
+                    </button>
+                  </div>
+                </div>
               </div>
-              <SheetClose asChild><Button className="w-full">Mark All Read</Button></SheetClose>
-            </SheetContent>
-          </Sheet>
+            )}
+          </div>
         </ComponentDemo>
 
         <ComponentDemo
           title="Tooltip"
-          description="Contextual help text on hover/focus"
-          usage="Provide brief additional information without cluttering the UI."
+          description="Contextual help text"
+          usage="Use for additional information on hover"
         >
-          <TooltipProvider>
-            <div className="flex gap-4">
-              <Tooltip>
-                <TooltipTrigger asChild><Button variant="outline" size="icon" aria-label="Copy"><Copy className="h-4 w-4" /></Button></TooltipTrigger>
-                <TooltipContent><p>Copy to clipboard</p></TooltipContent>
-              </Tooltip>
-              <Tooltip>
-                <TooltipTrigger asChild><Button variant="outline" size="icon" aria-label="Settings"><Settings className="h-4 w-4" /></Button></TooltipTrigger>
-                <TooltipContent><p>Open settings</p></TooltipContent>
-              </Tooltip>
-              <Tooltip>
-                <TooltipTrigger asChild><Button variant="outline" size="icon" aria-label="Notifications"><Bell className="h-4 w-4" /></Button></TooltipTrigger>
-                <TooltipContent><p>3 new notifications</p></TooltipContent>
-              </Tooltip>
-            </div>
-          </TooltipProvider>
-        </ComponentDemo>
-
-        <ComponentDemo
-          title="Popover"
-          description="Floating panel anchored to a trigger"
-          usage="Use for forms, settings panels, or rich content that doesn't need a full dialog."
-        >
-          <Popover>
-            <PopoverTrigger asChild>
-              <Button variant="outline">Quick Settings</Button>
-            </PopoverTrigger>
-            <PopoverContent className="w-64">
-              <div className="space-y-3">
-                <h4 className="font-medium text-sm">Display Preferences</h4>
-                <div className="flex items-center justify-between">
-                  <Label htmlFor="pop-switch" className="text-sm">Dark mode</Label>
-                  <Switch id="pop-switch" />
-                </div>
-                <div className="flex items-center justify-between">
-                  <Label htmlFor="pop-switch2" className="text-sm">Compact view</Label>
-                  <Switch id="pop-switch2" />
-                </div>
+          <div className="relative inline-block">
+            <button
+              onMouseEnter={() => setShowTooltip(true)}
+              onMouseLeave={() => setShowTooltip(false)}
+              className="px-4 py-2 bg-[var(--color-neutral-100)] hover:bg-[var(--color-neutral-200)] text-[var(--color-neutral-700)] rounded-lg transition-colors"
+            >
+              Hover me
+            </button>
+            {showTooltip && (
+              <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-[var(--color-neutral-900)] text-white text-sm rounded-lg whitespace-nowrap">
+                Helpful tooltip text
+                <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-[var(--color-neutral-900)]" />
               </div>
-            </PopoverContent>
-          </Popover>
-        </ComponentDemo>
-
-        <FigmaSpec
-          component="Overlays"
-          anatomy={['Dialog: overlay + content + header + body + footer', 'Sheet: overlay + sliding content panel', 'Tooltip: trigger + floating content', 'Popover: trigger + anchored content panel']}
-          variants={{ dialog: 'default | destructive', sheet: 'side: left | right | top | bottom', tooltip: 'side: top | right | bottom | left' }}
-          spacing="Dialog padding: 24px. Sheet padding: 24px. Tooltip padding: 6px 12px. Popover padding: 16px."
-          typography="Dialog title: heading-3 (24px) semibold. Dialog description: body-sm (14px). Tooltip: body-sm (14px)."
-          a11y="Dialog: focus-trapped, Escape to close, aria-labelledby/describedby. Sheet: same as dialog. Tooltip: role=tooltip, appears on hover and focus. Popover: focus-managed, Escape to close."
-        />
-      </ComponentSection>
-
-      {/* ================================================================ */}
-      {/* 9. TOGGLES & CONTROLS                                            */}
-      {/* ================================================================ */}
-      <ComponentSection title="Toggles & Controls" id="toggles">
-        <ComponentDemo
-          title="Toggle"
-          description="Pressable state button"
-          usage="Use for toggling formatting options, view modes, or preferences."
-        >
-          <div className="flex gap-2">
-            <Toggle aria-label="Toggle bold"><Bold className="h-4 w-4" /></Toggle>
-            <Toggle aria-label="Toggle italic"><Italic className="h-4 w-4" /></Toggle>
-            <Toggle aria-label="Toggle underline"><Underline className="h-4 w-4" /></Toggle>
+            )}
           </div>
         </ComponentDemo>
 
         <ComponentDemo
-          title="Toggle Group"
-          description="Mutually exclusive group of toggle buttons"
-          usage="Use for toolbar-style option groups like text alignment."
+          title="Dropdown Menu"
+          description="Contextual menu overlay"
+          usage="Use for action menus or option lists"
         >
-          <ToggleGroup type="single" defaultValue="left">
-            <ToggleGroupItem value="left" aria-label="Align left"><AlignLeft className="h-4 w-4" /></ToggleGroupItem>
-            <ToggleGroupItem value="center" aria-label="Align center"><AlignCenter className="h-4 w-4" /></ToggleGroupItem>
-            <ToggleGroupItem value="right" aria-label="Align right"><AlignRight className="h-4 w-4" /></ToggleGroupItem>
-          </ToggleGroup>
-        </ComponentDemo>
-
-        <FigmaSpec
-          component="Toggle"
-          anatomy={['Toggle root (pressed/unpressed)', 'Icon or label', 'ToggleGroup: group container + ToggleGroupItem']}
-          variants={{ variant: 'default | outline', size: 'default | sm | lg', type: 'single | multiple' }}
-          spacing="Toggle padding: 8px. Group gap: 0 (items touch). Border radius: md (8px)."
-          typography="Toggle label: body-sm (14px) medium."
-          a11y="aria-pressed for standalone toggle. ToggleGroup type=single uses role=radiogroup; type=multiple uses role=group with aria-pressed per item."
-        />
-      </ComponentSection>
-
-      {/* ================================================================ */}
-      {/* 10. ACCORDION                                                    */}
-      {/* ================================================================ */}
-      <ComponentSection title="Accordion" id="accordion">
-        <ComponentDemo
-          title="Collapsible FAQ"
-          description="Vertically stacked expandable sections"
-          usage="Use for FAQs, settings panels, or progressive disclosure."
-        >
-          <Accordion type="single" collapsible className="max-w-2xl">
-            <AccordionItem value="hours">
-              <AccordionTrigger>What are your hours of operation?</AccordionTrigger>
-              <AccordionContent>
-                We are open Monday through Friday, 7:00 AM to 6:00 PM. Extended care is available until 7:00 PM upon request.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="curriculum">
-              <AccordionTrigger>What curriculum do you follow?</AccordionTrigger>
-              <AccordionContent>
-                We follow a play-based learning approach that integrates social-emotional development, early literacy, numeracy, and creative arts. Our curriculum is aligned with Indonesia&apos;s national early childhood education standards.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="meals">
-              <AccordionTrigger>Are meals included?</AccordionTrigger>
-              <AccordionContent>
-                Yes! We provide a nutritious morning snack, lunch, and afternoon snack. All meals are prepared fresh daily by our in-house kitchen. We accommodate common allergies and dietary requirements.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </ComponentDemo>
-
-        <FigmaSpec
-          component="Accordion"
-          anatomy={['Accordion root', 'AccordionItem', 'AccordionTrigger (header + chevron)', 'AccordionContent (collapsible body)']}
-          variants={{ type: 'single (one open) | multiple (many open)', collapsible: 'true | false' }}
-          spacing="Trigger padding: 16px vertical. Content padding: 0 0 16px. Item border-bottom: 1px."
-          typography="Trigger: body (16px) medium. Content: body-sm (14px) normal."
-          a11y="Each trigger is a button with aria-expanded. Content region has role=region and aria-labelledby pointing to trigger. Full keyboard support with Enter/Space to toggle."
-        />
-      </ComponentSection>
-
-      {/* ================================================================ */}
-      {/* 11. FILE UPLOAD & EMPTY STATE                                    */}
-      {/* ================================================================ */}
-      <ComponentSection title="Patterns" id="patterns">
-        <ComponentDemo
-          title="File Upload"
-          description="Drag-and-drop file input area"
-          usage="Use for document or image uploads."
-        >
-          <label className="flex flex-col items-center justify-center w-full max-w-md h-32 border-2 border-dashed border-[var(--color-neutral-300)] rounded-xl hover:border-[var(--color-primary-400)] hover:bg-[var(--color-primary-50)] transition-all cursor-pointer">
-            <Upload className="h-8 w-8 text-[var(--color-neutral-400)] mb-2" />
-            <p className="text-sm text-[var(--color-neutral-600)]">
-              <span className="font-medium text-[var(--color-primary-600)]">Click to upload</span> or drag and drop
-            </p>
-            <p className="text-xs text-[var(--color-neutral-500)]">PNG, JPG up to 10 MB</p>
-            <input type="file" className="hidden" />
-          </label>
-        </ComponentDemo>
-
-        <ComponentDemo
-          title="Empty State"
-          description="Placeholder when no data exists"
-          usage="Guide users to take action when content is empty."
-        >
-          <div className="flex flex-col items-center justify-center p-12 bg-[var(--color-neutral-50)] rounded-xl max-w-md">
-            <div className="w-16 h-16 bg-[var(--color-neutral-200)] rounded-full flex items-center justify-center mb-4">
-              <Search className="h-8 w-8 text-[var(--color-neutral-400)]" />
+          <div className="relative inline-block">
+            <button className="px-4 py-2 bg-white border border-[var(--color-neutral-300)] rounded-lg hover:bg-[var(--color-neutral-50)] transition-colors flex items-center gap-2">
+              <Menu size={18} />
+              <span>Menu</span>
+              <ChevronDown size={16} />
+            </button>
+            <div className="mt-2 w-48 bg-white border border-[var(--color-neutral-200)] rounded-lg shadow-lg py-2">
+              <button className="w-full px-4 py-2 text-left text-sm text-[var(--color-neutral-700)] hover:bg-[var(--color-neutral-100)] transition-colors">
+                Edit
+              </button>
+              <button className="w-full px-4 py-2 text-left text-sm text-[var(--color-neutral-700)] hover:bg-[var(--color-neutral-100)] transition-colors">
+                Duplicate
+              </button>
+              <div className="my-2 border-t border-[var(--color-neutral-200)]" />
+              <button className="w-full px-4 py-2 text-left text-sm text-[var(--color-error-600)] hover:bg-[var(--color-error-50)] transition-colors">
+                Delete
+              </button>
             </div>
-            <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-2">No results found</h3>
-            <p className="text-sm text-[var(--color-neutral-600)] text-center mb-4">
-              Try adjusting your search or filters to find what you&apos;re looking for.
-            </p>
-            <Button>Clear Filters</Button>
+          </div>
+        </ComponentDemo>
+      </ComponentSection>
+
+      {/* MISC COMPONENTS */}
+      <ComponentSection title="Additional Components" id="misc">
+        <ComponentDemo
+          title="Divider"
+          description="Visual content separator"
+          usage="Use to separate content sections"
+        >
+          <div className="space-y-4 max-w-md">
+            <div className="h-px bg-[var(--color-neutral-200)]" />
+            <div className="flex items-center gap-4">
+              <div className="flex-1 h-px bg-[var(--color-neutral-200)]" />
+              <span className="text-sm text-[var(--color-neutral-500)]">OR</span>
+              <div className="flex-1 h-px bg-[var(--color-neutral-200)]" />
+            </div>
+            <div className="h-0.5 bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-accent-500)] rounded-full" />
           </div>
         </ComponentDemo>
 
         <ComponentDemo
           title="Tags / Chips"
-          description="Removable inline labels"
-          usage="Use for filters, selected items, or categories."
+          description="Removable labels"
+          usage="Use for filters, selected items, or categories"
         >
           <div className="flex flex-wrap gap-2">
-            <Badge className="gap-1 pl-3 pr-1.5 py-1">
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-[var(--color-primary-100)] text-[var(--color-primary-700)] text-sm rounded-full">
               Design
-              <button className="hover:bg-[var(--color-primary-200)]/20 rounded-full p-0.5"><X className="h-3 w-3" /></button>
-            </Badge>
-            <Badge variant="secondary" className="gap-1 pl-3 pr-1.5 py-1">
+              <button className="hover:bg-[var(--color-primary-200)] rounded-full p-0.5 transition-colors">
+                <X size={14} />
+              </button>
+            </span>
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-[var(--color-secondary-100)] text-[var(--color-secondary-700)] text-sm rounded-full">
               Development
-              <button className="hover:bg-[var(--color-neutral-300)] rounded-full p-0.5"><X className="h-3 w-3" /></button>
-            </Badge>
-            <Badge variant="outline" className="gap-1 pl-3 pr-1.5 py-1">
+              <button className="hover:bg-[var(--color-secondary-200)] rounded-full p-0.5 transition-colors">
+                <X size={14} />
+              </button>
+            </span>
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-[var(--color-accent-100)] text-[var(--color-accent-700)] text-sm rounded-full">
               Creative
-              <button className="hover:bg-[var(--color-neutral-200)] rounded-full p-0.5"><X className="h-3 w-3" /></button>
-            </Badge>
+              <button className="hover:bg-[var(--color-accent-200)] rounded-full p-0.5 transition-colors">
+                <X size={14} />
+              </button>
+            </span>
           </div>
         </ComponentDemo>
 
-        <FigmaSpec
-          component="Patterns"
-          anatomy={['File Upload: drop zone + icon + label + helper text', 'Empty State: icon + heading + description + CTA', 'Tags: badge + close button']}
-          variants={{ fileUpload: 'default | dragging | error', emptyState: 'search | no-data | error' }}
-          spacing="Drop zone padding: 32px. Empty state padding: 48px. Tag padding: 4px 12px."
-          typography="Drop zone label: body-sm (14px). Empty state heading: body-lg (18px) semibold. Tag: caption (12px) medium."
-          a11y="File input is accessible via the label element. Empty state CTA is focusable. Tags use button[aria-label] for the remove action."
-        />
+        <ComponentDemo
+          title="Accordion"
+          description="Expandable content sections"
+          usage="Use for FAQs or collapsible content"
+        >
+          <div className="space-y-2 max-w-2xl">
+            <details className="group bg-white border border-[var(--color-neutral-200)] rounded-lg overflow-hidden">
+              <summary className="px-6 py-4 cursor-pointer list-none flex items-center justify-between hover:bg-[var(--color-neutral-50)] transition-colors">
+                <span className="font-medium text-[var(--color-neutral-900)]">What are your hours?</span>
+                <ChevronDown size={20} className="text-[var(--color-neutral-500)] group-open:rotate-180 transition-transform" />
+              </summary>
+              <div className="px-6 py-4 border-t border-[var(--color-neutral-200)] text-sm text-[var(--color-neutral-600)]">
+                We are open Monday through Friday, 7:00 AM to 6:00 PM.
+              </div>
+            </details>
+
+            <details className="group bg-white border border-[var(--color-neutral-200)] rounded-lg overflow-hidden">
+              <summary className="px-6 py-4 cursor-pointer list-none flex items-center justify-between hover:bg-[var(--color-neutral-50)] transition-colors">
+                <span className="font-medium text-[var(--color-neutral-900)]">What is your curriculum?</span>
+                <ChevronDown size={20} className="text-[var(--color-neutral-500)] group-open:rotate-180 transition-transform" />
+              </summary>
+              <div className="px-6 py-4 border-t border-[var(--color-neutral-200)] text-sm text-[var(--color-neutral-600)]">
+                We follow a play-based learning approach focusing on social, emotional, and cognitive development.
+              </div>
+            </details>
+          </div>
+        </ComponentDemo>
+
+        <ComponentDemo
+          title="File Upload"
+          description="File input component"
+          usage="Use for document or image uploads"
+        >
+          <div className="max-w-md">
+            <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-[var(--color-neutral-300)] rounded-xl hover:border-[var(--color-primary-400)] hover:bg-[var(--color-primary-50)] transition-all cursor-pointer">
+              <div className="flex flex-col items-center justify-center gap-2">
+                <Upload size={32} className="text-[var(--color-neutral-400)]" />
+                <p className="text-sm text-[var(--color-neutral-600)]">
+                  <span className="font-medium text-[var(--color-primary-600)]">Click to upload</span> or drag and drop
+                </p>
+                <p className="text-xs text-[var(--color-neutral-500)]">PNG, JPG up to 10MB</p>
+              </div>
+              <input type="file" className="hidden" />
+            </label>
+          </div>
+        </ComponentDemo>
+
+        <ComponentDemo
+          title="Empty State"
+          description="Placeholder for empty content"
+          usage="Use when there's no data to display"
+        >
+          <div className="flex flex-col items-center justify-center p-12 bg-[var(--color-neutral-50)] rounded-xl max-w-md">
+            <div className="w-16 h-16 bg-[var(--color-neutral-200)] rounded-full flex items-center justify-center mb-4">
+              <Search size={32} className="text-[var(--color-neutral-400)]" />
+            </div>
+            <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-2">No results found</h3>
+            <p className="text-sm text-[var(--color-neutral-600)] text-center mb-4">
+              Try adjusting your search or filters to find what you're looking for.
+            </p>
+            <button className="px-4 py-2 bg-[var(--color-primary-500)] hover:bg-[var(--color-primary-600)] text-white rounded-lg transition-colors">
+              Clear Filters
+            </button>
+          </div>
+        </ComponentDemo>
       </ComponentSection>
 
-      {/* ================================================================ */}
-      {/* SUMMARY                                                          */}
-      {/* ================================================================ */}
+      {/* Component Count Summary */}
       <div className="p-8 rounded-2xl bg-gradient-to-br from-[var(--color-primary-50)] to-[var(--color-accent-50)] border border-[var(--color-primary-200)]">
-        <h2 className="text-2xl font-bold text-[var(--color-neutral-900)] mb-4">Component Library Summary</h2>
-        <p className="text-[var(--color-neutral-700)] mb-6">
-          This design system includes 35+ accessible, dark-mode-ready components covering all
-          essential UI patterns. Every component is built on Radix UI primitives, styled with
-          Tailwind CSS, and ships with Figma handoff specifications.
+        <h2 className="text-2xl font-bold text-[var(--color-neutral-900)] mb-4">Component Library</h2>
+        <p className="text-[var(--color-neutral-700)] mb-4">
+          This design system includes 35+ components covering all essential UI patterns. Each component is designed 
+          with accessibility, responsiveness, and delightful interactions in mind.
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {[
-            { count: '6', label: 'Button variants', color: 'var(--color-primary-600)' },
-            { count: '8', label: 'Form inputs', color: 'var(--color-secondary-600)' },
-            { count: '4', label: 'Card styles', color: 'var(--color-accent-600)' },
-            { count: '17+', label: 'More components', color: 'var(--color-primary-600)' },
-          ].map((stat) => (
-            <div key={stat.label} className="p-4 bg-white dark:bg-[var(--color-neutral-100)] rounded-lg">
-              <p className="text-2xl font-bold" style={{ color: stat.color }}>{stat.count}</p>
-              <p className="text-sm text-[var(--color-neutral-600)]">{stat.label}</p>
-            </div>
-          ))}
+          <div className="p-4 bg-white rounded-lg">
+            <p className="text-2xl font-bold text-[var(--color-primary-600)]">10+</p>
+            <p className="text-sm text-[var(--color-neutral-600)]">Button variants</p>
+          </div>
+          <div className="p-4 bg-white rounded-lg">
+            <p className="text-2xl font-bold text-[var(--color-secondary-600)]">8+</p>
+            <p className="text-sm text-[var(--color-neutral-600)]">Input types</p>
+          </div>
+          <div className="p-4 bg-white rounded-lg">
+            <p className="text-2xl font-bold text-[var(--color-accent-600)]">4+</p>
+            <p className="text-sm text-[var(--color-neutral-600)]">Card styles</p>
+          </div>
+          <div className="p-4 bg-white rounded-lg">
+            <p className="text-2xl font-bold text-[var(--color-primary-600)]">13+</p>
+            <p className="text-sm text-[var(--color-neutral-600)]">More components</p>
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-/* ================================================================ */
-/* Helper Components                                                 */
-/* ================================================================ */
-
-function ComponentSection({
-  title,
-  id,
-  children,
-}: {
-  title: string;
-  id: string;
+// Component Section Wrapper
+function ComponentSection({ 
+  title, 
+  id, 
+  children 
+}: { 
+  title: string; 
+  id: string; 
   children: React.ReactNode;
 }) {
   return (
@@ -1036,11 +1021,14 @@ function ComponentSection({
         <h2 className="text-3xl font-bold text-[var(--color-neutral-900)]">{title}</h2>
         <div className="flex-1 h-px bg-[var(--color-neutral-200)]" />
       </div>
-      <div className="space-y-8">{children}</div>
+      <div className="space-y-8">
+        {children}
+      </div>
     </section>
   );
 }
 
+// Component Demo Wrapper
 function ComponentDemo({
   title,
   description,
@@ -1053,7 +1041,7 @@ function ComponentDemo({
   children: React.ReactNode;
 }) {
   return (
-    <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl dark:bg-[var(--color-neutral-100)]">
+    <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
       <div className="mb-6">
         <h3 className="text-xl font-semibold text-[var(--color-neutral-900)] mb-2">{title}</h3>
         <p className="text-sm text-[var(--color-neutral-600)] mb-1">{description}</p>
@@ -1061,69 +1049,9 @@ function ComponentDemo({
           <span className="font-medium">Usage:</span> {usage}
         </p>
       </div>
-      <div className="p-6 bg-[var(--color-neutral-50)] rounded-lg">{children}</div>
-    </div>
-  );
-}
-
-function FigmaSpec({
-  component,
-  anatomy,
-  variants,
-  spacing,
-  typography,
-  a11y,
-}: {
-  component: string;
-  anatomy: string[];
-  variants: Record<string, string>;
-  spacing: string;
-  typography: string;
-  a11y: string;
-}) {
-  return (
-    <details className="group bg-[var(--color-secondary-50)] border border-[var(--color-secondary-200)] rounded-xl overflow-hidden dark:bg-[var(--color-neutral-100)] dark:border-[var(--color-neutral-200)]">
-      <summary className="px-6 py-4 cursor-pointer list-none flex items-center justify-between hover:bg-[var(--color-secondary-100)] transition-colors dark:hover:bg-[var(--color-neutral-200)]">
-        <span className="font-semibold text-[var(--color-neutral-900)] text-sm">
-          Figma Handoff — {component}
-        </span>
-        <ChevronDown className="h-4 w-4 text-[var(--color-neutral-500)] group-open:rotate-180 transition-transform" />
-      </summary>
-      <div className="px-6 pb-6 grid md:grid-cols-2 gap-6 text-sm">
-        <div>
-          <h4 className="font-semibold text-[var(--color-neutral-800)] mb-2">Anatomy</h4>
-          <ul className="space-y-1 text-[var(--color-neutral-600)]">
-            {anatomy.map((item) => (
-              <li key={item} className="flex items-start gap-2">
-                <span className="text-[var(--color-secondary-500)] mt-1">•</span>
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h4 className="font-semibold text-[var(--color-neutral-800)] mb-2">Variants</h4>
-          <ul className="space-y-1 text-[var(--color-neutral-600)]">
-            {Object.entries(variants).map(([key, value]) => (
-              <li key={key}>
-                <code className="text-xs bg-[var(--color-neutral-100)] px-1.5 py-0.5 rounded">{key}</code>: {value}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h4 className="font-semibold text-[var(--color-neutral-800)] mb-2">Spacing</h4>
-          <p className="text-[var(--color-neutral-600)]">{spacing}</p>
-        </div>
-        <div>
-          <h4 className="font-semibold text-[var(--color-neutral-800)] mb-2">Typography</h4>
-          <p className="text-[var(--color-neutral-600)]">{typography}</p>
-        </div>
-        <div className="md:col-span-2">
-          <h4 className="font-semibold text-[var(--color-neutral-800)] mb-2">Accessibility</h4>
-          <p className="text-[var(--color-neutral-600)]">{a11y}</p>
-        </div>
+      <div className="p-6 bg-[var(--color-neutral-50)] rounded-lg">
+        {children}
       </div>
-    </details>
+    </div>
   );
 }

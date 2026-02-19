@@ -9,11 +9,12 @@ import Layout from "./pages/Layout";
 import Motion from "./pages/Motion";
 import Accessibility from "./pages/Accessibility";
 import Tokens from "./pages/Tokens";
-import HomePage from "./pages/website/HomePage";
-import AboutPage from "./pages/website/AboutPage";
-import ProgramsPage from "./pages/website/ProgramsPage";
-import AdmissionsPage from "./pages/website/AdmissionsPage";
-import ContactPage from "./pages/website/ContactPage";
+import PortfolioRoot from "./pages/portfolio/PortfolioRoot";
+import PortfolioHome from "./pages/portfolio/Home";
+import PortfolioAbout from "./pages/portfolio/About";
+import PortfolioPrograms from "./pages/portfolio/Programs";
+import PortfolioAdmissions from "./pages/portfolio/Admissions";
+import PortfolioContact from "./pages/portfolio/Contact";
 
 export const router = createBrowserRouter([
   {
@@ -29,11 +30,17 @@ export const router = createBrowserRouter([
       { path: "motion", Component: Motion },
       { path: "accessibility", Component: Accessibility },
       { path: "tokens", Component: Tokens },
-      { path: "website", Component: HomePage },
-      { path: "website/about", Component: AboutPage },
-      { path: "website/programs", Component: ProgramsPage },
-      { path: "website/admissions", Component: AdmissionsPage },
-      { path: "website/contact", Component: ContactPage },
+    ],
+  },
+  {
+    path: "/portfolio",
+    Component: PortfolioRoot,
+    children: [
+      { index: true, Component: PortfolioHome },
+      { path: "about", Component: PortfolioAbout },
+      { path: "programs", Component: PortfolioPrograms },
+      { path: "admissions", Component: PortfolioAdmissions },
+      { path: "contact", Component: PortfolioContact },
     ],
   },
 ]);
