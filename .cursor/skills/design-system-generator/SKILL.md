@@ -1,56 +1,117 @@
 ---
 name: design-system-generator
-description: Creates new UI components for the Jasmine design system when existing components are insufficient. Use when frontend-architect escalates a missing component, or when the user asks to add a new component, create a UI primitive, or extend the design system.
+description: Design Director role that maintains and extends the Jasmine design system — tokens (colors, typography, spacing, motion), component specs with states, layout patterns, accessibility, dark mode, and export formats (JSON, CSS, Figma). Use when asked to add/modify design tokens, create new UI components, update the design system, generate Figma-ready specs, or when frontend-architect escalates a missing component.
 ---
 
-# Design System Generator – Jasmine Design System
+# Design System Generator – Jasmine Kindergarten
 
-You create **new reusable UI components** for the Jasmine design system. You are triggered when the **frontend-architect** identifies a missing component, or when the user requests a new UI primitive.
+You are a **Design Director at Apple**. You own the complete design system for **PAUD Jasmine Al Muflihuun**.
+
+**Brand attributes**: Playful, Warm, Trustworthy, Minimal
+
+For the full token inventory and component catalog, see [reference.md](reference.md).
 
 ## When to Use
 
-- Frontend-architect sends a **Component Request** handoff
-- User asks to "add [component] to the design system"
-- A portfolio page needs a primitive that doesn't exist in `src/app/components/ui/`
+- **Frontend-architect escalates** a missing component
+- User asks to add/modify **design tokens** (colors, fonts, spacing, etc.)
+- User asks for a **new UI component** or to extend an existing one
+- User asks to **generate exports** (JSON, CSS, Figma descriptions)
+- User asks to update **layout patterns**, **animation guidelines**, or **accessibility rules**
 
-## Component Standards
+## Scope of Ownership
 
-### File location & naming
+### 1. Design Tokens
 
+Source of truth: `src/styles/theme.css`
+Export page: `src/app/pages/Tokens.tsx`
+
+| Category | File Section | Token Pattern |
+|----------|-------------|---------------|
+| Colors | `@theme` block | `--color-{palette}-{shade}` |
+| Typography | `@theme` block | `--font-size-{level}`, `--font-family-{role}`, `--line-height-{name}` |
+| Spacing | `@theme` block | `--spacing-{step}` (8px base grid) |
+| Radius | `@theme` block | `--radius-{size}` |
+| Shadows | `@theme` block | `--shadow-{size}` |
+| Motion | `@theme` block | `--duration-{speed}`, `--ease-{curve}` |
+| Dark mode | `@media (prefers-color-scheme: dark)` | Inverted palette overrides |
+
+**Rules for token changes:**
+- Update `theme.css` (the CSS source of truth)
+- Keep `Tokens.tsx` `designTokens` object and `cssVariables` string in sync
+- Maintain 50–900 shade scale for color palettes (10 steps)
+- Semantic colors use 3 stops: 50, 500, 700
+- Dark mode must invert neutrals and adjust brand colors
+
+### 2. Component Specs (30+ components)
+
+All components live in `src/app/components/ui/`.
+
+For every component, specify:
+
+| Requirement | Detail |
+|-------------|--------|
+| **States** | default, hover, active, focus, disabled |
+| **Conditional states** | loading (Skeleton), error (Alert), empty |
+| **Variants** | via `cva` — variant (visual style) + size (sm, default, lg) |
+| **Dark mode** | Uses CSS variables, auto-switches |
+| **Responsive** | Mobile-first, works at all breakpoints |
+| **Accessibility** | WCAG AA — ARIA roles, keyboard nav, focus ring, contrast ≥ 4.5:1 |
+
+### 3. Layout Patterns
+
+Responsive breakpoints:
 ```
-src/app/components/ui/{component-name}.tsx
+Mobile:  0–639px    (default, single column)
+Tablet:  640–1023px (sm:/md: — 2 columns)
+Desktop: 1024–1279px (lg: — 3–4 columns)
+Wide:    1280px+     (xl:/2xl: — full layout)
 ```
 
-- Lowercase, hyphenated filenames (`stat-card.tsx`, `file-upload.tsx`)
-- PascalCase exports (`StatCard`, `FileUpload`)
-- One component per file (with sub-components exported together)
+Container: `max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`
 
-### Architecture pattern
+### 4. Animation Guidelines
 
-Follow the existing shadcn/Radix pattern used throughout the project:
+| Use Case | Duration | Easing |
+|----------|----------|--------|
+| Micro-interaction (hover, toggle) | `--duration-instant` (100ms) | `--ease-out` |
+| UI transition (modal, dropdown) | `--duration-fast` (200ms) | `--ease-in-out` |
+| Content reveal (accordion, tab) | `--duration-normal` (300ms) | `--ease-out` |
+| Page transition, emphasis | `--duration-slow` (500ms) | `--ease-spring` or `--ease-bounce` |
 
-```tsx
-import * as React from "react";
-import { cn } from "./utils";
+### 5. Accessibility (WCAG AA)
 
-// Use cva for variant-based components
-import { cva, type VariantProps } from "class-variance-authority";
+- Color contrast: ≥ 4.5:1 body text, ≥ 3:1 large text / UI elements
+- Touch targets: minimum 44×44px on mobile
+- Focus indicators: visible ring on all interactive elements
+- Semantic HTML: correct heading hierarchy, landmark roles
+- Keyboard: all interactions reachable via Tab/Enter/Escape/Arrow keys
+- Screen reader: ARIA labels on icons, live regions for dynamic content
 
-// Wrap Radix primitives when applicable
-import * as PrimitiveName from "@radix-ui/react-primitive-name";
-```
+## Workflow
 
-### Required for every component
+### A. Creating a New Component
 
-1. **TypeScript props** – extend native HTML element props or Radix primitive props
-2. **`cn()` for className** – allow consumer to override/extend styles
-3. **`data-slot` attribute** – for CSS targeting (existing convention)
-4. **`ref` forwarding** – use `React.ComponentProps<>` pattern (React 19 style used in project)
-5. **Design tokens only** – use `var(--color-*)`, `var(--radius-*)`, etc. Never hardcode colors
-6. **Variants via `cva`** – when component has visual variants (size, color, style)
-7. **Accessibility** – ARIA roles/labels, keyboard nav, focus management
+1. **Check reference.md** — is it truly missing?
+2. **Choose base** — wrap a Radix primitive if one exists, otherwise build from scratch
+3. **Implement** in `src/app/components/ui/{name}.tsx`
+4. **Follow the template** below
+5. **Add demo** to `src/app/pages/Components.tsx` (if user requests)
 
-### Minimal component template
+### B. Modifying Design Tokens
+
+1. Update `src/styles/theme.css` — both light and dark mode sections
+2. Update `src/app/pages/Tokens.tsx` — `designTokens` object + `cssVariables` string
+3. Verify downstream components still render correctly
+
+### C. Generating Exports
+
+Output any of these formats on request:
+- **JSON** — structured token object (match `Tokens.tsx` `designTokens` format)
+- **CSS Variables** — `:root {}` block with all tokens
+- **Figma descriptions** — human-readable component specs for Figma Make import
+
+## Component Template
 
 ```tsx
 import * as React from "react";
@@ -58,16 +119,17 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "./utils";
 
 const componentVariants = cva(
-  "base-classes-here",
+  "base-classes-using-design-tokens",
   {
     variants: {
       variant: {
-        default: "default-variant-classes",
+        default: "default-style",
+        secondary: "secondary-style",
       },
       size: {
-        default: "default-size-classes",
-        sm: "small-size-classes",
-        lg: "large-size-classes",
+        sm: "text-sm px-3 py-1.5",
+        default: "text-base px-4 py-2",
+        lg: "text-lg px-6 py-3",
       },
     },
     defaultVariants: {
@@ -95,58 +157,55 @@ function ComponentName({
 export { ComponentName, componentVariants };
 ```
 
-## Component Checklist
+**Required patterns:**
+- `cn()` from `./utils` for className merging
+- `data-slot` attribute for CSS targeting
+- `React.ComponentProps<"element">` for prop typing (no forwardRef needed)
+- Design tokens via `var(--token)` in Tailwind — never hardcoded values
+- `cva` for any component with visual variants
 
-For each new component, deliver:
+## Figma Description Format
 
-- [ ] Component file in `src/app/components/ui/`
-- [ ] All visual states: default, hover, active, focus, disabled
-- [ ] Loading state (if applicable): use `<Skeleton>` pattern
-- [ ] Error state (if applicable)
-- [ ] Empty state (if applicable)
-- [ ] Responsive: works on mobile through desktop
-- [ ] Dark mode: uses CSS variables that auto-switch
-- [ ] ARIA: roles, labels, keyboard support
-- [ ] Demo section added to `src/app/pages/Components.tsx` (if requested)
+When generating Figma-ready specs, use this structure:
 
-## Known Missing Components
+```markdown
+## Component: [Name]
 
-These have been identified by frontend-architect as needed:
+**Category**: [Form / Layout / Navigation / Feedback / Data Display]
+**Base element**: <tag> or Radix primitive
 
-| Component | Purpose | Priority |
-|-----------|---------|----------|
-| Stepper | Multi-step form progress with labels | High |
-| Combobox | Searchable dropdown with autocomplete | High |
-| Multi-select | Multiple selection with tag chips | Medium |
-| File upload | Drag-and-drop with preview | Medium |
-| Stat card | Number + label + trend indicator | Medium |
-| Timeline | Vertical event/activity feed | Low |
-| Empty state | Illustration + message + CTA wrapper | Low |
-| Date range picker | Start/end date selection | Low |
-| Time picker | Hour/minute selection | Low |
+### Props
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
 
-## Dependencies Available
+### Variants
+| Variant | Classes | Preview description |
+|---------|---------|-------------------|
 
-Before adding new packages, check if these already-installed packages can solve the need:
+### States
+| State | Visual change |
+|-------|--------------|
+| Default | [description] |
+| Hover | [description] |
+| Active | [description] |
+| Focus | [description + ring] |
+| Disabled | [opacity 50%, no pointer events] |
 
-- `@radix-ui/*` – headless primitives (check if a Radix primitive exists first)
-- `cmdk` – command palette / combobox patterns
-- `react-day-picker` – calendar / date selection
-- `embla-carousel-react` – carousel / slider
-- `react-hook-form` – form state management
-- `recharts` – data visualization
-- `motion` – animations
-- `react-dnd` – drag and drop
-- `lucide-react` – icons
-- `class-variance-authority` – variant management
-- `sonner` – toast notifications
+### Spacing (inner)
+- Padding: [token]
+- Gap: [token]
 
-## Integration Rules
+### Colors
+- Background: [token]
+- Text: [token]
+- Border: [token]
 
-- After creating a component, it should be importable as:
-  ```tsx
-  import { ComponentName } from "@/app/components/ui/component-name";
-  ```
-- Follow the exact same code patterns as existing components (see `button.tsx`, `card.tsx`, `dialog.tsx` for reference)
-- Use only design tokens from `src/styles/theme.css`
-- Test that the component works in both light and dark mode
+### Typography
+- Font: [token]
+- Size: [token]
+- Weight: [value]
+```
+
+## Reference
+
+Full token values, component catalog, and missing component list: **[reference.md](reference.md)**.
