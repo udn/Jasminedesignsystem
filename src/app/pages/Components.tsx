@@ -4,6 +4,7 @@ import {
   Search, Bell, User, Menu, Home, Settings, AlertCircle, 
   CheckCircle, XCircle, Info, Play, Upload, Eye
 } from 'lucide-react';
+import { PhotoGalleryGrid } from '../components/ui/photo-gallery-grid';
 
 export default function Components() {
   const [checkboxStates, setCheckboxStates] = useState<Record<string, boolean>>({});
@@ -975,6 +976,48 @@ export default function Components() {
         </ComponentDemo>
       </ComponentSection>
 
+      {/* PHOTO GALLERY GRID */}
+      <ComponentSection title="Photo Gallery Grid" id="photo-gallery-grid">
+        <ComponentDemo
+          title="2×2 Facility Showcase"
+          description="A responsive photo grid with overlay caption badges — ideal for showcasing facilities, classrooms, or campus highlights. Stacks to single column on mobile."
+          usage="Use for facility showcases, campus tours, or any grouped image presentation with labels."
+        >
+          <PhotoGalleryGrid
+            animated
+            items={[
+              { alt: 'Indoor playground with colourful slides and soft mats', label: '🎪 Indoor Playground' },
+              { alt: 'Clean mushola prayer room for students', label: '🕌 Mushola' },
+              { alt: 'Air-conditioned classroom with educational displays', label: '❄️ Classroom (AC)' },
+              { alt: 'Spacious outdoor area with playground equipment', label: '🌳 Outdoor Area' },
+            ]}
+          />
+        </ComponentDemo>
+
+        <ComponentDemo
+          title="3-Column Grid"
+          description="The grid supports 3-column layout for wider presentations."
+          usage="Use columns={3} for a wider gallery layout."
+        >
+          <PhotoGalleryGrid
+            columns={3}
+            items={[
+              { alt: 'Library', label: '📚 Library' },
+              { alt: 'Science lab', label: '🔬 Science Lab' },
+              { alt: 'Art studio', label: '🎨 Art Studio' },
+            ]}
+          />
+        </ComponentDemo>
+
+        <ComponentDemo
+          title="Tabbed Gallery (Facility Tour)"
+          description="Combine with category tabs to organise photos by theme — Keamanan, Kenyamanan, Edukasi, Bermain."
+          usage="Pair PhotoGalleryGrid with tab buttons and AnimatePresence for category switching."
+        >
+          <TabbedGalleryDemo />
+        </ComponentDemo>
+      </ComponentSection>
+
       {/* Component Count Summary */}
       <div className="p-8 rounded-2xl bg-gradient-to-br from-[var(--color-primary-50)] to-[var(--color-accent-50)] border border-[var(--color-primary-200)]">
         <h2 className="text-2xl font-bold text-[var(--color-neutral-900)] mb-4">Component Library</h2>
@@ -1052,6 +1095,51 @@ function ComponentDemo({
       <div className="p-6 bg-[var(--color-neutral-50)] rounded-lg">
         {children}
       </div>
+    </div>
+  );
+}
+
+// Tabbed Gallery Demo for Photo Gallery Grid section
+function TabbedGalleryDemo() {
+  const categories = [
+    { key: 'keamanan', label: '🛡️ Keamanan', items: [
+      { alt: 'CCTV monitoring', label: '🎥 CCTV 24 Jam' },
+      { alt: 'Fogging disinfektan', label: '🧴 Fogging' },
+    ]},
+    { key: 'kenyamanan', label: '❄️ Kenyamanan', items: [
+      { alt: 'AC and air purifier', label: '❄️ AC & Air Purifier' },
+      { alt: 'Clean toilet', label: '🚿 Toilet Bersih' },
+    ]},
+    { key: 'edukasi', label: '📚 Edukasi', items: [
+      { alt: 'Library', label: '📚 Perpustakaan' },
+      { alt: 'Educational TV', label: '📺 TV Edukasi' },
+    ]},
+    { key: 'bermain', label: '🎮 Bermain', items: [
+      { alt: 'Indoor playground', label: '🎪 Indoor Playground' },
+      { alt: 'Outdoor playground', label: '🌳 Outdoor Playground' },
+    ]},
+  ];
+  const [active, setActive] = useState(categories[0].key);
+  const current = categories.find((c) => c.key === active) ?? categories[0];
+
+  return (
+    <div className="space-y-4">
+      <div className="flex flex-wrap gap-2">
+        {categories.map((cat) => (
+          <button
+            key={cat.key}
+            onClick={() => setActive(cat.key)}
+            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 ${
+              active === cat.key
+                ? 'bg-[var(--color-primary-500)] text-white shadow-md'
+                : 'bg-[var(--color-neutral-100)] text-[var(--color-neutral-700)] hover:bg-[var(--color-neutral-200)]'
+            }`}
+          >
+            {cat.label}
+          </button>
+        ))}
+      </div>
+      <PhotoGalleryGrid items={current.items} animated />
     </div>
   );
 }
