@@ -1,5 +1,28 @@
 import { useState } from 'react';
-import { Calendar, FileText, Users, CheckCircle, Clock, DollarSign } from 'lucide-react';
+import { Link } from 'react-router';
+import { motion } from 'motion/react';
+import {
+  Calendar, FileText, CheckCircle, Gift, Users,
+  ArrowRight, Phone, MessageCircle, ShieldCheck,
+  GraduationCap, BookOpen, Sparkles,
+} from 'lucide-react';
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from '@/app/components/ui/accordion';
+
+const WHATSAPP_URL = 'https://wa.me/6281328846089';
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const stagger = {
+  visible: { transition: { staggerChildren: 0.1 } },
+};
 
 export default function PortfolioAdmissions() {
   const [formData, setFormData] = useState({
@@ -9,343 +32,403 @@ export default function PortfolioAdmissions() {
     childName: '',
     childAge: '',
     program: '',
-    tourDate: '',
-    message: ''
+    preferredDate: '',
+    message: '',
   });
+
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert('Thank you! We will contact you within 24 hours to confirm your visit.');
+    setSubmitted(true);
   };
 
   return (
-    <div className="space-y-24">
-      {/* Hero */}
-      <section className="text-center space-y-8 py-12">
-        <h1 className="text-5xl lg:text-6xl font-bold text-[var(--color-neutral-900)] leading-tight">
-          Begin Your Child's Journey
-        </h1>
-        <h2 className="text-2xl lg:text-3xl text-[var(--color-neutral-600)] max-w-4xl mx-auto font-medium">
-          Simple enrollment process. Transparent pricing. No pressure, just possibilities.
-        </h2>
+    <div className="space-y-16 sm:space-y-20 lg:space-y-24">
+      {/* ==================== HERO ==================== */}
+      <section className="text-center space-y-6 py-4 lg:py-8">
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--color-error-50)] text-[var(--color-error-700)] text-xs sm:text-sm font-semibold"
+        >
+          <Sparkles size={16} />
+          <span>Kuota Terbatas — Tahun Ajaran 2026–2027</span>
+        </motion.div>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.15, duration: 0.5, ease: [0, 0, 0.2, 1] }}
+          className="text-4xl sm:text-5xl lg:text-7xl font-bold text-[var(--color-neutral-900)] leading-tight"
+        >
+          Bergabung Bersama Kami
+        </motion.h1>
+
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.5, ease: [0, 0, 0.2, 1] }}
+          className="text-lg sm:text-xl lg:text-2xl text-[var(--color-neutral-600)] max-w-4xl mx-auto leading-relaxed font-medium"
+        >
+          Proses pendaftaran mudah dan transparan. Free Trial Class &amp; Diskon Sibling 25%!
+        </motion.h2>
       </section>
 
-      {/* Enrollment Steps */}
+      {/* ==================== OFFERS ==================== */}
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={stagger}
+        className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6"
+      >
+        <motion.div
+          variants={fadeUp}
+          transition={{ duration: 0.4 }}
+          className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-[var(--color-primary-50)] to-[var(--color-accent-50)] border-2 border-[var(--color-primary-200)] shadow-lg"
+        >
+          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--color-primary-500)] to-[var(--color-accent-500)] flex items-center justify-center text-white mb-4 shadow-md">
+            <Gift size={28} />
+          </div>
+          <h3 className="text-xl sm:text-2xl font-bold text-[var(--color-neutral-900)] mb-2">Free Trial Class</h3>
+          <p className="text-sm sm:text-base text-[var(--color-neutral-700)] leading-relaxed">
+            Coba dulu, baru yakin! Biarkan anak Anda merasakan langsung suasana belajar di Jasmine tanpa biaya dan tanpa kewajiban mendaftar.
+          </p>
+        </motion.div>
+
+        <motion.div
+          variants={fadeUp}
+          transition={{ duration: 0.4 }}
+          className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-[var(--color-secondary-50)] to-[var(--color-primary-50)] border-2 border-[var(--color-secondary-200)] shadow-lg"
+        >
+          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--color-secondary-500)] to-[var(--color-primary-500)] flex items-center justify-center text-white mb-4 shadow-md">
+            <Users size={28} />
+          </div>
+          <h3 className="text-xl sm:text-2xl font-bold text-[var(--color-neutral-900)] mb-2">Diskon Sibling 25%</h3>
+          <p className="text-sm sm:text-base text-[var(--color-neutral-700)] leading-relaxed">
+            Untuk pendaftar anak ke-2! Dapatkan potongan 25% untuk adik atau kakak yang mendaftar di tahun yang sama.
+          </p>
+        </motion.div>
+      </motion.section>
+
+      {/* ==================== ENROLLMENT STEPS ==================== */}
       <section>
-        <h2 className="text-4xl font-bold text-center text-[var(--color-neutral-900)] mb-16">
-          How to Enroll in 4 Easy Steps
-        </h2>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="text-center">
-            <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-[var(--color-primary-500)] to-[var(--color-accent-500)] flex items-center justify-center text-white text-3xl font-bold mb-6 shadow-lg">
-              1
-            </div>
-            <h3 className="text-xl font-bold text-[var(--color-neutral-900)] mb-3">Schedule a Tour</h3>
-            <p className="text-[var(--color-neutral-700)]">
-              Visit our campus, meet educators, see classrooms in action. Book online or call us.
-            </p>
-          </div>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-3xl sm:text-4xl font-bold text-center text-[var(--color-neutral-900)] mb-10 sm:mb-14"
+        >
+          4 Langkah Mudah Pendaftaran
+        </motion.h2>
 
-          <div className="text-center">
-            <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-[var(--color-secondary-500)] to-[var(--color-primary-500)] flex items-center justify-center text-white text-3xl font-bold mb-6 shadow-lg">
-              2
-            </div>
-            <h3 className="text-xl font-bold text-[var(--color-neutral-900)] mb-3">Submit Application</h3>
-            <p className="text-[var(--color-neutral-700)]">
-              Complete enrollment form and provide required documents. We review within 48 hours.
-            </p>
-          </div>
-
-          <div className="text-center">
-            <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-[var(--color-accent-500)] to-[var(--color-secondary-500)] flex items-center justify-center text-white text-3xl font-bold mb-6 shadow-lg">
-              3
-            </div>
-            <h3 className="text-xl font-bold text-[var(--color-neutral-900)] mb-3">Trial Day</h3>
-            <p className="text-[var(--color-neutral-700)]">
-              Your child experiences a full day with us. See if it's the right fit—no obligation.
-            </p>
-          </div>
-
-          <div className="text-center">
-            <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-[var(--color-success-500)] to-[var(--color-accent-500)] flex items-center justify-center text-white text-3xl font-bold mb-6 shadow-lg">
-              4
-            </div>
-            <h3 className="text-xl font-bold text-[var(--color-neutral-900)] mb-3">Confirm & Start</h3>
-            <p className="text-[var(--color-neutral-700)]">
-              Finalize paperwork, pay enrollment fee, and choose your start date. Welcome to Jasmine!
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Booking Form */}
-      <section className="max-w-4xl mx-auto">
-        <div className="p-10 lg:p-12 rounded-3xl bg-gradient-to-br from-[var(--color-primary-50)] via-white to-[var(--color-secondary-50)] border-2 border-[var(--color-primary-200)] shadow-2xl">
-          <div className="text-center mb-10">
-            <h2 className="text-4xl font-bold text-[var(--color-neutral-900)] mb-4">
-              Schedule Your Campus Tour
-            </h2>
-            <p className="text-xl text-[var(--color-neutral-600)]">
-              See why families choose Jasmine. Tours available Monday-Friday, 9 AM-3 PM.
-            </p>
-          </div>
-
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-semibold text-[var(--color-neutral-900)] mb-2">
-                  Parent Name *
-                </label>
-                <input
-                  type="text"
-                  required
-                  value={formData.parentName}
-                  onChange={(e) => setFormData({...formData, parentName: e.target.value})}
-                  className="w-full px-4 py-3 rounded-xl border-2 border-[var(--color-neutral-300)] focus:border-[var(--color-primary-500)] focus:ring-2 focus:ring-[var(--color-primary-200)] outline-none transition-all"
-                  placeholder="Your full name"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-semibold text-[var(--color-neutral-900)] mb-2">
-                  Email Address *
-                </label>
-                <input
-                  type="email"
-                  required
-                  value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  className="w-full px-4 py-3 rounded-xl border-2 border-[var(--color-neutral-300)] focus:border-[var(--color-primary-500)] focus:ring-2 focus:ring-[var(--color-primary-200)] outline-none transition-all"
-                  placeholder="your@email.com"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-semibold text-[var(--color-neutral-900)] mb-2">
-                  Phone Number *
-                </label>
-                <input
-                  type="tel"
-                  required
-                  value={formData.phone}
-                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                  className="w-full px-4 py-3 rounded-xl border-2 border-[var(--color-neutral-300)] focus:border-[var(--color-primary-500)] focus:ring-2 focus:ring-[var(--color-primary-200)] outline-none transition-all"
-                  placeholder="+62 812 3456 7890"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-semibold text-[var(--color-neutral-900)] mb-2">
-                  Child's Name *
-                </label>
-                <input
-                  type="text"
-                  required
-                  value={formData.childName}
-                  onChange={(e) => setFormData({...formData, childName: e.target.value})}
-                  className="w-full px-4 py-3 rounded-xl border-2 border-[var(--color-neutral-300)] focus:border-[var(--color-primary-500)] focus:ring-2 focus:ring-[var(--color-primary-200)] outline-none transition-all"
-                  placeholder="Child's full name"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-semibold text-[var(--color-neutral-900)] mb-2">
-                  Child's Age *
-                </label>
-                <select
-                  required
-                  value={formData.childAge}
-                  onChange={(e) => setFormData({...formData, childAge: e.target.value})}
-                  className="w-full px-4 py-3 rounded-xl border-2 border-[var(--color-neutral-300)] focus:border-[var(--color-primary-500)] focus:ring-2 focus:ring-[var(--color-primary-200)] outline-none transition-all"
-                >
-                  <option value="">Select age</option>
-                  <option value="2">2 years old</option>
-                  <option value="3">3 years old</option>
-                  <option value="4">4 years old</option>
-                  <option value="5">5 years old</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-semibold text-[var(--color-neutral-900)] mb-2">
-                  Program Interest *
-                </label>
-                <select
-                  required
-                  value={formData.program}
-                  onChange={(e) => setFormData({...formData, program: e.target.value})}
-                  className="w-full px-4 py-3 rounded-xl border-2 border-[var(--color-neutral-300)] focus:border-[var(--color-primary-500)] focus:ring-2 focus:ring-[var(--color-primary-200)] outline-none transition-all"
-                >
-                  <option value="">Select program</option>
-                  <option value="toddler">Toddler (Ages 2-3)</option>
-                  <option value="prek">Pre-K (Ages 3-4)</option>
-                  <option value="kindergarten">Kindergarten (Ages 4-5)</option>
-                </select>
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-sm font-semibold text-[var(--color-neutral-900)] mb-2">
-                Preferred Tour Date *
-              </label>
-              <input
-                type="date"
-                required
-                value={formData.tourDate}
-                onChange={(e) => setFormData({...formData, tourDate: e.target.value})}
-                className="w-full px-4 py-3 rounded-xl border-2 border-[var(--color-neutral-300)] focus:border-[var(--color-primary-500)] focus:ring-2 focus:ring-[var(--color-primary-200)] outline-none transition-all"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-semibold text-[var(--color-neutral-900)] mb-2">
-                Questions or Special Requests
-              </label>
-              <textarea
-                rows={4}
-                value={formData.message}
-                onChange={(e) => setFormData({...formData, message: e.target.value})}
-                className="w-full px-4 py-3 rounded-xl border-2 border-[var(--color-neutral-300)] focus:border-[var(--color-primary-500)] focus:ring-2 focus:ring-[var(--color-primary-200)] outline-none transition-all resize-none"
-                placeholder="Allergies, special needs, specific questions..."
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="w-full px-8 py-5 rounded-2xl bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-accent-500)] hover:shadow-2xl text-white font-bold transition-all hover:-translate-y-1 text-lg shadow-xl"
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={stagger}
+          className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8"
+        >
+          {[
+            { step: 1, icon: <Phone size={24} />, title: 'Hubungi Kami', desc: 'Via WhatsApp atau telepon untuk konsultasi dan jadwalkan kunjungan.', color: 'primary' },
+            { step: 2, icon: <Calendar size={24} />, title: 'Kunjungan Sekolah', desc: 'Datang ke sekolah, kenali lingkungan, dan temui guru kami.', color: 'secondary' },
+            { step: 3, icon: <GraduationCap size={24} />, title: 'Free Trial Class', desc: 'Anak Anda ikut belajar satu hari penuh — gratis, tanpa kewajiban.', color: 'accent' },
+            { step: 4, icon: <CheckCircle size={24} />, title: 'Konfirmasi Daftar', desc: 'Lengkapi formulir dan dokumen. Selamat bergabung di Jasmine!', color: 'success' },
+          ].map((s) => (
+            <motion.div
+              key={s.step}
+              variants={fadeUp}
+              transition={{ duration: 0.4 }}
+              className="text-center"
             >
-              Confirm My Tour
-            </button>
+              <div className={`w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-full bg-gradient-to-br from-[var(--color-${s.color}-500)] to-[var(--color-${s.color}-600)] flex items-center justify-center text-white text-xl sm:text-2xl font-bold mb-4 shadow-lg`}>
+                {s.step}
+              </div>
+              <h3 className="text-sm sm:text-lg font-bold text-[var(--color-neutral-900)] mb-2">{s.title}</h3>
+              <p className="text-xs sm:text-sm text-[var(--color-neutral-700)]">{s.desc}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
 
-            <p className="text-sm text-center text-[var(--color-neutral-600)]">
-              We'll call within 24 hours to confirm your visit. No commitment required.
+      {/* ==================== BOOKING FORM + SIDEBAR ==================== */}
+      <section className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-10">
+        {/* Form */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.4 }}
+          className="lg:col-span-3"
+        >
+          <div className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-[var(--color-primary-50)] via-white to-[var(--color-secondary-50)] border-2 border-[var(--color-primary-200)] shadow-xl">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--color-neutral-900)] mb-2">
+              Formulir Pendaftaran Kunjungan
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--color-neutral-600)] mb-6 sm:mb-8">
+              Isi formulir di bawah dan kami akan menghubungi dalam 24 jam.
             </p>
-          </form>
-        </div>
-      </section>
 
-      {/* Pricing Overview */}
-      <section>
-        <h2 className="text-4xl font-bold text-center text-[var(--color-neutral-900)] mb-16">
-          Transparent Pricing & Payment Options
-        </h2>
+            {submitted ? (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, ease: [0.34, 1.56, 0.64, 1] }}
+                className="text-center py-10"
+              >
+                <div className="w-16 h-16 mx-auto rounded-full bg-[var(--color-success-500)] flex items-center justify-center text-white mb-4">
+                  <CheckCircle size={32} />
+                </div>
+                <h3 className="text-xl font-bold text-[var(--color-neutral-900)] mb-2">Terima Kasih!</h3>
+                <p className="text-sm text-[var(--color-neutral-600)] mb-6">
+                  Kami akan menghubungi Anda dalam 24 jam untuk konfirmasi jadwal kunjungan.
+                </p>
+                <button
+                  onClick={() => { setSubmitted(false); setFormData({ parentName: '', email: '', phone: '', childName: '', childAge: '', program: '', preferredDate: '', message: '' }); }}
+                  className="text-sm text-[var(--color-primary-600)] font-semibold hover:underline"
+                >
+                  Kirim formulir lagi
+                </button>
+              </motion.div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                  <div>
+                    <label className="block text-sm font-semibold text-[var(--color-neutral-900)] mb-1.5">Nama Orang Tua *</label>
+                    <input type="text" required value={formData.parentName} onChange={(e) => setFormData({ ...formData, parentName: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl border-2 border-[var(--color-neutral-300)] focus:border-[var(--color-primary-500)] focus:ring-2 focus:ring-[var(--color-primary-200)] outline-none transition-all text-sm"
+                      placeholder="Nama lengkap"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-semibold text-[var(--color-neutral-900)] mb-1.5">Email *</label>
+                    <input type="email" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl border-2 border-[var(--color-neutral-300)] focus:border-[var(--color-primary-500)] focus:ring-2 focus:ring-[var(--color-primary-200)] outline-none transition-all text-sm"
+                      placeholder="email@anda.com"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-semibold text-[var(--color-neutral-900)] mb-1.5">Nomor Telepon *</label>
+                    <input type="tel" required value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl border-2 border-[var(--color-neutral-300)] focus:border-[var(--color-primary-500)] focus:ring-2 focus:ring-[var(--color-primary-200)] outline-none transition-all text-sm"
+                      placeholder="08xxxxxxxxxx"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-semibold text-[var(--color-neutral-900)] mb-1.5">Nama Anak *</label>
+                    <input type="text" required value={formData.childName} onChange={(e) => setFormData({ ...formData, childName: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl border-2 border-[var(--color-neutral-300)] focus:border-[var(--color-primary-500)] focus:ring-2 focus:ring-[var(--color-primary-200)] outline-none transition-all text-sm"
+                      placeholder="Nama lengkap anak"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-semibold text-[var(--color-neutral-900)] mb-1.5">Usia Anak *</label>
+                    <select required value={formData.childAge} onChange={(e) => setFormData({ ...formData, childAge: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl border-2 border-[var(--color-neutral-300)] focus:border-[var(--color-primary-500)] focus:ring-2 focus:ring-[var(--color-primary-200)] outline-none transition-all text-sm"
+                    >
+                      <option value="">Pilih usia</option>
+                      <option value="0-1">0–1 tahun (Inden)</option>
+                      <option value="2-3">2–3 tahun</option>
+                      <option value="4-5">4–5 tahun</option>
+                      <option value="5-6">5–6 tahun</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-semibold text-[var(--color-neutral-900)] mb-1.5">Program *</label>
+                    <select required value={formData.program} onChange={(e) => setFormData({ ...formData, program: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl border-2 border-[var(--color-neutral-300)] focus:border-[var(--color-primary-500)] focus:ring-2 focus:ring-[var(--color-primary-200)] outline-none transition-all text-sm"
+                    >
+                      <option value="">Pilih program</option>
+                      <option value="kb">Kelompok Bermain (KB)</option>
+                      <option value="tk-a">TK-A</option>
+                      <option value="tk-b">TK-B</option>
+                      <option value="tpa">TPA</option>
+                      <option value="bilingual">Bilingual Class</option>
+                    </select>
+                  </div>
+                </div>
 
-        <div className="grid lg:grid-cols-2 gap-10 max-w-6xl mx-auto">
-          <div className="p-10 rounded-3xl bg-white border-2 border-[var(--color-neutral-200)] shadow-lg">
-            <h3 className="text-2xl font-bold text-[var(--color-neutral-900)] mb-8">One-Time Fees</h3>
-            <div className="space-y-6">
-              <div className="flex justify-between items-start pb-6 border-b border-[var(--color-neutral-200)]">
                 <div>
-                  <p className="font-semibold text-[var(--color-neutral-900)]">Registration Fee</p>
-                  <p className="text-sm text-[var(--color-neutral-600)]">Paid once upon enrollment</p>
+                  <label className="block text-sm font-semibold text-[var(--color-neutral-900)] mb-1.5">Tanggal Kunjungan Pilihan *</label>
+                  <input type="date" required value={formData.preferredDate} onChange={(e) => setFormData({ ...formData, preferredDate: e.target.value })}
+                    className="w-full px-4 py-3 rounded-xl border-2 border-[var(--color-neutral-300)] focus:border-[var(--color-primary-500)] focus:ring-2 focus:ring-[var(--color-primary-200)] outline-none transition-all text-sm"
+                  />
                 </div>
-                <p className="text-2xl font-bold text-[var(--color-primary-600)]">Rp 5,000,000</p>
-              </div>
-              <div className="flex justify-between items-start">
+
                 <div>
-                  <p className="font-semibold text-[var(--color-neutral-900)]">Trial Day (Optional)</p>
-                  <p className="text-sm text-[var(--color-neutral-600)]">Credited if you enroll</p>
+                  <label className="block text-sm font-semibold text-[var(--color-neutral-900)] mb-1.5">Pertanyaan / Pesan Tambahan</label>
+                  <textarea rows={3} value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    className="w-full px-4 py-3 rounded-xl border-2 border-[var(--color-neutral-300)] focus:border-[var(--color-primary-500)] focus:ring-2 focus:ring-[var(--color-primary-200)] outline-none transition-all resize-none text-sm"
+                    placeholder="Alergi, kebutuhan khusus, pertanyaan..."
+                  />
                 </div>
-                <p className="text-2xl font-bold text-[var(--color-secondary-600)]">Rp 500,000</p>
-              </div>
-            </div>
+
+                <button type="submit"
+                  className="w-full px-8 py-4 rounded-2xl bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-accent-500)] hover:shadow-2xl text-white font-bold transition-all hover:-translate-y-1 text-base sm:text-lg shadow-xl"
+                >
+                  Kirim Formulir
+                </button>
+                <p className="text-xs text-center text-[var(--color-neutral-500)]">
+                  Kami akan menghubungi dalam 24 jam. Tanpa kewajiban mendaftar.
+                </p>
+              </form>
+            )}
+          </div>
+        </motion.div>
+
+        {/* Sidebar - Trust Signals */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
+          className="lg:col-span-2 space-y-5"
+        >
+          <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-[var(--color-primary-50)] to-[var(--color-accent-50)] border-2 border-[var(--color-primary-200)]">
+            <h3 className="text-lg sm:text-xl font-bold text-[var(--color-neutral-900)] mb-5">Kenapa Jasmine?</h3>
+            <ul className="space-y-3.5">
+              {[
+                { icon: <ShieldCheck size={18} />, text: 'Sekolah Islam swasta resmi' },
+                { icon: <ShieldCheck size={18} />, text: 'CCTV 24 jam & ruang ber-AC' },
+                { icon: <ShieldCheck size={18} />, text: 'Guru profesional & bersertifikat' },
+                { icon: <ShieldCheck size={18} />, text: 'Metode Ummi Al-Qur\'an' },
+                { icon: <ShieldCheck size={18} />, text: 'Play-based learning' },
+                { icon: <ShieldCheck size={18} />, text: 'Coding & Robotic, English Class' },
+                { icon: <ShieldCheck size={18} />, text: 'Free Trial Class' },
+                { icon: <ShieldCheck size={18} />, text: 'Diskon Sibling 25%' },
+              ].map((item) => (
+                <li key={item.text} className="flex items-start gap-2.5 text-sm text-[var(--color-neutral-700)]">
+                  <span className="text-[var(--color-primary-600)] shrink-0 mt-0.5">{item.icon}</span>
+                  <span>{item.text}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          <div className="p-10 rounded-3xl bg-white border-2 border-[var(--color-neutral-200)] shadow-lg">
-            <h3 className="text-2xl font-bold text-[var(--color-neutral-900)] mb-8">Monthly Tuition</h3>
-            <div className="space-y-6">
-              <div className="flex justify-between items-start pb-6 border-b border-[var(--color-neutral-200)]">
-                <div>
-                  <p className="font-semibold text-[var(--color-neutral-900)]">Toddler Program (Ages 2-3)</p>
-                </div>
-                <p className="text-2xl font-bold text-[var(--color-primary-600)]">Rp 3,500,000</p>
-              </div>
-              <div className="flex justify-between items-start pb-6 border-b border-[var(--color-neutral-200)]">
-                <div>
-                  <p className="font-semibold text-[var(--color-neutral-900)]">Pre-K Program (Ages 3-4)</p>
-                </div>
-                <p className="text-2xl font-bold text-[var(--color-secondary-600)]">Rp 4,100,000</p>
-              </div>
-              <div className="flex justify-between items-start">
-                <div>
-                  <p className="font-semibold text-[var(--color-neutral-900)]">Kindergarten (Ages 4-5)</p>
-                </div>
-                <p className="text-2xl font-bold text-[var(--color-accent-600)]">Rp 4,800,000</p>
-              </div>
+          <div className="p-6 sm:p-8 rounded-2xl bg-[var(--color-neutral-900)] text-white">
+            <h3 className="text-lg font-bold mb-3">Butuh bantuan langsung?</h3>
+            <p className="text-sm text-[var(--color-neutral-300)] mb-5">
+              Tim kami siap menjawab pertanyaan Anda.
+            </p>
+            <div className="space-y-3">
+              <a href="tel:+6281328846089" className="flex items-center gap-2 text-sm font-medium hover:text-[var(--color-primary-400)] transition-colors">
+                <Phone size={16} /> 081328846089
+              </a>
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium hover:text-[var(--color-success-400)] transition-colors">
+                <MessageCircle size={16} /> Chat via WhatsApp
+              </a>
             </div>
           </div>
-        </div>
-
-        <div className="mt-10 p-8 rounded-2xl bg-gradient-to-r from-[var(--color-success-50)] to-[var(--color-primary-50)] border-2 border-[var(--color-success-200)] max-w-6xl mx-auto">
-          <h3 className="text-xl font-bold text-[var(--color-neutral-900)] mb-4">Payment Plans & Discounts</h3>
-          <ul className="grid md:grid-cols-2 gap-4">
-            <li className="flex items-start gap-3">
-              <CheckCircle size={20} className="text-[var(--color-success-600)] shrink-0 mt-0.5" />
-              <span className="text-[var(--color-neutral-700)]"><strong>10% sibling discount</strong> for second child</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <CheckCircle size={20} className="text-[var(--color-success-600)] shrink-0 mt-0.5" />
-              <span className="text-[var(--color-neutral-700)]"><strong>5% annual payment</strong> discount if paid upfront</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <CheckCircle size={20} className="text-[var(--color-success-600)] shrink-0 mt-0.5" />
-              <span className="text-[var(--color-neutral-700)]"><strong>Quarterly payment</strong> option available</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <CheckCircle size={20} className="text-[var(--color-success-600)] shrink-0 mt-0.5" />
-              <span className="text-[var(--color-neutral-700)]"><strong>All meals & materials</strong> included—no hidden fees</span>
-            </li>
-          </ul>
-        </div>
+        </motion.div>
       </section>
 
-      {/* Required Documents */}
-      <section className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-center text-[var(--color-neutral-900)] mb-12">
-          Required Documents for Enrollment
+      {/* ==================== DOKUMEN ==================== */}
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="max-w-4xl mx-auto"
+      >
+        <h2 className="text-2xl sm:text-3xl font-bold text-center text-[var(--color-neutral-900)] mb-8 sm:mb-10">
+          Dokumen Pendaftaran
         </h2>
-        
-        <div className="p-8 rounded-2xl bg-white border-2 border-[var(--color-neutral-200)] shadow-sm">
+        <div className="p-6 sm:p-8 rounded-2xl bg-white border-2 border-[var(--color-neutral-200)] shadow-sm">
           <ul className="space-y-4">
-            <li className="flex items-start gap-4">
-              <FileText size={24} className="text-[var(--color-primary-600)] shrink-0 mt-1" />
-              <div>
-                <p className="font-semibold text-[var(--color-neutral-900)]">Child's Birth Certificate (copy)</p>
-                <p className="text-sm text-[var(--color-neutral-600)]">Official copy for age verification</p>
-              </div>
-            </li>
-            <li className="flex items-start gap-4">
-              <FileText size={24} className="text-[var(--color-primary-600)] shrink-0 mt-1" />
-              <div>
-                <p className="font-semibold text-[var(--color-neutral-900)]">Parent/Guardian ID (KTP or Passport)</p>
-                <p className="text-sm text-[var(--color-neutral-600)]">Photo copy of valid identification</p>
-              </div>
-            </li>
-            <li className="flex items-start gap-4">
-              <FileText size={24} className="text-[var(--color-primary-600)] shrink-0 mt-1" />
-              <div>
-                <p className="font-semibold text-[var(--color-neutral-900)]">Immunization Records</p>
-                <p className="text-sm text-[var(--color-neutral-600)]">Up-to-date vaccination history from healthcare provider</p>
-              </div>
-            </li>
-            <li className="flex items-start gap-4">
-              <FileText size={24} className="text-[var(--color-primary-600)] shrink-0 mt-1" />
-              <div>
-                <p className="font-semibold text-[var(--color-neutral-900)]">Recent Photo (3x4 cm)</p>
-                <p className="text-sm text-[var(--color-neutral-600)]">2 photos of your child for student records</p>
-              </div>
-            </li>
-            <li className="flex items-start gap-4">
-              <FileText size={24} className="text-[var(--color-primary-600)] shrink-0 mt-1" />
-              <div>
-                <p className="font-semibold text-[var(--color-neutral-900)]">Medical History Form (Provided by us)</p>
-                <p className="text-sm text-[var(--color-neutral-600)]">Allergies, medications, special needs, emergency contacts</p>
-              </div>
-            </li>
+            {[
+              { title: 'Akta Kelahiran Anak (fotokopi)', desc: 'Untuk verifikasi usia' },
+              { title: 'KTP Orang Tua / Wali (fotokopi)', desc: 'Identitas resmi' },
+              { title: 'Kartu Keluarga (fotokopi)', desc: 'Data keluarga' },
+              { title: 'Pas Foto Anak (3x4, 2 lembar)', desc: 'Untuk arsip siswa' },
+              { title: 'Surat Keterangan Sehat dari Dokter', desc: 'Riwayat kesehatan anak' },
+            ].map((doc) => (
+              <li key={doc.title} className="flex items-start gap-3">
+                <FileText size={20} className="text-[var(--color-primary-600)] shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-sm font-semibold text-[var(--color-neutral-900)]">{doc.title}</p>
+                  <p className="text-xs text-[var(--color-neutral-600)]">{doc.desc}</p>
+                </div>
+              </li>
+            ))}
           </ul>
         </div>
+      </motion.section>
+
+      {/* ==================== FAQ ==================== */}
+      <section>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-3xl sm:text-4xl font-bold text-center text-[var(--color-neutral-900)] mb-8 sm:mb-10"
+        >
+          Pertanyaan Seputar Pendaftaran
+        </motion.h2>
+
+        <div className="max-w-4xl mx-auto">
+          <Accordion type="single" collapsible className="space-y-3">
+            {[
+              { q: 'Apakah ada biaya pendaftaran?', a: 'Informasi lengkap mengenai biaya pendaftaran, SPP, dan biaya lainnya akan disampaikan saat kunjungan sekolah. Kami menyediakan pilihan pembayaran yang fleksibel.' },
+              { q: 'Kapan tahun ajaran dimulai?', a: 'Tahun ajaran baru dimulai pada bulan Juli. Namun pendaftaran dibuka sepanjang tahun selama kuota masih tersedia. Kami menyarankan mendaftar lebih awal karena kuota terbatas.' },
+              { q: 'Apakah bisa pindahan dari sekolah lain?', a: 'Ya, kami menerima siswa pindahan. Silakan hubungi kami untuk konsultasi mengenai prosedur dan ketersediaan tempat di kelas yang sesuai.' },
+              { q: 'Bagaimana jika anak saya memiliki kebutuhan khusus?', a: 'Kami menyambut semua anak dan akan berdiskusi bersama orang tua untuk memahami kebutuhan anak. Guru kami terlatih untuk mendampingi anak dengan sabar dan penuh perhatian.' },
+              { q: 'Berapa lama proses pendaftaran?', a: 'Dari kunjungan pertama hingga konfirmasi pendaftaran biasanya memakan waktu 1–2 minggu, tergantung ketersediaan jadwal trial class.' },
+              { q: 'Apakah ada seragam sekolah?', a: 'Ya, seragam disediakan oleh sekolah. Informasi lengkap tentang seragam dan perlengkapan sekolah akan diberikan saat proses pendaftaran.' },
+            ].map((faq, i) => (
+              <AccordionItem
+                key={i}
+                value={`adm-faq-${i}`}
+                className="p-4 sm:p-5 rounded-2xl bg-white border-2 border-[var(--color-neutral-200)] shadow-sm hover:shadow-md transition-shadow"
+              >
+                <AccordionTrigger className="text-sm sm:text-base font-bold text-[var(--color-neutral-900)] hover:no-underline">
+                  {faq.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-sm text-[var(--color-neutral-700)] leading-relaxed">
+                  {faq.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
       </section>
+
+      {/* ==================== REASSURANCE BANNER ==================== */}
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.5 }}
+        className="py-10 sm:py-14 px-6 sm:px-10 lg:px-16 rounded-3xl bg-gradient-to-br from-[var(--color-primary-500)] via-[var(--color-accent-500)] to-[var(--color-secondary-500)] text-white text-center shadow-2xl"
+      >
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
+          Masih Ragu? Hubungi Kami Langsung
+        </h2>
+        <p className="text-base sm:text-lg mb-8 max-w-2xl mx-auto opacity-95">
+          Kami siap menjawab semua pertanyaan Anda dan membantu menemukan program terbaik untuk buah hati.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-4 sm:px-10 sm:py-5 rounded-2xl bg-white text-[var(--color-success-600)] font-bold hover:shadow-2xl hover:-translate-y-1 transition-all text-base sm:text-lg flex items-center justify-center gap-2"
+          >
+            <MessageCircle size={20} />
+            Chat WhatsApp
+          </a>
+          <a
+            href="tel:+6281328846089"
+            className="px-8 py-4 sm:px-10 sm:py-5 rounded-2xl bg-white/10 backdrop-blur-sm text-white font-bold transition-all hover:bg-white/20 border-2 border-white/40 text-base sm:text-lg flex items-center justify-center gap-2"
+          >
+            <Phone size={20} />
+            081328846089
+          </a>
+        </div>
+      </motion.section>
     </div>
   );
 }

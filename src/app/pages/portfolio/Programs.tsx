@@ -1,339 +1,391 @@
 import { Link } from 'react-router';
-import { Baby, Smile, Zap, Calendar, Clock, Users, CheckCircle } from 'lucide-react';
+import { motion } from 'motion/react';
+import {
+  Baby, Smile, GraduationCap, BookOpen, ArrowRight,
+  CheckCircle, Globe, Cpu, Music, Palette, Waves,
+  Drum, PenTool, Brain, Hand, MessageCircle, Users, Sparkles,
+} from 'lucide-react';
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from '@/app/components/ui/accordion';
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const stagger = {
+  visible: { transition: { staggerChildren: 0.15 } },
+};
 
 export default function PortfolioPrograms() {
   return (
-    <div className="space-y-24">
-      {/* Hero Section */}
-      <section className="text-center space-y-8 py-12">
-        <h1 className="text-5xl lg:text-6xl font-bold text-[var(--color-neutral-900)] leading-tight">
-          Programs That Grow With Your Child
-        </h1>
-        <h2 className="text-2xl lg:text-3xl text-[var(--color-neutral-600)] max-w-4xl mx-auto leading-relaxed font-medium">
-          Age-appropriate curricula designed for development, discovery, and delight
-        </h2>
+    <div className="space-y-16 sm:space-y-20 lg:space-y-24">
+      {/* ==================== HERO ==================== */}
+      <section className="text-center space-y-6 py-4 lg:py-8">
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--color-secondary-100)] text-[var(--color-secondary-700)] text-xs sm:text-sm font-semibold"
+        >
+          <GraduationCap size={16} />
+          <span>Usia 0–6 Tahun</span>
+        </motion.div>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.15, duration: 0.5, ease: [0, 0, 0.2, 1] }}
+          className="text-4xl sm:text-5xl lg:text-7xl font-bold text-[var(--color-neutral-900)] leading-tight"
+        >
+          Kurikulum yang Menyenangkan
+        </motion.h1>
+
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.5, ease: [0, 0, 0.2, 1] }}
+          className="text-lg sm:text-xl lg:text-2xl text-[var(--color-neutral-600)] max-w-4xl mx-auto leading-relaxed font-medium"
+        >
+          Program pendidikan Islami berbasis bermain yang disesuaikan dengan tahap perkembangan anak
+        </motion.h2>
       </section>
 
-      {/* Program Overview */}
-      <section className="grid lg:grid-cols-3 gap-10">
-        {/* Toddler Program */}
-        <div className="p-10 rounded-3xl bg-gradient-to-br from-[var(--color-primary-50)] via-white to-[var(--color-accent-50)] border-2 border-[var(--color-primary-300)] shadow-lg hover:shadow-2xl transition-all">
-          <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[var(--color-primary-500)] to-[var(--color-accent-500)] flex items-center justify-center text-white mb-8 shadow-md">
-            <Baby size={40} />
-          </div>
-          
-          <div className="mb-6">
-            <h2 className="text-3xl font-bold text-[var(--color-neutral-900)] mb-2">Toddler Program</h2>
-            <p className="text-xl text-[var(--color-primary-600)] font-semibold">Ages 2-3 years</p>
-          </div>
-          
-          <p className="text-[var(--color-neutral-700)] leading-relaxed mb-8">
-            Gentle introduction to structured learning through sensory play, music, movement, and social interaction. Building confidence one smile at a time.
-          </p>
-          
-          <div className="space-y-4 mb-8">
-            <div className="flex items-center gap-3">
-              <Clock size={20} className="text-[var(--color-primary-600)] shrink-0" />
-              <span className="text-[var(--color-neutral-700)]"><strong>Hours:</strong> Half-day (8AM-12PM) or Full-day (8AM-4PM)</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <Users size={20} className="text-[var(--color-primary-600)] shrink-0" />
-              <span className="text-[var(--color-neutral-700)]"><strong>Class Size:</strong> Maximum 8 students, 1 teacher</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <Calendar size={20} className="text-[var(--color-primary-600)] shrink-0" />
-              <span className="text-[var(--color-neutral-700)]"><strong>Days:</strong> Monday to Friday</span>
-            </div>
-          </div>
-          
-          <div className="mb-8">
-            <h3 className="font-bold text-[var(--color-neutral-900)] mb-4">Program Highlights:</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <CheckCircle size={20} className="text-[var(--color-primary-600)] shrink-0 mt-0.5" />
-                <span className="text-[var(--color-neutral-700)]">Potty training support with patience and positivity</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle size={20} className="text-[var(--color-primary-600)] shrink-0 mt-0.5" />
-                <span className="text-[var(--color-neutral-700)]">Sensory bins, water play, and tactile exploration</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle size={20} className="text-[var(--color-primary-600)] shrink-0 mt-0.5" />
-                <span className="text-[var(--color-neutral-700)]">Circle time with songs, stories, and movement</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle size={20} className="text-[var(--color-primary-600)] shrink-0 mt-0.5" />
-                <span className="text-[var(--color-neutral-700)]">Introduction to sharing, taking turns, and routines</span>
-              </li>
-            </ul>
-          </div>
-          
-          <div className="p-6 rounded-xl bg-white border-2 border-[var(--color-primary-200)] mb-6">
-            <p className="text-2xl font-bold text-[var(--color-primary-600)] mb-1">Rp 3,500,000</p>
-            <p className="text-sm text-[var(--color-neutral-600)]">per month • All meals included</p>
-          </div>
-          
-          <Link 
-            to="/portfolio/admissions" 
-            className="block text-center px-8 py-4 rounded-xl bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-accent-500)] hover:shadow-xl text-white font-bold transition-all hover:-translate-y-0.5"
+      {/* ==================== PROGRAM CARDS ==================== */}
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        variants={stagger}
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
+      >
+        {[
+          {
+            icon: <Baby size={36} />,
+            name: 'Kelompok Bermain (KB)',
+            age: 'Usia 2–3 tahun',
+            desc: 'Pengenalan awal dunia belajar melalui bermain sensorik, musik, gerakan, dan interaksi sosial pertama.',
+            highlights: ['Stimulasi motorik halus & kasar', 'Pengenalan huruf hijaiyah & doa', 'Bermain kelompok & berbagi', 'Seni, lagu, dan cerita'],
+            color: 'primary',
+          },
+          {
+            icon: <Smile size={36} />,
+            name: 'TK-A',
+            age: 'Usia 4–5 tahun',
+            desc: 'Mengembangkan rasa ingin tahu melalui eksplorasi, literasi awal, konsep angka, dan kemandirian.',
+            highlights: ['Metode Ummi — belajar Al-Qur\'an', 'Mengenal huruf, angka & bentuk', 'Percobaan sains sederhana', 'English Class pengenalan'],
+            color: 'secondary',
+          },
+          {
+            icon: <GraduationCap size={36} />,
+            name: 'TK-B',
+            age: 'Usia 5–6 tahun',
+            desc: 'Persiapan masuk SD — membaca, menulis, berhitung, dan membangun kepercayaan diri serta kemandirian.',
+            highlights: ['Membaca, menulis & berhitung', 'Persiapan akademis masuk SD', 'Coding & Robotic dasar', 'Leadership & kerja tim'],
+            color: 'accent',
+          },
+          {
+            icon: <BookOpen size={36} />,
+            name: 'TPA',
+            age: 'Taman Pendidikan Al-Qur\'an',
+            desc: 'Program khusus membaca dan mencintai Al-Qur\'an dengan Metode Ummi yang menyenangkan dan terbukti.',
+            highlights: ['Metode Ummi berjenjang', 'Hafalan surat-surat pendek', 'Pembiasaan adab & akhlak', 'Sholat & doa harian'],
+            color: 'success',
+          },
+        ].map((program) => (
+          <motion.div
+            key={program.name}
+            variants={fadeUp}
+            transition={{ duration: 0.5 }}
+            className={`p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[var(--color-${program.color}-50)] via-white to-white border-2 border-[var(--color-${program.color}-200)] shadow-lg hover:shadow-xl transition-shadow`}
           >
-            Enroll Now
-          </Link>
-        </div>
-
-        {/* Pre-K Program */}
-        <div className="p-10 rounded-3xl bg-gradient-to-br from-[var(--color-secondary-50)] via-white to-[var(--color-primary-50)] border-2 border-[var(--color-secondary-300)] shadow-lg hover:shadow-2xl transition-all">
-          <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[var(--color-secondary-500)] to-[var(--color-primary-500)] flex items-center justify-center text-white mb-8 shadow-md">
-            <Smile size={40} />
-          </div>
-          
-          <div className="mb-6">
-            <h2 className="text-3xl font-bold text-[var(--color-neutral-900)] mb-2">Pre-K Program</h2>
-            <p className="text-xl text-[var(--color-secondary-600)] font-semibold">Ages 3-4 years</p>
-          </div>
-          
-          <p className="text-[var(--color-neutral-700)] leading-relaxed mb-8">
-            Expanding curiosity through hands-on projects, early literacy, basic math concepts, and cooperative play. Watch independence bloom.
-          </p>
-          
-          <div className="space-y-4 mb-8">
-            <div className="flex items-center gap-3">
-              <Clock size={20} className="text-[var(--color-secondary-600)] shrink-0" />
-              <span className="text-[var(--color-neutral-700)]"><strong>Hours:</strong> Half-day (8AM-12PM) or Full-day (8AM-4PM)</span>
+            <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br from-[var(--color-${program.color}-500)] to-[var(--color-${program.color}-600)] flex items-center justify-center text-white mb-5 shadow-md`}>
+              {program.icon}
             </div>
-            <div className="flex items-center gap-3">
-              <Users size={20} className="text-[var(--color-secondary-600)] shrink-0" />
-              <span className="text-[var(--color-neutral-700)]"><strong>Class Size:</strong> Maximum 10 students, 1 teacher</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <Calendar size={20} className="text-[var(--color-secondary-600)] shrink-0" />
-              <span className="text-[var(--color-neutral-700)]"><strong>Days:</strong> Monday to Friday</span>
-            </div>
-          </div>
-          
-          <div className="mb-8">
-            <h3 className="font-bold text-[var(--color-neutral-900)] mb-4">Program Highlights:</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <CheckCircle size={20} className="text-[var(--color-secondary-600)] shrink-0 mt-0.5" />
-                <span className="text-[var(--color-neutral-700)]">Letter recognition and phonics through play</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle size={20} className="text-[var(--color-secondary-600)] shrink-0 mt-0.5" />
-                <span className="text-[var(--color-neutral-700)]">Counting, shapes, patterns, and sorting games</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle size={20} className="text-[var(--color-secondary-600)] shrink-0 mt-0.5" />
-                <span className="text-[var(--color-neutral-700)]">Art projects, dramatic play, and storytelling</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle size={20} className="text-[var(--color-secondary-600)] shrink-0 mt-0.5" />
-                <span className="text-[var(--color-neutral-700)]">Introduction to science experiments and nature study</span>
-              </li>
+            <h2 className="text-xl sm:text-2xl font-bold text-[var(--color-neutral-900)] mb-1">{program.name}</h2>
+            <p className={`text-sm font-semibold text-[var(--color-${program.color}-600)] mb-4`}>{program.age}</p>
+            <p className="text-sm text-[var(--color-neutral-700)] leading-relaxed mb-5">{program.desc}</p>
+            <ul className="space-y-2.5 mb-6">
+              {program.highlights.map((h) => (
+                <li key={h} className="flex items-start gap-2 text-sm text-[var(--color-neutral-700)]">
+                  <CheckCircle size={16} className={`text-[var(--color-${program.color}-600)] shrink-0 mt-0.5`} />
+                  <span>{h}</span>
+                </li>
+              ))}
             </ul>
-          </div>
-          
-          <div className="p-6 rounded-xl bg-white border-2 border-[var(--color-secondary-200)] mb-6">
-            <p className="text-2xl font-bold text-[var(--color-secondary-600)] mb-1">Rp 4,100,000</p>
-            <p className="text-sm text-[var(--color-neutral-600)]">per month • All meals included</p>
-          </div>
-          
-          <Link 
-            to="/portfolio/admissions" 
-            className="block text-center px-8 py-4 rounded-xl bg-gradient-to-r from-[var(--color-secondary-500)] to-[var(--color-primary-500)] hover:shadow-xl text-white font-bold transition-all hover:-translate-y-0.5"
-          >
-            Enroll Now
-          </Link>
-        </div>
+            <Link
+              to="/portfolio/admissions"
+              className={`block text-center px-6 py-3 rounded-xl bg-gradient-to-r from-[var(--color-${program.color}-500)] to-[var(--color-${program.color}-600)] text-white font-bold transition-all hover:shadow-lg hover:-translate-y-0.5 text-sm`}
+            >
+              Daftar Sekarang
+            </Link>
+          </motion.div>
+        ))}
+      </motion.section>
 
-        {/* Kindergarten Program */}
-        <div className="p-10 rounded-3xl bg-gradient-to-br from-[var(--color-accent-50)] via-white to-[var(--color-secondary-50)] border-2 border-[var(--color-accent-300)] shadow-lg hover:shadow-2xl transition-all">
-          <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[var(--color-accent-500)] to-[var(--color-secondary-500)] flex items-center justify-center text-white mb-8 shadow-md">
-            <Zap size={40} />
-          </div>
-          
-          <div className="mb-6">
-            <h2 className="text-3xl font-bold text-[var(--color-neutral-900)] mb-2">Kindergarten Program</h2>
-            <p className="text-xl text-[var(--color-accent-600)] font-semibold">Ages 4-5 years</p>
-          </div>
-          
-          <p className="text-[var(--color-neutral-700)] leading-relaxed mb-8">
-            School-readiness focus with reading, writing, problem-solving, and social skills. Preparing confident, capable learners for primary school success.
-          </p>
-          
-          <div className="space-y-4 mb-8">
-            <div className="flex items-center gap-3">
-              <Clock size={20} className="text-[var(--color-accent-600)] shrink-0" />
-              <span className="text-[var(--color-neutral-700)]"><strong>Hours:</strong> Half-day (8AM-12PM) or Full-day (8AM-4PM)</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <Users size={20} className="text-[var(--color-accent-600)] shrink-0" />
-              <span className="text-[var(--color-neutral-700)]"><strong>Class Size:</strong> Maximum 12 students, 1 teacher</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <Calendar size={20} className="text-[var(--color-accent-600)] shrink-0" />
-              <span className="text-[var(--color-neutral-700)]"><strong>Days:</strong> Monday to Friday</span>
-            </div>
-          </div>
-          
-          <div className="mb-8">
-            <h3 className="font-bold text-[var(--color-neutral-900)] mb-4">Program Highlights:</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <CheckCircle size={20} className="text-[var(--color-accent-600)] shrink-0 mt-0.5" />
-                <span className="text-[var(--color-neutral-700)]">Reading fluency and writing practice daily</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle size={20} className="text-[var(--color-accent-600)] shrink-0 mt-0.5" />
-                <span className="text-[var(--color-neutral-700)]">Math skills: addition, subtraction, and logic puzzles</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle size={20} className="text-[var(--color-accent-600)] shrink-0 mt-0.5" />
-                <span className="text-[var(--color-neutral-700)]">STEAM projects and critical thinking challenges</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle size={20} className="text-[var(--color-accent-600)] shrink-0 mt-0.5" />
-                <span className="text-[var(--color-neutral-700)]">Leadership skills, presentations, and teamwork</span>
-              </li>
-            </ul>
-          </div>
-          
-          <div className="p-6 rounded-xl bg-white border-2 border-[var(--color-accent-200)] mb-6">
-            <p className="text-2xl font-bold text-[var(--color-accent-600)] mb-1">Rp 4,800,000</p>
-            <p className="text-sm text-[var(--color-neutral-600)]">per month • All meals included</p>
-          </div>
-          
-          <Link 
-            to="/portfolio/admissions" 
-            className="block text-center px-8 py-4 rounded-xl bg-gradient-to-r from-[var(--color-accent-500)] to-[var(--color-secondary-500)] hover:shadow-xl text-white font-bold transition-all hover:-translate-y-0.5"
-          >
-            Enroll Now
-          </Link>
+      {/* ==================== BILINGUAL CLASS ==================== */}
+      <motion.section
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.5, ease: [0, 0, 0.2, 1] }}
+        className="relative overflow-hidden p-6 sm:p-10 lg:p-12 rounded-3xl bg-gradient-to-br from-[var(--color-secondary-500)] via-[var(--color-primary-500)] to-[var(--color-accent-500)] text-white shadow-2xl"
+      >
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/20 text-xs font-bold uppercase tracking-wider mb-4">
+          <Globe size={14} />
+          <span>NEW — Bilingual Class</span>
         </div>
-      </section>
-
-      {/* What's Included */}
-      <section className="py-12 px-10 lg:px-16 rounded-3xl bg-gradient-to-br from-[var(--color-primary-50)] via-white to-[var(--color-secondary-50)] border-2 border-[var(--color-primary-200)] shadow-lg">
-        <h2 className="text-4xl lg:text-5xl font-bold text-[var(--color-neutral-900)] mb-12 text-center">
-          What's Included in Every Program
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3">
+          Open Bilingual Class
         </h2>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="flex items-start gap-4">
-            <div className="w-12 h-12 rounded-xl bg-[var(--color-primary-100)] flex items-center justify-center shrink-0 text-2xl">
-              🍎
-            </div>
-            <div>
-              <h3 className="font-bold text-[var(--color-neutral-900)] mb-2">Healthy Meals & Snacks</h3>
-              <p className="text-sm text-[var(--color-neutral-700)]">Nutritious breakfast, lunch, and 2 snacks daily. Accommodates allergies and dietary preferences.</p>
-            </div>
-          </div>
-          
-          <div className="flex items-start gap-4">
-            <div className="w-12 h-12 rounded-xl bg-[var(--color-secondary-100)] flex items-center justify-center shrink-0 text-2xl">
-              📚
-            </div>
-            <div>
-              <h3 className="font-bold text-[var(--color-neutral-900)] mb-2">All Learning Materials</h3>
-              <p className="text-sm text-[var(--color-neutral-700)]">Books, art supplies, STEAM kits, and educational toys. No extra costs for activities.</p>
-            </div>
-          </div>
-          
-          <div className="flex items-start gap-4">
-            <div className="w-12 h-12 rounded-xl bg-[var(--color-accent-100)] flex items-center justify-center shrink-0 text-2xl">
-              📱
-            </div>
-            <div>
-              <h3 className="font-bold text-[var(--color-neutral-900)] mb-2">Parent App Access</h3>
-              <p className="text-sm text-[var(--color-neutral-700)]">Real-time photos, daily reports, and live camera feeds. Stay connected anytime.</p>
-            </div>
-          </div>
-          
-          <div className="flex items-start gap-4">
-            <div className="w-12 h-12 rounded-xl bg-[var(--color-success-100)] flex items-center justify-center shrink-0 text-2xl">
-              👕
-            </div>
-            <div>
-              <h3 className="font-bold text-[var(--color-neutral-900)] mb-2">Uniforms & Supplies</h3>
-              <p className="text-sm text-[var(--color-neutral-700)]">2 sets of uniforms, bags, and water bottles included in first month's fee.</p>
-            </div>
-          </div>
-          
-          <div className="flex items-start gap-4">
-            <div className="w-12 h-12 rounded-xl bg-[var(--color-warning-100)] flex items-center justify-center shrink-0 text-2xl">
-              🎨
-            </div>
-            <div>
-              <h3 className="font-bold text-[var(--color-neutral-900)] mb-2">Enrichment Activities</h3>
-              <p className="text-sm text-[var(--color-neutral-700)]">Weekly music, art, yoga, and outdoor nature walks at no additional charge.</p>
-            </div>
-          </div>
-          
-          <div className="flex items-start gap-4">
-            <div className="w-12 h-12 rounded-xl bg-[var(--color-info-100)] flex items-center justify-center shrink-0 text-2xl">
-              💬
-            </div>
-            <div>
-              <h3 className="font-bold text-[var(--color-neutral-900)] mb-2">Progress Tracking</h3>
-              <p className="text-sm text-[var(--color-neutral-700)]">Monthly reports, portfolio photos, and bi-monthly parent-teacher conferences.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Flexible Options */}
-      <section>
-        <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-bold text-[var(--color-neutral-900)] mb-4">
-            Flexible Scheduling Options
-          </h2>
-          <p className="text-xl text-[var(--color-neutral-600)] max-w-3xl mx-auto">
-            We adapt to your family's needs
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <div className="p-8 rounded-2xl bg-white border-2 border-[var(--color-neutral-200)] shadow-sm">
-            <h3 className="text-2xl font-bold text-[var(--color-neutral-900)] mb-4">Extended Care</h3>
-            <p className="text-[var(--color-neutral-700)] mb-6">
-              Need drop-off before 8 AM or pickup after 4 PM? Our extended care runs from 7 AM to 6 PM for working parents.
-            </p>
-            <p className="text-lg font-bold text-[var(--color-primary-600)]">Rp 300,000/month</p>
-          </div>
-
-          <div className="p-8 rounded-2xl bg-white border-2 border-[var(--color-neutral-200)] shadow-sm">
-            <h3 className="text-2xl font-bold text-[var(--color-neutral-900)] mb-4">Summer Camp</h3>
-            <p className="text-[var(--color-neutral-700)] mb-6">
-              June-July special programs with field trips, water play, and themed weeks. Keep learning fun during school breaks!
-            </p>
-            <p className="text-lg font-bold text-[var(--color-secondary-600)]">Rp 2,500,000/month</p>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-16 px-8 lg:px-16 rounded-3xl bg-gradient-to-br from-[var(--color-neutral-900)] to-[var(--color-neutral-800)] text-white text-center shadow-2xl">
-        <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-          Find the Perfect Program for Your Child
-        </h2>
-        <p className="text-xl lg:text-2xl mb-10 max-w-3xl mx-auto opacity-95">
-          Still deciding? Schedule a tour to see our programs in action and meet our educators.
+        <p className="text-base sm:text-lg opacity-95 mb-6 max-w-3xl">
+          Untuk anak usia 4–6 tahun. Guru fasih dua bahasa, kurikulum dari ahli pendidikan, metode fun &amp; play-based learning.
         </p>
-        <div className="flex flex-wrap gap-4 justify-center">
-          <Link 
-            to="/portfolio/admissions" 
-            className="px-10 py-5 rounded-2xl bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-accent-500)] text-white font-bold transition-all hover:shadow-2xl hover:-translate-y-1 text-lg"
+        <div className="flex flex-wrap gap-2 sm:gap-3 mb-8">
+          {[
+            'Fun Learning', 'Expert Curriculum', 'Professional Educators',
+            'Play-Based Method', 'Bilingual Environment', 'Small Class Size',
+          ].map((chip) => (
+            <span key={chip} className="px-3 py-1.5 rounded-full bg-white/20 text-xs sm:text-sm font-medium backdrop-blur-sm">
+              {chip}
+            </span>
+          ))}
+        </div>
+        <Link
+          to="/portfolio/admissions"
+          className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-white text-[var(--color-primary-600)] font-bold hover:shadow-xl transition-all hover:-translate-y-0.5 text-sm sm:text-base"
+        >
+          Daftar Kelas Bilingual
+          <ArrowRight size={18} />
+        </Link>
+      </motion.section>
+
+      {/* ==================== METODE UMMI ==================== */}
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={stagger}
+        className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center"
+      >
+        <motion.div variants={fadeUp} transition={{ duration: 0.5 }}>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--color-primary-100)] text-[var(--color-primary-700)] text-xs font-semibold mb-4">
+            <BookOpen size={14} />
+            <span>Program Unggulan</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--color-neutral-900)] mb-4">
+            Metode Ummi
+          </h2>
+          <p className="text-sm sm:text-base text-[var(--color-neutral-700)] leading-relaxed mb-5">
+            Metode Ummi adalah metode pembelajaran Al-Qur'an yang mudah, menyenangkan, dan menyentuh hati.
+            Anak-anak belajar membaca Al-Qur'an dengan tartil melalui pendekatan bertahap yang penuh kasih sayang,
+            tanpa tekanan — sehingga tumbuh kecintaan terhadap Al-Qur'an secara alami.
+          </p>
+          <ul className="space-y-3">
+            {[
+              'Pembelajaran berjenjang sesuai kemampuan anak',
+              'Guru bersertifikat Metode Ummi',
+              'Hafalan surat-surat pendek & doa harian',
+              'Membangun kecintaan Al-Qur\'an sejak dini',
+            ].map((item) => (
+              <li key={item} className="flex items-start gap-2.5 text-sm text-[var(--color-neutral-700)]">
+                <CheckCircle size={16} className="text-[var(--color-primary-600)] shrink-0 mt-0.5" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+
+        <motion.div
+          variants={fadeUp}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[var(--color-primary-50)] to-[var(--color-accent-50)] border-2 border-[var(--color-primary-200)] shadow-lg"
+        >
+          <div className="text-center">
+            <div className="text-6xl sm:text-7xl mb-4">📖</div>
+            <h3 className="text-xl font-bold text-[var(--color-neutral-900)] mb-2">Belajar Membaca &amp; Mencintai Al-Qur'an</h3>
+            <p className="text-sm text-[var(--color-neutral-600)]">Mudah &bull; Menyenangkan &bull; Menyentuh Hati</p>
+          </div>
+        </motion.div>
+      </motion.section>
+
+      {/* ==================== EKSTRAKURIKULER ==================== */}
+      <section>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={stagger}
+          className="text-center mb-10 sm:mb-14"
+        >
+          <motion.h2 variants={fadeUp} transition={{ duration: 0.5 }} className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-neutral-900)] mb-3">
+            Ekstrakurikuler
+          </motion.h2>
+          <motion.p variants={fadeUp} transition={{ duration: 0.5 }} className="text-base sm:text-lg text-[var(--color-neutral-600)] max-w-2xl mx-auto">
+            Beragam kegiatan menyenangkan untuk mengembangkan bakat dan minat anak
+          </motion.p>
+        </motion.div>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={stagger}
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6"
+        >
+          {[
+            { icon: <Cpu size={24} />, name: 'Coding & Robotic', desc: 'Pengenalan teknologi dan logika berpikir', color: 'primary' },
+            { icon: <Globe size={24} />, name: 'English Class', desc: 'Belajar bahasa Inggris dengan fun', color: 'secondary' },
+            { icon: <Waves size={24} />, name: 'Berenang', desc: 'Olahraga air untuk motorik & keberanian', color: 'info' },
+            { icon: <Drum size={24} />, name: 'Drumband', desc: 'Melatih koordinasi dan kerjasama tim', color: 'accent' },
+            { icon: <Music size={24} />, name: 'Angklung', desc: 'Mengenal alat musik tradisional Indonesia', color: 'warning' },
+            { icon: <Sparkles size={24} />, name: 'Menari', desc: 'Ekspresi gerak dan seni tari nusantara', color: 'accent' },
+            { icon: <Palette size={24} />, name: 'Menggambar & Mewarnai', desc: 'Kreativitas seni visual dan imajinasi', color: 'primary' },
+          ].map((ekskul) => (
+            <motion.div
+              key={ekskul.name}
+              variants={fadeUp}
+              transition={{ duration: 0.3 }}
+              className="p-4 sm:p-6 rounded-2xl bg-white border border-[var(--color-neutral-200)] shadow-sm hover:shadow-md transition-shadow text-center"
+            >
+              <div className={`w-12 h-12 mx-auto rounded-xl bg-[var(--color-${ekskul.color}-100)] flex items-center justify-center text-[var(--color-${ekskul.color}-600)] mb-3`}>
+                {ekskul.icon}
+              </div>
+              <h3 className="text-sm sm:text-base font-bold text-[var(--color-neutral-900)] mb-1">{ekskul.name}</h3>
+              <p className="text-xs text-[var(--color-neutral-600)]">{ekskul.desc}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
+
+      {/* ==================== TUMBUH KEMBANG ==================== */}
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={stagger}
+      >
+        <motion.div variants={fadeUp} className="text-center mb-10 sm:mb-14">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-neutral-900)] mb-3">
+            Stimulasi Tumbuh Kembang
+          </h2>
+          <p className="text-base sm:text-lg text-[var(--color-neutral-600)] max-w-3xl mx-auto">
+            Kami mendukung perkembangan anak secara holistik sesuai tahapan usia
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto">
+          {[
+            { icon: <Hand size={24} />, label: 'Motorik', desc: 'Halus & kasar', color: 'primary' },
+            { icon: <Brain size={24} />, label: 'Sensorik', desc: 'Panca indera', color: 'secondary' },
+            { icon: <MessageCircle size={24} />, label: 'Komunikasi', desc: 'Bicara & bahasa', color: 'accent' },
+            { icon: <Users size={24} />, label: 'Sosial', desc: 'Berinteraksi & berbagi', color: 'info' },
+            { icon: <Sparkles size={24} />, label: 'Kemandirian', desc: 'Percaya diri', color: 'warning' },
+            { icon: <Heart size={24} />, label: 'Karakter', desc: 'Akhlak mulia', color: 'success' },
+          ].map((dev) => (
+            <motion.div
+              key={dev.label}
+              variants={fadeUp}
+              transition={{ duration: 0.3 }}
+              className="p-4 sm:p-6 rounded-2xl bg-white border border-[var(--color-neutral-200)] shadow-sm text-center"
+            >
+              <div className={`w-12 h-12 mx-auto rounded-xl bg-[var(--color-${dev.color}-100)] flex items-center justify-center text-[var(--color-${dev.color}-600)] mb-3`}>
+                {dev.icon}
+              </div>
+              <h3 className="text-sm sm:text-base font-bold text-[var(--color-neutral-900)] mb-0.5">{dev.label}</h3>
+              <p className="text-xs text-[var(--color-neutral-600)]">{dev.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.p
+          variants={fadeUp}
+          className="text-center text-sm text-[var(--color-neutral-600)] mt-6 max-w-2xl mx-auto"
+        >
+          Kami memahami kekhawatiran orang tua tentang speech delay dan anak yang lambat beradaptasi.
+          Guru kami terlatih untuk mendampingi setiap anak dengan sabar dan penuh perhatian.
+        </motion.p>
+      </motion.section>
+
+      {/* ==================== BILINGUAL FAQ ==================== */}
+      <section>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={stagger}
+          className="text-center mb-10 sm:mb-14"
+        >
+          <motion.h2 variants={fadeUp} transition={{ duration: 0.5 }} className="text-3xl sm:text-4xl font-bold text-[var(--color-neutral-900)] mb-3">
+            FAQ Kelas Bilingual
+          </motion.h2>
+          <motion.p variants={fadeUp} transition={{ duration: 0.5 }} className="text-base sm:text-lg text-[var(--color-neutral-600)] max-w-2xl mx-auto">
+            Pertanyaan umum seputar program bilingual kami
+          </motion.p>
+        </motion.div>
+
+        <div className="max-w-4xl mx-auto">
+          <Accordion type="single" collapsible className="space-y-3">
+            {[
+              { q: 'Apa target kelas bilingual di Jasmine?', a: 'Target utama adalah memberikan eksposur bahasa Inggris sejak dini melalui lingkungan bilingual yang alami. Anak-anak akan terbiasa mendengar dan menggunakan bahasa Inggris dalam konteks bermain dan belajar sehari-hari.' },
+              { q: 'Bagaimana metode pengajaran bilingual?', a: 'Kami menggunakan metode fun & play-based learning. Guru menggunakan dua bahasa secara natural sepanjang hari — melalui lagu, cerita, permainan, dan percakapan. Tidak ada tekanan, yang ada hanya kesenangan belajar.' },
+              { q: 'Apakah guru kelas bilingual berpengalaman?', a: 'Ya, guru kelas bilingual kami fasih berbahasa Indonesia dan Inggris, dengan kurikulum yang dirancang oleh ahli pendidikan bilingual berpengalaman.' },
+              { q: 'Bagaimana progress anak dipantau?', a: 'Kami memberikan laporan perkembangan berkala kepada orang tua, termasuk perkembangan bahasa Inggris dan bahasa Indonesia anak, serta aspek sosial dan akademis lainnya.' },
+              { q: 'Apakah anak yang belum bisa bahasa Inggris bisa ikut?', a: 'Tentu! Sebagian besar anak memulai tanpa kemampuan bahasa Inggris — itu normal. Metode immersion kami membuat anak menyerap bahasa secara alami melalui kegiatan sehari-hari.' },
+              { q: 'Berapa usia yang tepat untuk kelas bilingual?', a: 'Kelas bilingual kami dirancang untuk anak usia 4–6 tahun, saat otak anak sangat reseptif terhadap bahasa baru. Ini adalah golden age untuk pengenalan bahasa kedua.' },
+            ].map((faq, i) => (
+              <AccordionItem
+                key={i}
+                value={`bil-faq-${i}`}
+                className="p-4 sm:p-5 rounded-2xl bg-white border-2 border-[var(--color-neutral-200)] shadow-sm hover:shadow-md transition-shadow"
+              >
+                <AccordionTrigger className="text-sm sm:text-base font-bold text-[var(--color-neutral-900)] hover:no-underline">
+                  {faq.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-sm text-[var(--color-neutral-700)] leading-relaxed">
+                  {faq.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
+      {/* ==================== CTA ==================== */}
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.5 }}
+        className="py-10 sm:py-14 lg:py-16 px-6 sm:px-10 lg:px-16 rounded-3xl bg-gradient-to-br from-[var(--color-neutral-900)] to-[var(--color-neutral-800)] text-white text-center shadow-2xl"
+      >
+        <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-4 sm:mb-6">
+          Coba Free Trial Class
+        </h2>
+        <p className="text-base sm:text-lg lg:text-xl mb-8 sm:mb-10 max-w-3xl mx-auto opacity-95">
+          Biarkan anak Anda merasakan langsung serunya belajar di Jasmine. Gratis, tanpa kewajiban mendaftar!
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+          <Link
+            to="/portfolio/admissions"
+            className="px-8 py-4 sm:px-10 sm:py-5 rounded-2xl bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-accent-500)] text-white font-bold transition-all hover:shadow-2xl hover:-translate-y-1 text-base sm:text-lg"
           >
-            Schedule a Tour
+            Daftar Trial Class
           </Link>
-          <a 
-            href="tel:+622112345678" 
-            className="px-10 py-5 rounded-2xl bg-white/10 backdrop-blur-sm text-white font-bold transition-all hover:bg-white/20 border-2 border-white/40 text-lg"
+          <a
+            href="https://wa.me/6281328846089"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-4 sm:px-10 sm:py-5 rounded-2xl bg-white/10 backdrop-blur-sm text-white font-bold transition-all hover:bg-white/20 border-2 border-white/40 text-base sm:text-lg"
           >
-            Call Us Today
+            Tanya via WhatsApp
           </a>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 }

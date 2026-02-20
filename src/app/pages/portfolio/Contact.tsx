@@ -1,5 +1,24 @@
-import { MapPin, Phone, Mail, Clock, MessageCircle, Send } from 'lucide-react';
 import { useState } from 'react';
+import { motion } from 'motion/react';
+import {
+  MapPin, Phone, Mail, Clock, MessageCircle, Send,
+  Instagram, ArrowRight,
+} from 'lucide-react';
+
+const WHATSAPP_URL = 'https://wa.me/6281328846089';
+const PHONE_1 = '081328846089';
+const PHONE_2 = '085229552707';
+const INSTAGRAM = '@jasminealmuflihun';
+const ADDRESS = 'Jl. Grogolsari, Juwangen, Purwomartani, Kalasan, Sleman, Yogyakarta';
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const stagger = {
+  visible: { transition: { staggerChildren: 0.1 } },
+};
 
 export default function PortfolioContact() {
   const [formData, setFormData] = useState({
@@ -7,284 +26,320 @@ export default function PortfolioContact() {
     email: '',
     phone: '',
     subject: '',
-    message: ''
+    message: '',
   });
+
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert('Thank you for your message! We will respond within 24 hours.');
-    setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+    setSubmitted(true);
   };
 
   return (
-    <div className="space-y-24">
-      {/* Hero */}
-      <section className="text-center space-y-8 py-12">
-        <h1 className="text-5xl lg:text-6xl font-bold text-[var(--color-neutral-900)] leading-tight">
-          We're Here to Help
-        </h1>
-        <h2 className="text-2xl lg:text-3xl text-[var(--color-neutral-600)] max-w-4xl mx-auto font-medium">
-          Questions? Schedule a visit? Let's connect and start the conversation.
-        </h2>
+    <div className="space-y-16 sm:space-y-20 lg:space-y-24">
+      {/* ==================== HERO ==================== */}
+      <section className="text-center space-y-6 py-4 lg:py-8">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: [0, 0, 0.2, 1] }}
+          className="text-4xl sm:text-5xl lg:text-7xl font-bold text-[var(--color-neutral-900)] leading-tight"
+        >
+          Hubungi Kami
+        </motion.h1>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.5, ease: [0, 0, 0.2, 1] }}
+          className="text-lg sm:text-xl lg:text-2xl text-[var(--color-neutral-600)] max-w-4xl mx-auto leading-relaxed font-medium"
+        >
+          Kami siap membantu menjawab pertanyaan Anda. Jangan ragu untuk menghubungi kami kapan saja!
+        </motion.h2>
       </section>
 
-      {/* Contact Methods */}
-      <section className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <a 
-          href="tel:+622112345678"
-          className="group p-8 rounded-2xl bg-gradient-to-br from-[var(--color-primary-50)] to-white border-2 border-[var(--color-primary-200)] hover:border-[var(--color-primary-400)] hover:shadow-lg transition-all text-center"
+      {/* ==================== CONTACT METHODS ==================== */}
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={stagger}
+        className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
+      >
+        <motion.a
+          href={`tel:+62${PHONE_1}`}
+          variants={fadeUp}
+          transition={{ duration: 0.3 }}
+          className="group p-5 sm:p-8 rounded-2xl bg-gradient-to-br from-[var(--color-primary-50)] to-white border-2 border-[var(--color-primary-200)] hover:border-[var(--color-primary-400)] hover:shadow-lg transition-all text-center"
         >
-          <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-[var(--color-primary-500)] to-[var(--color-accent-500)] flex items-center justify-center text-white mb-6 shadow-md group-hover:scale-110 transition-transform">
-            <Phone size={28} />
+          <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-2xl bg-gradient-to-br from-[var(--color-primary-500)] to-[var(--color-accent-500)] flex items-center justify-center text-white mb-3 sm:mb-5 shadow-md group-hover:scale-110 transition-transform">
+            <Phone size={24} />
           </div>
-          <h3 className="text-xl font-bold text-[var(--color-neutral-900)] mb-2">Call Us</h3>
-          <p className="text-lg text-[var(--color-primary-600)] font-semibold">+62 21 1234 5678</p>
-          <p className="text-sm text-[var(--color-neutral-600)] mt-2">Mon-Fri, 8 AM - 5 PM</p>
-        </a>
+          <h3 className="text-base sm:text-lg font-bold text-[var(--color-neutral-900)] mb-1">Telepon</h3>
+          <p className="text-xs sm:text-sm text-[var(--color-primary-600)] font-semibold">{PHONE_1}</p>
+          <p className="text-xs text-[var(--color-neutral-500)] mt-1 hidden sm:block">Senin–Jumat</p>
+        </motion.a>
 
-        <a 
-          href="https://wa.me/622112345678"
+        <motion.a
+          href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="group p-8 rounded-2xl bg-gradient-to-br from-[var(--color-success-50)] to-white border-2 border-[var(--color-success-200)] hover:border-[var(--color-success-400)] hover:shadow-lg transition-all text-center"
+          variants={fadeUp}
+          transition={{ duration: 0.3 }}
+          className="group p-5 sm:p-8 rounded-2xl bg-gradient-to-br from-[var(--color-success-50)] to-white border-2 border-[var(--color-success-200)] hover:border-[var(--color-success-400)] hover:shadow-lg transition-all text-center"
         >
-          <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-[var(--color-success-500)] to-[var(--color-success-600)] flex items-center justify-center text-white mb-6 shadow-md group-hover:scale-110 transition-transform">
-            <MessageCircle size={28} />
+          <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-2xl bg-gradient-to-br from-[var(--color-success-500)] to-[var(--color-success-600)] flex items-center justify-center text-white mb-3 sm:mb-5 shadow-md group-hover:scale-110 transition-transform">
+            <MessageCircle size={24} />
           </div>
-          <h3 className="text-xl font-bold text-[var(--color-neutral-900)] mb-2">WhatsApp</h3>
-          <p className="text-lg text-[var(--color-success-600)] font-semibold">+62 812 3456 7890</p>
-          <p className="text-sm text-[var(--color-neutral-600)] mt-2">Fast response guaranteed</p>
-        </a>
+          <h3 className="text-base sm:text-lg font-bold text-[var(--color-neutral-900)] mb-1">WhatsApp</h3>
+          <p className="text-xs sm:text-sm text-[var(--color-success-600)] font-semibold">Chat Langsung</p>
+          <p className="text-xs text-[var(--color-neutral-500)] mt-1 hidden sm:block">Respon cepat</p>
+        </motion.a>
 
-        <a 
-          href="mailto:hello@jasminekindergarten.com"
-          className="group p-8 rounded-2xl bg-gradient-to-br from-[var(--color-secondary-50)] to-white border-2 border-[var(--color-secondary-200)] hover:border-[var(--color-secondary-400)] hover:shadow-lg transition-all text-center"
+        <motion.a
+          href={`https://instagram.com/${INSTAGRAM.replace('@', '')}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          variants={fadeUp}
+          transition={{ duration: 0.3 }}
+          className="group p-5 sm:p-8 rounded-2xl bg-gradient-to-br from-[var(--color-accent-50)] to-white border-2 border-[var(--color-accent-200)] hover:border-[var(--color-accent-400)] hover:shadow-lg transition-all text-center"
         >
-          <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-[var(--color-secondary-500)] to-[var(--color-primary-500)] flex items-center justify-center text-white mb-6 shadow-md group-hover:scale-110 transition-transform">
-            <Mail size={28} />
+          <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-2xl bg-gradient-to-br from-[var(--color-accent-500)] to-[var(--color-secondary-500)] flex items-center justify-center text-white mb-3 sm:mb-5 shadow-md group-hover:scale-110 transition-transform">
+            <Instagram size={24} />
           </div>
-          <h3 className="text-xl font-bold text-[var(--color-neutral-900)] mb-2">Email Us</h3>
-          <p className="text-sm text-[var(--color-secondary-600)] font-semibold break-words">hello@jasmine<wbr />kindergarten.com</p>
-          <p className="text-sm text-[var(--color-neutral-600)] mt-2">24-hour reply time</p>
-        </a>
+          <h3 className="text-base sm:text-lg font-bold text-[var(--color-neutral-900)] mb-1">Instagram</h3>
+          <p className="text-xs sm:text-sm text-[var(--color-accent-600)] font-semibold">{INSTAGRAM}</p>
+          <p className="text-xs text-[var(--color-neutral-500)] mt-1 hidden sm:block">Follow kami</p>
+        </motion.a>
 
-        <div className="p-8 rounded-2xl bg-gradient-to-br from-[var(--color-accent-50)] to-white border-2 border-[var(--color-accent-200)] text-center">
-          <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-[var(--color-accent-500)] to-[var(--color-secondary-500)] flex items-center justify-center text-white mb-6 shadow-md">
-            <MapPin size={28} />
+        <motion.div
+          variants={fadeUp}
+          transition={{ duration: 0.3 }}
+          className="p-5 sm:p-8 rounded-2xl bg-gradient-to-br from-[var(--color-secondary-50)] to-white border-2 border-[var(--color-secondary-200)] text-center"
+        >
+          <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-2xl bg-gradient-to-br from-[var(--color-secondary-500)] to-[var(--color-primary-500)] flex items-center justify-center text-white mb-3 sm:mb-5 shadow-md">
+            <MapPin size={24} />
           </div>
-          <h3 className="text-xl font-bold text-[var(--color-neutral-900)] mb-2">Visit Us</h3>
-          <p className="text-sm text-[var(--color-neutral-700)]">Jl. Pendidikan No. 123</p>
-          <p className="text-sm text-[var(--color-neutral-700)]">Menteng, Jakarta Pusat 10310</p>
-          <p className="text-sm text-[var(--color-accent-600)] mt-2 font-semibold">Open for tours daily</p>
-        </div>
-      </section>
+          <h3 className="text-base sm:text-lg font-bold text-[var(--color-neutral-900)] mb-1">Lokasi</h3>
+          <p className="text-xs sm:text-sm text-[var(--color-neutral-700)]">Kalasan, Sleman</p>
+          <p className="text-xs text-[var(--color-neutral-500)] mt-1 hidden sm:block">Yogyakarta</p>
+        </motion.div>
+      </motion.section>
 
-      {/* Contact Form */}
-      <section className="max-w-5xl mx-auto">
-        <div className="grid lg:grid-cols-5 gap-10">
-          {/* Form */}
-          <div className="lg:col-span-3">
-            <div className="p-10 rounded-3xl bg-white border-2 border-[var(--color-neutral-200)] shadow-lg">
-              <h2 className="text-3xl font-bold text-[var(--color-neutral-900)] mb-3">Send Us a Message</h2>
-              <p className="text-[var(--color-neutral-600)] mb-8">
-                Have questions? Want to schedule a visit? Fill out the form and we'll respond within 24 hours.
-              </p>
+      {/* ==================== FORM + SIDEBAR ==================== */}
+      <section className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-10">
+        {/* Form */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.4 }}
+          className="lg:col-span-3"
+        >
+          <div className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-white border-2 border-[var(--color-neutral-200)] shadow-lg">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--color-neutral-900)] mb-2">Kirim Pesan</h2>
+            <p className="text-sm text-[var(--color-neutral-600)] mb-6 sm:mb-8">
+              Ada pertanyaan? Ingin jadwalkan kunjungan? Isi formulir dan kami akan merespons dalam 24 jam.
+            </p>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+            {submitted ? (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, ease: [0.34, 1.56, 0.64, 1] }}
+                className="text-center py-10"
+              >
+                <div className="w-16 h-16 mx-auto rounded-full bg-[var(--color-success-500)] flex items-center justify-center text-white mb-4">
+                  <Send size={28} />
+                </div>
+                <h3 className="text-xl font-bold text-[var(--color-neutral-900)] mb-2">Pesan Terkirim!</h3>
+                <p className="text-sm text-[var(--color-neutral-600)] mb-6">
+                  Terima kasih! Kami akan merespons dalam 24 jam.
+                </p>
+                <button
+                  onClick={() => { setSubmitted(false); setFormData({ name: '', email: '', phone: '', subject: '', message: '' }); }}
+                  className="text-sm text-[var(--color-primary-600)] font-semibold hover:underline"
+                >
+                  Kirim pesan lagi
+                </button>
+              </motion.div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
-                  <label className="block text-sm font-semibold text-[var(--color-neutral-900)] mb-2">
-                    Your Name *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    className="w-full px-4 py-3 rounded-xl border-2 border-[var(--color-neutral-300)] focus:border-[var(--color-primary-500)] focus:ring-2 focus:ring-[var(--color-primary-200)] outline-none transition-all"
-                    placeholder="Full name"
+                  <label className="block text-sm font-semibold text-[var(--color-neutral-900)] mb-1.5">Nama Lengkap *</label>
+                  <input type="text" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className="w-full px-4 py-3 rounded-xl border-2 border-[var(--color-neutral-300)] focus:border-[var(--color-primary-500)] focus:ring-2 focus:ring-[var(--color-primary-200)] outline-none transition-all text-sm"
+                    placeholder="Nama lengkap Anda"
                   />
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-semibold text-[var(--color-neutral-900)] mb-2">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({...formData, email: e.target.value})}
-                      className="w-full px-4 py-3 rounded-xl border-2 border-[var(--color-neutral-300)] focus:border-[var(--color-primary-500)] focus:ring-2 focus:ring-[var(--color-primary-200)] outline-none transition-all"
-                      placeholder="your@email.com"
+                    <label className="block text-sm font-semibold text-[var(--color-neutral-900)] mb-1.5">Email *</label>
+                    <input type="email" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl border-2 border-[var(--color-neutral-300)] focus:border-[var(--color-primary-500)] focus:ring-2 focus:ring-[var(--color-primary-200)] outline-none transition-all text-sm"
+                      placeholder="email@anda.com"
                     />
                   </div>
-
                   <div>
-                    <label className="block text-sm font-semibold text-[var(--color-neutral-900)] mb-2">
-                      Phone Number *
-                    </label>
-                    <input
-                      type="tel"
-                      required
-                      value={formData.phone}
-                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                      className="w-full px-4 py-3 rounded-xl border-2 border-[var(--color-neutral-300)] focus:border-[var(--color-primary-500)] focus:ring-2 focus:ring-[var(--color-primary-200)] outline-none transition-all"
-                      placeholder="+62 812 3456 7890"
+                    <label className="block text-sm font-semibold text-[var(--color-neutral-900)] mb-1.5">Nomor Telepon *</label>
+                    <input type="tel" required value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl border-2 border-[var(--color-neutral-300)] focus:border-[var(--color-primary-500)] focus:ring-2 focus:ring-[var(--color-primary-200)] outline-none transition-all text-sm"
+                      placeholder="08xxxxxxxxxx"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-[var(--color-neutral-900)] mb-2">
-                    Subject *
-                  </label>
-                  <select
-                    required
-                    value={formData.subject}
-                    onChange={(e) => setFormData({...formData, subject: e.target.value})}
-                    className="w-full px-4 py-3 rounded-xl border-2 border-[var(--color-neutral-300)] focus:border-[var(--color-primary-500)] focus:ring-2 focus:ring-[var(--color-primary-200)] outline-none transition-all"
+                  <label className="block text-sm font-semibold text-[var(--color-neutral-900)] mb-1.5">Subjek *</label>
+                  <select required value={formData.subject} onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                    className="w-full px-4 py-3 rounded-xl border-2 border-[var(--color-neutral-300)] focus:border-[var(--color-primary-500)] focus:ring-2 focus:ring-[var(--color-primary-200)] outline-none transition-all text-sm"
                   >
-                    <option value="">Select a topic</option>
-                    <option value="tour">Schedule a campus tour</option>
-                    <option value="enrollment">Enrollment inquiries</option>
-                    <option value="programs">Questions about programs</option>
-                    <option value="pricing">Pricing and payment options</option>
-                    <option value="other">Other questions</option>
+                    <option value="">Pilih topik</option>
+                    <option value="info">Informasi Umum</option>
+                    <option value="pendaftaran">Pendaftaran</option>
+                    <option value="kunjungan">Jadwal Kunjungan</option>
+                    <option value="lainnya">Lainnya</option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-[var(--color-neutral-900)] mb-2">
-                    Your Message *
-                  </label>
-                  <textarea
-                    required
-                    rows={5}
-                    value={formData.message}
-                    onChange={(e) => setFormData({...formData, message: e.target.value})}
-                    className="w-full px-4 py-3 rounded-xl border-2 border-[var(--color-neutral-300)] focus:border-[var(--color-primary-500)] focus:ring-2 focus:ring-[var(--color-primary-200)] outline-none transition-all resize-none"
-                    placeholder="Tell us how we can help..."
+                  <label className="block text-sm font-semibold text-[var(--color-neutral-900)] mb-1.5">Pesan *</label>
+                  <textarea required rows={4} value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    className="w-full px-4 py-3 rounded-xl border-2 border-[var(--color-neutral-300)] focus:border-[var(--color-primary-500)] focus:ring-2 focus:ring-[var(--color-primary-200)] outline-none transition-all resize-none text-sm"
+                    placeholder="Tulis pesan Anda di sini..."
                   />
                 </div>
 
-                <button
-                  type="submit"
-                  className="w-full px-8 py-4 rounded-xl bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-accent-500)] hover:shadow-xl text-white font-bold transition-all hover:-translate-y-0.5 shadow-lg flex items-center justify-center gap-3 text-lg"
+                <button type="submit"
+                  className="w-full px-8 py-4 rounded-xl bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-accent-500)] hover:shadow-xl text-white font-bold transition-all hover:-translate-y-0.5 shadow-lg flex items-center justify-center gap-2 text-base sm:text-lg"
                 >
-                  <span>Send Message</span>
-                  <Send size={20} />
+                  <span>Kirim Pesan</span>
+                  <Send size={18} />
                 </button>
               </form>
+            )}
+          </div>
+        </motion.div>
+
+        {/* Sidebar Info */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
+          className="lg:col-span-2 space-y-5"
+        >
+          <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-[var(--color-primary-50)] to-[var(--color-accent-50)] border-2 border-[var(--color-primary-200)]">
+            <div className="flex items-center gap-2 mb-5">
+              <Clock size={20} className="text-[var(--color-primary-600)]" />
+              <h3 className="text-lg font-bold text-[var(--color-neutral-900)]">Jam Operasional</h3>
+            </div>
+            <div className="space-y-2.5 text-sm text-[var(--color-neutral-700)]">
+              <div className="flex justify-between">
+                <span>Senin – Jumat</span>
+                <span className="font-semibold">07.00 – 16.00 WIB</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Sabtu</span>
+                <span className="font-semibold">Dengan janji</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Minggu</span>
+                <span className="font-semibold">Tutup</span>
+              </div>
             </div>
           </div>
 
-          {/* Sidebar Info */}
-          <div className="lg:col-span-2 space-y-6">
-            <div className="p-8 rounded-2xl bg-gradient-to-br from-[var(--color-primary-50)] to-[var(--color-accent-50)] border-2 border-[var(--color-primary-200)]">
-              <div className="flex items-center gap-3 mb-6">
-                <Clock size={24} className="text-[var(--color-primary-600)]" />
-                <h3 className="text-xl font-bold text-[var(--color-neutral-900)]">Operating Hours</h3>
-              </div>
-              <div className="space-y-3 text-[var(--color-neutral-700)]">
-                <div className="flex justify-between">
-                  <span>Monday - Friday</span>
-                  <span className="font-semibold">7:00 AM - 6:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Saturday</span>
-                  <span className="font-semibold">By appointment</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Sunday</span>
-                  <span className="font-semibold">Closed</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="p-8 rounded-2xl bg-gradient-to-br from-[var(--color-secondary-50)] to-[var(--color-primary-50)] border-2 border-[var(--color-secondary-200)]">
-              <h3 className="text-xl font-bold text-[var(--color-neutral-900)] mb-4">Quick Response Promise</h3>
-              <p className="text-[var(--color-neutral-700)] leading-relaxed mb-4">
-                We understand choosing a kindergarten is important. Our admissions team responds to all inquiries within 24 hours, usually sooner.
-              </p>
-              <ul className="space-y-2 text-sm text-[var(--color-neutral-700)]">
-                <li className="flex items-start gap-2">
-                  <span className="text-[var(--color-success-600)]">✓</span>
-                  <span>Phone calls answered during business hours</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[var(--color-success-600)]">✓</span>
-                  <span>WhatsApp messages replied within 2 hours</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[var(--color-success-600)]">✓</span>
-                  <span>Emails responded within 24 hours</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="p-8 rounded-2xl bg-[var(--color-neutral-900)] text-white">
-              <h3 className="text-xl font-bold mb-4">Campus Location</h3>
-              <p className="text-[var(--color-neutral-300)] mb-6">
-                Conveniently located in Menteng with ample parking and easy access from major Jakarta roads.
-              </p>
-              <a 
-                href="https://maps.google.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 border-2 border-white/30 font-semibold transition-all"
-              >
-                Open in Google Maps →
-              </a>
-            </div>
+          <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-[var(--color-secondary-50)] to-[var(--color-primary-50)] border-2 border-[var(--color-secondary-200)]">
+            <h3 className="text-lg font-bold text-[var(--color-neutral-900)] mb-3">Respon Cepat</h3>
+            <p className="text-sm text-[var(--color-neutral-700)] leading-relaxed mb-4">
+              Kami memahami pentingnya memilih sekolah untuk buah hati. Tim kami merespons semua pertanyaan dengan cepat.
+            </p>
+            <ul className="space-y-2 text-xs sm:text-sm text-[var(--color-neutral-700)]">
+              <li className="flex items-start gap-2">
+                <span className="text-[var(--color-success-600)] shrink-0">✓</span>
+                <span>WhatsApp dibalas dalam 2 jam</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[var(--color-success-600)] shrink-0">✓</span>
+                <span>Telepon dijawab saat jam kerja</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[var(--color-success-600)] shrink-0">✓</span>
+                <span>Email direspons dalam 24 jam</span>
+              </li>
+            </ul>
           </div>
-        </div>
+
+          <div className="p-6 sm:p-8 rounded-2xl bg-[var(--color-neutral-900)] text-white">
+            <h3 className="text-lg font-bold mb-3">Lokasi Sekolah</h3>
+            <p className="text-sm text-[var(--color-neutral-300)] mb-4">{ADDRESS}</p>
+            <a
+              href="https://maps.google.com/?q=Jl.+Grogolsari+Juwangen+Purwomartani+Kalasan+Sleman+Yogyakarta"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/30 font-semibold transition-all text-sm"
+            >
+              Buka di Google Maps
+              <ArrowRight size={14} />
+            </a>
+          </div>
+        </motion.div>
       </section>
 
-      {/* FAQ Quick Links */}
-      <section className="py-12 px-10 rounded-3xl bg-gradient-to-br from-[var(--color-accent-50)] to-[var(--color-secondary-50)] border-2 border-[var(--color-accent-200)]">
-        <h2 className="text-3xl font-bold text-center text-[var(--color-neutral-900)] mb-10">
-          Common Questions Answered
+      {/* ==================== MAP EMBED ==================== */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.5 }}
+      >
+        <h2 className="text-2xl sm:text-3xl font-bold text-[var(--color-neutral-900)] mb-6 text-center">
+          Temukan Kami
         </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          <div className="p-6 rounded-xl bg-white border border-[var(--color-neutral-200)]">
-            <h3 className="font-bold text-[var(--color-neutral-900)] mb-2">What are your hours?</h3>
-            <p className="text-sm text-[var(--color-neutral-700)]">
-              We're open Monday-Friday, 7 AM-6 PM with core learning from 8 AM-4 PM.
-            </p>
-          </div>
-          <div className="p-6 rounded-xl bg-white border border-[var(--color-neutral-200)]">
-            <h3 className="font-bold text-[var(--color-neutral-900)] mb-2">Can I visit unannounced?</h3>
-            <p className="text-sm text-[var(--color-neutral-700)]">
-              Yes! Drop-ins are welcome Mon-Fri, 9 AM-3 PM. Scheduled tours get more time with educators.
-            </p>
-          </div>
-          <div className="p-6 rounded-xl bg-white border border-[var(--color-neutral-200)]">
-            <h3 className="font-bold text-[var(--color-neutral-900)] mb-2">How do I enroll?</h3>
-            <p className="text-sm text-[var(--color-neutral-700)]">
-              Visit us, submit application, trial day, then confirm. Simple 4-step process.
-            </p>
-          </div>
-          <div className="p-6 rounded-xl bg-white border border-[var(--color-neutral-200)]">
-            <h3 className="font-bold text-[var(--color-neutral-900)] mb-2">What's the waiting list?</h3>
-            <p className="text-sm text-[var(--color-neutral-700)]">
-              Varies by age group. Call for current availability—spots fill quickly for popular months.
-            </p>
-          </div>
-          <div className="p-6 rounded-xl bg-white border border-[var(--color-neutral-200)]">
-            <h3 className="font-bold text-[var(--color-neutral-900)] mb-2">Do you offer financial aid?</h3>
-            <p className="text-sm text-[var(--color-neutral-700)]">
-              We offer sibling discounts and flexible payment plans. Contact us to discuss options.
-            </p>
-          </div>
-          <div className="p-6 rounded-xl bg-white border border-[var(--color-neutral-200)]">
-            <h3 className="font-bold text-[var(--color-neutral-900)] mb-2">Parent testimonials?</h3>
-            <p className="text-sm text-[var(--color-neutral-700)]">
-              98% parent satisfaction rate. Read reviews from real families on our homepage.
-            </p>
-          </div>
+        <div className="rounded-2xl overflow-hidden border-2 border-[var(--color-neutral-200)] shadow-lg">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.0!2d110.47!3d-7.75!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sKalasan%2C+Sleman%2C+Yogyakarta!5e0!3m2!1sid!2sid!4v1"
+            width="100%"
+            height="300"
+            className="sm:h-[350px] lg:h-[400px] border-0"
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Lokasi PAUD Jasmine Al Muflihuun"
+          />
         </div>
-      </section>
+        <p className="text-center text-sm text-[var(--color-neutral-600)] mt-4">
+          {ADDRESS}
+        </p>
+      </motion.section>
+
+      {/* ==================== WHATSAPP CTA ==================== */}
+      <motion.section
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.5 }}
+        className="py-10 sm:py-14 px-6 sm:px-10 lg:px-16 rounded-3xl bg-gradient-to-br from-[var(--color-success-500)] to-[var(--color-success-600)] text-white text-center shadow-2xl"
+      >
+        <MessageCircle size={40} className="mx-auto mb-4 opacity-90" />
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
+          Chat Langsung via WhatsApp
+        </h2>
+        <p className="text-base sm:text-lg mb-8 max-w-2xl mx-auto opacity-95">
+          Cara tercepat untuk menghubungi kami. Klik tombol di bawah untuk memulai percakapan.
+        </p>
+        <a
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-10 py-5 rounded-2xl bg-white text-[var(--color-success-600)] font-bold hover:shadow-2xl hover:-translate-y-1 transition-all text-base sm:text-lg"
+        >
+          <MessageCircle size={22} />
+          Mulai Chat WhatsApp
+        </a>
+      </motion.section>
     </div>
   );
 }

@@ -3,9 +3,24 @@
 Technical specification for PAUD Jasmine Al Muflihuun portfolio website.
 
 **Website type**: Portfolio / institutional — Islamic kindergarten (PAUD, KB, TK, TPA)
-**Target audience**: First-time parents in Indonesia, children 0–6, middle-to-upper income, value safety + Islamic education
-**Key features**: School info, program details, admissions/enrollment, visit booking, contact
+**Target audience**: First-time parents in Indonesia, children 0–6, middle-to-upper income, value safety + Islamic education + play-based learning
+**Key features**: School info, program details (including bilingual class), admissions/enrollment, visit booking, contact
+**Tagline**: Pendidikan Investasi Masa Depan
 **Tech considerations**: Responsive (mobile-first), SEO (Bahasa Indonesia), Performance (fast LCP)
+
+### Parent Research Summary (Drives Content & UX Decisions)
+
+| Concern | UX Implication |
+|---------|---------------|
+| Proximity to home | Show map + "5 menit dari..." on Contact page |
+| Speech delay support | Feature story on Programs page about communication development |
+| Play-based learning | Emphasize "belajar sambil bermain" visual language, show happy kids |
+| Safety & comfort | CCTV, fogging, AC — show as trust badges everywhere |
+| Social development | Testimonials from parents about child progress |
+| Slow-to-warm-up children | Highlight patient educators, small class sizes, trial class |
+| Affordability vs international schools | Position as "kualitas internasional, harga terjangkau" |
+| Bilingual concerns | Dedicated FAQ section answering 12 common bilingual questions |
+| Want measurable progress | Show milestone tracking, parent communication channels |
 
 ---
 
@@ -86,6 +101,38 @@ Technical specification for PAUD Jasmine Al Muflihuun portfolio website.
 **Key metrics**: FAQ click-through to contact, Bounce rate on FAQ
 **Friction points**: FAQ not comprehensive, no search, slow page load
 
+### Flow 4: Parent Interested in Bilingual Class → Enrolls (New)
+
+```
+[Sees Bilingual Class banner on Home]
+  → clicks "Pelajari Selengkapnya"
+    → [Programs page, scrolled to Bilingual section]
+      → reads 6 feature chips (fun learning, expert curriculum, etc.)
+      → expands bilingual FAQ (12 questions)
+      → satisfied with answers
+      → clicks "Daftar Kelas Bilingual"
+        → [Admissions page, program pre-selected: Bilingual]
+          → fills form → submits → WhatsApp follow-up
+```
+
+**Key metrics**: Bilingual banner CTR, FAQ expansion rate, Form completion with "Bilingual" selected
+**Friction points**: Not enough detail on bilingual method, no teacher profiles, unclear pricing
+
+### Flow 5: Concerned Parent (Speech Delay / Slow-to-warm-up) → Gains Confidence
+
+```
+[Lands on Home or Programs via search/referral]
+  → sees "tumbuh kembang" section on Programs
+  → reads how Jasmine supports communication development
+  → reads testimonial from parent with similar concern
+  → navigates to About → sees patient, qualified educators
+  → clicks "Jadwalkan Kunjungan" or WhatsApp
+    → discusses child's specific needs with school
+```
+
+**Key metrics**: Time on Programs tumbuh kembang section, Testimonial engagement, Contact conversion
+**Friction points**: No specific speech/developmental info, generic testimonials
+
 ---
 
 ## 3. Data Models
@@ -129,6 +176,21 @@ interface ProgramCard {
   description: string;
   highlights: string[];
   schedule?: string;
+  isBilingual?: boolean;   // true for bilingual class (4–6yr)
+  badge?: string;          // e.g. "NEW", "Bilingual"
+}
+
+interface BilingualInfo {
+  targetAge: string;       // "4–6 tahun"
+  features: string[];      // 6 key features from flyer
+  faqItems: FaqItem[];     // 12 bilingual-specific FAQs
+}
+
+interface FacilityItem {
+  icon: LucideIcon;
+  name: string;
+  description: string;
+  category: 'keamanan' | 'kenyamanan' | 'edukasi' | 'kesehatan';
 }
 
 interface TeamMember {
@@ -148,7 +210,7 @@ interface AdmissionForm {
   phone: string;           // required, Indonesian format
   childName: string;       // required
   childAge: string;        // required, select: 0-1, 2-3, 4-5, 5-6
-  program: string;         // required, select: KB, TK-A, TK-B, TPA
+  program: string;         // required, select: KB, TK-A, TK-B, TPA, Bilingual Class
   preferredDate: string;   // required, date picker
   message?: string;        // optional, textarea
 }
@@ -212,8 +274,11 @@ Currently **no backend API** — the site is fully static (React SPA).
 | Component | Source | Status |
 |-----------|--------|--------|
 | Program card (icon + age + description + highlights) | Custom + Card | ✅ Built |
+| Bilingual class feature section (highlighted banner) | Custom + Badge | ❌ Missing |
 | Curriculum section | Custom | ✅ Built |
 | Extracurricular grid | Custom + Badge | ✅ Built |
+| Development milestones (tumbuh kembang) | Custom | ❌ Missing |
+| Bilingual FAQ accordion (12 questions) | Accordion | ✅ Available |
 | Schedule table | Table | ✅ Available |
 | Age comparison tabs | Tabs | ✅ Available |
 
@@ -252,102 +317,235 @@ Currently **no backend API** — the site is fully static (React SPA).
 | Component | Used on | Priority |
 |-----------|---------|----------|
 | Stepper | Admissions (multi-step form) | High |
+| Trust badge row | Home, Admissions (horizontal scroll, icon + label) | High |
+| Bilingual feature banner | Home, Programs (highlighted section with chips) | High |
+| Photo gallery grid | About, Home (facility showcase) | High |
+| Development milestone card | Programs (tumbuh kembang section) | Medium |
 | Timeline | About (school history) | Medium |
 | Stat card | Home (key numbers display) | Medium |
+| Floating WhatsApp CTA | Contact, all pages mobile (sticky bottom) | Medium |
 | Empty state | All pages (no-data fallback) | Low |
 
 ---
 
 ## 6. Page Templates (Wireframe Descriptions)
 
-### Home
+### Home — "Pendidikan Investasi Masa Depan"
 ```
 ┌─────────────────────────────────────────┐
-│ [Badge: Tahun Ajaran]                   │
-│ H1: Headline (6 words)                  │
+│ HERO (full-width, gradient overlay)     │
+│ [Badge: Tahun Ajaran 2026–2027]         │
+│ H1: Emotional headline (6 words)        │
 │ H2: Subheadline (15 words)              │
-│ [Primary CTA] [Secondary CTA]           │
-│ Microcopy (90 chars)                    │
+│ [Primary CTA: Jadwalkan Kunjungan]      │
+│ [Secondary CTA: Lihat Program]          │
+│ Microcopy: "Free Trial Class tersedia"  │
+│ Trust chips: CCTV ✓ AC ✓ Play-based ✓  │
 ├─────────────────────────────────────────┤
-│ ┌───────┐ ┌───────┐ ┌───────┐          │
-│ │Feature│ │Feature│ │Feature│  3-col    │
-│ │Card 1 │ │Card 2 │ │Card 3 │  grid    │
-│ └───────┘ └───────┘ └───────┘          │
+│ TRUST BADGES (horizontal scroll mobile) │
+│ 🛡️ CCTV 24 Jam | ❄️ AC & Air Purifier  │
+│ 📖 Metode Ummi | 🤖 Coding & Robotic   │
 ├─────────────────────────────────────────┤
-│ Social Proof: 3 testimonial cards       │
-│ Trust signals: stats row                │
+│ FEATURE BLOCKS (3-col → stack mobile)   │
+│ ┌───────────┐ ┌──────────┐ ┌─────────┐ │
+│ │ Pendidikan│ │ Fasilitas│ │ Ekstra- │ │
+│ │ Islami &  │ │ Aman &   │ │ kurikuler│ │
+│ │ Karakter  │ │ Modern   │ │ Modern  │ │
+│ └───────────┘ └──────────┘ └─────────┘ │
 ├─────────────────────────────────────────┤
-│ CTA Banner: gradient + button           │
+│ BILINGUAL CLASS HIGHLIGHT (NEW badge)   │
+│ Banner: "Open Bilingual Class 4–6 thn"  │
+│ 6 feature chips from flyer              │
+│ CTA: "Pelajari Selengkapnya"            │
+├─────────────────────────────────────────┤
+│ SOCIAL PROOF                            │
+│ 3 parent testimonials (real concerns):  │
+│ - Speech delay progress story           │
+│ - Play-based learning testimony         │
+│ - Safety & comfort testimony            │
+│ Stats: [X+ Siswa] [X Tahun] [X Ekskul] │
+├─────────────────────────────────────────┤
+│ FACILITY SHOWCASE (image grid)          │
+│ 4-col grid of facility photos           │
+│ Indoor playground | Mushola | Lab       │
+├─────────────────────────────────────────┤
+│ CTA BANNER                              │
+│ "Daftarkan Buah Hati Anda Sekarang"     │
+│ [CTA] + [WhatsApp button]              │
+│ "Free Trial Class & Diskon Sibling 25%" │
 └─────────────────────────────────────────┘
 ```
 
-### About (Tentang Kami)
+### About (Tentang Kami) — "Kenali Kami Lebih Dekat"
 ```
 ┌─────────────────────────────────────────┐
-│ H1 + H2 (centered hero)                │
+│ HERO (centered)                         │
+│ H1: Tentang headline                    │
+│ H2: Brand story subheadline             │
+│ Background: School photo overlay        │
 ├─────────────────────────────────────────┤
-│ ┌──────────┐ ┌──────────┐              │
-│ │ Mission  │ │ Vision   │  2-col       │
-│ └──────────┘ └──────────┘              │
+│ BRAND STORY (narrative section)         │
+│ Left: Brand story text (warm, personal) │
+│ Right: School photo                     │
 ├─────────────────────────────────────────┤
-│ Timeline: school milestones             │
+│ VISI & MISI (2-col cards)              │
+│ ┌──────────────┐ ┌──────────────┐      │
+│ │ Visi card    │ │ Misi card    │      │
+│ │ "Generasi    │ │ 4-5 points   │      │
+│ │  Cerdas..."  │ │              │      │
+│ └──────────────┘ └──────────────┘      │
 ├─────────────────────────────────────────┤
-│ Values grid: 4-6 value cards            │
+│ NILAI-NILAI (values grid, 6 cards)      │
+│ Islami | Aman | Kreatif | Mandiri      │
+│ Disiplin | Menyenangkan                │
 ├─────────────────────────────────────────┤
-│ Team section: teacher cards grid        │
+│ KENAPA JASMINE? (why-us section)        │
+│ Address parent concerns directly:       │
+│ - Dekat rumah & akses mudah            │
+│ - Lingkungan aman & terpercaya         │
+│ - Belajar tanpa tekanan                │
+│ - Guru profesional & sabar             │
+│ - Harga terjangkau, kualitas premium   │
+├─────────────────────────────────────────┤
+│ TEAM SECTION (educator cards)           │
+│ Teacher photo + name + qualification    │
+│ Highlight: bilingual teachers           │
+├─────────────────────────────────────────┤
+│ FACILITY TOUR (photo gallery + badges)  │
+│ Indoor | Outdoor | Mushola | Library    │
+│ CCTV | AC | Playground                 │
+├─────────────────────────────────────────┤
+│ CTA: "Jadwalkan Kunjungan Sekolah"      │
 └─────────────────────────────────────────┘
 ```
 
-### Programs (Program)
+### Programs (Program) — "Kurikulum yang Menyenangkan"
 ```
 ┌─────────────────────────────────────────┐
-│ H1 + H2 (centered hero)                │
+│ HERO (centered)                         │
+│ H1: Program headline                    │
+│ H2: Play-based learning emphasis        │
+│ Age badge: "Usia 0–6 Tahun"            │
 ├─────────────────────────────────────────┤
-│ ┌──────┐ ┌──────┐ ┌──────┐            │
-│ │KB    │ │TK-A  │ │TK-B  │ 3-col      │
-│ │2-3yr │ │4-5yr │ │5-6yr │ program     │
-│ └──────┘ └──────┘ └──────┘ cards       │
+│ PROGRAM CARDS (4-col → 2-col → stack)   │
+│ ┌──────┐ ┌──────┐ ┌──────┐ ┌────────┐ │
+│ │KB    │ │TK-A  │ │TK-B  │ │TPA     │ │
+│ │0-3yr │ │4-5yr │ │5-6yr │ │Al-Quran│ │
+│ │      │ │      │ │      │ │        │ │
+│ └──────┘ └──────┘ └──────┘ └────────┘ │
 ├─────────────────────────────────────────┤
-│ Curriculum highlights (Metode Ummi)     │
+│ BILINGUAL CLASS (featured section, NEW) │
+│ ┌─────────────────────────────────────┐ │
+│ │ 🌍 Open Bilingual Class            │ │
+│ │ For 4–6 Years Old                  │ │
+│ │ ┌─────┐ ┌──────┐ ┌──────┐         │ │
+│ │ │Fun  │ │Expert│ │Prof  │ 6 chips  │ │
+│ │ │Learn│ │Curric│ │Educ. │          │ │
+│ │ └─────┘ └──────┘ └──────┘         │ │
+│ │ CTA: "Daftar Kelas Bilingual"      │ │
+│ └─────────────────────────────────────┘ │
 ├─────────────────────────────────────────┤
-│ Extracurricular grid (7 items)          │
+│ METODE UMMI (program unggulan section)  │
+│ Left: Description + benefits            │
+│ Right: Photo children learning Quran    │
 ├─────────────────────────────────────────┤
-│ CTA: "Daftar Sekarang"                 │
+│ EXTRACURRICULAR GRID (7 items)          │
+│ 🤖 Coding & Robotic | 🇬🇧 English       │
+│ 🏊 Berenang | 🥁 Drumband | 🎵 Angklung │
+│ 💃 Menari | 🎨 Menggambar & Mewarnai    │
+├─────────────────────────────────────────┤
+│ TUMBUH KEMBANG SECTION (parent concern) │
+│ How Jasmine supports:                   │
+│ - Motorik | Sensorik | Komunikasi      │
+│ - Sosial | Kemandirian | Karakter      │
+│ (Addresses speech delay / slow-warm-up) │
+├─────────────────────────────────────────┤
+│ BILINGUAL FAQ (12 questions, accordion) │
+│ Target, method, teachers, progress...   │
+├─────────────────────────────────────────┤
+│ CTA: "Coba Free Trial Class"            │
 └─────────────────────────────────────────┘
 ```
 
-### Admissions (Pendaftaran)
+### Admissions (Pendaftaran) — "Bergabung Bersama Kami"
 ```
 ┌─────────────────────────────────────────┐
-│ H1 + H2 (centered hero)                │
+│ HERO                                    │
+│ H1: Enrollment headline                 │
+│ H2: "Free Trial Class & Diskon 25%"     │
+│ Urgency badge: "Kuota Terbatas"         │
 ├─────────────────────────────────────────┤
-│ Enrollment steps (4 steps visual)       │
-│ 1→ 2→ 3→ 4                            │
+│ ENROLLMENT STEPS (4 steps stepper)      │
+│ ① Isi Formulir → ② Jadwal Kunjungan    │
+│ → ③ Trial Class → ④ Konfirmasi         │
+├─────────────────────────────────────────┤
+│ OFFERS (2-col cards, eye-catching)      │
+│ ┌───────────────┐ ┌───────────────┐    │
+│ │ 🎁 Free       │ │ 👶👶 Diskon   │    │
+│ │ Trial Class   │ │ Sibling 25%   │    │
+│ │ "Coba dulu,   │ │ "Untuk        │    │
+│ │  baru yakin!" │ │  pendaftar    │    │
+│ │               │ │  ke-2"        │    │
+│ └───────────────┘ └───────────────┘    │
 ├──────────────────┬──────────────────────┤
-│ Booking form     │ Pricing / Offers     │
+│ BOOKING FORM     │ WHY CHOOSE sidebar   │
+│ Multi-step:      │ Trust signals:       │
+│ Step 1: Parent   │ ✓ Sekolah resmi      │
+│ Step 2: Child    │ ✓ CCTV 24 jam        │
+│ Step 3: Program  │ ✓ Guru profesional   │
+│ Step 4: Schedule │ ✓ Play-based         │
 │ (left, 60%)     │ (right, 40%)         │
 ├──────────────────┴──────────────────────┤
-│ FAQ Accordion (8 questions)             │
+│ REQUIREMENTS (dokumen pendaftaran)      │
+│ Checklist of documents needed           │
 ├─────────────────────────────────────────┤
-│ CTA: WhatsApp contact                   │
+│ FAQ ACCORDION (8 general questions)     │
+│ Keamanan, metode, usia, trial, dll.     │
+├─────────────────────────────────────────┤
+│ REASSURANCE BANNER                      │
+│ "Masih ragu? Hubungi kami langsung"     │
+│ [WhatsApp CTA] + [Phone CTA]           │
 └─────────────────────────────────────────┘
 ```
 
-### Contact (Kontak)
+### Contact (Kontak) — "Hubungi Kami"
 ```
 ┌─────────────────────────────────────────┐
-│ H1 + H2 (centered hero)                │
+│ HERO (centered)                         │
+│ H1: Contact headline                    │
+│ H2: "Kami siap membantu"               │
 ├──────────────────┬──────────────────────┤
-│ Contact form     │ Info cards            │
-│ (left, 60%)     │ (right, 40%)         │
-│                  │ • Phone              │
-│                  │ • Email              │
-│                  │ • Address            │
-│                  │ • Hours              │
+│ CONTACT FORM     │ QUICK CONTACT CARDS  │
+│ Name             │ ┌──────────────┐     │
+│ Email            │ │📞 Telepon    │     │
+│ Phone            │ │081328846089  │     │
+│ Subject (select) │ │085229552707  │     │
+│ Message          │ └──────────────┘     │
+│ [Kirim]          │ ┌──────────────┐     │
+│                  │ │💬 WhatsApp   │     │
+│                  │ │Tap to chat   │     │
+│                  │ └──────────────┘     │
+│                  │ ┌──────────────┐     │
+│                  │ │📍 Lokasi     │     │
+│                  │ │Jl. Grogolsari│     │
+│                  │ │Kalasan, Sleman│     │
+│                  │ └──────────────┘     │
+│                  │ ┌──────────────┐     │
+│                  │ │📷 Instagram  │     │
+│                  │ │@jasmine...   │     │
+│                  │ └──────────────┘     │
+│ (left, 55%)     │ (right, 45%)         │
 ├──────────────────┴──────────────────────┤
-│ Map embed (full width)                  │
+│ MAP EMBED (full width, interactive)     │
+│ Google Maps with school pin             │
+│ "5 menit dari..." nearby landmarks     │
 ├─────────────────────────────────────────┤
-│ WhatsApp CTA banner                     │
+│ VISIT HOURS (operating schedule)        │
+│ Senin–Jumat: [jam]                     │
+│ Sabtu: [jam, by appointment]           │
+├─────────────────────────────────────────┤
+│ FLOATING WHATSAPP CTA (mobile sticky)   │
+│ "Chat langsung via WhatsApp"            │
 └─────────────────────────────────────────┘
 ```
 
@@ -456,8 +654,8 @@ Clean, lowercase, no trailing slashes, no query parameters for content pages.
 ### SEO keywords (target, Bahasa Indonesia)
 
 **Primary**: PAUD Islam Sleman, TK Islam Yogyakarta, sekolah Islam anak usia dini
-**Secondary**: Metode Ummi Yogyakarta, PAUD dengan coding, kindergarten Kalasan Sleman
-**Long-tail**: pendaftaran PAUD Islam Sleman 2026, sekolah TK terbaik Yogyakarta, PAUD dengan fasilitas CCTV dan AC
+**Secondary**: Metode Ummi Yogyakarta, PAUD dengan coding, kindergarten Kalasan Sleman, kelas bilingual PAUD Yogyakarta
+**Long-tail**: pendaftaran PAUD Islam Sleman 2026, sekolah TK terbaik Yogyakarta, PAUD dengan fasilitas CCTV dan AC, kelas bilingual anak 4–6 tahun Sleman, PAUD play-based learning Yogyakarta
 
 ---
 

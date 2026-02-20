@@ -20,13 +20,40 @@ Use this document as the only source for brand facts, page structure, and copy l
 ## Institutional Facts (Copy Only From Here)
 
 - **Visi**: Mempersiapkan Generasi Cerdas, Kreatif, Mandiri, Disiplin, dan Berakhlakul Karimah
-- **Program unggulan**: Metode Ummi (belajar membaca dan mencintai Al-Qur'an)
-- **Ekstrakurikuler**: Coding & Robotic, English Class, Berenang, Drumband, Angklung, Menari, Menggambar
-- **Fasilitas**: AC, Air Purifier, CCTV, Mushola, Perpustakaan, Indoor & Outdoor Playground, Toilet Bersih
-- **Offer**: Free Trial Class, Diskon Sibling 25%
+- **Tagline**: Pendidikan Investasi Masa Depan
+- **Program**: KB (Kelompok Bermain), TK (Taman Kanak-kanak), TPA (Taman Pendidikan Al-Qur'an)
+- **Usia**: Menerima Peserta Didik Baru & Inden, Usia 0–6 Tahun
+- **Program unggulan**: Metode Ummi (Belajar Membaca dan Mencintai Al-Qur'an)
+- **Kelas Bilingual**: Untuk usia 4–6 tahun, guru fasih dua bahasa, kurikulum dari ahli pendidikan, metode fun & play-based
+- **Ekstrakurikuler**: Coding & Robotic by Jasmine Al Muflihuun, English Class, Berenang, Drumband, Angklung, Menari, Menggambar & Mewarnai
+- **Fasilitas**: Ruang Kelas Bersih Nyaman dengan AC & Air Purifier, CCTV & TV Edukasi, Mushola Siswa, Perpustakaan, Permainan Indoor & Outdoor yang Aman & Menyenangkan, Fogging Disinfektan Secara Berkala, Toilet Bersih dengan Closet Duduk
+- **Offer**: Free Trial Class, Diskon Sibling 25% (untuk pendaftar ke-2)
 - **Lokasi**: Jl. Grogolsari, Juwangen, Purwomartani, Kalasan, Sleman, Yogyakarta
 - **Kontak**: 081328846089 / 085229552707
+- **Instagram**: @jasminealmuflihun
 - **Status**: Sekolah Islam Swasta resmi
+
+## Parent Research Insights (Use for Emotional Copy)
+
+These are real concerns and hopes from target parents — use as emotional triggers in copy:
+
+### Key Parent Concerns (Address These)
+- **Proximity**: Parents value close-to-home schools so young children don't get tired
+- **Speech development**: Some children have speech delay — parents seek schools that help with communication skills
+- **Play-based learning**: Parents want children to enjoy school without academic pressure ("belajar itu menyenangkan")
+- **Safety & comfort**: "Tempat yang aman, nyaman, dan fun" — top priority for first-time parents
+- **Social development**: Building confidence, learning to socialize with peers
+- **Slow-to-warm-up children**: Need patient, supportive environment and dedicated educators
+- **Financial consideration**: Parents compare with international schools — value quality at accessible pricing
+- **Bilingual concerns**: Parents ask about target (exposure vs active), methods, teacher qualifications, parent guidance, progress tracking
+
+### What Parents Hope For
+- Anak lancar berkomunikasi dan berinteraksi
+- Anak senang sekolah, tahu bahwa belajar itu menyenangkan
+- Lingkungan pertemanan yang positif dan aman
+- Stimulasi tumbuh kembang sesuai usia (motorik, sensorik, komunikasi, sosial, kemandirian)
+- Anak percaya diri dan berani mencoba hal baru
+- Progress yang terukur dan terkomunikasikan ke orang tua
 
 ---
 

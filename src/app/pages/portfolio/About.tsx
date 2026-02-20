@@ -1,324 +1,271 @@
-import { Heart, Award, Users, Target, Lightbulb, BookOpen } from 'lucide-react';
+import { Link } from 'react-router';
+import { motion } from 'motion/react';
+import {
+  Target, Lightbulb, Heart, BookOpen, ShieldCheck, Users,
+  ArrowRight, Star, Smile, Award,
+} from 'lucide-react';
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const stagger = {
+  visible: { transition: { staggerChildren: 0.1 } },
+};
 
 export default function PortfolioAbout() {
   return (
-    <div className="space-y-24">
-      {/* Hero Section */}
-      <section className="text-center space-y-8 py-12">
-        <h1 className="text-5xl lg:text-6xl font-bold text-[var(--color-neutral-900)] leading-tight">
-          Our Story, Your Child's Future
-        </h1>
-        <h2 className="text-2xl lg:text-3xl text-[var(--color-neutral-600)] max-w-4xl mx-auto leading-relaxed font-medium">
-          Nine years of nurturing confident, curious, compassionate learners in the heart of Jakarta
+    <div className="space-y-16 sm:space-y-20 lg:space-y-24">
+      {/* ==================== HERO ==================== */}
+      <section className="text-center space-y-6 py-4 lg:py-8">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: [0, 0, 0.2, 1] }}
+          className="text-4xl sm:text-5xl lg:text-7xl font-bold text-[var(--color-neutral-900)] leading-tight"
+        >
+          Kenali Kami Lebih Dekat
+        </motion.h1>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.5, ease: [0, 0, 0.2, 1] }}
+          className="text-lg sm:text-xl lg:text-2xl text-[var(--color-neutral-600)] max-w-4xl mx-auto leading-relaxed font-medium"
+        >
+          Sekolah Islam terpercaya yang mendidik anak dengan cinta, membangun karakter mulia sejak usia dini
+        </motion.h2>
+      </section>
+
+      {/* ==================== BRAND STORY ==================== */}
+      <motion.section
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.5 }}
+        className="p-6 sm:p-10 lg:p-12 rounded-3xl bg-gradient-to-br from-[var(--color-primary-50)] via-white to-[var(--color-accent-50)] border-2 border-[var(--color-primary-200)] shadow-lg"
+      >
+        <h2 className="text-2xl sm:text-3xl font-bold text-[var(--color-neutral-900)] mb-4">
+          Cerita Kami
         </h2>
-      </section>
+        <p className="text-sm sm:text-base text-[var(--color-neutral-700)] leading-relaxed mb-4">
+          PAUD Jasmine Al Muflihuun hadir di Kalasan, Sleman, Yogyakarta dengan satu tujuan: memberikan pendidikan terbaik
+          untuk anak usia dini yang memadukan nilai-nilai Islami, metode bermain, dan fasilitas modern. Kami percaya bahwa
+          masa keemasan anak (golden age) adalah waktu paling berharga untuk membangun fondasi iman, karakter, dan kecerdasan.
+        </p>
+        <p className="text-sm sm:text-base text-[var(--color-neutral-700)] leading-relaxed">
+          Dengan tagline <strong>&ldquo;Pendidikan Investasi Masa Depan&rdquo;</strong>, kami berkomitmen menyiapkan generasi
+          yang cerdas, kreatif, mandiri, disiplin, dan berakhlakul karimah — siap menghadapi tantangan dunia dengan bekal
+          iman yang kuat dan keterampilan modern.
+        </p>
+      </motion.section>
 
-      {/* Our Mission & Vision */}
-      <section className="grid lg:grid-cols-2 gap-12">
-        <div className="p-10 lg:p-12 rounded-3xl bg-gradient-to-br from-[var(--color-primary-50)] to-white border-2 border-[var(--color-primary-200)] shadow-lg">
-          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[var(--color-primary-500)] to-[var(--color-accent-500)] flex items-center justify-center text-white mb-6 shadow-md">
-            <Target size={32} />
+      {/* ==================== VISI & MISI ==================== */}
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={stagger}
+        className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10"
+      >
+        <motion.div
+          variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0 } }}
+          transition={{ duration: 0.5, ease: [0, 0, 0.2, 1] }}
+          className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-[var(--color-primary-50)] to-white border-2 border-[var(--color-primary-200)] shadow-lg"
+        >
+          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--color-primary-500)] to-[var(--color-accent-500)] flex items-center justify-center text-white mb-5 shadow-md">
+            <Target size={28} />
           </div>
-          <h2 className="text-3xl font-bold text-[var(--color-neutral-900)] mb-6">Our Mission</h2>
-          <p className="text-lg text-[var(--color-neutral-700)] leading-relaxed mb-6">
-            To create a nurturing environment where every child feels valued, develops confidence through play-based discovery, and builds the foundation for lifelong learning.
+          <h2 className="text-2xl sm:text-3xl font-bold text-[var(--color-neutral-900)] mb-4">Visi</h2>
+          <p className="text-base sm:text-lg text-[var(--color-neutral-700)] leading-relaxed font-medium">
+            Mempersiapkan Generasi Cerdas, Kreatif, Mandiri, Disiplin, dan Berakhlakul Karimah
           </p>
-          <p className="text-[var(--color-neutral-600)] leading-relaxed">
-            We believe childhood is precious. Our approach honors each child's unique pace while fostering curiosity, creativity, and social-emotional intelligence that extends far beyond academics.
-          </p>
-        </div>
+        </motion.div>
 
-        <div className="p-10 lg:p-12 rounded-3xl bg-gradient-to-br from-[var(--color-secondary-50)] to-white border-2 border-[var(--color-secondary-200)] shadow-lg">
-          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[var(--color-secondary-500)] to-[var(--color-primary-500)] flex items-center justify-center text-white mb-6 shadow-md">
-            <Lightbulb size={32} />
+        <motion.div
+          variants={{ hidden: { opacity: 0, x: 30 }, visible: { opacity: 1, x: 0 } }}
+          transition={{ duration: 0.5, ease: [0, 0, 0.2, 1] }}
+          className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-[var(--color-secondary-50)] to-white border-2 border-[var(--color-secondary-200)] shadow-lg"
+        >
+          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--color-secondary-500)] to-[var(--color-primary-500)] flex items-center justify-center text-white mb-5 shadow-md">
+            <Lightbulb size={28} />
           </div>
-          <h2 className="text-3xl font-bold text-[var(--color-neutral-900)] mb-6">Our Vision</h2>
-          <p className="text-lg text-[var(--color-neutral-700)] leading-relaxed mb-6">
-            To be Indonesia's most trusted early education partner—where families find peace of mind and children discover their potential through joy, not pressure.
-          </p>
-          <p className="text-[var(--color-neutral-600)] leading-relaxed">
-            By 2030, we envision expanding our model to serve 1,000+ families while maintaining the intimate, personalized care that defines Jasmine Kindergarten.
-          </p>
-        </div>
-      </section>
+          <h2 className="text-2xl sm:text-3xl font-bold text-[var(--color-neutral-900)] mb-4">Misi</h2>
+          <ul className="space-y-3 text-sm sm:text-base text-[var(--color-neutral-700)] leading-relaxed">
+            <li className="flex items-start gap-2.5">
+              <span className="text-[var(--color-secondary-600)] shrink-0 mt-0.5">✓</span>
+              <span>Menanamkan nilai-nilai Islam dan akhlakul karimah sejak usia dini</span>
+            </li>
+            <li className="flex items-start gap-2.5">
+              <span className="text-[var(--color-secondary-600)] shrink-0 mt-0.5">✓</span>
+              <span>Mengembangkan kecerdasan melalui metode belajar sambil bermain</span>
+            </li>
+            <li className="flex items-start gap-2.5">
+              <span className="text-[var(--color-secondary-600)] shrink-0 mt-0.5">✓</span>
+              <span>Menyediakan lingkungan yang aman, nyaman, dan menyenangkan</span>
+            </li>
+            <li className="flex items-start gap-2.5">
+              <span className="text-[var(--color-secondary-600)] shrink-0 mt-0.5">✓</span>
+              <span>Membangun kemandirian, kreativitas, dan kedisiplinan anak</span>
+            </li>
+            <li className="flex items-start gap-2.5">
+              <span className="text-[var(--color-secondary-600)] shrink-0 mt-0.5">✓</span>
+              <span>Mempersiapkan anak untuk jenjang pendidikan berikutnya</span>
+            </li>
+          </ul>
+        </motion.div>
+      </motion.section>
 
-      {/* Core Values */}
+      {/* ==================== NILAI-NILAI (VALUES) ==================== */}
       <section>
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-[var(--color-neutral-900)] mb-4">
-            Our Core Values
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={stagger}
+          className="text-center mb-10 sm:mb-14"
+        >
+          <motion.h2 variants={fadeUp} transition={{ duration: 0.5 }} className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-neutral-900)] mb-3">
+            Nilai-Nilai Kami
+          </motion.h2>
+          <motion.p variants={fadeUp} transition={{ duration: 0.5 }} className="text-base sm:text-lg text-[var(--color-neutral-600)] max-w-3xl mx-auto">
+            Prinsip yang menjadi landasan dalam setiap aktivitas pendidikan kami
+          </motion.p>
+        </motion.div>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={stagger}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-8"
+        >
+          {[
+            { icon: <BookOpen size={24} />, title: 'Islami', desc: 'Menanamkan cinta Al-Qur\'an dan nilai-nilai Islam dalam setiap aspek pembelajaran dan pembiasaan sehari-hari.', bg: 'primary' },
+            { icon: <ShieldCheck size={24} />, title: 'Aman', desc: 'Lingkungan belajar yang terjaga dengan CCTV, AC, dan standar kebersihan tinggi untuk kenyamanan anak.', bg: 'secondary' },
+            { icon: <Star size={24} />, title: 'Kreatif', desc: 'Mendorong imajinasi dan kreativitas melalui seni, musik, coding, dan eksplorasi hands-on setiap hari.', bg: 'accent' },
+            { icon: <Award size={24} />, title: 'Mandiri', desc: 'Membangun kemandirian anak melalui kegiatan terstruktur yang melatih tanggung jawab dan percaya diri.', bg: 'success' },
+            { icon: <Target size={24} />, title: 'Disiplin', desc: 'Pembiasaan kedisiplinan positif yang membantu anak memahami aturan dan menghargai waktu.', bg: 'warning' },
+            { icon: <Smile size={24} />, title: 'Menyenangkan', desc: 'Belajar sambil bermain — setiap hari di Jasmine adalah hari yang menyenangkan bagi anak-anak.', bg: 'info' },
+          ].map((value) => (
+            <motion.div
+              key={value.title}
+              variants={fadeUp}
+              transition={{ duration: 0.4 }}
+              className="p-6 sm:p-8 rounded-2xl bg-white border-2 border-[var(--color-neutral-200)] shadow-sm hover:shadow-lg transition-shadow"
+            >
+              <div className={`w-12 h-12 rounded-xl bg-[var(--color-${value.bg}-100)] flex items-center justify-center text-[var(--color-${value.bg}-600)] mb-4`}>
+                {value.icon}
+              </div>
+              <h3 className="text-lg sm:text-xl font-bold text-[var(--color-neutral-900)] mb-2">{value.title}</h3>
+              <p className="text-sm text-[var(--color-neutral-700)] leading-relaxed">{value.desc}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
+
+      {/* ==================== KENAPA JASMINE? ==================== */}
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={stagger}
+      >
+        <motion.div variants={fadeUp} className="text-center mb-10 sm:mb-14">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-neutral-900)] mb-3">
+            Kenapa Memilih Jasmine?
           </h2>
-          <p className="text-xl text-[var(--color-neutral-600)] max-w-3xl mx-auto">
-            The principles that guide everything we do, every single day
+          <p className="text-base sm:text-lg text-[var(--color-neutral-600)] max-w-3xl mx-auto">
+            Kami memahami kekhawatiran orang tua — dan menjawabnya dengan tindakan nyata
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="p-8 rounded-2xl bg-white border-2 border-[var(--color-neutral-200)] shadow-sm hover:shadow-lg transition-all">
-            <div className="w-14 h-14 rounded-xl bg-[var(--color-primary-100)] flex items-center justify-center text-3xl mb-4">
-              💝
-            </div>
-            <h3 className="text-xl font-bold text-[var(--color-neutral-900)] mb-3">Love & Care</h3>
-            <p className="text-[var(--color-neutral-700)] leading-relaxed">
-              Every child deserves to feel loved, safe, and supported. We treat each student as our own, with patience, kindness, and genuine affection.
-            </p>
-          </div>
-
-          <div className="p-8 rounded-2xl bg-white border-2 border-[var(--color-neutral-200)] shadow-sm hover:shadow-lg transition-all">
-            <div className="w-14 h-14 rounded-xl bg-[var(--color-secondary-100)] flex items-center justify-center text-3xl mb-4">
-              🌟
-            </div>
-            <h3 className="text-xl font-bold text-[var(--color-neutral-900)] mb-3">Excellence</h3>
-            <p className="text-[var(--color-neutral-700)] leading-relaxed">
-              We continuously improve our methods, train our educators, and invest in research-backed practices that deliver real developmental results.
-            </p>
-          </div>
-
-          <div className="p-8 rounded-2xl bg-white border-2 border-[var(--color-neutral-200)] shadow-sm hover:shadow-lg transition-all">
-            <div className="w-14 h-14 rounded-xl bg-[var(--color-accent-100)] flex items-center justify-center text-3xl mb-4">
-              🤝
-            </div>
-            <h3 className="text-xl font-bold text-[var(--color-neutral-900)] mb-3">Integrity</h3>
-            <p className="text-[var(--color-neutral-700)] leading-relaxed">
-              Transparency, honesty, and accountability define our relationships with families. What we promise, we deliver—no hidden fees, no surprises.
-            </p>
-          </div>
-
-          <div className="p-8 rounded-2xl bg-white border-2 border-[var(--color-neutral-200)] shadow-sm hover:shadow-lg transition-all">
-            <div className="w-14 h-14 rounded-xl bg-[var(--color-success-100)] flex items-center justify-center text-3xl mb-4">
-              🎨
-            </div>
-            <h3 className="text-xl font-bold text-[var(--color-neutral-900)] mb-3">Creativity</h3>
-            <p className="text-[var(--color-neutral-700)] leading-relaxed">
-              We encourage imagination, experimentation, and self-expression. Learning happens through play, art, music, and hands-on exploration.
-            </p>
-          </div>
-
-          <div className="p-8 rounded-2xl bg-white border-2 border-[var(--color-neutral-200)] shadow-sm hover:shadow-lg transition-all">
-            <div className="w-14 h-14 rounded-xl bg-[var(--color-warning-100)] flex items-center justify-center text-3xl mb-4">
-              🌍
-            </div>
-            <h3 className="text-xl font-bold text-[var(--color-neutral-900)] mb-3">Inclusivity</h3>
-            <p className="text-[var(--color-neutral-700)] leading-relaxed">
-              We celebrate diversity and welcome children from all backgrounds. Every family, culture, and perspective enriches our community.
-            </p>
-          </div>
-
-          <div className="p-8 rounded-2xl bg-white border-2 border-[var(--color-neutral-200)] shadow-sm hover:shadow-lg transition-all">
-            <div className="w-14 h-14 rounded-xl bg-[var(--color-info-100)] flex items-center justify-center text-3xl mb-4">
-              🌱
-            </div>
-            <h3 className="text-xl font-bold text-[var(--color-neutral-900)] mb-3">Growth Mindset</h3>
-            <p className="text-[var(--color-neutral-700)] leading-relaxed">
-              We teach children that abilities develop through effort. Mistakes are learning opportunities. Challenges help us grow stronger together.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Meet Our Team */}
-      <section>
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-[var(--color-neutral-900)] mb-4">
-            Meet Our Dedicated Educators
-          </h2>
-          <p className="text-xl text-[var(--color-neutral-600)] max-w-3xl mx-auto">
-            Experienced, certified professionals who make learning joyful every day
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-10">
-          <div className="text-center">
-            <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-[var(--color-primary-400)] to-[var(--color-accent-400)] flex items-center justify-center text-white text-4xl font-bold mb-6 shadow-lg">
-              MS
-            </div>
-            <h3 className="text-2xl font-bold text-[var(--color-neutral-900)] mb-2">Maya Sari, M.Ed.</h3>
-            <p className="text-[var(--color-primary-600)] font-semibold mb-4">Founder & Principal</p>
-            <p className="text-[var(--color-neutral-700)] leading-relaxed">
-              15+ years in early childhood education. Master's degree from Columbia University. Former consultant to Indonesia's Ministry of Education.
-            </p>
-          </div>
-
-          <div className="text-center">
-            <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-[var(--color-secondary-400)] to-[var(--color-primary-400)] flex items-center justify-center text-white text-4xl font-bold mb-6 shadow-lg">
-              LN
-            </div>
-            <h3 className="text-2xl font-bold text-[var(--color-neutral-900)] mb-2">Linda Novita, S.Psi.</h3>
-            <p className="text-[var(--color-secondary-600)] font-semibold mb-4">Head of Curriculum</p>
-            <p className="text-[var(--color-neutral-700)] leading-relaxed">
-              Child psychology specialist with 12 years experience. Certified in Montessori and Reggio Emilia approaches. Parent of two Jasmine alumni.
-            </p>
-          </div>
-
-          <div className="text-center">
-            <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-[var(--color-accent-400)] to-[var(--color-secondary-400)] flex items-center justify-center text-white text-4xl font-bold mb-6 shadow-lg">
-              AK
-            </div>
-            <h3 className="text-2xl font-bold text-[var(--color-neutral-900)] mb-2">Andi Kurniawan, S.Pd.</h3>
-            <p className="text-[var(--color-accent-600)] font-semibold mb-4">Lead Teacher, Age 4-5</p>
-            <p className="text-[var(--color-neutral-700)] leading-relaxed">
-              Bachelor's in Early Childhood Education. 10 years teaching experience. Specializes in bilingual literacy and STEAM activities.
-            </p>
-          </div>
-        </div>
-
-        <div className="mt-12 p-10 rounded-2xl bg-gradient-to-r from-[var(--color-primary-50)] to-[var(--color-secondary-50)] border-2 border-[var(--color-primary-200)] text-center">
-          <p className="text-lg text-[var(--color-neutral-700)] leading-relaxed">
-            <strong>All educators</strong> hold certified degrees in early childhood education or child psychology, undergo annual training, and pass comprehensive background checks. Our teacher-to-student ratio of 1:8 ensures your child receives focused, individualized attention.
-          </p>
-        </div>
-      </section>
-
-      {/* Our Approach */}
-      <section>
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-[var(--color-neutral-900)] mb-4">
-            Our Educational Philosophy
-          </h2>
-          <p className="text-xl text-[var(--color-neutral-600)] max-w-3xl mx-auto">
-            Research-backed methods meet real-world care
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="p-8 rounded-2xl bg-white border-2 border-[var(--color-neutral-200)] shadow-sm">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-[var(--color-primary-100)] flex items-center justify-center">
-                <BookOpen size={24} className="text-[var(--color-primary-600)]" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-8 max-w-5xl mx-auto">
+          {[
+            { icon: <Heart size={20} />, title: 'Guru Profesional & Sabar', desc: 'Pendidik berpengalaman yang memahami kebutuhan setiap anak, termasuk anak yang pendiam atau lambat beradaptasi.' },
+            { icon: <ShieldCheck size={20} />, title: 'Lingkungan Aman & Terpercaya', desc: 'CCTV 24 jam, ruang ber-AC, fogging berkala — keamanan dan kenyamanan anak adalah prioritas utama kami.' },
+            { icon: <BookOpen size={20} />, title: 'Belajar Tanpa Tekanan', desc: 'Metode bermain yang menyenangkan agar anak senang sekolah dan tahu bahwa belajar itu menyenangkan.' },
+            { icon: <Users size={20} />, title: 'Kualitas Premium, Harga Terjangkau', desc: 'Program unggulan setara sekolah internasional — Metode Ummi, Coding, Bilingual — dengan biaya yang terjangkau.' },
+          ].map((item) => (
+            <motion.div
+              key={item.title}
+              variants={fadeUp}
+              transition={{ duration: 0.4 }}
+              className="flex gap-4 p-5 sm:p-6 rounded-2xl bg-white border border-[var(--color-neutral-200)] shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div className="w-10 h-10 rounded-xl bg-[var(--color-primary-100)] flex items-center justify-center text-[var(--color-primary-600)] shrink-0">
+                {item.icon}
               </div>
-              <h3 className="text-2xl font-bold text-[var(--color-neutral-900)]">Play-Based Learning</h3>
-            </div>
-            <p className="text-[var(--color-neutral-700)] leading-relaxed mb-4">
-              Children learn best through hands-on exploration, not rote memorization. Our curriculum integrates play with purpose—building cognitive, social, and motor skills naturally.
-            </p>
-            <ul className="space-y-2 text-[var(--color-neutral-600)]">
-              <li className="flex items-start gap-2">
-                <span className="text-[var(--color-primary-600)]">•</span>
-                <span>Sensory play develops fine motor skills and creativity</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-[var(--color-primary-600)]">•</span>
-                <span>Group activities teach cooperation and communication</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-[var(--color-primary-600)]">•</span>
-                <span>Problem-solving games build critical thinking</span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="p-8 rounded-2xl bg-white border-2 border-[var(--color-neutral-200)] shadow-sm">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-[var(--color-secondary-100)] flex items-center justify-center">
-                <Heart size={24} className="text-[var(--color-secondary-600)]" />
+              <div>
+                <h3 className="text-base sm:text-lg font-bold text-[var(--color-neutral-900)] mb-1.5">{item.title}</h3>
+                <p className="text-sm text-[var(--color-neutral-700)] leading-relaxed">{item.desc}</p>
               </div>
-              <h3 className="text-2xl font-bold text-[var(--color-neutral-900)]">Social-Emotional Focus</h3>
-            </div>
-            <p className="text-[var(--color-neutral-700)] leading-relaxed mb-4">
-              Academic skills matter, but emotional intelligence is foundational. We teach empathy, self-regulation, and resilience through daily practice.
-            </p>
-            <ul className="space-y-2 text-[var(--color-neutral-600)]">
-              <li className="flex items-start gap-2">
-                <span className="text-[var(--color-secondary-600)]">•</span>
-                <span>Emotion recognition and expression exercises</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-[var(--color-secondary-600)]">•</span>
-                <span>Conflict resolution guided by trained educators</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-[var(--color-secondary-600)]">•</span>
-                <span>Mindfulness and calming techniques for stress</span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="p-8 rounded-2xl bg-white border-2 border-[var(--color-neutral-200)] shadow-sm">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-[var(--color-accent-100)] flex items-center justify-center">
-                <Users size={24} className="text-[var(--color-accent-600)]" />
-              </div>
-              <h3 className="text-2xl font-bold text-[var(--color-neutral-900)]">Parent Partnership</h3>
-            </div>
-            <p className="text-[var(--color-neutral-700)] leading-relaxed mb-4">
-              You're not dropping off your child—you're joining our community. We maintain open communication and involve families in the learning journey.
-            </p>
-            <ul className="space-y-2 text-[var(--color-neutral-600)]">
-              <li className="flex items-start gap-2">
-                <span className="text-[var(--color-accent-600)]">•</span>
-                <span>Daily photo updates via secure app</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-[var(--color-accent-600)]">•</span>
-                <span>Bi-monthly parent-teacher conferences</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-[var(--color-accent-600)]">•</span>
-                <span>Monthly family events and workshops</span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="p-8 rounded-2xl bg-white border-2 border-[var(--color-neutral-200)] shadow-sm">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-[var(--color-success-100)] flex items-center justify-center">
-                <Award size={24} className="text-[var(--color-success-600)]" />
-              </div>
-              <h3 className="text-2xl font-bold text-[var(--color-neutral-900)]">Bilingual Excellence</h3>
-            </div>
-            <p className="text-[var(--color-neutral-700)] leading-relaxed mb-4">
-              English and Bahasa Indonesia are used naturally throughout the day. Children absorb both languages through immersion, not forced instruction.
-            </p>
-            <ul className="space-y-2 text-[var(--color-neutral-600)]">
-              <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-600)]">•</span>
-                <span>Native and fluent speakers in every classroom</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-600)]">•</span>
-                <span>Stories, songs, and games in both languages</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-600)]">•</span>
-                <span>No pressure—learning happens through joy</span>
-              </li>
-            </ul>
-          </div>
+            </motion.div>
+          ))}
         </div>
-      </section>
+      </motion.section>
 
-      {/* Accreditation & Recognition */}
-      <section className="py-12 px-10 rounded-3xl bg-gradient-to-br from-[var(--color-neutral-900)] to-[var(--color-neutral-800)] text-white">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4">Accreditation & Recognition</h2>
-          <p className="text-xl text-[var(--color-neutral-300)]">
-            Certified excellence you can trust
+      {/* ==================== FASILITAS ==================== */}
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={stagger}
+        className="py-8 sm:py-10 px-6 sm:px-10 rounded-3xl bg-gradient-to-br from-[var(--color-neutral-900)] to-[var(--color-neutral-800)] text-white"
+      >
+        <motion.div variants={fadeUp} className="text-center mb-10">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-3">Fasilitas Kami</h2>
+          <p className="text-base sm:text-lg text-[var(--color-neutral-300)]">
+            Dirancang untuk kenyamanan dan keamanan anak Anda
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-4 gap-8 text-center">
-          <div>
-            <div className="text-5xl mb-4">🏆</div>
-            <h3 className="text-lg font-bold mb-2">ISO 9001 Certified</h3>
-            <p className="text-sm text-[var(--color-neutral-400)]">Quality management & safety</p>
-          </div>
-          <div>
-            <div className="text-5xl mb-4">✅</div>
-            <h3 className="text-lg font-bold mb-2">Licensed by Kemendikbud</h3>
-            <p className="text-sm text-[var(--color-neutral-400)]">Ministry of Education approved</p>
-          </div>
-          <div>
-            <div className="text-5xl mb-4">🌟</div>
-            <h3 className="text-lg font-bold mb-2">Top 10 in Jakarta</h3>
-            <p className="text-sm text-[var(--color-neutral-400)]">Parents' Choice Awards 2025</p>
-          </div>
-          <div>
-            <div className="text-5xl mb-4">💯</div>
-            <h3 className="text-lg font-bold mb-2">Health Certified</h3>
-            <p className="text-sm text-[var(--color-neutral-400)]">Dinkes Jakarta standards</p>
-          </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+          {[
+            { emoji: '🎥', label: 'CCTV 24 Jam' },
+            { emoji: '❄️', label: 'AC & Air Purifier' },
+            { emoji: '📺', label: 'TV Edukasi' },
+            { emoji: '🕌', label: 'Mushola Siswa' },
+            { emoji: '📚', label: 'Perpustakaan' },
+            { emoji: '🎪', label: 'Indoor Playground' },
+            { emoji: '🌳', label: 'Outdoor Playground' },
+            { emoji: '🚿', label: 'Toilet Bersih' },
+          ].map((f) => (
+            <motion.div
+              key={f.label}
+              variants={fadeUp}
+              transition={{ duration: 0.3 }}
+              className="text-center p-4 sm:p-5 rounded-xl bg-white/5"
+            >
+              <div className="text-3xl sm:text-4xl mb-2">{f.emoji}</div>
+              <p className="text-xs sm:text-sm font-medium text-[var(--color-neutral-200)]">{f.label}</p>
+            </motion.div>
+          ))}
         </div>
-      </section>
+      </motion.section>
+
+      {/* ==================== CTA ==================== */}
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.5 }}
+        className="py-10 sm:py-14 px-6 sm:px-10 lg:px-16 rounded-3xl bg-gradient-to-br from-[var(--color-primary-500)] via-[var(--color-accent-500)] to-[var(--color-secondary-500)] text-white text-center shadow-2xl"
+      >
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
+          Jadwalkan Kunjungan Sekolah
+        </h2>
+        <p className="text-base sm:text-lg mb-8 max-w-2xl mx-auto opacity-95">
+          Datang dan lihat langsung bagaimana kami mendidik anak-anak dengan cinta dan profesionalisme.
+        </p>
+        <Link
+          to="/portfolio/admissions"
+          className="inline-flex items-center gap-2 px-8 py-4 sm:px-10 sm:py-5 rounded-2xl bg-white text-[var(--color-primary-600)] font-bold hover:shadow-2xl hover:-translate-y-1 transition-all text-base sm:text-lg"
+        >
+          Jadwalkan Sekarang
+          <ArrowRight size={20} />
+        </Link>
+      </motion.section>
     </div>
   );
 }
