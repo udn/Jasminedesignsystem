@@ -4,6 +4,7 @@ import {
   Search, Bell, User, Menu, Home, Settings, AlertCircle, 
   CheckCircle, XCircle, Info, Play, Upload, Eye
 } from 'lucide-react';
+import { PhotoGalleryGrid } from '../components/ui/photo-gallery-grid';
 
 export default function Components() {
   const [checkboxStates, setCheckboxStates] = useState<Record<string, boolean>>({});
@@ -972,6 +973,39 @@ export default function Components() {
               Clear Filters
             </button>
           </div>
+        </ComponentDemo>
+      </ComponentSection>
+
+      {/* PHOTO GALLERY GRID */}
+      <ComponentSection title="Photo Gallery Grid" id="photo-gallery-grid">
+        <ComponentDemo
+          title="2×2 Facility Showcase"
+          description="A responsive photo grid with overlay caption badges — ideal for showcasing facilities, classrooms, or campus highlights."
+          usage="Use for facility showcases, campus tours, or any grouped image presentation with labels."
+        >
+          <PhotoGalleryGrid
+            items={[
+              { alt: 'Indoor playground with colourful slides and soft mats', label: '🎪 Indoor Playground' },
+              { alt: 'Clean mushola prayer room for students', label: '🕌 Mushola' },
+              { alt: 'Air-conditioned classroom with educational displays', label: '❄️ Classroom (AC)' },
+              { alt: 'Spacious outdoor area with playground equipment', label: '🌳 Outdoor Area' },
+            ]}
+          />
+        </ComponentDemo>
+
+        <ComponentDemo
+          title="3-Column Grid"
+          description="The grid supports 3-column layout for wider presentations."
+          usage="Use columns={3} for a wider gallery layout."
+        >
+          <PhotoGalleryGrid
+            columns={3}
+            items={[
+              { alt: 'Library', label: '📚 Library' },
+              { alt: 'Science lab', label: '🔬 Science Lab' },
+              { alt: 'Art studio', label: '🎨 Art Studio' },
+            ]}
+          />
         </ComponentDemo>
       </ComponentSection>
 

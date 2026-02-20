@@ -4,6 +4,7 @@ import {
   Target, Lightbulb, Heart, BookOpen, ShieldCheck, Users,
   ArrowRight, Star, Smile, Award,
 } from 'lucide-react';
+import { PhotoGalleryGrid } from '../../components/ui/photo-gallery-grid';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -242,6 +243,34 @@ export default function PortfolioAbout() {
             </motion.div>
           ))}
         </div>
+      </motion.section>
+
+      {/* ==================== FACILITY SHOWCASE (Photo Grid) ==================== */}
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={stagger}
+      >
+        <motion.div variants={fadeUp} className="text-center mb-8 sm:mb-10">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-neutral-900)] mb-3">
+            Lihat Fasilitas Kami
+          </h2>
+          <p className="text-base sm:text-lg text-[var(--color-neutral-600)] max-w-3xl mx-auto">
+            Lingkungan belajar yang aman, nyaman, dan menyenangkan untuk si kecil
+          </p>
+        </motion.div>
+
+        <motion.div variants={fadeUp} transition={{ duration: 0.5 }}>
+          <PhotoGalleryGrid
+            items={[
+              { alt: 'Indoor playground dengan perosotan warna-warni dan matras empuk', label: '🎪 Indoor Playground' },
+              { alt: 'Mushola siswa yang bersih dan nyaman', label: '🕌 Mushola' },
+              { alt: 'Ruang kelas ber-AC dengan display edukasi', label: '❄️ Ruang Kelas (AC)' },
+              { alt: 'Area outdoor luas dengan alat bermain', label: '🌳 Outdoor Area' },
+            ]}
+          />
+        </motion.div>
       </motion.section>
 
       {/* ==================== CTA ==================== */}
