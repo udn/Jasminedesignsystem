@@ -1,10 +1,50 @@
+import { useState } from 'react';
 import { Link } from 'react-router';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import {
   Target, Lightbulb, Heart, BookOpen, ShieldCheck, Users,
-  ArrowRight, Star, Smile, Award,
+  ArrowRight, Star, Smile, Award, Shield, Thermometer, GraduationCap, Gamepad2,
 } from 'lucide-react';
 import { PhotoGalleryGrid } from '../../components/ui/photo-gallery-grid';
+
+const facilityCategories = [
+  {
+    key: 'keamanan',
+    label: 'Keamanan',
+    icon: <Shield size={16} />,
+    items: [
+      { alt: 'Sistem CCTV 24 jam memantau seluruh area sekolah', label: '🎥 CCTV 24 Jam' },
+      { alt: 'Proses fogging disinfektan rutin untuk kebersihan', label: '🧴 Fogging Disinfektan' },
+    ],
+  },
+  {
+    key: 'kenyamanan',
+    label: 'Kenyamanan',
+    icon: <Thermometer size={16} />,
+    items: [
+      { alt: 'Ruang kelas ber-AC sejuk dan nyaman', label: '❄️ AC & Air Purifier' },
+      { alt: 'Toilet bersih ramah anak dengan closet duduk', label: '🚿 Toilet Bersih' },
+    ],
+  },
+  {
+    key: 'edukasi',
+    label: 'Edukasi',
+    icon: <GraduationCap size={16} />,
+    items: [
+      { alt: 'Perpustakaan dengan koleksi buku cerita anak', label: '📚 Perpustakaan' },
+      { alt: 'TV edukasi untuk pembelajaran interaktif', label: '📺 TV Edukasi' },
+    ],
+  },
+  {
+    key: 'bermain',
+    label: 'Bermain',
+    icon: <Gamepad2 size={16} />,
+    items: [
+      { alt: 'Indoor playground dengan perosotan warna-warni dan matras empuk', label: '🎪 Indoor Playground' },
+      { alt: 'Area outdoor luas dengan alat bermain aman', label: '🌳 Outdoor Playground' },
+    ],
+  },
+] as const;
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -245,11 +285,11 @@ export default function PortfolioAbout() {
         </div>
       </motion.section>
 
-      {/* ==================== FACILITY SHOWCASE (Photo Grid) ==================== */}
+      {/* ==================== FACILITY TOUR (Tabbed Photo Grid) ==================== */}
       <motion.section
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.15 }}
         variants={stagger}
       >
         <motion.div variants={fadeUp} className="text-center mb-8 sm:mb-10">
@@ -261,16 +301,7 @@ export default function PortfolioAbout() {
           </p>
         </motion.div>
 
-        <motion.div variants={fadeUp} transition={{ duration: 0.5 }}>
-          <PhotoGalleryGrid
-            items={[
-              { alt: 'Indoor playground dengan perosotan warna-warni dan matras empuk', label: '🎪 Indoor Playground' },
-              { alt: 'Mushola siswa yang bersih dan nyaman', label: '🕌 Mushola' },
-              { alt: 'Ruang kelas ber-AC dengan display edukasi', label: '❄️ Ruang Kelas (AC)' },
-              { alt: 'Area outdoor luas dengan alat bermain', label: '🌳 Outdoor Area' },
-            ]}
-          />
-        </motion.div>
+        <FacilityTour />
       </motion.section>
 
       {/* ==================== CTA ==================== */}
@@ -295,6 +326,49 @@ export default function PortfolioAbout() {
           <ArrowRight size={20} />
         </Link>
       </motion.section>
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Facility Tour — tabbed category gallery                           */
+/* ------------------------------------------------------------------ */
+function FacilityTour() {
+  const [active, setActive] = useState(facilityCategories[0].key);
+  const current = facilityCategories.find((c) => c.key === active) ?? facilityCategories[0];
+
+  return (
+    <div className="space-y-6">
+      {/* category tabs */}
+      <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
+        {facilityCategories.map((cat) => (
+          <button
+            key={cat.key}
+            onClick={() => setActive(cat.key)}
+            className={`inline-flex items-center gap-1.5 rounded-xl px-4 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-semibold transition-all duration-200 ${
+              active === cat.key
+                ? 'bg-[var(--color-primary-500)] text-white shadow-md scale-[1.02]'
+                : 'bg-[var(--color-neutral-100)] text-[var(--color-neutral-700)] hover:bg-[var(--color-neutral-200)]'
+            }`}
+          >
+            {cat.icon}
+            {cat.label}
+          </button>
+        ))}
+      </div>
+
+      {/* animated gallery panel */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={current.key}
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -12 }}
+          transition={{ duration: 0.3, ease: [0, 0, 0.2, 1] }}
+        >
+          <PhotoGalleryGrid items={[...current.items]} animated />
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 }

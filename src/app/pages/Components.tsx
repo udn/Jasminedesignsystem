@@ -980,10 +980,11 @@ export default function Components() {
       <ComponentSection title="Photo Gallery Grid" id="photo-gallery-grid">
         <ComponentDemo
           title="2×2 Facility Showcase"
-          description="A responsive photo grid with overlay caption badges — ideal for showcasing facilities, classrooms, or campus highlights."
+          description="A responsive photo grid with overlay caption badges — ideal for showcasing facilities, classrooms, or campus highlights. Stacks to single column on mobile."
           usage="Use for facility showcases, campus tours, or any grouped image presentation with labels."
         >
           <PhotoGalleryGrid
+            animated
             items={[
               { alt: 'Indoor playground with colourful slides and soft mats', label: '🎪 Indoor Playground' },
               { alt: 'Clean mushola prayer room for students', label: '🕌 Mushola' },
@@ -1006,6 +1007,14 @@ export default function Components() {
               { alt: 'Art studio', label: '🎨 Art Studio' },
             ]}
           />
+        </ComponentDemo>
+
+        <ComponentDemo
+          title="Tabbed Gallery (Facility Tour)"
+          description="Combine with category tabs to organise photos by theme — Keamanan, Kenyamanan, Edukasi, Bermain."
+          usage="Pair PhotoGalleryGrid with tab buttons and AnimatePresence for category switching."
+        >
+          <TabbedGalleryDemo />
         </ComponentDemo>
       </ComponentSection>
 
@@ -1086,6 +1095,51 @@ function ComponentDemo({
       <div className="p-6 bg-[var(--color-neutral-50)] rounded-lg">
         {children}
       </div>
+    </div>
+  );
+}
+
+// Tabbed Gallery Demo for Photo Gallery Grid section
+function TabbedGalleryDemo() {
+  const categories = [
+    { key: 'keamanan', label: '🛡️ Keamanan', items: [
+      { alt: 'CCTV monitoring', label: '🎥 CCTV 24 Jam' },
+      { alt: 'Fogging disinfektan', label: '🧴 Fogging' },
+    ]},
+    { key: 'kenyamanan', label: '❄️ Kenyamanan', items: [
+      { alt: 'AC and air purifier', label: '❄️ AC & Air Purifier' },
+      { alt: 'Clean toilet', label: '🚿 Toilet Bersih' },
+    ]},
+    { key: 'edukasi', label: '📚 Edukasi', items: [
+      { alt: 'Library', label: '📚 Perpustakaan' },
+      { alt: 'Educational TV', label: '📺 TV Edukasi' },
+    ]},
+    { key: 'bermain', label: '🎮 Bermain', items: [
+      { alt: 'Indoor playground', label: '🎪 Indoor Playground' },
+      { alt: 'Outdoor playground', label: '🌳 Outdoor Playground' },
+    ]},
+  ];
+  const [active, setActive] = useState(categories[0].key);
+  const current = categories.find((c) => c.key === active) ?? categories[0];
+
+  return (
+    <div className="space-y-4">
+      <div className="flex flex-wrap gap-2">
+        {categories.map((cat) => (
+          <button
+            key={cat.key}
+            onClick={() => setActive(cat.key)}
+            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 ${
+              active === cat.key
+                ? 'bg-[var(--color-primary-500)] text-white shadow-md'
+                : 'bg-[var(--color-neutral-100)] text-[var(--color-neutral-700)] hover:bg-[var(--color-neutral-200)]'
+            }`}
+          >
+            {cat.label}
+          </button>
+        ))}
+      </div>
+      <PhotoGalleryGrid items={current.items} animated />
     </div>
   );
 }
