@@ -52,15 +52,11 @@ export default function PortfolioRoot() {
             }`}
           >
             <Link to="/portfolio" className="flex items-center gap-3">
-              <div
-                className={`flex items-center justify-center rounded-2xl bg-gradient-to-br from-[var(--color-primary-500)] to-[var(--color-accent-500)] shadow-lg transition-all duration-300 ${
-                  scrolled ? 'h-10 w-10' : 'h-12 w-12 lg:h-14 lg:w-14'
-                }`}
-              >
-                <svg viewBox="0 0 24 24" className={`text-white transition-all duration-300 ${scrolled ? 'h-5 w-5' : 'h-6 w-6 lg:h-8 lg:w-8'}`} fill="currentColor">
-                  <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 14.5c-2.49 0-4.5-2.01-4.5-4.5S9.51 7.5 12 7.5s4.5 2.01 4.5 4.5-2.01 4.5-4.5 4.5z"/>
-                </svg>
-              </div>
+              <img
+                src="/logo-jasmine.png"
+                alt="PAUD Jasmine Al Muflihuun"
+                className={`object-contain transition-all duration-300 ${scrolled ? 'h-10 w-10' : 'h-12 w-12 lg:h-14 lg:w-14'}`}
+              />
               <div>
                 <h1 className="text-lg lg:text-xl font-bold text-[var(--color-neutral-900)] leading-tight">
                   PAUD Jasmine Al Muflihuun
@@ -182,11 +178,11 @@ export default function PortfolioRoot() {
             {/* Brand */}
             <div className="sm:col-span-2 lg:col-span-2">
               <div className="flex items-center gap-3 mb-5">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-[var(--color-primary-500)] to-[var(--color-accent-500)]">
-                  <svg viewBox="0 0 24 24" className="h-6 w-6 text-white" fill="currentColor">
-                    <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 14.5c-2.49 0-4.5-2.01-4.5-4.5S9.51 7.5 12 7.5s4.5 2.01 4.5 4.5-2.01 4.5-4.5 4.5z"/>
-                  </svg>
-                </div>
+                <img
+                  src="/logo-jasmine.png"
+                  alt="PAUD Jasmine Al Muflihuun"
+                  className="h-11 w-11 object-contain"
+                />
                 <div>
                   <h2 className="text-lg font-bold text-[var(--color-neutral-900)]">PAUD Jasmine Al Muflihuun</h2>
                   <p className="text-xs text-[var(--color-neutral-500)]">Pendidikan Investasi Masa Depan</p>
