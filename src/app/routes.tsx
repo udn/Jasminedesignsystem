@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import { createHashRouter } from "react-router";
 import Root from "./Root";
 import Overview from "./pages/Overview";
 import Colors from "./pages/Colors";
@@ -16,7 +16,7 @@ import PortfolioPrograms from "./pages/portfolio/Programs";
 import PortfolioAdmissions from "./pages/portfolio/Admissions";
 import PortfolioContact from "./pages/portfolio/Contact";
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     path: "/",
     Component: Root,
