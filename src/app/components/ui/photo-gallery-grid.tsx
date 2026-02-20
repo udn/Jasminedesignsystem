@@ -9,8 +9,6 @@ export interface PhotoGalleryItem {
   alt: string;
   /** Caption badge label displayed as overlay */
   label: string;
-  /** Optional category for tab-based filtering */
-  category?: string;
 }
 
 export interface PhotoGalleryGridProps

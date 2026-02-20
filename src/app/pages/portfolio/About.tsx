@@ -366,7 +366,7 @@ function FacilityTour() {
           exit={{ opacity: 0, y: -12 }}
           transition={{ duration: 0.3, ease: [0, 0, 0.2, 1] }}
         >
-          <PhotoGalleryGrid items={[...current.items]} animated />
+          <PhotoGalleryGrid items={current.items} animated />
         </motion.div>
       </AnimatePresence>
     </div>
