@@ -131,6 +131,9 @@
   /* ===== SURFACE COLORS ===== */
   --color-surface: #ffffff;
   --color-surface-muted: #f5f5f4;
+  /* Always-dark surfaces — not inverted in dark mode */
+  --color-surface-dark: #1c1917;
+  --color-surface-dark-muted: #292524;
 
   /* ===== BREAKPOINTS (for reference) ===== */
   /* Mobile: 0-639px */

@@ -308,9 +308,9 @@ export default function PortfolioAdmissions() {
             </ul>
           </div>
 
-          <div className="p-6 sm:p-8 rounded-2xl bg-[var(--color-neutral-900)] text-white">
+          <div className="p-6 sm:p-8 rounded-2xl bg-[var(--color-surface-dark)] text-white">
             <h3 className="text-lg font-bold mb-3">Butuh bantuan langsung?</h3>
-            <p className="text-sm text-[var(--color-neutral-300)] mb-5">
+            <p className="text-sm text-[#d6d3d1] mb-5">
               Tim kami siap menjawab pertanyaan Anda.
             </p>
             <div className="space-y-3">
