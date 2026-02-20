@@ -187,7 +187,7 @@ export default function Colors() {
 
         <div className="grid md:grid-cols-2 gap-6">
           {semanticColors.map((semantic) => (
-            <div key={semantic.name} className="p-6 rounded-xl bg-white border border-[var(--color-neutral-200)]">
+            <div key={semantic.name} className="p-6 rounded-xl bg-[var(--color-surface)] border border-[var(--color-neutral-200)]">
               <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-2">{semantic.name}</h3>
               <p className="text-sm text-[var(--color-neutral-600)] mb-4">{semantic.description}</p>
               

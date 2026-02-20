@@ -166,7 +166,7 @@ export default function Components() {
                 type="text"
                 value="John Doe"
                 readOnly
-                className="w-full px-4 py-3 border border-[var(--color-neutral-300)] rounded-lg bg-white"
+                className="w-full px-4 py-3 border border-[var(--color-neutral-300)] rounded-lg bg-[var(--color-surface)]"
               />
             </div>
             <div>
@@ -224,7 +224,7 @@ export default function Components() {
               <select
                 value={selectValue}
                 onChange={(e) => setSelectValue(e.target.value)}
-                className="w-full px-4 py-3 pr-10 border border-[var(--color-neutral-300)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)] focus:border-transparent appearance-none bg-white transition-all"
+                className="w-full px-4 py-3 pr-10 border border-[var(--color-neutral-300)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)] focus:border-transparent appearance-none bg-[var(--color-surface)] transition-all"
               >
                 <option value="option1">Option 1</option>
                 <option value="option2">Option 2</option>
@@ -373,7 +373,7 @@ export default function Components() {
           description="Simple content container"
           usage="Use for grouping related information"
         >
-          <div className="max-w-sm p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl shadow-sm hover:shadow-md transition-shadow">
+          <div className="max-w-sm p-6 bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-xl shadow-sm hover:shadow-md transition-shadow">
             <h3 className="text-xl font-bold text-[var(--color-neutral-900)] mb-2">Card Title</h3>
             <p className="text-[var(--color-neutral-600)] mb-4">
               This is a basic card component with title and description content.
@@ -389,7 +389,7 @@ export default function Components() {
           description="Card with visual media"
           usage="Use for blog posts, products, or visual content"
         >
-          <div className="max-w-sm bg-white border border-[var(--color-neutral-200)] rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+          <div className="max-w-sm bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
             <div className="h-48 bg-gradient-to-br from-[var(--color-primary-300)] to-[var(--color-accent-300)]" />
             <div className="p-6">
               <h3 className="text-xl font-bold text-[var(--color-neutral-900)] mb-2">Image Card</h3>
@@ -408,7 +408,7 @@ export default function Components() {
           description="Clickable card with hover effects"
           usage="Use for navigation or selectable items"
         >
-          <button className="max-w-sm p-6 bg-white border-2 border-[var(--color-neutral-200)] rounded-xl shadow-sm hover:shadow-lg hover:border-[var(--color-primary-300)] hover:-translate-y-1 transition-all text-left">
+          <button className="max-w-sm p-6 bg-[var(--color-surface)] border-2 border-[var(--color-neutral-200)] rounded-xl shadow-sm hover:shadow-lg hover:border-[var(--color-primary-300)] hover:-translate-y-1 transition-all text-left">
             <div className="flex items-start gap-4">
               <div className="p-3 bg-[var(--color-primary-100)] rounded-xl">
                 <Star size={24} className="text-[var(--color-primary-600)]" />
@@ -446,7 +446,7 @@ export default function Components() {
           usage="Use for switching between related views"
         >
           <div className="flex gap-1 p-1 bg-[var(--color-neutral-100)] rounded-lg w-fit">
-            <button className="px-6 py-2 bg-white text-[var(--color-neutral-900)] rounded-md shadow-sm font-medium">
+            <button className="px-6 py-2 bg-[var(--color-surface)] text-[var(--color-neutral-900)] rounded-md shadow-sm font-medium">
               Active
             </button>
             <button className="px-6 py-2 text-[var(--color-neutral-600)] hover:text-[var(--color-neutral-900)] rounded-md transition-colors">
@@ -495,7 +495,7 @@ export default function Components() {
           description="Icon-based navigation menu"
           usage="Use for bottom navigation or side menus"
         >
-          <div className="flex gap-2 p-2 bg-white border border-[var(--color-neutral-200)] rounded-xl shadow-sm w-fit">
+          <div className="flex gap-2 p-2 bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-xl shadow-sm w-fit">
             <button className="p-3 bg-[var(--color-primary-100)] text-[var(--color-primary-600)] rounded-lg">
               <Home size={20} />
             </button>
@@ -736,7 +736,7 @@ export default function Components() {
           usage="Use for menus, options, or content lists"
         >
           <div className="space-y-2 max-w-md">
-            <button className="w-full flex items-center justify-between p-4 bg-white border border-[var(--color-neutral-200)] rounded-lg hover:border-[var(--color-primary-300)] hover:shadow-sm transition-all text-left">
+            <button className="w-full flex items-center justify-between p-4 bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-lg hover:border-[var(--color-primary-300)] hover:shadow-sm transition-all text-left">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-[var(--color-primary-100)] rounded-lg flex items-center justify-center">
                   <Settings size={20} className="text-[var(--color-primary-600)]" />
@@ -749,7 +749,7 @@ export default function Components() {
               <ChevronDown size={20} className="text-[var(--color-neutral-400)] -rotate-90" />
             </button>
 
-            <button className="w-full flex items-center justify-between p-4 bg-white border border-[var(--color-neutral-200)] rounded-lg hover:border-[var(--color-primary-300)] hover:shadow-sm transition-all text-left">
+            <button className="w-full flex items-center justify-between p-4 bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-lg hover:border-[var(--color-primary-300)] hover:shadow-sm transition-all text-left">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-[var(--color-secondary-100)] rounded-lg flex items-center justify-center">
                   <Bell size={20} className="text-[var(--color-secondary-600)]" />
@@ -782,7 +782,7 @@ export default function Components() {
 
             {showModal && (
               <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-                <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 animate-in fade-in duration-200">
+                <div className="bg-[var(--color-surface)] rounded-2xl shadow-2xl max-w-md w-full p-6 animate-in fade-in duration-200">
                   <div className="flex items-start justify-between mb-4">
                     <h3 className="text-2xl font-bold text-[var(--color-neutral-900)]">Modal Title</h3>
                     <button 
@@ -843,12 +843,12 @@ export default function Components() {
           usage="Use for action menus or option lists"
         >
           <div className="relative inline-block">
-            <button className="px-4 py-2 bg-white border border-[var(--color-neutral-300)] rounded-lg hover:bg-[var(--color-neutral-50)] transition-colors flex items-center gap-2">
+            <button className="px-4 py-2 bg-[var(--color-surface)] border border-[var(--color-neutral-300)] rounded-lg hover:bg-[var(--color-neutral-50)] transition-colors flex items-center gap-2">
               <Menu size={18} />
               <span>Menu</span>
               <ChevronDown size={16} />
             </button>
-            <div className="mt-2 w-48 bg-white border border-[var(--color-neutral-200)] rounded-lg shadow-lg py-2">
+            <div className="mt-2 w-48 bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-lg shadow-lg py-2">
               <button className="w-full px-4 py-2 text-left text-sm text-[var(--color-neutral-700)] hover:bg-[var(--color-neutral-100)] transition-colors">
                 Edit
               </button>
@@ -915,7 +915,7 @@ export default function Components() {
           usage="Use for FAQs or collapsible content"
         >
           <div className="space-y-2 max-w-2xl">
-            <details className="group bg-white border border-[var(--color-neutral-200)] rounded-lg overflow-hidden">
+            <details className="group bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-lg overflow-hidden">
               <summary className="px-6 py-4 cursor-pointer list-none flex items-center justify-between hover:bg-[var(--color-neutral-50)] transition-colors">
                 <span className="font-medium text-[var(--color-neutral-900)]">What are your hours?</span>
                 <ChevronDown size={20} className="text-[var(--color-neutral-500)] group-open:rotate-180 transition-transform" />
@@ -925,7 +925,7 @@ export default function Components() {
               </div>
             </details>
 
-            <details className="group bg-white border border-[var(--color-neutral-200)] rounded-lg overflow-hidden">
+            <details className="group bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-lg overflow-hidden">
               <summary className="px-6 py-4 cursor-pointer list-none flex items-center justify-between hover:bg-[var(--color-neutral-50)] transition-colors">
                 <span className="font-medium text-[var(--color-neutral-900)]">What is your curriculum?</span>
                 <ChevronDown size={20} className="text-[var(--color-neutral-500)] group-open:rotate-180 transition-transform" />
@@ -1026,19 +1026,19 @@ export default function Components() {
           with accessibility, responsiveness, and delightful interactions in mind.
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="p-4 bg-white rounded-lg">
+          <div className="p-4 bg-[var(--color-surface)] rounded-lg">
             <p className="text-2xl font-bold text-[var(--color-primary-600)]">10+</p>
             <p className="text-sm text-[var(--color-neutral-600)]">Button variants</p>
           </div>
-          <div className="p-4 bg-white rounded-lg">
+          <div className="p-4 bg-[var(--color-surface)] rounded-lg">
             <p className="text-2xl font-bold text-[var(--color-secondary-600)]">8+</p>
             <p className="text-sm text-[var(--color-neutral-600)]">Input types</p>
           </div>
-          <div className="p-4 bg-white rounded-lg">
+          <div className="p-4 bg-[var(--color-surface)] rounded-lg">
             <p className="text-2xl font-bold text-[var(--color-accent-600)]">4+</p>
             <p className="text-sm text-[var(--color-neutral-600)]">Card styles</p>
           </div>
-          <div className="p-4 bg-white rounded-lg">
+          <div className="p-4 bg-[var(--color-surface)] rounded-lg">
             <p className="text-2xl font-bold text-[var(--color-primary-600)]">13+</p>
             <p className="text-sm text-[var(--color-neutral-600)]">More components</p>
           </div>
@@ -1084,7 +1084,7 @@ function ComponentDemo({
   children: React.ReactNode;
 }) {
   return (
-    <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
+    <div className="p-6 bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-xl">
       <div className="mb-6">
         <h3 className="text-xl font-semibold text-[var(--color-neutral-900)] mb-2">{title}</h3>
         <p className="text-sm text-[var(--color-neutral-600)] mb-1">{description}</p>

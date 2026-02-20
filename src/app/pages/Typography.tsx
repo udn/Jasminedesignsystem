@@ -117,7 +117,7 @@ export default function Typography() {
         
         <div className="grid gap-6">
           {fontFamilies.map((font) => (
-            <div key={font.name} className="p-6 rounded-xl bg-white border border-[var(--color-neutral-200)]">
+            <div key={font.name} className="p-6 rounded-xl bg-[var(--color-surface)] border border-[var(--color-neutral-200)]">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-3">
                   <h3 className="text-xl font-semibold text-[var(--color-neutral-900)]">{font.name}</h3>
@@ -169,7 +169,7 @@ export default function Typography() {
 
         <div className="space-y-6">
           {typeScale.map((type) => (
-            <div key={type.name} className="p-6 rounded-xl bg-white border border-[var(--color-neutral-200)]">
+            <div key={type.name} className="p-6 rounded-xl bg-[var(--color-surface)] border border-[var(--color-neutral-200)]">
               <div className="grid lg:grid-cols-3 gap-6">
                 <div className="space-y-2">
                   <h3 className="text-lg font-semibold text-[var(--color-neutral-900)]">{type.name}</h3>
@@ -208,7 +208,7 @@ export default function Typography() {
         <h2 className="text-2xl font-bold text-[var(--color-neutral-900)]">Line Heights</h2>
         
         <div className="grid md:grid-cols-3 gap-6">
-          <div className="p-6 rounded-xl bg-white border border-[var(--color-neutral-200)]">
+          <div className="p-6 rounded-xl bg-[var(--color-surface)] border border-[var(--color-neutral-200)]">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-3">Tight (1.2)</h3>
             <p className="text-sm text-[var(--color-neutral-600)] mb-4">For headings and display text</p>
             <p className="leading-[1.2] text-[var(--color-neutral-700)]" style={{ fontFamily: 'var(--font-family-display)' }}>
@@ -217,7 +217,7 @@ export default function Typography() {
             </p>
           </div>
 
-          <div className="p-6 rounded-xl bg-white border border-[var(--color-neutral-200)]">
+          <div className="p-6 rounded-xl bg-[var(--color-surface)] border border-[var(--color-neutral-200)]">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-3">Normal (1.5)</h3>
             <p className="text-sm text-[var(--color-neutral-600)] mb-4">For body text and UI elements</p>
             <p className="leading-[1.5] text-[var(--color-neutral-700)]">
@@ -225,7 +225,7 @@ export default function Typography() {
             </p>
           </div>
 
-          <div className="p-6 rounded-xl bg-white border border-[var(--color-neutral-200)]">
+          <div className="p-6 rounded-xl bg-[var(--color-surface)] border border-[var(--color-neutral-200)]">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-3">Relaxed (1.7)</h3>
             <p className="text-sm text-[var(--color-neutral-600)] mb-4">For long-form content</p>
             <p className="leading-[1.7] text-[var(--color-neutral-700)]">
@@ -318,7 +318,7 @@ export default function Typography() {
       <div className="space-y-4">
         <h2 className="text-2xl font-bold text-[var(--color-neutral-900)]">Typography in Context</h2>
         
-        <div className="p-8 rounded-xl bg-white border border-[var(--color-neutral-200)]">
+        <div className="p-8 rounded-xl bg-[var(--color-surface)] border border-[var(--color-neutral-200)]">
           <h1 className="text-[2.5rem] font-bold text-[var(--color-neutral-900)] mb-4" style={{ fontFamily: 'var(--font-family-display)' }}>
             Welcome to Jasmine Kindergarten
           </h1>

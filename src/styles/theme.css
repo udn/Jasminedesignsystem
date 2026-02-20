@@ -128,6 +128,10 @@
   --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 
+  /* ===== SURFACE COLORS ===== */
+  --color-surface: #ffffff;
+  --color-surface-muted: #f5f5f4;
+
   /* ===== BREAKPOINTS (for reference) ===== */
   /* Mobile: 0-639px */
   /* Tablet: 640px-1023px */
@@ -156,6 +160,9 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== DARK MODE ===== */
 @media (prefers-color-scheme: dark) {
   :root {
+    color-scheme: dark;
+
+    /* Primary (inverted) */
     --color-primary-50: #803900;
     --color-primary-100: #b34f00;
     --color-primary-200: #e56500;
@@ -167,6 +174,31 @@ h1, h2, h3, h4, h5, h6 {
     --color-primary-800: #ffefd9;
     --color-primary-900: #fff8f0;
 
+    /* Secondary (inverted) */
+    --color-secondary-50: #0c4a6e;
+    --color-secondary-100: #075985;
+    --color-secondary-200: #0369a1;
+    --color-secondary-300: #0284c7;
+    --color-secondary-400: #0ea5e9;
+    --color-secondary-500: #38bdf8;
+    --color-secondary-600: #7dd3fc;
+    --color-secondary-700: #bae6fd;
+    --color-secondary-800: #e0f2fe;
+    --color-secondary-900: #f0f9ff;
+
+    /* Accent (inverted) */
+    --color-accent-50: #8d0f44;
+    --color-accent-100: #a80d4d;
+    --color-accent-200: #d10d5e;
+    --color-accent-300: #f01b75;
+    --color-accent-400: #ff3d94;
+    --color-accent-500: #ff6bae;
+    --color-accent-600: #ffa3ce;
+    --color-accent-700: #ffc9e1;
+    --color-accent-800: #ffe4f0;
+    --color-accent-900: #fff1f7;
+
+    /* Neutral (inverted) */
     --color-neutral-50: #1c1917;
     --color-neutral-100: #292524;
     --color-neutral-200: #44403c;
@@ -177,11 +209,39 @@ h1, h2, h3, h4, h5, h6 {
     --color-neutral-700: #e7e5e4;
     --color-neutral-800: #f5f5f4;
     --color-neutral-900: #fafaf9;
+
+    /* Semantic (adjusted for dark backgrounds) */
+    --color-success-50: #14532d;
+    --color-success-500: #4ade80;
+    --color-success-700: #86efac;
+
+    --color-warning-50: #78350f;
+    --color-warning-500: #fbbf24;
+    --color-warning-700: #fde68a;
+
+    --color-error-50: #7f1d1d;
+    --color-error-500: #f87171;
+    --color-error-700: #fca5a5;
+
+    --color-info-50: #1e3a5f;
+    --color-info-500: #60a5fa;
+    --color-info-700: #93c5fd;
+
+    /* Surface */
+    --color-surface: #292524;
+    --color-surface-muted: #1c1917;
   }
 
   body {
     background-color: var(--color-neutral-50);
     color: var(--color-neutral-900);
+  }
+
+  /* Form elements adapt to dark mode */
+  input, select, textarea {
+    background-color: var(--color-surface);
+    color: var(--color-neutral-900);
+    border-color: var(--color-neutral-300);
   }
 }
 

@@ -70,7 +70,7 @@ export default function PortfolioContact() {
           href={`tel:+62${PHONE_1}`}
           variants={fadeUp}
           transition={{ duration: 0.3 }}
-          className="group p-5 sm:p-8 rounded-2xl bg-gradient-to-br from-[var(--color-primary-50)] to-white border-2 border-[var(--color-primary-200)] hover:border-[var(--color-primary-400)] hover:shadow-lg transition-all text-center"
+          className="group p-5 sm:p-8 rounded-2xl bg-gradient-to-br from-[var(--color-primary-50)] to-[var(--color-surface)] border-2 border-[var(--color-primary-200)] hover:border-[var(--color-primary-400)] hover:shadow-lg transition-all text-center"
         >
           <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-2xl bg-gradient-to-br from-[var(--color-primary-500)] to-[var(--color-accent-500)] flex items-center justify-center text-white mb-3 sm:mb-5 shadow-md group-hover:scale-110 transition-transform">
             <Phone size={24} />
@@ -86,7 +86,7 @@ export default function PortfolioContact() {
           rel="noopener noreferrer"
           variants={fadeUp}
           transition={{ duration: 0.3 }}
-          className="group p-5 sm:p-8 rounded-2xl bg-gradient-to-br from-[var(--color-success-50)] to-white border-2 border-[var(--color-success-200)] hover:border-[var(--color-success-400)] hover:shadow-lg transition-all text-center"
+          className="group p-5 sm:p-8 rounded-2xl bg-gradient-to-br from-[var(--color-success-50)] to-[var(--color-surface)] border-2 border-[var(--color-success-200)] hover:border-[var(--color-success-400)] hover:shadow-lg transition-all text-center"
         >
           <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-2xl bg-gradient-to-br from-[var(--color-success-500)] to-[var(--color-success-700)] flex items-center justify-center text-white mb-3 sm:mb-5 shadow-md group-hover:scale-110 transition-transform">
             <MessageCircle size={24} />
@@ -102,7 +102,7 @@ export default function PortfolioContact() {
           rel="noopener noreferrer"
           variants={fadeUp}
           transition={{ duration: 0.3 }}
-          className="group p-5 sm:p-8 rounded-2xl bg-gradient-to-br from-[var(--color-accent-50)] to-white border-2 border-[var(--color-accent-200)] hover:border-[var(--color-accent-400)] hover:shadow-lg transition-all text-center"
+          className="group p-5 sm:p-8 rounded-2xl bg-gradient-to-br from-[var(--color-accent-50)] to-[var(--color-surface)] border-2 border-[var(--color-accent-200)] hover:border-[var(--color-accent-400)] hover:shadow-lg transition-all text-center"
         >
           <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-2xl bg-gradient-to-br from-[var(--color-accent-500)] to-[var(--color-secondary-500)] flex items-center justify-center text-white mb-3 sm:mb-5 shadow-md group-hover:scale-110 transition-transform">
             <Instagram size={24} />
@@ -115,7 +115,7 @@ export default function PortfolioContact() {
         <motion.div
           variants={fadeUp}
           transition={{ duration: 0.3 }}
-          className="p-5 sm:p-8 rounded-2xl bg-gradient-to-br from-[var(--color-secondary-50)] to-white border-2 border-[var(--color-secondary-200)] text-center"
+          className="p-5 sm:p-8 rounded-2xl bg-gradient-to-br from-[var(--color-secondary-50)] to-[var(--color-surface)] border-2 border-[var(--color-secondary-200)] text-center"
         >
           <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-2xl bg-gradient-to-br from-[var(--color-secondary-500)] to-[var(--color-primary-500)] flex items-center justify-center text-white mb-3 sm:mb-5 shadow-md">
             <MapPin size={24} />
@@ -136,7 +136,7 @@ export default function PortfolioContact() {
           transition={{ duration: 0.4 }}
           className="lg:col-span-3"
         >
-          <div className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-white border-2 border-[var(--color-neutral-200)] shadow-lg">
+          <div className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-[var(--color-surface)] border-2 border-[var(--color-neutral-200)] shadow-lg">
             <h2 className="text-2xl sm:text-3xl font-bold text-[var(--color-neutral-900)] mb-2">Kirim Pesan</h2>
             <p className="text-sm text-[var(--color-neutral-600)] mb-6 sm:mb-8">
               Ada pertanyaan? Ingin jadwalkan kunjungan? Isi formulir dan kami akan merespons dalam 24 jam.
@@ -338,7 +338,7 @@ export default function PortfolioContact() {
           href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-10 py-5 rounded-2xl bg-white text-[var(--color-success-700)] font-bold hover:shadow-2xl hover:-translate-y-1 transition-all text-base sm:text-lg shadow-lg"
+          className="inline-flex items-center gap-2 px-10 py-5 rounded-2xl bg-[var(--color-surface)] text-[var(--color-neutral-900)] font-bold hover:shadow-2xl hover:-translate-y-1 transition-all text-base sm:text-lg shadow-lg"
         >
           <MessageCircle size={22} />
           Mulai Chat WhatsApp

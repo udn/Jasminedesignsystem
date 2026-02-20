@@ -34,19 +34,19 @@ export default function Spacing() {
         </p>
         
         <div className="grid md:grid-cols-3 gap-6">
-          <div className="p-4 bg-white rounded-lg">
+          <div className="p-4 bg-[var(--color-surface)] rounded-lg">
             <h3 className="font-semibold text-[var(--color-neutral-900)] mb-2">Why 8px?</h3>
             <p className="text-sm text-[var(--color-neutral-600)]">
               Most screen resolutions are divisible by 8, preventing sub-pixel rendering issues and ensuring crisp edges.
             </p>
           </div>
-          <div className="p-4 bg-white rounded-lg">
+          <div className="p-4 bg-[var(--color-surface)] rounded-lg">
             <h3 className="font-semibold text-[var(--color-neutral-900)] mb-2">Flexibility</h3>
             <p className="text-sm text-[var(--color-neutral-600)]">
               2px and 4px tokens provide flexibility for borders and tight spacing when needed.
             </p>
           </div>
-          <div className="p-4 bg-white rounded-lg">
+          <div className="p-4 bg-[var(--color-surface)] rounded-lg">
             <h3 className="font-semibold text-[var(--color-neutral-900)] mb-2">Scalability</h3>
             <p className="text-sm text-[var(--color-neutral-600)]">
               The system scales elegantly from mobile to desktop without awkward gaps or crowding.
@@ -61,7 +61,7 @@ export default function Spacing() {
         
         <div className="space-y-4">
           {spacingTokens.map((token) => (
-            <div key={token.name} className="p-6 rounded-xl bg-white border border-[var(--color-neutral-200)]">
+            <div key={token.name} className="p-6 rounded-xl bg-[var(--color-surface)] border border-[var(--color-neutral-200)]">
               <div className="grid md:grid-cols-3 gap-6 items-center">
                 <div className="space-y-1">
                   <h3 className="font-semibold text-[var(--color-neutral-900)]">
@@ -100,7 +100,7 @@ export default function Spacing() {
         {/* Card with Spacing */}
         <div className="space-y-4">
           <h3 className="text-lg font-semibold text-[var(--color-neutral-900)]">Card Component Spacing</h3>
-          <div className="p-6 rounded-xl bg-white border-2 border-[var(--color-primary-300)] relative">
+          <div className="p-6 rounded-xl bg-[var(--color-surface)] border-2 border-[var(--color-primary-300)] relative">
             <div className="absolute top-0 left-0 text-xs text-[var(--color-primary-600)] bg-[var(--color-primary-100)] px-2 py-1 rounded-br">
               24px padding
             </div>
@@ -136,9 +136,9 @@ export default function Spacing() {
         <div className="space-y-4">
           <h3 className="text-lg font-semibold text-[var(--color-neutral-900)]">Vertical Stack (16px gaps)</h3>
           <div className="space-y-4 p-6 rounded-xl bg-[var(--color-neutral-100)]">
-            <div className="p-4 bg-white rounded-lg shadow-sm">Stack Item 1</div>
-            <div className="p-4 bg-white rounded-lg shadow-sm">Stack Item 2</div>
-            <div className="p-4 bg-white rounded-lg shadow-sm">Stack Item 3</div>
+            <div className="p-4 bg-[var(--color-surface)] rounded-lg shadow-sm">Stack Item 1</div>
+            <div className="p-4 bg-[var(--color-surface)] rounded-lg shadow-sm">Stack Item 2</div>
+            <div className="p-4 bg-[var(--color-surface)] rounded-lg shadow-sm">Stack Item 3</div>
           </div>
         </div>
 
@@ -146,9 +146,9 @@ export default function Spacing() {
         <div className="space-y-4">
           <h3 className="text-lg font-semibold text-[var(--color-neutral-900)]">Grid Layout (24px gaps)</h3>
           <div className="grid grid-cols-3 gap-6 p-6 rounded-xl bg-[var(--color-neutral-100)]">
-            <div className="p-4 bg-white rounded-lg shadow-sm text-center">Grid 1</div>
-            <div className="p-4 bg-white rounded-lg shadow-sm text-center">Grid 2</div>
-            <div className="p-4 bg-white rounded-lg shadow-sm text-center">Grid 3</div>
+            <div className="p-4 bg-[var(--color-surface)] rounded-lg shadow-sm text-center">Grid 1</div>
+            <div className="p-4 bg-[var(--color-surface)] rounded-lg shadow-sm text-center">Grid 2</div>
+            <div className="p-4 bg-[var(--color-surface)] rounded-lg shadow-sm text-center">Grid 3</div>
           </div>
         </div>
       </div>
@@ -166,7 +166,7 @@ export default function Spacing() {
             { name: '2xl', value: '24px', var: '--radius-2xl' },
             { name: 'full', value: '9999px', var: '--radius-full' },
           ].map((radius) => (
-            <div key={radius.name} className="p-4 rounded-xl bg-white border border-[var(--color-neutral-200)] text-center">
+            <div key={radius.name} className="p-4 rounded-xl bg-[var(--color-surface)] border border-[var(--color-neutral-200)] text-center">
               <div 
                 className="w-full h-20 bg-gradient-to-br from-[var(--color-primary-400)] to-[var(--color-accent-400)] mb-3"
                 style={{ borderRadius: radius.value }}

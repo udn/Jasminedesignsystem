@@ -164,7 +164,7 @@ export default function PortfolioAdmissions() {
           transition={{ duration: 0.4 }}
           className="lg:col-span-3"
         >
-          <div className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-[var(--color-primary-50)] via-white to-[var(--color-secondary-50)] border-2 border-[var(--color-primary-200)] shadow-xl">
+          <div className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-[var(--color-primary-50)] via-[var(--color-surface)] to-[var(--color-secondary-50)] border-2 border-[var(--color-primary-200)] shadow-xl">
             <h2 className="text-2xl sm:text-3xl font-bold text-[var(--color-neutral-900)] mb-2">
               Formulir Pendaftaran Kunjungan
             </h2>
@@ -336,7 +336,7 @@ export default function PortfolioAdmissions() {
         <h2 className="text-2xl sm:text-3xl font-bold text-center text-[var(--color-neutral-900)] mb-8 sm:mb-10">
           Dokumen Pendaftaran
         </h2>
-        <div className="p-6 sm:p-8 rounded-2xl bg-white border-2 border-[var(--color-neutral-200)] shadow-sm">
+        <div className="p-6 sm:p-8 rounded-2xl bg-[var(--color-surface)] border-2 border-[var(--color-neutral-200)] shadow-sm">
           <ul className="space-y-4">
             {[
               { title: 'Akta Kelahiran Anak (fotokopi)', desc: 'Untuk verifikasi usia' },
@@ -382,7 +382,7 @@ export default function PortfolioAdmissions() {
               <AccordionItem
                 key={i}
                 value={`adm-faq-${i}`}
-                className="p-4 sm:p-5 rounded-2xl bg-white border-2 border-[var(--color-neutral-200)] shadow-sm hover:shadow-md transition-shadow"
+                className="p-4 sm:p-5 rounded-2xl bg-[var(--color-surface)] border-2 border-[var(--color-neutral-200)] shadow-sm hover:shadow-md transition-shadow"
               >
                 <AccordionTrigger className="text-sm sm:text-base font-bold text-[var(--color-neutral-900)] hover:no-underline">
                   {faq.q}
@@ -415,7 +415,7 @@ export default function PortfolioAdmissions() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 sm:px-10 sm:py-5 rounded-2xl bg-white text-[var(--color-success-700)] font-bold hover:shadow-2xl hover:-translate-y-1 transition-all text-base sm:text-lg shadow-lg"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 sm:px-10 sm:py-5 rounded-2xl bg-[var(--color-surface)] text-[var(--color-neutral-900)] font-bold hover:shadow-2xl hover:-translate-y-1 transition-all text-base sm:text-lg shadow-lg"
           >
             <MessageCircle size={20} />
             Chat WhatsApp
