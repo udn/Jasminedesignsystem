@@ -24,7 +24,7 @@ export default function Overview() {
 
       {/* Brand Attributes - Full cards with images */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <article className="rounded-2xl bg-white border border-[var(--color-neutral-200)] shadow-sm overflow-hidden">
+        <article className="rounded-2xl bg-[var(--color-surface)] border border-[var(--color-neutral-200)] shadow-sm overflow-hidden">
           <div className="aspect-[4/3] bg-[var(--color-primary-100)] relative overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&h=300&fit=crop"
@@ -43,7 +43,7 @@ export default function Overview() {
           </div>
         </article>
 
-        <article className="rounded-2xl bg-white border border-[var(--color-neutral-200)] shadow-sm overflow-hidden">
+        <article className="rounded-2xl bg-[var(--color-surface)] border border-[var(--color-neutral-200)] shadow-sm overflow-hidden">
           <div className="aspect-[4/3] bg-[var(--color-secondary-100)] relative overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=400&h=300&fit=crop"
@@ -62,7 +62,7 @@ export default function Overview() {
           </div>
         </article>
 
-        <article className="rounded-2xl bg-white border border-[var(--color-neutral-200)] shadow-sm overflow-hidden">
+        <article className="rounded-2xl bg-[var(--color-surface)] border border-[var(--color-neutral-200)] shadow-sm overflow-hidden">
           <div className="aspect-[4/3] bg-[var(--color-accent-100)] relative overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=400&h=300&fit=crop"
@@ -81,7 +81,7 @@ export default function Overview() {
           </div>
         </article>
 
-        <article className="rounded-2xl bg-white border border-[var(--color-neutral-200)] shadow-sm overflow-hidden">
+        <article className="rounded-2xl bg-[var(--color-surface)] border border-[var(--color-neutral-200)] shadow-sm overflow-hidden">
           <div className="aspect-[4/3] bg-[var(--color-success-100)] relative overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=400&h=300&fit=crop"
@@ -130,7 +130,7 @@ export default function Overview() {
       <div>
         <h2 className="text-3xl font-bold text-[var(--color-neutral-900)] mb-6">What's Included</h2>
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="p-6 rounded-xl bg-white border border-[var(--color-neutral-200)]">
+          <div className="p-6 rounded-xl bg-[var(--color-surface)] border border-[var(--color-neutral-200)]">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-3">Design Tokens</h3>
             <ul className="space-y-2 text-sm text-[var(--color-neutral-700)]">
               <li className="flex items-start gap-2">
@@ -152,7 +152,7 @@ export default function Overview() {
             </ul>
           </div>
 
-          <div className="p-6 rounded-xl bg-white border border-[var(--color-neutral-200)]">
+          <div className="p-6 rounded-xl bg-[var(--color-surface)] border border-[var(--color-neutral-200)]">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-3">Components & Patterns</h3>
             <ul className="space-y-2 text-sm text-[var(--color-neutral-700)]">
               <li className="flex items-start gap-2">

@@ -16,7 +16,7 @@ export default function Accessibility() {
         <h2 className="text-2xl font-bold text-[var(--color-neutral-900)] mb-6">WCAG AA Standards</h2>
         
         <div className="grid md:grid-cols-3 gap-6">
-          <div className="p-6 bg-white rounded-xl">
+          <div className="p-6 bg-[var(--color-surface)] rounded-xl">
             <div className="text-4xl mb-3">✓</div>
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-2">Perceivable</h3>
             <p className="text-sm text-[var(--color-neutral-600)]">
@@ -24,7 +24,7 @@ export default function Accessibility() {
             </p>
           </div>
 
-          <div className="p-6 bg-white rounded-xl">
+          <div className="p-6 bg-[var(--color-surface)] rounded-xl">
             <div className="text-4xl mb-3">⚡</div>
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-2">Operable</h3>
             <p className="text-sm text-[var(--color-neutral-600)]">
@@ -32,7 +32,7 @@ export default function Accessibility() {
             </p>
           </div>
 
-          <div className="p-6 bg-white rounded-xl">
+          <div className="p-6 bg-[var(--color-surface)] rounded-xl">
             <div className="text-4xl mb-3">📖</div>
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-2">Understandable</h3>
             <p className="text-sm text-[var(--color-neutral-600)]">
@@ -47,7 +47,7 @@ export default function Accessibility() {
         <h2 className="text-2xl font-bold text-[var(--color-neutral-900)]">Color Contrast Requirements</h2>
         
         <div className="space-y-4">
-          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
+          <div className="p-6 bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-xl">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-4">Text Contrast Ratios</h3>
             
             <div className="grid md:grid-cols-2 gap-6">
@@ -78,7 +78,7 @@ export default function Accessibility() {
                   ✓ WCAG AA compliant for normal text
                 </p>
 
-                <div className="flex items-center justify-between p-4 bg-white border-2 border-[var(--color-primary-600)] rounded-lg">
+                <div className="flex items-center justify-between p-4 bg-[var(--color-surface)] border-2 border-[var(--color-primary-600)] rounded-lg">
                   <span className="text-lg text-[var(--color-primary-700)]">Primary Text</span>
                   <span className="px-3 py-1 bg-[var(--color-neutral-100)] rounded text-sm">5.2:1</span>
                 </div>
@@ -89,7 +89,7 @@ export default function Accessibility() {
             </div>
           </div>
 
-          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
+          <div className="p-6 bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-xl">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-4">UI Component Contrast</h3>
             
             <div className="grid md:grid-cols-2 gap-6">
@@ -135,7 +135,7 @@ export default function Accessibility() {
         <h2 className="text-2xl font-bold text-[var(--color-neutral-900)]">Keyboard Navigation</h2>
         
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
+          <div className="p-6 bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-xl">
             <div className="flex items-center gap-3 mb-4">
               <div className="p-3 bg-[var(--color-secondary-100)] rounded-lg">
                 <Keyboard size={24} className="text-[var(--color-secondary-600)]" />
@@ -167,7 +167,7 @@ export default function Accessibility() {
             </ul>
           </div>
 
-          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
+          <div className="p-6 bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-xl">
             <div className="flex items-center gap-3 mb-4">
               <div className="p-3 bg-[var(--color-primary-100)] rounded-lg">
                 <Hand size={24} className="text-[var(--color-primary-600)]" />
@@ -205,32 +205,32 @@ export default function Accessibility() {
           </div>
         </div>
 
-        <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
+        <div className="p-6 bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-xl">
           <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-4">Keyboard Shortcuts</h3>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="flex items-center gap-3 p-3 bg-[var(--color-neutral-50)] rounded-lg">
-              <kbd className="px-2 py-1 bg-white border border-[var(--color-neutral-300)] rounded text-sm font-mono">Tab</kbd>
+              <kbd className="px-2 py-1 bg-[var(--color-surface)] border border-[var(--color-neutral-300)] rounded text-sm font-mono">Tab</kbd>
               <span className="text-sm text-[var(--color-neutral-700)]">Next element</span>
             </div>
             <div className="flex items-center gap-3 p-3 bg-[var(--color-neutral-50)] rounded-lg">
-              <kbd className="px-2 py-1 bg-white border border-[var(--color-neutral-300)] rounded text-sm font-mono">Shift+Tab</kbd>
+              <kbd className="px-2 py-1 bg-[var(--color-surface)] border border-[var(--color-neutral-300)] rounded text-sm font-mono">Shift+Tab</kbd>
               <span className="text-sm text-[var(--color-neutral-700)]">Previous element</span>
             </div>
             <div className="flex items-center gap-3 p-3 bg-[var(--color-neutral-50)] rounded-lg">
-              <kbd className="px-2 py-1 bg-white border border-[var(--color-neutral-300)] rounded text-sm font-mono">Enter</kbd>
+              <kbd className="px-2 py-1 bg-[var(--color-surface)] border border-[var(--color-neutral-300)] rounded text-sm font-mono">Enter</kbd>
               <span className="text-sm text-[var(--color-neutral-700)]">Activate button/link</span>
             </div>
             <div className="flex items-center gap-3 p-3 bg-[var(--color-neutral-50)] rounded-lg">
-              <kbd className="px-2 py-1 bg-white border border-[var(--color-neutral-300)] rounded text-sm font-mono">Space</kbd>
+              <kbd className="px-2 py-1 bg-[var(--color-surface)] border border-[var(--color-neutral-300)] rounded text-sm font-mono">Space</kbd>
               <span className="text-sm text-[var(--color-neutral-700)]">Activate button/checkbox</span>
             </div>
             <div className="flex items-center gap-3 p-3 bg-[var(--color-neutral-50)] rounded-lg">
-              <kbd className="px-2 py-1 bg-white border border-[var(--color-neutral-300)] rounded text-sm font-mono">Esc</kbd>
+              <kbd className="px-2 py-1 bg-[var(--color-surface)] border border-[var(--color-neutral-300)] rounded text-sm font-mono">Esc</kbd>
               <span className="text-sm text-[var(--color-neutral-700)]">Close modal/dialog</span>
             </div>
             <div className="flex items-center gap-3 p-3 bg-[var(--color-neutral-50)] rounded-lg">
-              <kbd className="px-2 py-1 bg-white border border-[var(--color-neutral-300)] rounded text-sm font-mono">↑↓</kbd>
+              <kbd className="px-2 py-1 bg-[var(--color-surface)] border border-[var(--color-neutral-300)] rounded text-sm font-mono">↑↓</kbd>
               <span className="text-sm text-[var(--color-neutral-700)]">Navigate lists/menus</span>
             </div>
           </div>
@@ -242,7 +242,7 @@ export default function Accessibility() {
         <h2 className="text-2xl font-bold text-[var(--color-neutral-900)]">Screen Reader Support</h2>
         
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
+          <div className="p-6 bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-xl">
             <div className="flex items-center gap-3 mb-4">
               <div className="p-3 bg-[var(--color-accent-100)] rounded-lg">
                 <Ear size={24} className="text-[var(--color-accent-600)]" />
@@ -274,7 +274,7 @@ export default function Accessibility() {
             </ul>
           </div>
 
-          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
+          <div className="p-6 bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-xl">
             <div className="flex items-center gap-3 mb-4">
               <div className="p-3 bg-[var(--color-success-100)] rounded-lg">
                 <Eye size={24} className="text-[var(--color-success-600)]" />
@@ -307,7 +307,7 @@ export default function Accessibility() {
           </div>
         </div>
 
-        <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
+        <div className="p-6 bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-xl">
           <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-4">Alt Text Guidelines</h3>
           
           <div className="space-y-4">
@@ -360,7 +360,7 @@ export default function Accessibility() {
         <h2 className="text-2xl font-bold text-[var(--color-neutral-900)]">Additional Accessibility Features</h2>
         
         <div className="grid md:grid-cols-3 gap-6">
-          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
+          <div className="p-6 bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-xl">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-3">Motion Sensitivity</h3>
             <p className="text-sm text-[var(--color-neutral-600)] mb-3">
               Respect prefers-reduced-motion settings
@@ -370,7 +370,7 @@ export default function Accessibility() {
             </code>
           </div>
 
-          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
+          <div className="p-6 bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-xl">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-3">Color Blindness</h3>
             <p className="text-sm text-[var(--color-neutral-600)] mb-3">
               Don't rely solely on color to convey information
@@ -381,7 +381,7 @@ export default function Accessibility() {
             </div>
           </div>
 
-          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
+          <div className="p-6 bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-xl">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-3">Text Resize</h3>
             <p className="text-sm text-[var(--color-neutral-600)] mb-3">
               Support text scaling up to 200%

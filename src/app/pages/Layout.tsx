@@ -14,7 +14,7 @@ export default function Layout() {
         <h2 className="text-2xl font-bold text-[var(--color-neutral-900)]">Responsive Breakpoints</h2>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
+          <div className="p-6 bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-xl">
             <div className="w-12 h-12 bg-[var(--color-primary-100)] rounded-lg flex items-center justify-center mb-4 mx-auto">
               <span className="text-2xl">📱</span>
             </div>
@@ -23,7 +23,7 @@ export default function Layout() {
             <p className="text-xs text-[var(--color-neutral-500)]">Default, mobile-first design</p>
           </div>
 
-          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
+          <div className="p-6 bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-xl">
             <div className="w-12 h-12 bg-[var(--color-secondary-100)] rounded-lg flex items-center justify-center mb-4 mx-auto">
               <span className="text-2xl">📲</span>
             </div>
@@ -32,7 +32,7 @@ export default function Layout() {
             <p className="text-xs text-[var(--color-neutral-500)]">sm: and md: breakpoints</p>
           </div>
 
-          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
+          <div className="p-6 bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-xl">
             <div className="w-12 h-12 bg-[var(--color-accent-100)] rounded-lg flex items-center justify-center mb-4 mx-auto">
               <span className="text-2xl">💻</span>
             </div>
@@ -41,7 +41,7 @@ export default function Layout() {
             <p className="text-xs text-[var(--color-neutral-500)]">lg: breakpoint</p>
           </div>
 
-          <div className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
+          <div className="p-6 bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-xl">
             <div className="w-12 h-12 bg-[var(--color-success-100)] rounded-lg flex items-center justify-center mb-4 mx-auto">
               <span className="text-2xl">🖥️</span>
             </div>
@@ -137,7 +137,7 @@ export default function Layout() {
           <h3 className="text-lg font-semibold text-[var(--color-neutral-900)]">Container Example</h3>
           <div className="bg-[var(--color-neutral-100)] p-4 rounded-xl">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <div className="h-24 bg-white rounded-lg shadow-sm flex items-center justify-center">
+              <div className="h-24 bg-[var(--color-surface)] rounded-lg shadow-sm flex items-center justify-center">
                 <p className="text-[var(--color-neutral-600)]">Content Container (max-width: 1280px)</p>
               </div>
             </div>
@@ -174,7 +174,7 @@ export default function Layout() {
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-3">Feature Grid (Responsive)</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {Array.from({ length: 3 }).map((_, i) => (
-                <div key={i} className="p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
+                <div key={i} className="p-6 bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-xl">
                   <div className="w-12 h-12 bg-[var(--color-primary-100)] rounded-xl mb-4 flex items-center justify-center text-2xl">
                     ⭐
                   </div>
@@ -194,12 +194,12 @@ export default function Layout() {
               <div className="md:col-span-1 p-6 bg-[var(--color-neutral-100)] rounded-xl">
                 <h4 className="font-semibold text-[var(--color-neutral-900)] mb-4">Sidebar</h4>
                 <div className="space-y-2">
-                  <div className="p-2 bg-white rounded text-sm">Menu Item 1</div>
-                  <div className="p-2 bg-white rounded text-sm">Menu Item 2</div>
-                  <div className="p-2 bg-white rounded text-sm">Menu Item 3</div>
+                  <div className="p-2 bg-[var(--color-surface)] rounded text-sm">Menu Item 1</div>
+                  <div className="p-2 bg-[var(--color-surface)] rounded text-sm">Menu Item 2</div>
+                  <div className="p-2 bg-[var(--color-surface)] rounded text-sm">Menu Item 3</div>
                 </div>
               </div>
-              <div className="md:col-span-3 p-6 bg-white border border-[var(--color-neutral-200)] rounded-xl">
+              <div className="md:col-span-3 p-6 bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-xl">
                 <h4 className="font-semibold text-[var(--color-neutral-900)] mb-2">Main Content</h4>
                 <p className="text-sm text-[var(--color-neutral-600)]">
                   Primary content area takes up 3/4 of the width on desktop, full width on mobile.
@@ -213,7 +213,7 @@ export default function Layout() {
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-3">Card Grid (Auto-fit)</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {Array.from({ length: 4 }).map((_, i) => (
-                <div key={i} className="p-4 bg-white border border-[var(--color-neutral-200)] rounded-lg">
+                <div key={i} className="p-4 bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-lg">
                   <div className="aspect-square bg-gradient-to-br from-[var(--color-primary-300)] to-[var(--color-accent-300)] rounded-lg mb-3" />
                   <p className="text-sm font-medium text-[var(--color-neutral-900)]">Card {i + 1}</p>
                 </div>

@@ -249,7 +249,7 @@ export default function Tokens() {
       <div className="grid md:grid-cols-2 gap-6">
         <div className="p-8 bg-gradient-to-br from-[var(--color-primary-50)] to-[var(--color-accent-50)] border-2 border-[var(--color-primary-300)] rounded-2xl">
           <div className="flex items-center gap-3 mb-4">
-            <div className="p-3 bg-white rounded-xl shadow-sm">
+            <div className="p-3 bg-[var(--color-surface)] rounded-xl shadow-sm">
               <span className="text-2xl">📦</span>
             </div>
             <div>
@@ -272,7 +272,7 @@ export default function Tokens() {
 
         <div className="p-8 bg-gradient-to-br from-[var(--color-secondary-50)] to-[var(--color-primary-50)] border-2 border-[var(--color-secondary-300)] rounded-2xl">
           <div className="flex items-center gap-3 mb-4">
-            <div className="p-3 bg-white rounded-xl shadow-sm">
+            <div className="p-3 bg-[var(--color-surface)] rounded-xl shadow-sm">
               <span className="text-2xl">🎨</span>
             </div>
             <div>
@@ -448,7 +448,7 @@ export default function Tokens() {
           </div>
         </div>
 
-        <div className="mt-8 p-6 bg-white rounded-xl">
+        <div className="mt-8 p-6 bg-[var(--color-surface)] rounded-xl">
           <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-3">Figma Integration</h3>
           <p className="text-sm text-[var(--color-neutral-700)] mb-3">
             Import the JSON tokens into Figma using the Tokens Studio plugin for seamless design-to-development handoff.
