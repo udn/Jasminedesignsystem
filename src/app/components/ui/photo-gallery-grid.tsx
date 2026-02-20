@@ -37,8 +37,8 @@ function PhotoGalleryGrid({
       className={cn("grid gap-4", colsClass[columns], className)}
       {...props}
     >
-      {items.map((item, index) => (
-        <PhotoGalleryCell key={index} item={item} />
+      {items.map((item) => (
+        <PhotoGalleryCell key={item.label} item={item} />
       ))}
     </div>
   );
