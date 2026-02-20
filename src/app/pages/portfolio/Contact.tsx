@@ -5,7 +5,7 @@ import {
   Instagram, ArrowRight,
 } from 'lucide-react';
 
-const WHATSAPP_URL = 'https://wa.me/6281328846089';
+const WHATSAPP_URL = 'https://wa.me/6285229552707';
 const PHONE_1 = '081328846089';
 const PHONE_2 = '085229552707';
 const INSTAGRAM = '@jasminealmuflihun';
@@ -88,11 +88,11 @@ export default function PortfolioContact() {
           transition={{ duration: 0.3 }}
           className="group p-5 sm:p-8 rounded-2xl bg-gradient-to-br from-[var(--color-success-50)] to-white border-2 border-[var(--color-success-200)] hover:border-[var(--color-success-400)] hover:shadow-lg transition-all text-center"
         >
-          <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-2xl bg-gradient-to-br from-[var(--color-success-500)] to-[var(--color-success-600)] flex items-center justify-center text-white mb-3 sm:mb-5 shadow-md group-hover:scale-110 transition-transform">
+          <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-2xl bg-gradient-to-br from-[var(--color-success-500)] to-[var(--color-success-700)] flex items-center justify-center text-white mb-3 sm:mb-5 shadow-md group-hover:scale-110 transition-transform">
             <MessageCircle size={24} />
           </div>
           <h3 className="text-base sm:text-lg font-bold text-[var(--color-neutral-900)] mb-1">WhatsApp</h3>
-          <p className="text-xs sm:text-sm text-[var(--color-success-600)] font-semibold">Chat Langsung</p>
+          <p className="text-xs sm:text-sm text-[var(--color-success-700)] font-semibold">Chat Langsung</p>
           <p className="text-xs text-[var(--color-neutral-500)] mt-1 hidden sm:block">Respon cepat</p>
         </motion.a>
 
@@ -258,15 +258,15 @@ export default function PortfolioContact() {
             </p>
             <ul className="space-y-2 text-xs sm:text-sm text-[var(--color-neutral-700)]">
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-600)] shrink-0">✓</span>
+                <span className="text-[var(--color-success-700)] shrink-0">✓</span>
                 <span>WhatsApp dibalas dalam 2 jam</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-600)] shrink-0">✓</span>
+                <span className="text-[var(--color-success-700)] shrink-0">✓</span>
                 <span>Telepon dijawab saat jam kerja</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-600)] shrink-0">✓</span>
+                <span className="text-[var(--color-success-700)] shrink-0">✓</span>
                 <span>Email direspons dalam 24 jam</span>
               </li>
             </ul>
@@ -276,7 +276,7 @@ export default function PortfolioContact() {
             <h3 className="text-lg font-bold mb-3">Lokasi Sekolah</h3>
             <p className="text-sm text-[var(--color-neutral-300)] mb-4">{ADDRESS}</p>
             <a
-              href="https://maps.google.com/?q=Jl.+Grogolsari+Juwangen+Purwomartani+Kalasan+Sleman+Yogyakarta"
+              href="https://maps.app.goo.gl/rH4ejSfiZ2QG3hFHA"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/30 font-semibold transition-all text-sm"
@@ -298,18 +298,22 @@ export default function PortfolioContact() {
         <h2 className="text-2xl sm:text-3xl font-bold text-[var(--color-neutral-900)] mb-6 text-center">
           Temukan Kami
         </h2>
-        <div className="rounded-2xl overflow-hidden border-2 border-[var(--color-neutral-200)] shadow-lg">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.0!2d110.47!3d-7.75!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sKalasan%2C+Sleman%2C+Yogyakarta!5e0!3m2!1sid!2sid!4v1"
-            width="100%"
-            height="300"
-            className="sm:h-[350px] lg:h-[400px] border-0"
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Lokasi PAUD Jasmine Al Muflihuun"
-          />
-        </div>
+        <a
+          href="https://maps.app.goo.gl/rH4ejSfiZ2QG3hFHA"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block rounded-2xl overflow-hidden border-2 border-[var(--color-neutral-200)] shadow-lg bg-[var(--color-neutral-100)] hover:border-[var(--color-primary-300)] transition-colors"
+        >
+          <div className="flex flex-col items-center justify-center gap-4 py-16 sm:py-20 lg:py-24 px-6 bg-gradient-to-br from-[var(--color-primary-50)] to-[var(--color-secondary-50)]">
+            <MapPin size={48} className="text-[var(--color-primary-500)]" />
+            <span className="text-lg font-semibold text-[var(--color-neutral-800)]">Lihat lokasi di Google Maps</span>
+            <span className="text-sm text-[var(--color-neutral-600)]">{ADDRESS}</span>
+            <span className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[var(--color-primary-500)] text-white font-semibold">
+              Buka Peta
+              <ArrowRight size={18} />
+            </span>
+          </div>
+        </a>
         <p className="text-center text-sm text-[var(--color-neutral-600)] mt-4">
           {ADDRESS}
         </p>
@@ -321,7 +325,7 @@ export default function PortfolioContact() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.5 }}
-        className="py-10 sm:py-14 px-6 sm:px-10 lg:px-16 rounded-3xl bg-gradient-to-br from-[var(--color-success-500)] to-[var(--color-success-600)] text-white text-center shadow-2xl"
+        className="py-10 sm:py-14 px-6 sm:px-10 lg:px-16 rounded-3xl bg-gradient-to-br from-[var(--color-success-500)] to-[var(--color-success-700)] text-white text-center shadow-2xl"
       >
         <MessageCircle size={40} className="mx-auto mb-4 opacity-90" />
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
@@ -334,7 +338,7 @@ export default function PortfolioContact() {
           href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-10 py-5 rounded-2xl bg-white text-[var(--color-success-600)] font-bold hover:shadow-2xl hover:-translate-y-1 transition-all text-base sm:text-lg"
+          className="inline-flex items-center gap-2 px-10 py-5 rounded-2xl bg-white text-[var(--color-success-700)] font-bold hover:shadow-2xl hover:-translate-y-1 transition-all text-base sm:text-lg shadow-lg"
         >
           <MessageCircle size={22} />
           Mulai Chat WhatsApp

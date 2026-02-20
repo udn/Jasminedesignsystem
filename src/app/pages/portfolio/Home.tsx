@@ -12,7 +12,7 @@ import {
   AccordionContent,
 } from '@/app/components/ui/accordion';
 
-const WHATSAPP_URL = 'https://wa.me/6281328846089';
+const WHATSAPP_URL = 'https://wa.me/6285229552707';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -380,7 +380,7 @@ export default function PortfolioHome() {
               },
               {
                 q: 'Usia berapa anak bisa mendaftar?',
-                a: 'Kami menerima peserta didik baru dan inden mulai usia 0–6 tahun. Program Kelompok Bermain (KB) untuk usia 2–3 tahun, TK-A untuk 4–5 tahun, TK-B untuk 5–6 tahun, dan TPA (Taman Pendidikan Al-Qur\'an) untuk semua usia.',
+                a: 'Kami menerima peserta didik baru dan inden mulai usia 0–6 tahun. Program Kelompok Bermain (KB) untuk usia 2–3 tahun, TK-A untuk 4–5 tahun, TK-B untuk 5–6 tahun, dan TPA (Tempat Penitipan Anak) untuk layanan penitipan anak.',
               },
               {
                 q: 'Apakah ada trial class sebelum mendaftar?',

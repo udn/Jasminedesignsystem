@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import {
   Baby, Smile, GraduationCap, BookOpen, ArrowRight,
   CheckCircle, Globe, Cpu, Music, Palette, Waves,
-  Drum, PenTool, Brain, Hand, MessageCircle, Users, Sparkles,
+  Drum, PenTool, Brain, Hand, MessageCircle, Users, Sparkles, Heart,
 } from 'lucide-react';
 import {
   Accordion,
@@ -89,11 +89,11 @@ export default function PortfolioPrograms() {
             color: 'accent',
           },
           {
-            icon: <BookOpen size={36} />,
+            icon: <Baby size={36} />,
             name: 'TPA',
-            age: 'Taman Pendidikan Al-Qur\'an',
-            desc: 'Program khusus membaca dan mencintai Al-Qur\'an dengan Metode Ummi yang menyenangkan dan terbukti.',
-            highlights: ['Metode Ummi berjenjang', 'Hafalan surat-surat pendek', 'Pembiasaan adab & akhlak', 'Sholat & doa harian'],
+            age: 'Tempat Penitipan Anak',
+            desc: 'Layanan penitipan anak yang aman dan nyaman dengan pengasuhan berkualitas, aktivitas bermain, serta lingkungan yang mendukung tumbuh kembang anak.',
+            highlights: ['Pengasuhan oleh pengasuh berpengalaman', 'Aktivitas bermain & stimulasi usia dini', 'Lingkungan aman dengan CCTV & AC', 'Fleksibel sesuai kebutuhan orang tua'],
             color: 'success',
           },
         ].map((program) => (
@@ -377,7 +377,7 @@ export default function PortfolioPrograms() {
             Daftar Trial Class
           </Link>
           <a
-            href="https://wa.me/6281328846089"
+            href="https://wa.me/6285229552707"
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-4 sm:px-10 sm:py-5 rounded-2xl bg-white/10 backdrop-blur-sm text-white font-bold transition-all hover:bg-white/20 border-2 border-white/40 text-base sm:text-lg"

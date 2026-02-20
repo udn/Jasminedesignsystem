@@ -13,7 +13,7 @@ import {
   AccordionContent,
 } from '@/app/components/ui/accordion';
 
-const WHATSAPP_URL = 'https://wa.me/6281328846089';
+const WHATSAPP_URL = 'https://wa.me/6285229552707';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -245,7 +245,7 @@ export default function PortfolioAdmissions() {
                       <option value="kb">Kelompok Bermain (KB)</option>
                       <option value="tk-a">TK-A</option>
                       <option value="tk-b">TK-B</option>
-                      <option value="tpa">TPA</option>
+                      <option value="tpa">TPA (Tempat Penitipan Anak)</option>
                       <option value="bilingual">Bilingual Class</option>
                     </select>
                   </div>
@@ -400,9 +400,9 @@ export default function PortfolioAdmissions() {
       <motion.section
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0 }}
         transition={{ duration: 0.5 }}
-        className="py-10 sm:py-14 px-6 sm:px-10 lg:px-16 rounded-3xl bg-gradient-to-br from-[var(--color-primary-500)] via-[var(--color-accent-500)] to-[var(--color-secondary-500)] text-white text-center shadow-2xl"
+        className="relative z-10 py-10 sm:py-14 px-6 sm:px-10 lg:px-16 rounded-3xl bg-gradient-to-br from-[var(--color-primary-500)] via-[var(--color-accent-500)] to-[var(--color-secondary-500)] text-white text-center shadow-2xl"
       >
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
           Masih Ragu? Hubungi Kami Langsung
@@ -415,7 +415,7 @@ export default function PortfolioAdmissions() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-4 sm:px-10 sm:py-5 rounded-2xl bg-white text-[var(--color-success-600)] font-bold hover:shadow-2xl hover:-translate-y-1 transition-all text-base sm:text-lg flex items-center justify-center gap-2"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 sm:px-10 sm:py-5 rounded-2xl bg-white text-[var(--color-success-700)] font-bold hover:shadow-2xl hover:-translate-y-1 transition-all text-base sm:text-lg shadow-lg"
           >
             <MessageCircle size={20} />
             Chat WhatsApp

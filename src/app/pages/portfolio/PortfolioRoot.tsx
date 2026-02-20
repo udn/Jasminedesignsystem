@@ -3,7 +3,7 @@ import { Menu, X, Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
-const WHATSAPP_URL = 'https://wa.me/6281328846089';
+const WHATSAPP_URL = 'https://wa.me/6285229552707';
 const PHONE_1 = '081328846089';
 const PHONE_2 = '085229552707';
 const INSTAGRAM = '@jasminealmuflihun';
@@ -193,7 +193,7 @@ export default function PortfolioRoot() {
                 </div>
               </div>
               <p className="text-sm text-[var(--color-neutral-700)] leading-relaxed max-w-md mb-5">
-                Sekolah Islam PAUD, KB, TK, dan TPA terpercaya di Sleman, Yogyakarta. Membentuk generasi cerdas, kreatif, mandiri, dan berakhlakul karimah.
+                Sekolah Islam PAUD, KB, TK, dan TPA (Tempat Penitipan Anak) terpercaya di Sleman, Yogyakarta. Membentuk generasi cerdas, kreatif, mandiri, dan berakhlakul karimah.
               </p>
               <div className="flex gap-3">
                 <a
@@ -255,7 +255,7 @@ export default function PortfolioRoot() {
                   </a>
                 </li>
                 <li>
-                  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 text-sm text-[var(--color-neutral-600)] hover:text-[var(--color-success-600)] transition-colors">
+                  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 text-sm text-[var(--color-neutral-600)] hover:text-[var(--color-success-700)] transition-colors">
                     <MessageCircle size={16} className="mt-0.5 shrink-0" />
                     <span>WhatsApp</span>
                   </a>
