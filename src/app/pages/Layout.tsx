@@ -158,7 +158,7 @@ export default function Layout() {
                 <h1 className="text-4xl md:text-5xl font-bold">Welcome to Jasmine Kindergarten</h1>
                 <p className="text-lg opacity-90">Where young minds grow through joyful learning</p>
                 <div className="flex flex-wrap gap-3 justify-center pt-4">
-                  <button className="px-6 py-3 bg-white text-[var(--color-primary-600)] rounded-lg font-medium hover:shadow-lg transition-all">
+                  <button className="px-6 py-3 bg-[var(--color-surface)] text-[var(--color-neutral-900)] rounded-lg font-medium hover:shadow-lg transition-all">
                     Get Started
                   </button>
                   <button className="px-6 py-3 bg-white/20 backdrop-blur-sm text-white rounded-lg font-medium hover:bg-white/30 transition-all border border-white/40">
