@@ -71,7 +71,7 @@ export default function PortfolioHome() {
           </Link>
           <Link
             to="/portfolio/programs"
-            className="px-8 py-4 sm:px-10 sm:py-5 rounded-2xl bg-white hover:bg-[var(--color-neutral-50)] text-[var(--color-neutral-900)] font-bold transition-all border-2 border-[var(--color-neutral-300)] hover:border-[var(--color-neutral-400)] text-base sm:text-lg text-center"
+            className="px-8 py-4 sm:px-10 sm:py-5 rounded-2xl bg-[var(--color-surface)] hover:bg-[var(--color-neutral-50)] text-[var(--color-neutral-900)] font-bold transition-all border-2 border-[var(--color-neutral-300)] hover:border-[var(--color-neutral-400)] text-base sm:text-lg text-center"
           >
             Lihat Program
           </Link>
@@ -107,7 +107,7 @@ export default function PortfolioHome() {
             key={badge.label}
             variants={fadeUp}
             transition={{ duration: 0.4 }}
-            className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white border border-[var(--color-neutral-200)] shadow-sm text-sm font-medium text-[var(--color-neutral-700)]"
+            className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[var(--color-surface)] border border-[var(--color-neutral-200)] shadow-sm text-sm font-medium text-[var(--color-neutral-700)]"
           >
             <span className="text-[var(--color-primary-600)]">{badge.icon}</span>
             <span>{badge.label}</span>
@@ -127,7 +127,7 @@ export default function PortfolioHome() {
         <motion.div
           variants={fadeUp}
           transition={{ duration: 0.5 }}
-          className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-[var(--color-primary-50)] via-white to-[var(--color-accent-50)] border-2 border-[var(--color-primary-200)] shadow-lg hover:shadow-xl transition-shadow"
+          className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-[var(--color-primary-50)] via-[var(--color-surface)] to-[var(--color-accent-50)] border-2 border-[var(--color-primary-200)] shadow-lg hover:shadow-xl transition-shadow"
         >
           <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-gradient-to-br from-[var(--color-primary-500)] to-[var(--color-accent-500)] flex items-center justify-center text-white mb-5 shadow-md">
             <Heart size={28} />
@@ -156,7 +156,7 @@ export default function PortfolioHome() {
         <motion.div
           variants={fadeUp}
           transition={{ duration: 0.5 }}
-          className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-[var(--color-secondary-50)] via-white to-[var(--color-primary-50)] border-2 border-[var(--color-secondary-200)] shadow-lg hover:shadow-xl transition-shadow"
+          className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-[var(--color-secondary-50)] via-[var(--color-surface)] to-[var(--color-primary-50)] border-2 border-[var(--color-secondary-200)] shadow-lg hover:shadow-xl transition-shadow"
         >
           <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-gradient-to-br from-[var(--color-secondary-500)] to-[var(--color-primary-500)] flex items-center justify-center text-white mb-5 shadow-md">
             <Shield size={28} />
@@ -185,7 +185,7 @@ export default function PortfolioHome() {
         <motion.div
           variants={fadeUp}
           transition={{ duration: 0.5 }}
-          className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-[var(--color-accent-50)] via-white to-[var(--color-secondary-50)] border-2 border-[var(--color-accent-200)] shadow-lg hover:shadow-xl transition-shadow md:col-span-2 lg:col-span-1"
+          className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-[var(--color-accent-50)] via-[var(--color-surface)] to-[var(--color-secondary-50)] border-2 border-[var(--color-accent-200)] shadow-lg hover:shadow-xl transition-shadow md:col-span-2 lg:col-span-1"
         >
           <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-gradient-to-br from-[var(--color-accent-500)] to-[var(--color-secondary-500)] flex items-center justify-center text-white mb-5 shadow-md">
             <Sparkles size={28} />
@@ -241,7 +241,7 @@ export default function PortfolioHome() {
           </div>
           <Link
             to="/portfolio/programs"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-white text-[var(--color-primary-600)] font-bold hover:shadow-xl transition-all hover:-translate-y-0.5 text-sm sm:text-base"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-[var(--color-surface)] text-[var(--color-neutral-900)] font-bold hover:shadow-xl transition-all hover:-translate-y-0.5 text-sm sm:text-base"
           >
             Pelajari Selengkapnya
             <ArrowRight size={18} />
@@ -300,7 +300,7 @@ export default function PortfolioHome() {
               key={t.name}
               variants={fadeUp}
               transition={{ duration: 0.4 }}
-              className="p-6 sm:p-8 rounded-2xl bg-white border-2 border-[var(--color-neutral-200)] shadow-lg hover:shadow-xl transition-shadow"
+              className="p-6 sm:p-8 rounded-2xl bg-[var(--color-surface)] border-2 border-[var(--color-neutral-200)] shadow-lg hover:shadow-xl transition-shadow"
             >
               <Quote size={32} className={`text-[var(--color-${t.color}-400)] mb-3`} />
               <div className="flex gap-1 mb-3">
@@ -406,7 +406,7 @@ export default function PortfolioHome() {
               <AccordionItem
                 key={i}
                 value={`faq-${i}`}
-                className="p-4 sm:p-5 rounded-2xl bg-white border-2 border-[var(--color-neutral-200)] shadow-sm hover:shadow-md transition-shadow"
+                className="p-4 sm:p-5 rounded-2xl bg-[var(--color-surface)] border-2 border-[var(--color-neutral-200)] shadow-sm hover:shadow-md transition-shadow"
               >
                 <AccordionTrigger className="text-sm sm:text-base font-bold text-[var(--color-neutral-900)] hover:no-underline">
                   {faq.q}
@@ -437,7 +437,7 @@ export default function PortfolioHome() {
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
           <Link
             to="/portfolio/admissions"
-            className="px-8 py-4 sm:px-10 sm:py-5 rounded-2xl bg-white text-[var(--color-primary-600)] font-bold transition-all hover:shadow-2xl hover:-translate-y-1 text-base sm:text-lg"
+            className="px-8 py-4 sm:px-10 sm:py-5 rounded-2xl bg-[var(--color-surface)] text-[var(--color-neutral-900)] font-bold transition-all hover:shadow-2xl hover:-translate-y-1 text-base sm:text-lg"
           >
             Jadwalkan Kunjungan
           </Link>

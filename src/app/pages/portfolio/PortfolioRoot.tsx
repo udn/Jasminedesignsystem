@@ -41,7 +41,7 @@ export default function PortfolioRoot() {
     <div className="min-h-screen bg-[var(--color-neutral-50)]">
       {/* Header */}
       <header
-        className={`sticky top-0 z-50 border-b border-[var(--color-neutral-200)] bg-white/95 backdrop-blur-lg transition-all duration-300 ${
+        className={`sticky top-0 z-50 border-b border-[var(--color-neutral-200)] bg-[var(--color-surface)] backdrop-blur-lg transition-all duration-300 ${
           scrolled ? 'shadow-md' : 'shadow-sm'
         }`}
       >
@@ -112,7 +112,7 @@ export default function PortfolioRoot() {
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3, ease: [0, 0, 0.2, 1] }}
-              className="lg:hidden border-t border-[var(--color-neutral-200)] bg-white overflow-hidden"
+              className="lg:hidden border-t border-[var(--color-neutral-200)] bg-[var(--color-surface)] overflow-hidden"
             >
               <div className="px-4 py-4 space-y-1">
                 {navigation.map((item, i) => (
@@ -172,7 +172,7 @@ export default function PortfolioRoot() {
       </a>
 
       {/* Footer */}
-      <footer className="border-t border-[var(--color-neutral-200)] bg-white">
+      <footer className="border-t border-[var(--color-neutral-200)] bg-[var(--color-surface)]">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-12">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
             {/* Brand */}

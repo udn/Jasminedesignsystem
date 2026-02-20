@@ -101,7 +101,7 @@ export default function PortfolioPrograms() {
             key={program.name}
             variants={fadeUp}
             transition={{ duration: 0.5 }}
-            className={`p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[var(--color-${program.color}-50)] via-white to-white border-2 border-[var(--color-${program.color}-200)] shadow-lg hover:shadow-xl transition-shadow`}
+            className={`p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[var(--color-${program.color}-50)] via-[var(--color-surface)] to-[var(--color-surface)] border-2 border-[var(--color-${program.color}-200)] shadow-lg hover:shadow-xl transition-shadow`}
           >
             <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br from-[var(--color-${program.color}-500)] to-[var(--color-${program.color}-600)] flex items-center justify-center text-white mb-5 shadow-md`}>
               {program.icon}
@@ -157,7 +157,7 @@ export default function PortfolioPrograms() {
         </div>
         <Link
           to="/portfolio/admissions"
-          className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-white text-[var(--color-primary-600)] font-bold hover:shadow-xl transition-all hover:-translate-y-0.5 text-sm sm:text-base"
+          className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-[var(--color-surface)] text-[var(--color-neutral-900)] font-bold hover:shadow-xl transition-all hover:-translate-y-0.5 text-sm sm:text-base"
         >
           Daftar Kelas Bilingual
           <ArrowRight size={18} />
@@ -250,7 +250,7 @@ export default function PortfolioPrograms() {
               key={ekskul.name}
               variants={fadeUp}
               transition={{ duration: 0.3 }}
-              className="p-4 sm:p-6 rounded-2xl bg-white border border-[var(--color-neutral-200)] shadow-sm hover:shadow-md transition-shadow text-center"
+              className="p-4 sm:p-6 rounded-2xl bg-[var(--color-surface)] border border-[var(--color-neutral-200)] shadow-sm hover:shadow-md transition-shadow text-center"
             >
               <div className={`w-12 h-12 mx-auto rounded-xl bg-[var(--color-${ekskul.color}-100)] flex items-center justify-center text-[var(--color-${ekskul.color}-600)] mb-3`}>
                 {ekskul.icon}
@@ -291,7 +291,7 @@ export default function PortfolioPrograms() {
               key={dev.label}
               variants={fadeUp}
               transition={{ duration: 0.3 }}
-              className="p-4 sm:p-6 rounded-2xl bg-white border border-[var(--color-neutral-200)] shadow-sm text-center"
+              className="p-4 sm:p-6 rounded-2xl bg-[var(--color-surface)] border border-[var(--color-neutral-200)] shadow-sm text-center"
             >
               <div className={`w-12 h-12 mx-auto rounded-xl bg-[var(--color-${dev.color}-100)] flex items-center justify-center text-[var(--color-${dev.color}-600)] mb-3`}>
                 {dev.icon}
@@ -341,7 +341,7 @@ export default function PortfolioPrograms() {
               <AccordionItem
                 key={i}
                 value={`bil-faq-${i}`}
-                className="p-4 sm:p-5 rounded-2xl bg-white border-2 border-[var(--color-neutral-200)] shadow-sm hover:shadow-md transition-shadow"
+                className="p-4 sm:p-5 rounded-2xl bg-[var(--color-surface)] border-2 border-[var(--color-neutral-200)] shadow-sm hover:shadow-md transition-shadow"
               >
                 <AccordionTrigger className="text-sm sm:text-base font-bold text-[var(--color-neutral-900)] hover:no-underline">
                   {faq.q}

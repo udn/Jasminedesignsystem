@@ -84,7 +84,7 @@ export default function PortfolioAbout() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.5 }}
-        className="p-6 sm:p-10 lg:p-12 rounded-3xl bg-gradient-to-br from-[var(--color-primary-50)] via-white to-[var(--color-accent-50)] border-2 border-[var(--color-primary-200)] shadow-lg"
+        className="p-6 sm:p-10 lg:p-12 rounded-3xl bg-gradient-to-br from-[var(--color-primary-50)] via-[var(--color-surface)] to-[var(--color-accent-50)] border-2 border-[var(--color-primary-200)] shadow-lg"
       >
         <h2 className="text-2xl sm:text-3xl font-bold text-[var(--color-neutral-900)] mb-4">
           Cerita Kami
@@ -112,7 +112,7 @@ export default function PortfolioAbout() {
         <motion.div
           variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0 } }}
           transition={{ duration: 0.5, ease: [0, 0, 0.2, 1] }}
-          className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-[var(--color-primary-50)] to-white border-2 border-[var(--color-primary-200)] shadow-lg"
+          className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-[var(--color-primary-50)] to-[var(--color-surface)] border-2 border-[var(--color-primary-200)] shadow-lg"
         >
           <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--color-primary-500)] to-[var(--color-accent-500)] flex items-center justify-center text-white mb-5 shadow-md">
             <Target size={28} />
@@ -126,7 +126,7 @@ export default function PortfolioAbout() {
         <motion.div
           variants={{ hidden: { opacity: 0, x: 30 }, visible: { opacity: 1, x: 0 } }}
           transition={{ duration: 0.5, ease: [0, 0, 0.2, 1] }}
-          className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-[var(--color-secondary-50)] to-white border-2 border-[var(--color-secondary-200)] shadow-lg"
+          className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-[var(--color-secondary-50)] to-[var(--color-surface)] border-2 border-[var(--color-secondary-200)] shadow-lg"
         >
           <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--color-secondary-500)] to-[var(--color-primary-500)] flex items-center justify-center text-white mb-5 shadow-md">
             <Lightbulb size={28} />
@@ -193,7 +193,7 @@ export default function PortfolioAbout() {
               key={value.title}
               variants={fadeUp}
               transition={{ duration: 0.4 }}
-              className="p-6 sm:p-8 rounded-2xl bg-white border-2 border-[var(--color-neutral-200)] shadow-sm hover:shadow-lg transition-shadow"
+              className="p-6 sm:p-8 rounded-2xl bg-[var(--color-surface)] border-2 border-[var(--color-neutral-200)] shadow-sm hover:shadow-lg transition-shadow"
             >
               <div className={`w-12 h-12 rounded-xl bg-[var(--color-${value.bg}-100)] flex items-center justify-center text-[var(--color-${value.bg}-600)] mb-4`}>
                 {value.icon}
@@ -232,7 +232,7 @@ export default function PortfolioAbout() {
               key={item.title}
               variants={fadeUp}
               transition={{ duration: 0.4 }}
-              className="flex gap-4 p-5 sm:p-6 rounded-2xl bg-white border border-[var(--color-neutral-200)] shadow-sm hover:shadow-md transition-shadow"
+              className="flex gap-4 p-5 sm:p-6 rounded-2xl bg-[var(--color-surface)] border border-[var(--color-neutral-200)] shadow-sm hover:shadow-md transition-shadow"
             >
               <div className="w-10 h-10 rounded-xl bg-[var(--color-primary-100)] flex items-center justify-center text-[var(--color-primary-600)] shrink-0">
                 {item.icon}
@@ -320,7 +320,7 @@ export default function PortfolioAbout() {
         </p>
         <Link
           to="/portfolio/admissions"
-          className="inline-flex items-center gap-2 px-8 py-4 sm:px-10 sm:py-5 rounded-2xl bg-white text-[var(--color-primary-600)] font-bold hover:shadow-2xl hover:-translate-y-1 transition-all text-base sm:text-lg"
+          className="inline-flex items-center gap-2 px-8 py-4 sm:px-10 sm:py-5 rounded-2xl bg-[var(--color-surface)] text-[var(--color-neutral-900)] font-bold hover:shadow-2xl hover:-translate-y-1 transition-all text-base sm:text-lg"
         >
           Jadwalkan Sekarang
           <ArrowRight size={20} />
