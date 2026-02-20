@@ -53,7 +53,7 @@ export default function PortfolioRoot() {
           >
             <Link to="/portfolio" className="flex items-center gap-3">
               <img
-                src="/logo-jasmine.png"
+                src={`${import.meta.env.BASE_URL}logo-jasmine.png`}
                 alt="PAUD Jasmine Al Muflihuun"
                 className={`object-contain transition-all duration-300 ${scrolled ? 'h-10 w-10' : 'h-12 w-12 lg:h-14 lg:w-14'}`}
               />
@@ -179,7 +179,7 @@ export default function PortfolioRoot() {
             <div className="sm:col-span-2 lg:col-span-2">
               <div className="flex items-center gap-3 mb-5">
                 <img
-                  src="/logo-jasmine.png"
+                  src={`${import.meta.env.BASE_URL}logo-jasmine.png`}
                   alt="PAUD Jasmine Al Muflihuun"
                   className="h-11 w-11 object-contain"
                 />
