@@ -1,4 +1,4 @@
-import { createHashRouter } from "react-router";
+import { createHashRouter, Navigate } from "react-router";
 import Root from "./Root";
 import Overview from "./pages/Overview";
 import Colors from "./pages/Colors";
@@ -15,6 +15,7 @@ import PortfolioAbout from "./pages/portfolio/About";
 import PortfolioPrograms from "./pages/portfolio/Programs";
 import PortfolioAdmissions from "./pages/portfolio/Admissions";
 import PortfolioContact from "./pages/portfolio/Contact";
+import NotFound from "./pages/NotFound";
 
 export const router = createHashRouter([
   {
@@ -30,8 +31,11 @@ export const router = createHashRouter([
       { path: "motion", Component: Motion },
       { path: "accessibility", Component: Accessibility },
       { path: "tokens", Component: Tokens },
+      { path: "*", Component: NotFound },
     ],
   },
+  { path: "/portofolio", element: <Navigate to="/portfolio" replace /> },
+  { path: "/portofolio/*", element: <Navigate to="/portfolio" replace /> },
   {
     path: "/portfolio",
     Component: PortfolioRoot,
@@ -43,4 +47,5 @@ export const router = createHashRouter([
       { path: "contact", Component: PortfolioContact },
     ],
   },
+  { path: "*", element: <Navigate to="/" replace /> },
 ]);
