@@ -361,7 +361,7 @@ export default function PortfolioPrograms() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.5 }}
-        className="py-10 sm:py-14 lg:py-16 px-6 sm:px-10 lg:px-16 rounded-3xl bg-gradient-to-br from-[var(--color-neutral-900)] to-[var(--color-neutral-800)] text-white text-center shadow-2xl"
+        className="py-10 sm:py-14 lg:py-16 px-6 sm:px-10 lg:px-16 rounded-3xl bg-gradient-to-br from-[var(--color-surface-dark)] to-[var(--color-surface-dark-muted)] text-white text-center shadow-2xl"
       >
         <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-4 sm:mb-6">
           Coba Free Trial Class

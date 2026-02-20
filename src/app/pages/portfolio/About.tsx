@@ -252,11 +252,11 @@ export default function PortfolioAbout() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={stagger}
-        className="py-8 sm:py-10 px-6 sm:px-10 rounded-3xl bg-gradient-to-br from-[var(--color-neutral-900)] to-[var(--color-neutral-800)] text-white"
+        className="py-8 sm:py-10 px-6 sm:px-10 rounded-3xl bg-gradient-to-br from-[var(--color-surface-dark)] to-[var(--color-surface-dark-muted)] text-white"
       >
         <motion.div variants={fadeUp} className="text-center mb-10">
           <h2 className="text-3xl sm:text-4xl font-bold mb-3">Fasilitas Kami</h2>
-          <p className="text-base sm:text-lg text-[var(--color-neutral-300)]">
+          <p className="text-base sm:text-lg text-[#d6d3d1]">
             Dirancang untuk kenyamanan dan keamanan anak Anda
           </p>
         </motion.div>
@@ -279,7 +279,7 @@ export default function PortfolioAbout() {
               className="text-center p-4 sm:p-5 rounded-xl bg-white/5"
             >
               <div className="text-3xl sm:text-4xl mb-2">{f.emoji}</div>
-              <p className="text-xs sm:text-sm font-medium text-[var(--color-neutral-200)]">{f.label}</p>
+              <p className="text-xs sm:text-sm font-medium text-[#e7e5e4]">{f.label}</p>
             </motion.div>
           ))}
         </div>
