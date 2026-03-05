@@ -70,7 +70,7 @@ export default function Accessibility() {
               </div>
 
               <div className="space-y-3">
-                <div className="flex items-center justify-between p-4 bg-[var(--color-primary-600)] text-white rounded-lg">
+                <div className="flex items-center justify-between p-4 bg-[var(--color-primary-800)] text-white rounded-lg">
                   <span className="text-lg">Primary on White</span>
                   <span className="px-3 py-1 bg-white/20 rounded text-sm">4.7:1</span>
                 </div>
@@ -97,19 +97,19 @@ export default function Accessibility() {
                 <p className="text-sm font-medium text-[var(--color-neutral-700)] mb-3">Minimum 3:1 ratio required for:</p>
                 <ul className="space-y-2 text-sm text-[var(--color-neutral-600)]">
                   <li className="flex items-start gap-2">
-                    <span className="text-[var(--color-success-500)]">•</span>
+                    <span className="text-[var(--color-success-700)]">•</span>
                     <span>Interactive component borders (buttons, inputs)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-[var(--color-success-500)]">•</span>
+                    <span className="text-[var(--color-success-700)]">•</span>
                     <span>Focus indicators and outlines</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-[var(--color-success-500)]">•</span>
+                    <span className="text-[var(--color-success-700)]">•</span>
                     <span>Graphical objects (icons, charts)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-[var(--color-success-500)]">•</span>
+                    <span className="text-[var(--color-success-700)]">•</span>
                     <span>States of UI components (active, hover)</span>
                   </li>
                 </ul>
@@ -145,23 +145,23 @@ export default function Accessibility() {
             
             <ul className="space-y-3 text-sm text-[var(--color-neutral-700)]">
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">✓</span>
+                <span className="text-[var(--color-success-700)]">✓</span>
                 <span>All interactive elements must be keyboard accessible</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">✓</span>
+                <span className="text-[var(--color-success-700)]">✓</span>
                 <span>Visible focus indicators with 2px outline minimum</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">✓</span>
+                <span className="text-[var(--color-success-700)]">✓</span>
                 <span>Logical tab order following visual flow</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">✓</span>
+                <span className="text-[var(--color-success-700)]">✓</span>
                 <span>Skip links for efficient navigation</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">✓</span>
+                <span className="text-[var(--color-success-700)]">✓</span>
                 <span>No keyboard traps - users can exit all elements</span>
               </li>
             </ul>
@@ -177,19 +177,19 @@ export default function Accessibility() {
             
             <ul className="space-y-3 text-sm text-[var(--color-neutral-700)]">
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">✓</span>
+                <span className="text-[var(--color-success-700)]">✓</span>
                 <span>Minimum 44x44px touch target size on mobile</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">✓</span>
+                <span className="text-[var(--color-success-700)]">✓</span>
                 <span>Adequate spacing between clickable elements</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">✓</span>
+                <span className="text-[var(--color-success-700)]">✓</span>
                 <span>Clear visual feedback on tap/click</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">✓</span>
+                <span className="text-[var(--color-success-700)]">✓</span>
                 <span>No small clickable areas that are hard to target</span>
               </li>
             </ul>
@@ -252,23 +252,23 @@ export default function Accessibility() {
             
             <ul className="space-y-3 text-sm text-[var(--color-neutral-700)]">
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">✓</span>
+                <span className="text-[var(--color-success-700)]">✓</span>
                 <span>Use proper heading hierarchy (h1, h2, h3, etc.)</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">✓</span>
+                <span className="text-[var(--color-success-700)]">✓</span>
                 <span>Use &lt;button&gt; for actions, &lt;a&gt; for navigation</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">✓</span>
+                <span className="text-[var(--color-success-700)]">✓</span>
                 <span>Use &lt;nav&gt;, &lt;main&gt;, &lt;aside&gt; landmarks</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">✓</span>
+                <span className="text-[var(--color-success-700)]">✓</span>
                 <span>Use &lt;label&gt; for all form inputs</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">✓</span>
+                <span className="text-[var(--color-success-700)]">✓</span>
                 <span>Use &lt;table&gt; with proper headers for tabular data</span>
               </li>
             </ul>
@@ -284,23 +284,23 @@ export default function Accessibility() {
             
             <ul className="space-y-3 text-sm text-[var(--color-neutral-700)]">
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">✓</span>
+                <span className="text-[var(--color-success-700)]">✓</span>
                 <span>aria-label for icon-only buttons</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">✓</span>
+                <span className="text-[var(--color-success-700)]">✓</span>
                 <span>aria-describedby for additional context</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">✓</span>
+                <span className="text-[var(--color-success-700)]">✓</span>
                 <span>aria-live for dynamic content updates</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">✓</span>
+                <span className="text-[var(--color-success-700)]">✓</span>
                 <span>aria-expanded for collapsible sections</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">✓</span>
+                <span className="text-[var(--color-success-700)]">✓</span>
                 <span>aria-hidden for decorative elements</span>
               </li>
             </ul>
@@ -335,19 +335,19 @@ export default function Accessibility() {
 
             <ul className="space-y-2 text-sm text-[var(--color-neutral-700)]">
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span>Describe the content and function of the image</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span>Keep it concise (under 125 characters when possible)</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span>Use alt="" for purely decorative images</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span>Don't start with "image of" or "picture of"</span>
               </li>
             </ul>

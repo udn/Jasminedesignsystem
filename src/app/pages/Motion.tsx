@@ -35,7 +35,7 @@ export default function Motion() {
             </code>
             <div className="h-2 bg-[var(--color-neutral-100)] rounded-full overflow-hidden">
               <motion.div
-                className="h-full bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-accent-500)] rounded-full"
+                className="h-full bg-gradient-to-r from-[var(--color-primary-700)] to-[var(--color-accent-700)] rounded-full"
                 animate={{ width: isAnimating ? '100%' : '0%' }}
                 transition={{ duration: 0.5, ease: [0, 0, 0.2, 1] }}
               />
@@ -52,7 +52,7 @@ export default function Motion() {
             </code>
             <div className="h-2 bg-[var(--color-neutral-100)] rounded-full overflow-hidden">
               <motion.div
-                className="h-full bg-gradient-to-r from-[var(--color-secondary-500)] to-[var(--color-primary-500)] rounded-full"
+                className="h-full bg-gradient-to-r from-[var(--color-secondary-700)] to-[var(--color-primary-700)] rounded-full"
                 animate={{ width: isAnimating ? '100%' : '0%' }}
                 transition={{ duration: 0.5, ease: [0.4, 0, 1, 1] }}
               />
@@ -69,7 +69,7 @@ export default function Motion() {
             </code>
             <div className="h-2 bg-[var(--color-neutral-100)] rounded-full overflow-hidden">
               <motion.div
-                className="h-full bg-gradient-to-r from-[var(--color-accent-500)] to-[var(--color-secondary-500)] rounded-full"
+                className="h-full bg-gradient-to-r from-[var(--color-accent-700)] to-[var(--color-secondary-700)] rounded-full"
                 animate={{ width: isAnimating ? '100%' : '0%' }}
                 transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
               />
@@ -86,7 +86,7 @@ export default function Motion() {
             </code>
             <div className="h-2 bg-[var(--color-neutral-100)] rounded-full overflow-hidden">
               <motion.div
-                className="h-full bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-accent-500)] rounded-full"
+                className="h-full bg-gradient-to-r from-[var(--color-primary-700)] to-[var(--color-accent-700)] rounded-full"
                 animate={{ width: isAnimating ? '100%' : '0%' }}
                 transition={{ duration: 0.5, ease: [0.34, 1.56, 0.64, 1] }}
               />
@@ -97,7 +97,7 @@ export default function Motion() {
         <div className="flex justify-center pt-4">
           <button
             onClick={triggerAnimation}
-            className="px-6 py-3 bg-[var(--color-primary-500)] hover:bg-[var(--color-primary-600)] text-white rounded-lg font-medium transition-colors"
+            className="px-6 py-3 bg-[var(--color-primary-800)] hover:bg-[var(--color-primary-900)] text-white rounded-lg font-medium transition-colors"
           >
             Trigger Animations
           </button>
@@ -111,21 +111,21 @@ export default function Motion() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="p-6 bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-xl">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-2">Instant</h3>
-            <p className="text-2xl font-bold text-[var(--color-primary-600)] mb-2">100ms</p>
+            <p className="text-2xl font-bold text-[var(--color-primary-800)] mb-2">100ms</p>
             <p className="text-sm text-[var(--color-neutral-600)] mb-3">Color changes, small state updates</p>
             <code className="text-xs bg-[var(--color-neutral-100)] px-2 py-1 rounded">--duration-instant</code>
           </div>
 
           <div className="p-6 bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-xl">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-2">Fast</h3>
-            <p className="text-2xl font-bold text-[var(--color-secondary-600)] mb-2">200ms</p>
+            <p className="text-2xl font-bold text-[var(--color-secondary-700)] mb-2">200ms</p>
             <p className="text-sm text-[var(--color-neutral-600)] mb-3">Hover states, tooltips, small movements</p>
             <code className="text-xs bg-[var(--color-neutral-100)] px-2 py-1 rounded">--duration-fast</code>
           </div>
 
           <div className="p-6 bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-xl">
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-2">Normal</h3>
-            <p className="text-2xl font-bold text-[var(--color-accent-600)] mb-2">300ms</p>
+            <p className="text-2xl font-bold text-[var(--color-accent-700)] mb-2">300ms</p>
             <p className="text-sm text-[var(--color-neutral-600)] mb-3">Most transitions, modals, dropdowns</p>
             <code className="text-xs bg-[var(--color-neutral-100)] px-2 py-1 rounded">--duration-normal</code>
           </div>
@@ -149,7 +149,7 @@ export default function Motion() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-full px-6 py-3 bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-accent-500)] text-white rounded-lg font-medium shadow-lg"
+              className="w-full px-6 py-3 bg-gradient-to-r from-[var(--color-primary-800)] to-[var(--color-accent-700)] text-white rounded-lg font-medium shadow-lg"
             >
               Press Me
             </motion.button>
@@ -162,14 +162,14 @@ export default function Motion() {
               <motion.button
                 whileHover={{ scale: 1.2, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
-                className="p-3 bg-[var(--color-primary-100)] text-[var(--color-primary-600)] rounded-lg"
+                className="p-3 bg-[var(--color-primary-100)] text-[var(--color-primary-800)] rounded-lg"
               >
                 <Heart size={24} />
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.2, rotate: -5 }}
                 whileTap={{ scale: 0.9 }}
-                className="p-3 bg-[var(--color-accent-100)] text-[var(--color-accent-600)] rounded-lg"
+                className="p-3 bg-[var(--color-accent-100)] text-[var(--color-accent-700)] rounded-lg"
               >
                 <Star size={24} />
               </motion.button>
@@ -304,7 +304,7 @@ export default function Motion() {
                   key={i}
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 0.6, repeat: Infinity, delay: i * 0.15 }}
-                  className="w-3 h-3 bg-[var(--color-primary-500)] rounded-full"
+                  className="w-3 h-3 bg-[var(--color-primary-700)] rounded-full"
                 />
               ))}
             </div>
@@ -322,27 +322,27 @@ export default function Motion() {
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)]">✓ Do</h3>
             <ul className="space-y-2 text-sm text-[var(--color-neutral-700)]">
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span>Use motion to guide attention and provide feedback</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span>Keep animations under 500ms for most interactions</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span>Use ease-out for entering elements, ease-in for exiting</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span>Respect user preferences (prefers-reduced-motion)</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span>Test animations on lower-end devices</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span>Use subtle animations for professional contexts</span>
               </li>
             </ul>
@@ -352,27 +352,27 @@ export default function Motion() {
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)]">✗ Don't</h3>
             <ul className="space-y-2 text-sm text-[var(--color-neutral-700)]">
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-error-500)]">•</span>
+                <span className="text-[var(--color-error-700)]">•</span>
                 <span>Overuse animations - they can be distracting</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-error-500)]">•</span>
+                <span className="text-[var(--color-error-700)]">•</span>
                 <span>Make animations longer than necessary</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-error-500)]">•</span>
+                <span className="text-[var(--color-error-700)]">•</span>
                 <span>Use animation for purely decorative purposes</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-error-500)]">•</span>
+                <span className="text-[var(--color-error-700)]">•</span>
                 <span>Ignore accessibility concerns</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-error-500)]">•</span>
+                <span className="text-[var(--color-error-700)]">•</span>
                 <span>Animate layout-triggering properties (use transform instead)</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-error-500)]">•</span>
+                <span className="text-[var(--color-error-700)]">•</span>
                 <span>Create motion that could trigger vestibular issues</span>
               </li>
             </ul>

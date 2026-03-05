@@ -455,19 +455,19 @@ export default function Tokens() {
           </p>
           <ol className="space-y-2 text-sm text-[var(--color-neutral-700)]">
             <li className="flex items-start gap-2">
-              <span className="font-medium text-[var(--color-primary-600)]">1.</span>
+              <span className="font-medium text-[var(--color-primary-800)]">1.</span>
               <span>Install the Tokens Studio (Figma Tokens) plugin in Figma</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="font-medium text-[var(--color-primary-600)]">2.</span>
+              <span className="font-medium text-[var(--color-primary-800)]">2.</span>
               <span>Import the downloaded JSON file into the plugin</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="font-medium text-[var(--color-primary-600)]">3.</span>
+              <span className="font-medium text-[var(--color-primary-800)]">3.</span>
               <span>Apply tokens to your Figma components and styles</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="font-medium text-[var(--color-primary-600)]">4.</span>
+              <span className="font-medium text-[var(--color-primary-800)]">4.</span>
               <span>Keep design and code in sync with a single source of truth</span>
             </li>
           </ol>
@@ -484,7 +484,7 @@ export default function Tokens() {
             </p>
           </div>
           <div className="text-right">
-            <span className="inline-block px-4 py-2 bg-[var(--color-primary-500)] text-white rounded-lg font-bold">
+            <span className="inline-block px-4 py-2 bg-[var(--color-primary-800)] text-white rounded-lg font-bold">
               v1.0.0
             </span>
           </div>

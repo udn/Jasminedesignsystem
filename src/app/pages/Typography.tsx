@@ -244,15 +244,15 @@ export default function Typography() {
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)]">Hierarchy</h3>
             <ul className="space-y-2 text-sm text-[var(--color-neutral-700)]">
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span>Use only one Display or H1 per page for clear hierarchy</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span>Maintain consistent heading levels (don't skip levels)</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span>Use font weight and size together to establish importance</span>
               </li>
             </ul>
@@ -262,15 +262,15 @@ export default function Typography() {
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)]">Readability</h3>
             <ul className="space-y-2 text-sm text-[var(--color-neutral-700)]">
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span>Limit line length to 60-75 characters for optimal reading</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span>Use appropriate line height for text size and length</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span>Ensure sufficient color contrast (minimum 4.5:1 for body text)</span>
               </li>
             </ul>
@@ -280,15 +280,15 @@ export default function Typography() {
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)]">Mobile Optimization</h3>
             <ul className="space-y-2 text-sm text-[var(--color-neutral-700)]">
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span>Scale down display sizes by 25-30% on mobile devices</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span>Maintain minimum 16px font size for body text on mobile</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span>Increase line height slightly for smaller screens</span>
               </li>
             </ul>
@@ -298,15 +298,15 @@ export default function Typography() {
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)]">Accessibility</h3>
             <ul className="space-y-2 text-sm text-[var(--color-neutral-700)]">
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span>Use semantic HTML headings (h1, h2, etc.) for structure</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span>Allow users to resize text up to 200% without breaking layout</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span>Avoid text in images; use live text when possible</span>
               </li>
             </ul>
