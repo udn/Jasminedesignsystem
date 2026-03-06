@@ -279,21 +279,24 @@ export default function PortfolioHome() {
               name: 'Ibu Siti Aminah',
               child: 'Ibu dari Aisyah, TK-B',
               initials: 'SA',
-              color: 'primary',
+              quoteClass: 'text-[var(--color-primary-700)]',
+              avatarClass: 'from-[var(--color-primary-700)] to-[var(--color-primary-800)]',
             },
             {
               quote: 'Saya senang anak saya belajar Al-Qur\'an dengan Metode Ummi. Belajarnya menyenangkan, tidak ada tekanan. Sekarang di rumah sering hafalan sendiri. Lingkungannya juga aman, ada CCTV dan AC.',
               name: 'Ibu Ratna Dewi',
               child: 'Ibu dari Muhammad Faris, KB',
               initials: 'RD',
-              color: 'secondary',
+              quoteClass: 'text-[var(--color-secondary-700)]',
+              avatarClass: 'from-[var(--color-secondary-700)] to-[var(--color-secondary-800)]',
             },
             {
               quote: 'Fasilitas sekolahnya lengkap dan bersih. Yang paling saya suka, anak-anak bisa ikut coding dan robotic. Ekstrakurikulernya beragam — anak saya jadi semangat sekolah setiap hari!',
               name: 'Bapak Ahmad Rizki',
               child: 'Ayah dari Zahra, TK-A',
               initials: 'AR',
-              color: 'accent',
+              quoteClass: 'text-[var(--color-accent-700)]',
+              avatarClass: 'from-[var(--color-accent-700)] to-[var(--color-accent-800)]',
             },
           ].map((t) => (
             <motion.div
@@ -302,7 +305,7 @@ export default function PortfolioHome() {
               transition={{ duration: 0.4 }}
               className="p-6 sm:p-8 rounded-2xl bg-[var(--color-surface)] border-2 border-[var(--color-neutral-200)] shadow-lg hover:shadow-xl transition-shadow"
             >
-              <Quote size={32} className={`text-[var(--color-${t.color}-700)] mb-3`} />
+              <Quote size={32} className={`${t.quoteClass} mb-3`} />
               <div className="flex gap-1 mb-3">
                 {[1, 2, 3, 4, 5].map((s) => (
                   <Star key={s} size={16} className="text-[var(--color-warning-700)] fill-[var(--color-warning-700)]" />
@@ -312,7 +315,7 @@ export default function PortfolioHome() {
                 &ldquo;{t.quote}&rdquo;
               </p>
               <div className="flex items-center gap-3">
-                <div className={`w-10 h-10 rounded-full bg-gradient-to-br from-[var(--color-${t.color}-700)] to-[var(--color-${t.color}-800)] flex items-center justify-center text-white text-sm font-bold`}>
+                <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${t.avatarClass} flex items-center justify-center text-white text-sm font-bold`}>
                   {t.initials}
                 </div>
                 <div>
@@ -334,13 +337,13 @@ export default function PortfolioHome() {
         >
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 text-center">
             {[
-              { value: 'Sejak 2015', label: 'Terpercaya di Sleman', color: 'primary' },
-              { value: '4 Program', label: 'KB, TK-A, TK-B, TPA', color: 'secondary' },
-              { value: '7 Ekskul', label: 'Coding, English, Seni', color: 'accent' },
-              { value: 'Free Trial', label: 'Coba Dulu, Baru Yakin!', color: 'success' },
+              { value: 'Sejak 2015', label: 'Terpercaya di Sleman', valueClass: 'text-[var(--color-primary-700)]' },
+              { value: '4 Program', label: 'KB, TK-A, TK-B, TPA', valueClass: 'text-[var(--color-secondary-700)]' },
+              { value: '7 Ekskul', label: 'Coding, English, Seni', valueClass: 'text-[var(--color-accent-700)]' },
+              { value: 'Free Trial', label: 'Coba Dulu, Baru Yakin!', valueClass: 'text-[var(--color-success-700)]' },
             ].map((stat) => (
               <div key={stat.label}>
-                <div className={`text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--color-${stat.color}-700)] mb-1`}>
+                <div className={`text-2xl sm:text-3xl lg:text-4xl font-bold ${stat.valueClass} mb-1`}>
                   {stat.value}
                 </div>
                 <p className="text-xs sm:text-sm text-[var(--color-neutral-700)] font-medium">{stat.label}</p>

@@ -344,7 +344,7 @@ export default function Components() {
               onChange={(e) => setSliderValue(Number(e.target.value))}
               className="w-full h-2 bg-[var(--color-neutral-200)] rounded-lg appearance-none cursor-pointer slider-thumb"
               style={{
-                background: `linear-gradient(to right, var(--color-primary-700) 0%, var(--color-primary-700)) ${sliderValue}%, var(--color-neutral-200) ${sliderValue}%, var(--color-neutral-200) 100%)`
+                background: `linear-gradient(to right, var(--color-primary-700) 0%, var(--color-primary-700) ${sliderValue}%, var(--color-neutral-200) ${sliderValue}%, var(--color-neutral-200) 100%)`
               }}
             />
           </div>

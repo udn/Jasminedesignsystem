@@ -239,13 +239,13 @@ export default function PortfolioRoot() {
               </h3>
               <ul className="space-y-3">
                 <li>
-                  <a href={`tel:+62${PHONE_1}`} className="flex items-start gap-2 text-sm text-[var(--color-neutral-600)] hover:text-[var(--color-primary-800)] transition-colors">
+                  <a href={`tel:+62${PHONE_1.replace(/^0+/, '')}`} className="flex items-start gap-2 text-sm text-[var(--color-neutral-600)] hover:text-[var(--color-primary-800)] transition-colors">
                     <Phone size={16} className="mt-0.5 shrink-0" />
                     <span>{PHONE_1}</span>
                   </a>
                 </li>
                 <li>
-                  <a href={`tel:+62${PHONE_2}`} className="flex items-start gap-2 text-sm text-[var(--color-neutral-600)] hover:text-[var(--color-primary-800)] transition-colors">
+                  <a href={`tel:+62${PHONE_2.replace(/^0+/, '')}`} className="flex items-start gap-2 text-sm text-[var(--color-neutral-600)] hover:text-[var(--color-primary-800)] transition-colors">
                     <Phone size={16} className="mt-0.5 shrink-0" />
                     <span>{PHONE_2}</span>
                   </a>
@@ -271,8 +271,8 @@ export default function PortfolioRoot() {
             <div className="flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-[var(--color-neutral-500)]">
               <p>&copy; {new Date().getFullYear()} PAUD Jasmine Al Muflihuun. Sekolah Islam Swasta Resmi.</p>
               <div className="flex gap-5">
-                <a href="#" className="hover:text-[var(--color-primary-800)] transition-colors">Kebijakan Privasi</a>
-                <a href="#" className="hover:text-[var(--color-primary-800)] transition-colors">Syarat & Ketentuan</a>
+                <Link to="/portfolio/contact" className="hover:text-[var(--color-primary-800)] transition-colors">Kebijakan Privasi</Link>
+                <Link to="/portfolio/contact" className="hover:text-[var(--color-primary-800)] transition-colors">Syarat & Ketentuan</Link>
               </div>
             </div>
           </div>
