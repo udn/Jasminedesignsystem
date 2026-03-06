@@ -72,7 +72,7 @@ export default function Accessibility() {
               <div className="space-y-3">
                 <div className="flex items-center justify-between p-4 bg-[var(--color-primary-800)] text-white rounded-lg">
                   <span className="text-lg">Primary on White</span>
-                  <span className="px-3 py-1 bg-white/20 rounded text-sm">4.7:1</span>
+                  <span className="px-3 py-1 bg-white/20 rounded text-sm">5.2:1</span>
                 </div>
                 <p className="text-sm text-[var(--color-neutral-600)] ml-4">
                   ✓ WCAG AA compliant for normal text
