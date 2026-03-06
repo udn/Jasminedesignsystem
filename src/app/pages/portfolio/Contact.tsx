@@ -72,11 +72,11 @@ export default function PortfolioContact() {
           transition={{ duration: 0.3 }}
           className="group p-5 sm:p-8 rounded-2xl bg-gradient-to-br from-[var(--color-primary-50)] to-[var(--color-surface)] border-2 border-[var(--color-primary-200)] hover:border-[var(--color-primary-400)] hover:shadow-lg transition-all text-center"
         >
-          <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-2xl bg-gradient-to-br from-[var(--color-primary-500)] to-[var(--color-accent-500)] flex items-center justify-center text-white mb-3 sm:mb-5 shadow-md group-hover:scale-110 transition-transform">
+          <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-2xl bg-gradient-to-br from-[var(--color-primary-800)] to-[var(--color-accent-700)] flex items-center justify-center text-white mb-3 sm:mb-5 shadow-md group-hover:scale-110 transition-transform">
             <Phone size={24} />
           </div>
           <h3 className="text-base sm:text-lg font-bold text-[var(--color-neutral-900)] mb-1">Telepon</h3>
-          <p className="text-xs sm:text-sm text-[var(--color-primary-600)] font-semibold">{PHONE_1}</p>
+          <p className="text-xs sm:text-sm text-[var(--color-primary-800)] font-semibold">{PHONE_1}</p>
           <p className="text-xs text-[var(--color-neutral-500)] mt-1 hidden sm:block">Senin–Jumat</p>
         </motion.a>
 
@@ -88,7 +88,7 @@ export default function PortfolioContact() {
           transition={{ duration: 0.3 }}
           className="group p-5 sm:p-8 rounded-2xl bg-gradient-to-br from-[var(--color-success-50)] to-[var(--color-surface)] border-2 border-[var(--color-success-200)] hover:border-[var(--color-success-400)] hover:shadow-lg transition-all text-center"
         >
-          <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-2xl bg-gradient-to-br from-[var(--color-success-500)] to-[var(--color-success-700)] flex items-center justify-center text-white mb-3 sm:mb-5 shadow-md group-hover:scale-110 transition-transform">
+          <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-2xl bg-[var(--color-success-700)] flex items-center justify-center text-white mb-3 sm:mb-5 shadow-md group-hover:scale-110 transition-transform">
             <MessageCircle size={24} />
           </div>
           <h3 className="text-base sm:text-lg font-bold text-[var(--color-neutral-900)] mb-1">WhatsApp</h3>
@@ -104,11 +104,11 @@ export default function PortfolioContact() {
           transition={{ duration: 0.3 }}
           className="group p-5 sm:p-8 rounded-2xl bg-gradient-to-br from-[var(--color-accent-50)] to-[var(--color-surface)] border-2 border-[var(--color-accent-200)] hover:border-[var(--color-accent-400)] hover:shadow-lg transition-all text-center"
         >
-          <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-2xl bg-gradient-to-br from-[var(--color-accent-500)] to-[var(--color-secondary-500)] flex items-center justify-center text-white mb-3 sm:mb-5 shadow-md group-hover:scale-110 transition-transform">
+          <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-2xl bg-gradient-to-br from-[var(--color-accent-700)] to-[var(--color-secondary-700)] flex items-center justify-center text-white mb-3 sm:mb-5 shadow-md group-hover:scale-110 transition-transform">
             <Instagram size={24} />
           </div>
           <h3 className="text-base sm:text-lg font-bold text-[var(--color-neutral-900)] mb-1">Instagram</h3>
-          <p className="text-xs sm:text-sm text-[var(--color-accent-600)] font-semibold">{INSTAGRAM}</p>
+          <p className="text-xs sm:text-sm text-[var(--color-accent-700)] font-semibold">{INSTAGRAM}</p>
           <p className="text-xs text-[var(--color-neutral-500)] mt-1 hidden sm:block">Follow kami</p>
         </motion.a>
 
@@ -117,7 +117,7 @@ export default function PortfolioContact() {
           transition={{ duration: 0.3 }}
           className="p-5 sm:p-8 rounded-2xl bg-gradient-to-br from-[var(--color-secondary-50)] to-[var(--color-surface)] border-2 border-[var(--color-secondary-200)] text-center"
         >
-          <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-2xl bg-gradient-to-br from-[var(--color-secondary-500)] to-[var(--color-primary-500)] flex items-center justify-center text-white mb-3 sm:mb-5 shadow-md">
+          <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-2xl bg-gradient-to-br from-[var(--color-secondary-800)] to-[var(--color-primary-800)] flex items-center justify-center text-white mb-3 sm:mb-5 shadow-md">
             <MapPin size={24} />
           </div>
           <h3 className="text-base sm:text-lg font-bold text-[var(--color-neutral-900)] mb-1">Lokasi</h3>
@@ -149,7 +149,7 @@ export default function PortfolioContact() {
                 transition={{ duration: 0.3, ease: [0.34, 1.56, 0.64, 1] }}
                 className="text-center py-10"
               >
-                <div className="w-16 h-16 mx-auto rounded-full bg-[var(--color-success-500)] flex items-center justify-center text-white mb-4">
+                <div className="w-16 h-16 mx-auto rounded-full bg-[var(--color-success-700)] flex items-center justify-center text-white mb-4">
                   <Send size={28} />
                 </div>
                 <h3 className="text-xl font-bold text-[var(--color-neutral-900)] mb-2">Pesan Terkirim!</h3>
@@ -158,7 +158,7 @@ export default function PortfolioContact() {
                 </p>
                 <button
                   onClick={() => { setSubmitted(false); setFormData({ name: '', email: '', phone: '', subject: '', message: '' }); }}
-                  className="text-sm text-[var(--color-primary-600)] font-semibold hover:underline"
+                  className="text-sm text-[var(--color-primary-800)] font-semibold hover:underline"
                 >
                   Kirim pesan lagi
                 </button>
@@ -212,7 +212,7 @@ export default function PortfolioContact() {
                 </div>
 
                 <button type="submit"
-                  className="w-full px-8 py-4 rounded-xl bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-accent-500)] hover:shadow-xl text-white font-bold transition-all hover:-translate-y-0.5 shadow-lg flex items-center justify-center gap-2 text-base sm:text-lg"
+                  className="w-full px-8 py-4 rounded-xl bg-gradient-to-r from-[var(--color-primary-800)] to-[var(--color-accent-700)] hover:shadow-xl text-white font-bold transition-all hover:-translate-y-0.5 shadow-lg flex items-center justify-center gap-2 text-base sm:text-lg"
                 >
                   <span>Kirim Pesan</span>
                   <Send size={18} />
@@ -232,7 +232,7 @@ export default function PortfolioContact() {
         >
           <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-[var(--color-primary-50)] to-[var(--color-accent-50)] border-2 border-[var(--color-primary-200)]">
             <div className="flex items-center gap-2 mb-5">
-              <Clock size={20} className="text-[var(--color-primary-600)]" />
+              <Clock size={20} className="text-[var(--color-primary-800)]" />
               <h3 className="text-lg font-bold text-[var(--color-neutral-900)]">Jam Operasional</h3>
             </div>
             <div className="space-y-2.5 text-sm text-[var(--color-neutral-700)]">
@@ -305,10 +305,10 @@ export default function PortfolioContact() {
           className="block rounded-2xl overflow-hidden border-2 border-[var(--color-neutral-200)] shadow-lg bg-[var(--color-neutral-100)] hover:border-[var(--color-primary-300)] transition-colors"
         >
           <div className="flex flex-col items-center justify-center gap-4 py-16 sm:py-20 lg:py-24 px-6 bg-gradient-to-br from-[var(--color-primary-50)] to-[var(--color-secondary-50)]">
-            <MapPin size={48} className="text-[var(--color-primary-500)]" />
+            <MapPin size={48} className="text-[var(--color-primary-800)]" />
             <span className="text-lg font-semibold text-[var(--color-neutral-800)]">Lihat lokasi di Google Maps</span>
             <span className="text-sm text-[var(--color-neutral-600)]">{ADDRESS}</span>
-            <span className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[var(--color-primary-500)] text-white font-semibold">
+            <span className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[var(--color-primary-800)] text-white font-semibold">
               Buka Peta
               <ArrowRight size={18} />
             </span>
@@ -325,7 +325,7 @@ export default function PortfolioContact() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.5 }}
-        className="py-10 sm:py-14 px-6 sm:px-10 lg:px-16 rounded-3xl bg-gradient-to-br from-[var(--color-success-500)] to-[var(--color-success-700)] text-white text-center shadow-2xl"
+        className="py-10 sm:py-14 px-6 sm:px-10 lg:px-16 rounded-3xl bg-[var(--color-success-700)] text-white text-center shadow-2xl"
       >
         <MessageCircle size={40} className="mx-auto mb-4 opacity-90" />
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">

@@ -75,7 +75,7 @@ export default function PortfolioRoot() {
                   to={item.path}
                   className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${
                     isActive(item.path)
-                      ? 'bg-[var(--color-primary-500)] text-white shadow-md'
+                      ? 'bg-[var(--color-primary-800)] text-white shadow-md'
                       : 'text-[var(--color-neutral-700)] hover:bg-[var(--color-neutral-100)]'
                   }`}
                 >
@@ -87,7 +87,7 @@ export default function PortfolioRoot() {
             <div className="hidden lg:block">
               <Link
                 to="/portfolio/admissions"
-                className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-accent-500)] hover:shadow-xl text-white font-semibold transition-all hover:-translate-y-0.5 text-sm"
+                className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[var(--color-primary-800)] to-[var(--color-accent-700)] hover:shadow-xl text-white font-semibold transition-all hover:-translate-y-0.5 text-sm"
               >
                 Jadwalkan Kunjungan
               </Link>
@@ -127,7 +127,7 @@ export default function PortfolioRoot() {
                       onClick={() => setMobileMenuOpen(false)}
                       className={`block px-4 py-3 text-sm font-medium rounded-lg transition-all ${
                         isActive(item.path)
-                          ? 'bg-[var(--color-primary-500)] text-white'
+                          ? 'bg-[var(--color-primary-800)] text-white'
                           : 'text-[var(--color-neutral-700)] hover:bg-[var(--color-neutral-100)]'
                       }`}
                     >
@@ -143,7 +143,7 @@ export default function PortfolioRoot() {
                   <Link
                     to="/portfolio/admissions"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block mt-3 px-4 py-3 rounded-xl bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-accent-500)] text-white font-semibold text-center"
+                    className="block mt-3 px-4 py-3 rounded-xl bg-gradient-to-r from-[var(--color-primary-800)] to-[var(--color-accent-700)] text-white font-semibold text-center"
                   >
                     Jadwalkan Kunjungan
                   </Link>
@@ -223,7 +223,7 @@ export default function PortfolioRoot() {
                   <li key={item.path}>
                     <Link
                       to={item.path}
-                      className="text-sm text-[var(--color-neutral-600)] hover:text-[var(--color-primary-600)] transition-colors"
+                      className="text-sm text-[var(--color-neutral-600)] hover:text-[var(--color-primary-800)] transition-colors"
                     >
                       {item.name}
                     </Link>
@@ -239,13 +239,13 @@ export default function PortfolioRoot() {
               </h3>
               <ul className="space-y-3">
                 <li>
-                  <a href={`tel:+62${PHONE_1}`} className="flex items-start gap-2 text-sm text-[var(--color-neutral-600)] hover:text-[var(--color-primary-600)] transition-colors">
+                  <a href={`tel:+62${PHONE_1}`} className="flex items-start gap-2 text-sm text-[var(--color-neutral-600)] hover:text-[var(--color-primary-800)] transition-colors">
                     <Phone size={16} className="mt-0.5 shrink-0" />
                     <span>{PHONE_1}</span>
                   </a>
                 </li>
                 <li>
-                  <a href={`tel:+62${PHONE_2}`} className="flex items-start gap-2 text-sm text-[var(--color-neutral-600)] hover:text-[var(--color-primary-600)] transition-colors">
+                  <a href={`tel:+62${PHONE_2}`} className="flex items-start gap-2 text-sm text-[var(--color-neutral-600)] hover:text-[var(--color-primary-800)] transition-colors">
                     <Phone size={16} className="mt-0.5 shrink-0" />
                     <span>{PHONE_2}</span>
                   </a>
@@ -271,8 +271,8 @@ export default function PortfolioRoot() {
             <div className="flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-[var(--color-neutral-500)]">
               <p>&copy; {new Date().getFullYear()} PAUD Jasmine Al Muflihuun. Sekolah Islam Swasta Resmi.</p>
               <div className="flex gap-5">
-                <a href="#" className="hover:text-[var(--color-primary-600)] transition-colors">Kebijakan Privasi</a>
-                <a href="#" className="hover:text-[var(--color-primary-600)] transition-colors">Syarat & Ketentuan</a>
+                <a href="#" className="hover:text-[var(--color-primary-800)] transition-colors">Kebijakan Privasi</a>
+                <a href="#" className="hover:text-[var(--color-primary-800)] transition-colors">Syarat & Ketentuan</a>
               </div>
             </div>
           </div>

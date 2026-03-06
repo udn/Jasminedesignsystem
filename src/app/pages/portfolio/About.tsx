@@ -114,7 +114,7 @@ export default function PortfolioAbout() {
           transition={{ duration: 0.5, ease: [0, 0, 0.2, 1] }}
           className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-[var(--color-primary-50)] to-[var(--color-surface)] border-2 border-[var(--color-primary-200)] shadow-lg"
         >
-          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--color-primary-500)] to-[var(--color-accent-500)] flex items-center justify-center text-white mb-5 shadow-md">
+          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--color-primary-800)] to-[var(--color-accent-700)] flex items-center justify-center text-white mb-5 shadow-md">
             <Target size={28} />
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold text-[var(--color-neutral-900)] mb-4">Visi</h2>
@@ -128,29 +128,29 @@ export default function PortfolioAbout() {
           transition={{ duration: 0.5, ease: [0, 0, 0.2, 1] }}
           className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-[var(--color-secondary-50)] to-[var(--color-surface)] border-2 border-[var(--color-secondary-200)] shadow-lg"
         >
-          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--color-secondary-500)] to-[var(--color-primary-500)] flex items-center justify-center text-white mb-5 shadow-md">
+          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--color-secondary-800)] to-[var(--color-primary-800)] flex items-center justify-center text-white mb-5 shadow-md">
             <Lightbulb size={28} />
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold text-[var(--color-neutral-900)] mb-4">Misi</h2>
           <ul className="space-y-3 text-sm sm:text-base text-[var(--color-neutral-700)] leading-relaxed">
             <li className="flex items-start gap-2.5">
-              <span className="text-[var(--color-secondary-600)] shrink-0 mt-0.5">✓</span>
+              <span className="text-[var(--color-secondary-700)] shrink-0 mt-0.5">✓</span>
               <span>Menanamkan nilai-nilai Islam dan akhlakul karimah sejak usia dini</span>
             </li>
             <li className="flex items-start gap-2.5">
-              <span className="text-[var(--color-secondary-600)] shrink-0 mt-0.5">✓</span>
+              <span className="text-[var(--color-secondary-700)] shrink-0 mt-0.5">✓</span>
               <span>Mengembangkan kecerdasan melalui metode belajar sambil bermain</span>
             </li>
             <li className="flex items-start gap-2.5">
-              <span className="text-[var(--color-secondary-600)] shrink-0 mt-0.5">✓</span>
+              <span className="text-[var(--color-secondary-700)] shrink-0 mt-0.5">✓</span>
               <span>Menyediakan lingkungan yang aman, nyaman, dan menyenangkan</span>
             </li>
             <li className="flex items-start gap-2.5">
-              <span className="text-[var(--color-secondary-600)] shrink-0 mt-0.5">✓</span>
+              <span className="text-[var(--color-secondary-700)] shrink-0 mt-0.5">✓</span>
               <span>Membangun kemandirian, kreativitas, dan kedisiplinan anak</span>
             </li>
             <li className="flex items-start gap-2.5">
-              <span className="text-[var(--color-secondary-600)] shrink-0 mt-0.5">✓</span>
+              <span className="text-[var(--color-secondary-700)] shrink-0 mt-0.5">✓</span>
               <span>Mempersiapkan anak untuk jenjang pendidikan berikutnya</span>
             </li>
           </ul>
@@ -195,7 +195,7 @@ export default function PortfolioAbout() {
               transition={{ duration: 0.4 }}
               className="p-6 sm:p-8 rounded-2xl bg-[var(--color-surface)] border-2 border-[var(--color-neutral-200)] shadow-sm hover:shadow-lg transition-shadow"
             >
-              <div className={`w-12 h-12 rounded-xl bg-[var(--color-${value.bg}-100)] flex items-center justify-center text-[var(--color-${value.bg}-600)] mb-4`}>
+              <div className={`w-12 h-12 rounded-xl bg-[var(--color-${value.bg}-100)] flex items-center justify-center text-[var(--color-${value.bg}-800)] mb-4`}>
                 {value.icon}
               </div>
               <h3 className="text-lg sm:text-xl font-bold text-[var(--color-neutral-900)] mb-2">{value.title}</h3>
@@ -234,7 +234,7 @@ export default function PortfolioAbout() {
               transition={{ duration: 0.4 }}
               className="flex gap-4 p-5 sm:p-6 rounded-2xl bg-[var(--color-surface)] border border-[var(--color-neutral-200)] shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="w-10 h-10 rounded-xl bg-[var(--color-primary-100)] flex items-center justify-center text-[var(--color-primary-600)] shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-[var(--color-primary-100)] flex items-center justify-center text-[var(--color-primary-800)] shrink-0">
                 {item.icon}
               </div>
               <div>
@@ -310,7 +310,7 @@ export default function PortfolioAbout() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.5 }}
-        className="py-10 sm:py-14 px-6 sm:px-10 lg:px-16 rounded-3xl bg-gradient-to-br from-[var(--color-primary-500)] via-[var(--color-accent-500)] to-[var(--color-secondary-500)] text-white text-center shadow-2xl"
+        className="py-10 sm:py-14 px-6 sm:px-10 lg:px-16 rounded-3xl bg-gradient-to-br from-[var(--color-primary-800)] via-[var(--color-accent-700)] to-[var(--color-secondary-700)] text-white text-center shadow-2xl"
       >
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
           Jadwalkan Kunjungan Sekolah
@@ -347,7 +347,7 @@ function FacilityTour() {
             onClick={() => setActive(cat.key)}
             className={`inline-flex items-center gap-1.5 rounded-xl px-4 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-semibold transition-all duration-200 ${
               active === cat.key
-                ? 'bg-[var(--color-primary-500)] text-white shadow-md scale-[1.02]'
+                ? 'bg-[var(--color-primary-800)] text-white shadow-md scale-[1.02]'
                 : 'bg-[var(--color-neutral-100)] text-[var(--color-neutral-700)] hover:bg-[var(--color-neutral-200)]'
             }`}
           >

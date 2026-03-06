@@ -5,14 +5,14 @@ export default function Overview() {
     <div className="space-y-12">
       {/* Hero Section */}
       <div className="text-center space-y-4">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--color-primary-100)] text-[var(--color-primary-700)] text-sm font-medium">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--color-primary-100)] text-[var(--color-primary-800)] text-sm font-medium">
           <Sparkles size={16} />
           <span>Version 1.0.0</span>
         </div>
         <h1 className="text-5xl sm:text-6xl font-bold text-[var(--color-neutral-900)]">
           Jasmine Kindergarten
           <br />
-          <span className="bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-accent-500)] bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-[var(--color-primary-800)] to-[var(--color-accent-700)] bg-clip-text text-transparent">
             Design System
           </span>
         </h1>
@@ -134,19 +134,19 @@ export default function Overview() {
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-3">Design Tokens</h3>
             <ul className="space-y-2 text-sm text-[var(--color-neutral-700)]">
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">✓</span>
+                <span className="text-[var(--color-success-700)]">✓</span>
                 <span>Comprehensive color system with light & dark mode</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">✓</span>
+                <span className="text-[var(--color-success-700)]">✓</span>
                 <span>9-level typography scale with semantic sizing</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">✓</span>
+                <span className="text-[var(--color-success-700)]">✓</span>
                 <span>8px base grid spacing system</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">✓</span>
+                <span className="text-[var(--color-success-700)]">✓</span>
                 <span>Motion curves and duration guidelines</span>
               </li>
             </ul>
@@ -156,19 +156,19 @@ export default function Overview() {
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-3">Components & Patterns</h3>
             <ul className="space-y-2 text-sm text-[var(--color-neutral-700)]">
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">✓</span>
+                <span className="text-[var(--color-success-700)]">✓</span>
                 <span>30+ production-ready components</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">✓</span>
+                <span className="text-[var(--color-success-700)]">✓</span>
                 <span>Complete state variations (hover, active, disabled, etc.)</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">✓</span>
+                <span className="text-[var(--color-success-700)]">✓</span>
                 <span>Responsive layout patterns and grid system</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">✓</span>
+                <span className="text-[var(--color-success-700)]">✓</span>
                 <span>WCAG AA accessibility compliance</span>
               </li>
             </ul>
@@ -186,7 +186,7 @@ export default function Overview() {
         <div className="flex flex-wrap gap-3">
           <a 
             href="/colors" 
-            className="px-6 py-3 rounded-lg bg-[var(--color-primary-500)] hover:bg-[var(--color-primary-600)] text-white font-medium transition-colors"
+            className="px-6 py-3 rounded-lg bg-[var(--color-primary-800)] hover:bg-[var(--color-primary-900)] text-white font-medium transition-colors"
           >
             Explore Colors
           </a>

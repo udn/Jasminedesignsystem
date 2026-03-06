@@ -89,7 +89,7 @@ export default function PortfolioAdmissions() {
           transition={{ duration: 0.4 }}
           className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-[var(--color-primary-50)] to-[var(--color-accent-50)] border-2 border-[var(--color-primary-200)] shadow-lg"
         >
-          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--color-primary-500)] to-[var(--color-accent-500)] flex items-center justify-center text-white mb-4 shadow-md">
+          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--color-primary-800)] to-[var(--color-accent-700)] flex items-center justify-center text-white mb-4 shadow-md">
             <Gift size={28} />
           </div>
           <h3 className="text-xl sm:text-2xl font-bold text-[var(--color-neutral-900)] mb-2">Free Trial Class</h3>
@@ -103,7 +103,7 @@ export default function PortfolioAdmissions() {
           transition={{ duration: 0.4 }}
           className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-[var(--color-secondary-50)] to-[var(--color-primary-50)] border-2 border-[var(--color-secondary-200)] shadow-lg"
         >
-          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--color-secondary-500)] to-[var(--color-primary-500)] flex items-center justify-center text-white mb-4 shadow-md">
+          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--color-secondary-800)] to-[var(--color-primary-800)] flex items-center justify-center text-white mb-4 shadow-md">
             <Users size={28} />
           </div>
           <h3 className="text-xl sm:text-2xl font-bold text-[var(--color-neutral-900)] mb-2">Diskon Sibling 25%</h3>
@@ -144,7 +144,7 @@ export default function PortfolioAdmissions() {
               transition={{ duration: 0.4 }}
               className="text-center"
             >
-              <div className={`w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-full bg-gradient-to-br from-[var(--color-${s.color}-500)] to-[var(--color-${s.color}-600)] flex items-center justify-center text-white text-xl sm:text-2xl font-bold mb-4 shadow-lg`}>
+              <div className={`w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-full bg-gradient-to-br from-[var(--color-${s.color}-700)] to-[var(--color-${s.color}-800)] flex items-center justify-center text-white text-xl sm:text-2xl font-bold mb-4 shadow-lg`}>
                 {s.step}
               </div>
               <h3 className="text-sm sm:text-lg font-bold text-[var(--color-neutral-900)] mb-2">{s.title}</h3>
@@ -179,7 +179,7 @@ export default function PortfolioAdmissions() {
                 transition={{ duration: 0.3, ease: [0.34, 1.56, 0.64, 1] }}
                 className="text-center py-10"
               >
-                <div className="w-16 h-16 mx-auto rounded-full bg-[var(--color-success-500)] flex items-center justify-center text-white mb-4">
+                <div className="w-16 h-16 mx-auto rounded-full bg-[var(--color-success-700)] flex items-center justify-center text-white mb-4">
                   <CheckCircle size={32} />
                 </div>
                 <h3 className="text-xl font-bold text-[var(--color-neutral-900)] mb-2">Terima Kasih!</h3>
@@ -188,7 +188,7 @@ export default function PortfolioAdmissions() {
                 </p>
                 <button
                   onClick={() => { setSubmitted(false); setFormData({ parentName: '', email: '', phone: '', childName: '', childAge: '', program: '', preferredDate: '', message: '' }); }}
-                  className="text-sm text-[var(--color-primary-600)] font-semibold hover:underline"
+                  className="text-sm text-[var(--color-primary-800)] font-semibold hover:underline"
                 >
                   Kirim formulir lagi
                 </button>
@@ -267,7 +267,7 @@ export default function PortfolioAdmissions() {
                 </div>
 
                 <button type="submit"
-                  className="w-full px-8 py-4 rounded-2xl bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-accent-500)] hover:shadow-2xl text-white font-bold transition-all hover:-translate-y-1 text-base sm:text-lg shadow-xl"
+                  className="w-full px-8 py-4 rounded-2xl bg-gradient-to-r from-[var(--color-primary-800)] to-[var(--color-accent-700)] hover:shadow-2xl text-white font-bold transition-all hover:-translate-y-1 text-base sm:text-lg shadow-xl"
                 >
                   Kirim Formulir
                 </button>
@@ -301,7 +301,7 @@ export default function PortfolioAdmissions() {
                 { icon: <ShieldCheck size={18} />, text: 'Diskon Sibling 25%' },
               ].map((item) => (
                 <li key={item.text} className="flex items-start gap-2.5 text-sm text-[var(--color-neutral-700)]">
-                  <span className="text-[var(--color-primary-600)] shrink-0 mt-0.5">{item.icon}</span>
+                  <span className="text-[var(--color-primary-800)] shrink-0 mt-0.5">{item.icon}</span>
                   <span>{item.text}</span>
                 </li>
               ))}
@@ -346,7 +346,7 @@ export default function PortfolioAdmissions() {
               { title: 'Surat Keterangan Sehat dari Dokter', desc: 'Riwayat kesehatan anak' },
             ].map((doc) => (
               <li key={doc.title} className="flex items-start gap-3">
-                <FileText size={20} className="text-[var(--color-primary-600)] shrink-0 mt-0.5" />
+                <FileText size={20} className="text-[var(--color-primary-800)] shrink-0 mt-0.5" />
                 <div>
                   <p className="text-sm font-semibold text-[var(--color-neutral-900)]">{doc.title}</p>
                   <p className="text-xs text-[var(--color-neutral-600)]">{doc.desc}</p>
@@ -402,7 +402,7 @@ export default function PortfolioAdmissions() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0 }}
         transition={{ duration: 0.5 }}
-        className="relative z-10 py-10 sm:py-14 px-6 sm:px-10 lg:px-16 rounded-3xl bg-gradient-to-br from-[var(--color-primary-500)] via-[var(--color-accent-500)] to-[var(--color-secondary-500)] text-white text-center shadow-2xl"
+        className="relative z-10 py-10 sm:py-14 px-6 sm:px-10 lg:px-16 rounded-3xl bg-gradient-to-br from-[var(--color-primary-800)] via-[var(--color-accent-700)] to-[var(--color-secondary-700)] text-white text-center shadow-2xl"
       >
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
           Masih Ragu? Hubungi Kami Langsung

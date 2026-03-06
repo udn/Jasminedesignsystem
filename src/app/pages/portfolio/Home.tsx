@@ -32,7 +32,7 @@ export default function PortfolioHome() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, ease: [0, 0, 0.2, 1] }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--color-primary-100)] text-[var(--color-primary-700)] text-xs sm:text-sm font-semibold shadow-sm"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--color-primary-100)] text-[var(--color-primary-800)] text-xs sm:text-sm font-semibold shadow-sm"
         >
           <Sparkles size={16} />
           <span>Tahun Ajaran 2026–2027</span>
@@ -64,7 +64,7 @@ export default function PortfolioHome() {
         >
           <Link
             to="/portfolio/admissions"
-            className="group px-8 py-4 sm:px-10 sm:py-5 rounded-2xl bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-accent-500)] hover:shadow-2xl text-white font-bold transition-all hover:-translate-y-1 shadow-xl text-base sm:text-lg flex items-center justify-center gap-3"
+            className="group px-8 py-4 sm:px-10 sm:py-5 rounded-2xl bg-gradient-to-r from-[var(--color-primary-800)] to-[var(--color-accent-700)] hover:shadow-2xl text-white font-bold transition-all hover:-translate-y-1 shadow-xl text-base sm:text-lg flex items-center justify-center gap-3"
           >
             <span>Jadwalkan Kunjungan</span>
             <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
@@ -109,7 +109,7 @@ export default function PortfolioHome() {
             transition={{ duration: 0.4 }}
             className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[var(--color-surface)] border border-[var(--color-neutral-200)] shadow-sm text-sm font-medium text-[var(--color-neutral-700)]"
           >
-            <span className="text-[var(--color-primary-600)]">{badge.icon}</span>
+            <span className="text-[var(--color-primary-800)]">{badge.icon}</span>
             <span>{badge.label}</span>
           </motion.div>
         ))}
@@ -129,7 +129,7 @@ export default function PortfolioHome() {
           transition={{ duration: 0.5 }}
           className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-[var(--color-primary-50)] via-[var(--color-surface)] to-[var(--color-accent-50)] border-2 border-[var(--color-primary-200)] shadow-lg hover:shadow-xl transition-shadow"
         >
-          <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-gradient-to-br from-[var(--color-primary-500)] to-[var(--color-accent-500)] flex items-center justify-center text-white mb-5 shadow-md">
+          <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-gradient-to-br from-[var(--color-primary-800)] to-[var(--color-accent-700)] flex items-center justify-center text-white mb-5 shadow-md">
             <Heart size={28} />
           </div>
           <h2 className="text-xl lg:text-2xl font-bold text-[var(--color-neutral-900)] mb-3">
@@ -145,7 +145,7 @@ export default function PortfolioHome() {
               'Karakter cerdas, mandiri, dan disiplin',
             ].map((item) => (
               <li key={item} className="flex items-start gap-2.5 text-sm text-[var(--color-neutral-700)]">
-                <span className="text-[var(--color-primary-600)] shrink-0 mt-0.5">✓</span>
+                <span className="text-[var(--color-primary-800)] shrink-0 mt-0.5">✓</span>
                 <span>{item}</span>
               </li>
             ))}
@@ -158,7 +158,7 @@ export default function PortfolioHome() {
           transition={{ duration: 0.5 }}
           className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-[var(--color-secondary-50)] via-[var(--color-surface)] to-[var(--color-primary-50)] border-2 border-[var(--color-secondary-200)] shadow-lg hover:shadow-xl transition-shadow"
         >
-          <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-gradient-to-br from-[var(--color-secondary-500)] to-[var(--color-primary-500)] flex items-center justify-center text-white mb-5 shadow-md">
+          <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-gradient-to-br from-[var(--color-secondary-800)] to-[var(--color-primary-800)] flex items-center justify-center text-white mb-5 shadow-md">
             <Shield size={28} />
           </div>
           <h2 className="text-xl lg:text-2xl font-bold text-[var(--color-neutral-900)] mb-3">
@@ -174,7 +174,7 @@ export default function PortfolioHome() {
               'Fogging disinfektan secara berkala',
             ].map((item) => (
               <li key={item} className="flex items-start gap-2.5 text-sm text-[var(--color-neutral-700)]">
-                <span className="text-[var(--color-secondary-600)] shrink-0 mt-0.5">✓</span>
+                <span className="text-[var(--color-secondary-700)] shrink-0 mt-0.5">✓</span>
                 <span>{item}</span>
               </li>
             ))}
@@ -187,7 +187,7 @@ export default function PortfolioHome() {
           transition={{ duration: 0.5 }}
           className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-[var(--color-accent-50)] via-[var(--color-surface)] to-[var(--color-secondary-50)] border-2 border-[var(--color-accent-200)] shadow-lg hover:shadow-xl transition-shadow md:col-span-2 lg:col-span-1"
         >
-          <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-gradient-to-br from-[var(--color-accent-500)] to-[var(--color-secondary-500)] flex items-center justify-center text-white mb-5 shadow-md">
+          <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-gradient-to-br from-[var(--color-accent-700)] to-[var(--color-secondary-700)] flex items-center justify-center text-white mb-5 shadow-md">
             <Sparkles size={28} />
           </div>
           <h2 className="text-xl lg:text-2xl font-bold text-[var(--color-neutral-900)] mb-3">
@@ -203,7 +203,7 @@ export default function PortfolioHome() {
               'Drumband, Angklung, Menari & Seni',
             ].map((item) => (
               <li key={item} className="flex items-start gap-2.5 text-sm text-[var(--color-neutral-700)]">
-                <span className="text-[var(--color-accent-600)] shrink-0 mt-0.5">✓</span>
+                <span className="text-[var(--color-accent-700)] shrink-0 mt-0.5">✓</span>
                 <span>{item}</span>
               </li>
             ))}
@@ -217,7 +217,7 @@ export default function PortfolioHome() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.5, ease: [0, 0, 0.2, 1] }}
-        className="relative overflow-hidden p-6 sm:p-10 lg:p-12 rounded-3xl bg-gradient-to-br from-[var(--color-secondary-500)] via-[var(--color-primary-500)] to-[var(--color-accent-500)] text-white shadow-2xl"
+        className="relative overflow-hidden p-6 sm:p-10 lg:p-12 rounded-3xl bg-gradient-to-br from-[var(--color-secondary-800)] via-[var(--color-primary-800)] to-[var(--color-accent-700)] text-white shadow-2xl"
       >
         <div className="relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/20 text-xs font-bold uppercase tracking-wider mb-4">
@@ -302,17 +302,17 @@ export default function PortfolioHome() {
               transition={{ duration: 0.4 }}
               className="p-6 sm:p-8 rounded-2xl bg-[var(--color-surface)] border-2 border-[var(--color-neutral-200)] shadow-lg hover:shadow-xl transition-shadow"
             >
-              <Quote size={32} className={`text-[var(--color-${t.color}-400)] mb-3`} />
+              <Quote size={32} className={`text-[var(--color-${t.color}-700)] mb-3`} />
               <div className="flex gap-1 mb-3">
                 {[1, 2, 3, 4, 5].map((s) => (
-                  <Star key={s} size={16} className="text-[var(--color-warning-500)] fill-[var(--color-warning-500)]" />
+                  <Star key={s} size={16} className="text-[var(--color-warning-700)] fill-[var(--color-warning-700)]" />
                 ))}
               </div>
               <p className="text-sm sm:text-base text-[var(--color-neutral-700)] leading-relaxed mb-5 italic">
                 &ldquo;{t.quote}&rdquo;
               </p>
               <div className="flex items-center gap-3">
-                <div className={`w-10 h-10 rounded-full bg-gradient-to-br from-[var(--color-${t.color}-400)] to-[var(--color-${t.color}-600)] flex items-center justify-center text-white text-sm font-bold`}>
+                <div className={`w-10 h-10 rounded-full bg-gradient-to-br from-[var(--color-${t.color}-700)] to-[var(--color-${t.color}-800)] flex items-center justify-center text-white text-sm font-bold`}>
                   {t.initials}
                 </div>
                 <div>
@@ -340,7 +340,7 @@ export default function PortfolioHome() {
               { value: 'Free Trial', label: 'Coba Dulu, Baru Yakin!', color: 'success' },
             ].map((stat) => (
               <div key={stat.label}>
-                <div className={`text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--color-${stat.color}-600)] mb-1`}>
+                <div className={`text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--color-${stat.color}-700)] mb-1`}>
                   {stat.value}
                 </div>
                 <p className="text-xs sm:text-sm text-[var(--color-neutral-700)] font-medium">{stat.label}</p>
@@ -426,7 +426,7 @@ export default function PortfolioHome() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.5, ease: [0, 0, 0.2, 1] }}
-        className="py-10 sm:py-14 lg:py-16 px-6 sm:px-10 lg:px-16 rounded-3xl bg-gradient-to-br from-[var(--color-primary-500)] via-[var(--color-accent-500)] to-[var(--color-secondary-500)] text-white text-center shadow-2xl"
+        className="py-10 sm:py-14 lg:py-16 px-6 sm:px-10 lg:px-16 rounded-3xl bg-gradient-to-br from-[var(--color-primary-800)] via-[var(--color-accent-700)] to-[var(--color-secondary-700)] text-white text-center shadow-2xl"
       >
         <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-4 sm:mb-6">
           Daftarkan Buah Hati Anda Sekarang

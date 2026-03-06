@@ -233,19 +233,19 @@ export default function Colors() {
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)]">✓ Do</h3>
             <ul className="space-y-2 text-sm text-[var(--color-neutral-700)]">
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span>Use primary colors for main actions and brand elements</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span>Ensure minimum 4.5:1 contrast ratio for text</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span>Use semantic colors consistently for status messages</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span>Maintain color meaning across light and dark modes</span>
               </li>
             </ul>
@@ -255,19 +255,19 @@ export default function Colors() {
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)]">✗ Don't</h3>
             <ul className="space-y-2 text-sm text-[var(--color-neutral-700)]">
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-error-500)]">•</span>
+                <span className="text-[var(--color-error-700)]">•</span>
                 <span>Use too many colors in a single interface</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-error-500)]">•</span>
+                <span className="text-[var(--color-error-700)]">•</span>
                 <span>Rely solely on color to convey information</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-error-500)]">•</span>
+                <span className="text-[var(--color-error-700)]">•</span>
                 <span>Use low-contrast color combinations</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-error-500)]">•</span>
+                <span className="text-[var(--color-error-700)]">•</span>
                 <span>Override semantic colors for aesthetic purposes</span>
               </li>
             </ul>

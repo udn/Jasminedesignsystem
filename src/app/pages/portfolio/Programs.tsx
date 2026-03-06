@@ -71,6 +71,7 @@ export default function PortfolioPrograms() {
             desc: 'Pengenalan awal dunia belajar melalui bermain sensorik, musik, gerakan, dan interaksi sosial pertama.',
             highlights: ['Stimulasi motorik halus & kasar', 'Pengenalan huruf hijaiyah & doa', 'Bermain kelompok & berbagi', 'Seni, lagu, dan cerita'],
             color: 'primary',
+            btnClass: 'bg-gradient-to-r from-[var(--color-primary-800)] to-[var(--color-primary-900)]',
           },
           {
             icon: <Smile size={36} />,
@@ -79,6 +80,7 @@ export default function PortfolioPrograms() {
             desc: 'Mengembangkan rasa ingin tahu melalui eksplorasi, literasi awal, konsep angka, dan kemandirian.',
             highlights: ['Metode Ummi — belajar Al-Qur\'an', 'Mengenal huruf, angka & bentuk', 'Percobaan sains sederhana', 'English Class pengenalan'],
             color: 'secondary',
+            btnClass: 'bg-gradient-to-r from-[var(--color-secondary-800)] to-[var(--color-secondary-900)]',
           },
           {
             icon: <GraduationCap size={36} />,
@@ -87,6 +89,7 @@ export default function PortfolioPrograms() {
             desc: 'Persiapan masuk SD — membaca, menulis, berhitung, dan membangun kepercayaan diri serta kemandirian.',
             highlights: ['Membaca, menulis & berhitung', 'Persiapan akademis masuk SD', 'Coding & Robotic dasar', 'Leadership & kerja tim'],
             color: 'accent',
+            btnClass: 'bg-gradient-to-r from-[var(--color-accent-800)] to-[var(--color-accent-900)]',
           },
           {
             icon: <Baby size={36} />,
@@ -95,6 +98,7 @@ export default function PortfolioPrograms() {
             desc: 'Layanan penitipan anak yang aman dan nyaman dengan pengasuhan berkualitas, aktivitas bermain, serta lingkungan yang mendukung tumbuh kembang anak.',
             highlights: ['Pengasuhan oleh pengasuh berpengalaman', 'Aktivitas bermain & stimulasi usia dini', 'Lingkungan aman dengan CCTV & AC', 'Fleksibel sesuai kebutuhan orang tua'],
             color: 'success',
+            btnClass: 'bg-[var(--color-success-700)]',
           },
         ].map((program) => (
           <motion.div
@@ -103,23 +107,23 @@ export default function PortfolioPrograms() {
             transition={{ duration: 0.5 }}
             className={`p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[var(--color-${program.color}-50)] via-[var(--color-surface)] to-[var(--color-surface)] border-2 border-[var(--color-${program.color}-200)] shadow-lg hover:shadow-xl transition-shadow`}
           >
-            <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br from-[var(--color-${program.color}-500)] to-[var(--color-${program.color}-600)] flex items-center justify-center text-white mb-5 shadow-md`}>
+            <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br from-[var(--color-${program.color}-700)] to-[var(--color-${program.color}-800)] flex items-center justify-center text-white mb-5 shadow-md`}>
               {program.icon}
             </div>
             <h2 className="text-xl sm:text-2xl font-bold text-[var(--color-neutral-900)] mb-1">{program.name}</h2>
-            <p className={`text-sm font-semibold text-[var(--color-${program.color}-600)] mb-4`}>{program.age}</p>
+            <p className={`text-sm font-semibold text-[var(--color-${program.color}-700)] mb-4`}>{program.age}</p>
             <p className="text-sm text-[var(--color-neutral-700)] leading-relaxed mb-5">{program.desc}</p>
             <ul className="space-y-2.5 mb-6">
               {program.highlights.map((h) => (
                 <li key={h} className="flex items-start gap-2 text-sm text-[var(--color-neutral-700)]">
-                  <CheckCircle size={16} className={`text-[var(--color-${program.color}-600)] shrink-0 mt-0.5`} />
+                  <CheckCircle size={16} className={`text-[var(--color-${program.color}-700)] shrink-0 mt-0.5`} />
                   <span>{h}</span>
                 </li>
               ))}
             </ul>
             <Link
               to="/portfolio/admissions"
-              className={`block text-center px-6 py-3 rounded-xl bg-gradient-to-r from-[var(--color-${program.color}-500)] to-[var(--color-${program.color}-600)] text-white font-bold transition-all hover:shadow-lg hover:-translate-y-0.5 text-sm`}
+              className={`block text-center px-6 py-3 rounded-xl ${program.btnClass} text-white font-bold transition-all hover:shadow-lg hover:-translate-y-0.5 text-sm`}
             >
               Daftar Sekarang
             </Link>
@@ -133,7 +137,7 @@ export default function PortfolioPrograms() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.5, ease: [0, 0, 0.2, 1] }}
-        className="relative overflow-hidden p-6 sm:p-10 lg:p-12 rounded-3xl bg-gradient-to-br from-[var(--color-secondary-500)] via-[var(--color-primary-500)] to-[var(--color-accent-500)] text-white shadow-2xl"
+        className="relative overflow-hidden p-6 sm:p-10 lg:p-12 rounded-3xl bg-gradient-to-br from-[var(--color-secondary-800)] via-[var(--color-primary-800)] to-[var(--color-accent-700)] text-white shadow-2xl"
       >
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/20 text-xs font-bold uppercase tracking-wider mb-4">
           <Globe size={14} />
@@ -173,7 +177,7 @@ export default function PortfolioPrograms() {
         className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center"
       >
         <motion.div variants={fadeUp} transition={{ duration: 0.5 }}>
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--color-primary-100)] text-[var(--color-primary-700)] text-xs font-semibold mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--color-primary-100)] text-[var(--color-primary-800)] text-xs font-semibold mb-4">
             <BookOpen size={14} />
             <span>Program Unggulan</span>
           </div>
@@ -193,7 +197,7 @@ export default function PortfolioPrograms() {
               'Membangun kecintaan Al-Qur\'an sejak dini',
             ].map((item) => (
               <li key={item} className="flex items-start gap-2.5 text-sm text-[var(--color-neutral-700)]">
-                <CheckCircle size={16} className="text-[var(--color-primary-600)] shrink-0 mt-0.5" />
+                <CheckCircle size={16} className="text-[var(--color-primary-800)] shrink-0 mt-0.5" />
                 <span>{item}</span>
               </li>
             ))}
@@ -252,7 +256,7 @@ export default function PortfolioPrograms() {
               transition={{ duration: 0.3 }}
               className="p-4 sm:p-6 rounded-2xl bg-[var(--color-surface)] border border-[var(--color-neutral-200)] shadow-sm hover:shadow-md transition-shadow text-center"
             >
-              <div className={`w-12 h-12 mx-auto rounded-xl bg-[var(--color-${ekskul.color}-100)] flex items-center justify-center text-[var(--color-${ekskul.color}-600)] mb-3`}>
+              <div className={`w-12 h-12 mx-auto rounded-xl bg-[var(--color-${ekskul.color}-100)] flex items-center justify-center text-[var(--color-${ekskul.color}-800)] mb-3`}>
                 {ekskul.icon}
               </div>
               <h3 className="text-sm sm:text-base font-bold text-[var(--color-neutral-900)] mb-1">{ekskul.name}</h3>
@@ -293,7 +297,7 @@ export default function PortfolioPrograms() {
               transition={{ duration: 0.3 }}
               className="p-4 sm:p-6 rounded-2xl bg-[var(--color-surface)] border border-[var(--color-neutral-200)] shadow-sm text-center"
             >
-              <div className={`w-12 h-12 mx-auto rounded-xl bg-[var(--color-${dev.color}-100)] flex items-center justify-center text-[var(--color-${dev.color}-600)] mb-3`}>
+              <div className={`w-12 h-12 mx-auto rounded-xl bg-[var(--color-${dev.color}-100)] flex items-center justify-center text-[var(--color-${dev.color}-800)] mb-3`}>
                 {dev.icon}
               </div>
               <h3 className="text-sm sm:text-base font-bold text-[var(--color-neutral-900)] mb-0.5">{dev.label}</h3>
@@ -372,7 +376,7 @@ export default function PortfolioPrograms() {
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
           <Link
             to="/portfolio/admissions"
-            className="px-8 py-4 sm:px-10 sm:py-5 rounded-2xl bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-accent-500)] text-white font-bold transition-all hover:shadow-2xl hover:-translate-y-1 text-base sm:text-lg"
+            className="px-8 py-4 sm:px-10 sm:py-5 rounded-2xl bg-gradient-to-r from-[var(--color-primary-800)] to-[var(--color-accent-700)] text-white font-bold transition-all hover:shadow-2xl hover:-translate-y-1 text-base sm:text-lg"
           >
             Daftar Trial Class
           </Link>

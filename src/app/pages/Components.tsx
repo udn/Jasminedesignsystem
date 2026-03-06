@@ -41,19 +41,19 @@ export default function Components() {
           usage="Use for primary actions like 'Submit', 'Save', 'Continue'"
         >
           <div className="flex flex-wrap gap-3">
-            <button className="px-6 py-3 bg-[var(--color-primary-500)] hover:bg-[var(--color-primary-600)] active:bg-[var(--color-primary-700)] text-white rounded-lg font-medium transition-colors shadow-sm hover:shadow-md">
+            <button className="px-6 py-3 bg-[var(--color-primary-800)] hover:bg-[var(--color-primary-900)] active:bg-[var(--color-primary-900)] text-white rounded-lg font-medium transition-colors shadow-sm hover:shadow-md">
               Default
             </button>
-            <button className="px-6 py-3 bg-[var(--color-primary-600)] text-white rounded-lg font-medium shadow-md">
+            <button className="px-6 py-3 bg-[var(--color-primary-900)] text-white rounded-lg font-medium shadow-md">
               Hover
             </button>
-            <button className="px-6 py-3 bg-[var(--color-primary-700)] text-white rounded-lg font-medium shadow-md">
+            <button className="px-6 py-3 bg-[var(--color-primary-900)] text-white rounded-lg font-medium shadow-md">
               Active
             </button>
-            <button className="px-6 py-3 bg-[var(--color-primary-500)] text-white rounded-lg font-medium ring-2 ring-[var(--color-primary-300)] ring-offset-2">
+            <button className="px-6 py-3 bg-[var(--color-primary-800)] text-white rounded-lg font-medium ring-2 ring-[var(--color-primary-300)] ring-offset-2">
               Focus
             </button>
-            <button className="px-6 py-3 bg-[var(--color-neutral-200)] text-[var(--color-neutral-400)] rounded-lg font-medium cursor-not-allowed" disabled>
+            <button className="px-6 py-3 bg-[var(--color-neutral-200)] text-[var(--color-neutral-500)] rounded-lg font-medium cursor-not-allowed" disabled>
               Disabled
             </button>
           </div>
@@ -74,7 +74,7 @@ export default function Components() {
             <button className="px-6 py-3 bg-[var(--color-secondary-300)] text-[var(--color-secondary-800)] rounded-lg font-medium">
               Active
             </button>
-            <button className="px-6 py-3 bg-[var(--color-neutral-200)] text-[var(--color-neutral-400)] rounded-lg font-medium cursor-not-allowed" disabled>
+            <button className="px-6 py-3 bg-[var(--color-neutral-200)] text-[var(--color-neutral-500)] rounded-lg font-medium cursor-not-allowed" disabled>
               Disabled
             </button>
           </div>
@@ -86,13 +86,13 @@ export default function Components() {
           usage="Use for tertiary actions or when background contrast is needed"
         >
           <div className="flex flex-wrap gap-3">
-            <button className="px-6 py-3 border-2 border-[var(--color-primary-500)] hover:bg-[var(--color-primary-50)] active:bg-[var(--color-primary-100)] text-[var(--color-primary-600)] rounded-lg font-medium transition-colors">
+            <button className="px-6 py-3 border-2 border-[var(--color-primary-800)] hover:bg-[var(--color-primary-50)] active:bg-[var(--color-primary-100)] text-[var(--color-primary-800)] rounded-lg font-medium transition-colors">
               Default
             </button>
-            <button className="px-6 py-3 border-2 border-[var(--color-primary-500)] bg-[var(--color-primary-50)] text-[var(--color-primary-600)] rounded-lg font-medium">
+            <button className="px-6 py-3 border-2 border-[var(--color-primary-800)] bg-[var(--color-primary-50)] text-[var(--color-primary-800)] rounded-lg font-medium">
               Hover
             </button>
-            <button className="px-6 py-3 border-2 border-[var(--color-neutral-300)] text-[var(--color-neutral-400)] rounded-lg font-medium cursor-not-allowed" disabled>
+            <button className="px-6 py-3 border-2 border-[var(--color-neutral-300)] text-[var(--color-neutral-500)] rounded-lg font-medium cursor-not-allowed" disabled>
               Disabled
             </button>
           </div>
@@ -104,11 +104,11 @@ export default function Components() {
           usage="Use for toolbars, navigation, or space-constrained interfaces"
         >
           <div className="flex flex-wrap gap-3">
-            <button className="px-4 py-3 bg-[var(--color-primary-500)] hover:bg-[var(--color-primary-600)] text-white rounded-lg transition-colors flex items-center gap-2">
+            <button className="px-4 py-3 bg-[var(--color-primary-800)] hover:bg-[var(--color-primary-900)] text-white rounded-lg transition-colors flex items-center gap-2">
               <Heart size={20} />
               <span>Like</span>
             </button>
-            <button className="px-4 py-3 bg-[var(--color-accent-500)] hover:bg-[var(--color-accent-600)] text-white rounded-lg transition-colors flex items-center gap-2">
+            <button className="px-4 py-3 bg-[var(--color-accent-700)] hover:bg-[var(--color-accent-800)] text-white rounded-lg transition-colors flex items-center gap-2">
               <Star size={20} />
               <span>Favorite</span>
             </button>
@@ -127,13 +127,13 @@ export default function Components() {
           usage="Adapt button size to context and hierarchy"
         >
           <div className="flex flex-wrap items-center gap-3">
-            <button className="px-3 py-1.5 bg-[var(--color-primary-500)] hover:bg-[var(--color-primary-600)] text-white text-sm rounded-lg transition-colors">
+            <button className="px-3 py-1.5 bg-[var(--color-primary-800)] hover:bg-[var(--color-primary-900)] text-white text-sm rounded-lg transition-colors">
               Small
             </button>
-            <button className="px-6 py-3 bg-[var(--color-primary-500)] hover:bg-[var(--color-primary-600)] text-white rounded-lg transition-colors">
+            <button className="px-6 py-3 bg-[var(--color-primary-800)] hover:bg-[var(--color-primary-900)] text-white rounded-lg transition-colors">
               Medium
             </button>
-            <button className="px-8 py-4 bg-[var(--color-primary-500)] hover:bg-[var(--color-primary-600)] text-white text-lg rounded-lg transition-colors">
+            <button className="px-8 py-4 bg-[var(--color-primary-800)] hover:bg-[var(--color-primary-900)] text-white text-lg rounded-lg transition-colors">
               Large
             </button>
           </div>
@@ -177,7 +177,7 @@ export default function Components() {
                 type="text"
                 placeholder="Disabled input"
                 disabled
-                className="w-full px-4 py-3 border border-[var(--color-neutral-200)] rounded-lg bg-[var(--color-neutral-100)] text-[var(--color-neutral-400)] cursor-not-allowed"
+                className="w-full px-4 py-3 border border-[var(--color-neutral-200)] rounded-lg bg-[var(--color-neutral-100)] text-[var(--color-neutral-500)] cursor-not-allowed"
               />
             </div>
             <div>
@@ -189,7 +189,7 @@ export default function Components() {
                 placeholder="Invalid input"
                 className="w-full px-4 py-3 border-2 border-[var(--color-error-500)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-error-500)]"
               />
-              <p className="text-sm text-[var(--color-error-500)] mt-1">This field is required</p>
+              <p className="text-sm text-[var(--color-error-700)] mt-1">This field is required</p>
             </div>
           </div>
         </ComponentDemo>
@@ -250,7 +250,7 @@ export default function Components() {
                     onChange={() => toggleCheckbox(id)}
                     className="peer sr-only"
                   />
-                  <div className="w-5 h-5 border-2 border-[var(--color-neutral-300)] rounded peer-checked:bg-[var(--color-primary-500)] peer-checked:border-[var(--color-primary-500)] peer-focus:ring-2 peer-focus:ring-[var(--color-primary-300)] transition-all flex items-center justify-center">
+                  <div className="w-5 h-5 border-2 border-[var(--color-neutral-300)] rounded peer-checked:bg-[var(--color-primary-800)] peer-checked:border-[var(--color-primary-500)] peer-focus:ring-2 peer-focus:ring-[var(--color-primary-300)] transition-all flex items-center justify-center">
                     {checkboxStates[id] && <Check size={14} className="text-white" />}
                   </div>
                 </div>
@@ -284,7 +284,7 @@ export default function Components() {
                   />
                   <div className="w-5 h-5 border-2 border-[var(--color-neutral-300)] rounded-full peer-checked:border-[var(--color-primary-500)] peer-focus:ring-2 peer-focus:ring-[var(--color-primary-300)] transition-all flex items-center justify-center">
                     {radioValue === id && (
-                      <div className="w-2.5 h-2.5 bg-[var(--color-primary-500)] rounded-full" />
+                      <div className="w-2.5 h-2.5 bg-[var(--color-primary-800)] rounded-full" />
                     )}
                   </div>
                 </div>
@@ -312,7 +312,7 @@ export default function Components() {
                     onChange={() => toggleSwitch(id)}
                     className="sr-only peer"
                   />
-                  <div className="w-11 h-6 bg-[var(--color-neutral-300)] rounded-full peer-checked:bg-[var(--color-primary-500)] peer-focus:ring-2 peer-focus:ring-[var(--color-primary-300)] transition-all">
+                  <div className="w-11 h-6 bg-[var(--color-neutral-300)] rounded-full peer-checked:bg-[var(--color-primary-800)] peer-focus:ring-2 peer-focus:ring-[var(--color-primary-300)] transition-all">
                     <div className={`absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform ${switchStates[id] ? 'translate-x-5' : ''}`} />
                   </div>
                 </div>
@@ -344,7 +344,7 @@ export default function Components() {
               onChange={(e) => setSliderValue(Number(e.target.value))}
               className="w-full h-2 bg-[var(--color-neutral-200)] rounded-lg appearance-none cursor-pointer slider-thumb"
               style={{
-                background: `linear-gradient(to right, var(--color-primary-500) 0%, var(--color-primary-500)) ${sliderValue}%, var(--color-neutral-200) ${sliderValue}%, var(--color-neutral-200) 100%)`
+                background: `linear-gradient(to right, var(--color-primary-700) 0%, var(--color-primary-700)) ${sliderValue}%, var(--color-neutral-200) ${sliderValue}%, var(--color-neutral-200) 100%)`
               }}
             />
           </div>
@@ -356,7 +356,7 @@ export default function Components() {
           usage="Use for search functionality"
         >
           <div className="max-w-md relative">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--color-neutral-400)]" size={20} />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--color-neutral-500)]" size={20} />
             <input
               type="search"
               placeholder="Search..."
@@ -378,7 +378,7 @@ export default function Components() {
             <p className="text-[var(--color-neutral-600)] mb-4">
               This is a basic card component with title and description content.
             </p>
-            <button className="text-[var(--color-primary-600)] font-medium hover:text-[var(--color-primary-700)]">
+            <button className="text-[var(--color-primary-800)] font-medium hover:text-[var(--color-primary-700)]">
               Learn More →
             </button>
           </div>
@@ -396,7 +396,7 @@ export default function Components() {
               <p className="text-[var(--color-neutral-600)] mb-4">
                 Beautiful card design with image header for visual appeal.
               </p>
-              <button className="px-4 py-2 bg-[var(--color-primary-500)] hover:bg-[var(--color-primary-600)] text-white rounded-lg transition-colors">
+              <button className="px-4 py-2 bg-[var(--color-primary-800)] hover:bg-[var(--color-primary-900)] text-white rounded-lg transition-colors">
                 View Details
               </button>
             </div>
@@ -411,7 +411,7 @@ export default function Components() {
           <button className="max-w-sm p-6 bg-[var(--color-surface)] border-2 border-[var(--color-neutral-200)] rounded-xl shadow-sm hover:shadow-lg hover:border-[var(--color-primary-300)] hover:-translate-y-1 transition-all text-left">
             <div className="flex items-start gap-4">
               <div className="p-3 bg-[var(--color-primary-100)] rounded-xl">
-                <Star size={24} className="text-[var(--color-primary-600)]" />
+                <Star size={24} className="text-[var(--color-primary-800)]" />
               </div>
               <div className="flex-1">
                 <h3 className="text-lg font-bold text-[var(--color-neutral-900)] mb-1">Interactive Card</h3>
@@ -428,7 +428,7 @@ export default function Components() {
           description="Card for displaying metrics and statistics"
           usage="Use in dashboards for key metrics"
         >
-          <div className="max-w-xs p-6 bg-gradient-to-br from-[var(--color-primary-500)] to-[var(--color-accent-500)] rounded-xl shadow-lg text-white">
+          <div className="max-w-xs p-6 bg-gradient-to-br from-[var(--color-primary-800)] to-[var(--color-accent-700)] rounded-xl shadow-lg text-white">
             <p className="text-sm opacity-90 mb-1">Total Students</p>
             <p className="text-4xl font-bold mb-2">1,234</p>
             <p className="text-sm opacity-80 flex items-center gap-1">
@@ -464,10 +464,10 @@ export default function Components() {
           usage="Use to show current location in hierarchy"
         >
           <nav className="flex items-center gap-2 text-sm">
-            <a href="#" className="text-[var(--color-primary-600)] hover:text-[var(--color-primary-700)]">Home</a>
-            <span className="text-[var(--color-neutral-400)]">/</span>
-            <a href="#" className="text-[var(--color-primary-600)] hover:text-[var(--color-primary-700)]">Parents</a>
-            <span className="text-[var(--color-neutral-400)]">/</span>
+            <a href="#" className="text-[var(--color-primary-800)] hover:text-[var(--color-primary-700)]">Home</a>
+            <span className="text-[var(--color-neutral-500)]">/</span>
+            <a href="#" className="text-[var(--color-primary-800)] hover:text-[var(--color-primary-700)]">Parents</a>
+            <span className="text-[var(--color-neutral-500)]">/</span>
             <span className="text-[var(--color-neutral-700)]">Resources</span>
           </nav>
         </ComponentDemo>
@@ -481,7 +481,7 @@ export default function Components() {
             <button className="px-4 py-2 border border-[var(--color-neutral-300)] rounded-lg text-[var(--color-neutral-700)] hover:bg-[var(--color-neutral-100)] transition-colors">
               Previous
             </button>
-            <button className="px-4 py-2 bg-[var(--color-primary-500)] text-white rounded-lg font-medium">1</button>
+            <button className="px-4 py-2 bg-[var(--color-primary-800)] text-white rounded-lg font-medium">1</button>
             <button className="px-4 py-2 border border-[var(--color-neutral-300)] rounded-lg text-[var(--color-neutral-700)] hover:bg-[var(--color-neutral-100)] transition-colors">2</button>
             <button className="px-4 py-2 border border-[var(--color-neutral-300)] rounded-lg text-[var(--color-neutral-700)] hover:bg-[var(--color-neutral-100)] transition-colors">3</button>
             <button className="px-4 py-2 border border-[var(--color-neutral-300)] rounded-lg text-[var(--color-neutral-700)] hover:bg-[var(--color-neutral-100)] transition-colors">
@@ -496,7 +496,7 @@ export default function Components() {
           usage="Use for bottom navigation or side menus"
         >
           <div className="flex gap-2 p-2 bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-xl shadow-sm w-fit">
-            <button className="p-3 bg-[var(--color-primary-100)] text-[var(--color-primary-600)] rounded-lg">
+            <button className="p-3 bg-[var(--color-primary-100)] text-[var(--color-primary-800)] rounded-lg">
               <Home size={20} />
             </button>
             <button className="p-3 text-[var(--color-neutral-500)] hover:bg-[var(--color-neutral-100)] rounded-lg transition-colors">
@@ -578,7 +578,7 @@ export default function Components() {
                 <span>75%</span>
               </div>
               <div className="h-2 bg-[var(--color-neutral-200)] rounded-full overflow-hidden">
-                <div className="h-full bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-accent-500)] rounded-full" style={{ width: '75%' }} />
+                <div className="h-full bg-gradient-to-r from-[var(--color-primary-700)] to-[var(--color-accent-700)] rounded-full" style={{ width: '75%' }} />
               </div>
             </div>
             <div>
@@ -587,7 +587,7 @@ export default function Components() {
                 <span>50%</span>
               </div>
               <div className="h-3 bg-[var(--color-neutral-200)] rounded-full overflow-hidden">
-                <div className="h-full bg-[var(--color-secondary-500)] rounded-full" style={{ width: '50%' }} />
+                <div className="h-full bg-[var(--color-secondary-700)] rounded-full" style={{ width: '50%' }} />
               </div>
             </div>
           </div>
@@ -599,12 +599,12 @@ export default function Components() {
           usage="Use to indicate content is loading"
         >
           <div className="flex flex-wrap items-center gap-6">
-            <div className="w-8 h-8 border-4 border-[var(--color-neutral-200)] border-t-[var(--color-primary-500)] rounded-full animate-spin" />
-            <div className="w-10 h-10 border-4 border-[var(--color-neutral-200)] border-t-[var(--color-accent-500)] rounded-full animate-spin" />
+            <div className="w-8 h-8 border-4 border-[var(--color-neutral-200)] border-t-[var(--color-primary-700)] rounded-full animate-spin" />
+            <div className="w-10 h-10 border-4 border-[var(--color-neutral-200)] border-t-[var(--color-accent-700)] rounded-full animate-spin" />
             <div className="flex gap-2">
-              <div className="w-3 h-3 bg-[var(--color-primary-500)] rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-              <div className="w-3 h-3 bg-[var(--color-primary-500)] rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-              <div className="w-3 h-3 bg-[var(--color-primary-500)] rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+              <div className="w-3 h-3 bg-[var(--color-primary-800)] rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+              <div className="w-3 h-3 bg-[var(--color-primary-800)] rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+              <div className="w-3 h-3 bg-[var(--color-primary-800)] rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
             </div>
           </div>
         </ComponentDemo>
@@ -615,7 +615,7 @@ export default function Components() {
           usage="Use for counts, statuses, or labels"
         >
           <div className="flex flex-wrap items-center gap-3">
-            <span className="px-3 py-1 bg-[var(--color-primary-100)] text-[var(--color-primary-700)] text-sm font-medium rounded-full">
+            <span className="px-3 py-1 bg-[var(--color-primary-100)] text-[var(--color-primary-800)] text-sm font-medium rounded-full">
               New
             </span>
             <span className="px-3 py-1 bg-[var(--color-success-100)] text-[var(--color-success-700)] text-sm font-medium rounded-full">
@@ -627,7 +627,7 @@ export default function Components() {
             <span className="px-3 py-1 bg-[var(--color-error-100)] text-[var(--color-error-700)] text-sm font-medium rounded-full">
               Closed
             </span>
-            <span className="px-2 py-0.5 bg-[var(--color-accent-500)] text-white text-xs font-bold rounded-full">
+            <span className="px-2 py-0.5 bg-[var(--color-accent-700)] text-white text-xs font-bold rounded-full">
               99+
             </span>
           </div>
@@ -642,18 +642,18 @@ export default function Components() {
           usage="Use to represent users or accounts"
         >
           <div className="flex flex-wrap items-end gap-4">
-            <div className="w-12 h-12 bg-gradient-to-br from-[var(--color-primary-400)] to-[var(--color-accent-400)] rounded-full flex items-center justify-center text-white font-bold">
+            <div className="w-12 h-12 bg-gradient-to-br from-[var(--color-primary-700)] to-[var(--color-accent-700)] rounded-full flex items-center justify-center text-white font-bold">
               AB
             </div>
-            <div className="w-16 h-16 bg-gradient-to-br from-[var(--color-secondary-400)] to-[var(--color-primary-400)] rounded-full flex items-center justify-center text-white font-bold text-lg">
+            <div className="w-16 h-16 bg-gradient-to-br from-[var(--color-secondary-700)] to-[var(--color-primary-700)] rounded-full flex items-center justify-center text-white font-bold text-lg">
               JD
             </div>
-            <div className="w-20 h-20 bg-gradient-to-br from-[var(--color-accent-400)] to-[var(--color-secondary-400)] rounded-full flex items-center justify-center text-white font-bold text-xl">
+            <div className="w-20 h-20 bg-gradient-to-br from-[var(--color-accent-700)] to-[var(--color-secondary-700)] rounded-full flex items-center justify-center text-white font-bold text-xl">
               MK
             </div>
             <div className="relative">
-              <div className="w-16 h-16 bg-gradient-to-br from-[var(--color-primary-400)] to-[var(--color-accent-400)] rounded-full" />
-              <div className="absolute bottom-0 right-0 w-4 h-4 bg-[var(--color-success-500)] border-2 border-white rounded-full" />
+              <div className="w-16 h-16 bg-gradient-to-br from-[var(--color-primary-700)] to-[var(--color-accent-700)] rounded-full" />
+              <div className="absolute bottom-0 right-0 w-4 h-4 bg-[var(--color-success-700)] border-2 border-white rounded-full" />
             </div>
           </div>
         </ComponentDemo>
@@ -665,7 +665,7 @@ export default function Components() {
         >
           <div className="space-y-4">
             <div className="w-64 h-48 bg-[var(--color-neutral-100)] rounded-lg flex items-center justify-center">
-              <Eye size={32} className="text-[var(--color-neutral-400)]" />
+              <Eye size={32} className="text-[var(--color-neutral-500)]" />
             </div>
             <div className="w-32 h-32 bg-gradient-to-br from-[var(--color-primary-200)] to-[var(--color-accent-200)] rounded-xl" />
           </div>
@@ -739,27 +739,27 @@ export default function Components() {
             <button className="w-full flex items-center justify-between p-4 bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-lg hover:border-[var(--color-primary-300)] hover:shadow-sm transition-all text-left">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-[var(--color-primary-100)] rounded-lg flex items-center justify-center">
-                  <Settings size={20} className="text-[var(--color-primary-600)]" />
+                  <Settings size={20} className="text-[var(--color-primary-800)]" />
                 </div>
                 <div>
                   <p className="font-medium text-[var(--color-neutral-900)]">Settings</p>
                   <p className="text-sm text-[var(--color-neutral-500)]">Manage preferences</p>
                 </div>
               </div>
-              <ChevronDown size={20} className="text-[var(--color-neutral-400)] -rotate-90" />
+              <ChevronDown size={20} className="text-[var(--color-neutral-500)] -rotate-90" />
             </button>
 
             <button className="w-full flex items-center justify-between p-4 bg-[var(--color-surface)] border border-[var(--color-neutral-200)] rounded-lg hover:border-[var(--color-primary-300)] hover:shadow-sm transition-all text-left">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-[var(--color-secondary-100)] rounded-lg flex items-center justify-center">
-                  <Bell size={20} className="text-[var(--color-secondary-600)]" />
+                  <Bell size={20} className="text-[var(--color-secondary-700)]" />
                 </div>
                 <div>
                   <p className="font-medium text-[var(--color-neutral-900)]">Notifications</p>
                   <p className="text-sm text-[var(--color-neutral-500)]">3 new messages</p>
                 </div>
               </div>
-              <span className="px-2 py-0.5 bg-[var(--color-error-500)] text-white text-xs font-bold rounded-full">3</span>
+              <span className="px-2 py-0.5 bg-[var(--color-error-700)] text-white text-xs font-bold rounded-full">3</span>
             </button>
           </div>
         </ComponentDemo>
@@ -775,7 +775,7 @@ export default function Components() {
           <div>
             <button 
               onClick={() => setShowModal(true)}
-              className="px-6 py-3 bg-[var(--color-primary-500)] hover:bg-[var(--color-primary-600)] text-white rounded-lg transition-colors"
+              className="px-6 py-3 bg-[var(--color-primary-800)] hover:bg-[var(--color-primary-900)] text-white rounded-lg transition-colors"
             >
               Open Modal
             </button>
@@ -804,7 +804,7 @@ export default function Components() {
                     </button>
                     <button 
                       onClick={() => setShowModal(false)}
-                      className="px-4 py-2 bg-[var(--color-primary-500)] hover:bg-[var(--color-primary-600)] text-white rounded-lg transition-colors"
+                      className="px-4 py-2 bg-[var(--color-primary-800)] hover:bg-[var(--color-primary-900)] text-white rounded-lg transition-colors"
                     >
                       Confirm
                     </button>
@@ -945,9 +945,9 @@ export default function Components() {
           <div className="max-w-md">
             <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-[var(--color-neutral-300)] rounded-xl hover:border-[var(--color-primary-400)] hover:bg-[var(--color-primary-50)] transition-all cursor-pointer">
               <div className="flex flex-col items-center justify-center gap-2">
-                <Upload size={32} className="text-[var(--color-neutral-400)]" />
+                <Upload size={32} className="text-[var(--color-neutral-500)]" />
                 <p className="text-sm text-[var(--color-neutral-600)]">
-                  <span className="font-medium text-[var(--color-primary-600)]">Click to upload</span> or drag and drop
+                  <span className="font-medium text-[var(--color-primary-800)]">Click to upload</span> or drag and drop
                 </p>
                 <p className="text-xs text-[var(--color-neutral-500)]">PNG, JPG up to 10MB</p>
               </div>
@@ -963,13 +963,13 @@ export default function Components() {
         >
           <div className="flex flex-col items-center justify-center p-12 bg-[var(--color-neutral-50)] rounded-xl max-w-md">
             <div className="w-16 h-16 bg-[var(--color-neutral-200)] rounded-full flex items-center justify-center mb-4">
-              <Search size={32} className="text-[var(--color-neutral-400)]" />
+              <Search size={32} className="text-[var(--color-neutral-500)]" />
             </div>
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)] mb-2">No results found</h3>
             <p className="text-sm text-[var(--color-neutral-600)] text-center mb-4">
               Try adjusting your search or filters to find what you're looking for.
             </p>
-            <button className="px-4 py-2 bg-[var(--color-primary-500)] hover:bg-[var(--color-primary-600)] text-white rounded-lg transition-colors">
+            <button className="px-4 py-2 bg-[var(--color-primary-800)] hover:bg-[var(--color-primary-900)] text-white rounded-lg transition-colors">
               Clear Filters
             </button>
           </div>
@@ -1027,19 +1027,19 @@ export default function Components() {
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="p-4 bg-[var(--color-surface)] rounded-lg">
-            <p className="text-2xl font-bold text-[var(--color-primary-600)]">10+</p>
+            <p className="text-2xl font-bold text-[var(--color-primary-800)]">10+</p>
             <p className="text-sm text-[var(--color-neutral-600)]">Button variants</p>
           </div>
           <div className="p-4 bg-[var(--color-surface)] rounded-lg">
-            <p className="text-2xl font-bold text-[var(--color-secondary-600)]">8+</p>
+            <p className="text-2xl font-bold text-[var(--color-secondary-700)]">8+</p>
             <p className="text-sm text-[var(--color-neutral-600)]">Input types</p>
           </div>
           <div className="p-4 bg-[var(--color-surface)] rounded-lg">
-            <p className="text-2xl font-bold text-[var(--color-accent-600)]">4+</p>
+            <p className="text-2xl font-bold text-[var(--color-accent-700)]">4+</p>
             <p className="text-sm text-[var(--color-neutral-600)]">Card styles</p>
           </div>
           <div className="p-4 bg-[var(--color-surface)] rounded-lg">
-            <p className="text-2xl font-bold text-[var(--color-primary-600)]">13+</p>
+            <p className="text-2xl font-bold text-[var(--color-primary-800)]">13+</p>
             <p className="text-sm text-[var(--color-neutral-600)]">More components</p>
           </div>
         </div>
@@ -1131,7 +1131,7 @@ function TabbedGalleryDemo() {
             onClick={() => setActive(cat.key)}
             className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 ${
               active === cat.key
-                ? 'bg-[var(--color-primary-500)] text-white shadow-md'
+                ? 'bg-[var(--color-primary-800)] text-white shadow-md'
                 : 'bg-[var(--color-neutral-100)] text-[var(--color-neutral-700)] hover:bg-[var(--color-neutral-200)]'
             }`}
           >

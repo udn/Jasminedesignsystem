@@ -101,7 +101,7 @@ export default function Spacing() {
         <div className="space-y-4">
           <h3 className="text-lg font-semibold text-[var(--color-neutral-900)]">Card Component Spacing</h3>
           <div className="p-6 rounded-xl bg-[var(--color-surface)] border-2 border-[var(--color-primary-300)] relative">
-            <div className="absolute top-0 left-0 text-xs text-[var(--color-primary-600)] bg-[var(--color-primary-100)] px-2 py-1 rounded-br">
+            <div className="absolute top-0 left-0 text-xs text-[var(--color-primary-800)] bg-[var(--color-primary-100)] px-2 py-1 rounded-br">
               24px padding
             </div>
             
@@ -109,7 +109,7 @@ export default function Spacing() {
               <h4 className="text-xl font-bold text-[var(--color-neutral-900)]">
                 Example Card Title
               </h4>
-              <div className="absolute right-6 top-20 text-xs text-[var(--color-primary-600)] bg-[var(--color-primary-100)] px-2 py-1 rounded">
+              <div className="absolute right-6 top-20 text-xs text-[var(--color-primary-800)] bg-[var(--color-primary-100)] px-2 py-1 rounded">
                 16px gap
               </div>
               <p className="text-[var(--color-neutral-700)]">
@@ -118,10 +118,10 @@ export default function Spacing() {
               </p>
               
               <div className="flex gap-3 pt-2">
-                <div className="absolute left-6 bottom-16 text-xs text-[var(--color-primary-600)] bg-[var(--color-primary-100)] px-2 py-1 rounded">
+                <div className="absolute left-6 bottom-16 text-xs text-[var(--color-primary-800)] bg-[var(--color-primary-100)] px-2 py-1 rounded">
                   12px gap
                 </div>
-                <button className="px-4 py-2 bg-[var(--color-primary-500)] text-white rounded-lg">
+                <button className="px-4 py-2 bg-[var(--color-primary-800)] text-white rounded-lg">
                   Primary
                 </button>
                 <button className="px-4 py-2 border border-[var(--color-neutral-300)] text-[var(--color-neutral-700)] rounded-lg">
@@ -187,19 +187,19 @@ export default function Spacing() {
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)]">Component Spacing</h3>
             <ul className="space-y-2 text-sm text-[var(--color-neutral-700)]">
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span><strong>Button padding:</strong> 12px vertical, 16-24px horizontal</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span><strong>Card padding:</strong> 24px for standard cards, 32px for hero cards</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span><strong>Form fields:</strong> 16px between labels and inputs, 24px between field groups</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span><strong>List items:</strong> 12-16px vertical spacing between items</span>
               </li>
             </ul>
@@ -209,19 +209,19 @@ export default function Spacing() {
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)]">Layout Spacing</h3>
             <ul className="space-y-2 text-sm text-[var(--color-neutral-700)]">
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span><strong>Section spacing:</strong> 64-96px between major sections</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span><strong>Container padding:</strong> 16px mobile, 24px tablet, 32px desktop</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span><strong>Grid gaps:</strong> 16px mobile, 24px tablet, 32px desktop</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span><strong>Content width:</strong> Max 1280px with 16-32px side padding</span>
               </li>
             </ul>
@@ -231,15 +231,15 @@ export default function Spacing() {
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)]">Mobile Adjustments</h3>
             <ul className="space-y-2 text-sm text-[var(--color-neutral-700)]">
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span>Reduce large spacing values by 25-40% on mobile</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span>Maintain touch target minimum of 44x44px</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span>Use 16px minimum for container edge padding</span>
               </li>
             </ul>
@@ -249,15 +249,15 @@ export default function Spacing() {
             <h3 className="text-lg font-semibold text-[var(--color-neutral-900)]">Border Radius Usage</h3>
             <ul className="space-y-2 text-sm text-[var(--color-neutral-700)]">
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span><strong>Buttons & inputs:</strong> 8px (md) for standard, 12px (lg) for prominent</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span><strong>Cards:</strong> 12px (lg) for small cards, 16px (xl) for large cards</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[var(--color-success-500)]">•</span>
+                <span className="text-[var(--color-success-700)]">•</span>
                 <span><strong>Avatars & badges:</strong> 9999px (full) for circular elements</span>
               </li>
             </ul>
